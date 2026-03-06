@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&amp;display=swap');
+
+:root{
+
+    /* primary */
+    --primary-black: black;
+    --primary-white: white;
+    --primary-neutral: grey;
+
+    /* zinc */
+
+    --zinc-100:#f4f4f5;
+    --zinc-200:#e4e4e7;
+    --zinc-300:#d4d4d8;
+    --zinc-500:#71717a;
+    --zinc-800:#27272a;
+
+    /* error */
+
+    --error-500: #ef4444;
+}
