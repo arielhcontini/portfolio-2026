@@ -1,3 +1,24 @@
-header{
-    color: var(--error-500);
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-16);
 } 
+
+
+.header__brand{
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-16);
+}
+
+.header__title{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary-black);
+}
+
+.header__nav,
+.header__cta{
+    display: none;
+}

@@ -18,4 +18,15 @@
     /* error */
 
     --error-500: #ef4444;
+
+    /* spacing */
+
+    --spacing-4: 4px;
+    --spacing-8: 8px;
+    --spacing-16: 16px;
+    --spacing-32: 32px;
+    --spacing-40: 40px;
+    --spacing-48: 48px;
+    --spacing-56: 56px;
 }
+
