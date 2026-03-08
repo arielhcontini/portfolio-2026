@@ -35,3 +35,7 @@ a{
 body {
       font-family: 'Sora', sans-serif;
 }
+
+li{
+    list-style: none;
+}
