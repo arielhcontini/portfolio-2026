@@ -3,12 +3,11 @@ body {
 }
 
 .outline{
-    background: linear-gradient(45deg, #663399, #c86c4d);
+    background: linear-gradient(66deg, #F87060, #102542);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 700;
-    font-family: Arial, sans-serif;
 }
 
 /* HEADER */
@@ -87,10 +86,7 @@ color: var(--primary-black);
 
     .hero{
       flex-direction: row-reverse;
-
     }
-
-
 
 }
 
