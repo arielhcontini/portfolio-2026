@@ -90,7 +90,7 @@ section{
     align-items: center;
     justify-content: center;
     gap: var(--spacing-40);
-    border-bottom: 1px var(--zinc-100) solid;
+    border-bottom: 1px var(--zinc-300) solid;
 }
 
 .hero__content{
@@ -227,6 +227,7 @@ color: var(--primary-black);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: var(--spacing-24);
+    border-bottom: 1px var(--zinc-300) solid;
 }
 
 
