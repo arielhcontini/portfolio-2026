@@ -1,5 +1,6 @@
 body {
       font-family: 'Sora', sans-serif;
+      background-color: var(--primary-white);
 }
 
 section{
@@ -9,7 +10,7 @@ section{
 }
 
 .outline{
-    background: linear-gradient(45deg, #F87060, #102542);
+    background: linear-gradient(45deg, #A793AC, #102542);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -20,6 +21,7 @@ section{
     font-size: clamp(1.75rem, 5vw, 2.5rem);
     font-weight: 400;
     text-align: center;
+    margin-bottom: var(--spacing-8);
 }
 
 /* === HEADER === */
@@ -118,7 +120,8 @@ color: var(--primary-black);
 .hero__image{
     width: 100%;
     height: auto;
-    max-height: 30vh;
+    max-width: 50vh;
+    border-radius: 4px;
     padding: 0;
     margin: 0;
 }
@@ -190,18 +193,21 @@ color: var(--primary-black);
     border: 2px solid var(--primary-black);
 
     transition: transform 0.15s ease;
+
+    cursor: pointer;
 }
 
 
 
 .skill-card:hover{
-    background-color: var(--primary-black);
     color: var(--primary-white);
-    transform: translateY(-2px);
+    background-color: var(--primary-black);
+    transform: translateY(-3px);
 }
 
 .skill-card:hover .skill-card__icon img{
     filter: invert(1);
+    color: var(--primary-white);
 }
 
 .skill-card__icon img{
@@ -211,10 +217,10 @@ color: var(--primary-black);
 }
 
 .skill-card__label{
-    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-size: clamp(1rem, 2vw, 1.15rem);
     font-weight: 700;
-    color: var(--primary-black);
 }
+
 
 
 .skills__grid{

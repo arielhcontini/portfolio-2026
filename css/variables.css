@@ -3,8 +3,8 @@
 :root{
 
     /* primary */
-    --primary-black: black;
-    --primary-white: white;
+    --primary-black: #080808;
+    --primary-white:  #F0EFEB;
     --primary-neutral: grey;
 
     /* zinc */
@@ -34,7 +34,7 @@
 
     /* MAX WIDTH */
 
-    --max-width:1280px;
+    --max-width:1024px;
 
 }
 
