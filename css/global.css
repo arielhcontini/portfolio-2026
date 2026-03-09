@@ -10,7 +10,7 @@ section{
 }
 
 .outline{
-    background: linear-gradient(45deg, #A793AC, #102542);
+    background: var(--gradient-100);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -31,7 +31,7 @@ section{
     align-items: center;
     justify-content: space-between;
     padding: var(--spacing-16);
-    border-bottom: 1px var(--zinc-100) solid;
+    border-bottom: 1px var(--zinc-300) solid;
     max-width: var(--max-width);
     margin: 0 auto;
 } 
@@ -217,8 +217,8 @@ color: var(--primary-black);
 }
 
 .skill-card__label{
-    font-size: clamp(1rem, 2vw, 1.15rem);
-    font-weight: 700;
+    font-size: clamp(1rem, 1vw, 1.15rem);
+    font-weight: 600;
 }
 
 

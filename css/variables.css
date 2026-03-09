@@ -19,6 +19,10 @@
 
     --error-500: #ef4444;
 
+
+    /* Gradients */
+    --gradient-100: linear-gradient(-45deg, #A793AC, #102542);
+
     /* spacing */
 
     --spacing-4: 4px;
