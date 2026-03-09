@@ -32,12 +32,11 @@
     --spacing-56: 56px;
 
 
-    --outline-width:1px;
+    /* MAX WIDTH */
+
+    --max-width:1280px;
+
 }
 
-@media (min-width: 768px){
-    :root{
-        --outline-width:2px;
-    }
-}
+
 
