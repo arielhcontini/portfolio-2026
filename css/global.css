@@ -98,12 +98,13 @@ html {
         position: static; 
         box-shadow: none;
         display: block; /* Rompemos el grid de móvil */
+
     }
     
     .header__nav ul {
         overflow: visible;
         flex-direction: row; /* Links uno al lado del otro */
-        gap: 2rem; /* Separación entre links en PC */
+        gap: 1.6rem; /* Separación entre links en PC */
         border: none;
     }
 
@@ -157,7 +158,7 @@ html {
     .header__nav ul{
         display: flex;
         align-items: center;
-        gap: var(--spacing-32);
+        gap: var(--spacing-40);
         font-size: 16px;
         font-weight: 600;
     }
