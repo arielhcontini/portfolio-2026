@@ -3,6 +3,10 @@ body {
       background-color: var(--primary-white);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .section-container{
     max-width: var(--max-width);
     margin: 0 auto;
@@ -38,7 +42,85 @@ body {
     border-bottom: 1px var(--zinc-300) solid;
     max-width: var(--max-width);
     margin: 0 auto;
+    z-index: 100;
+    position: relative;
 } 
+
+
+/* 2. Estilos del Menú Móvil (Oculto por defecto) */
+.header__nav {
+    text-align: center;
+    position: absolute;
+    top: 100%; /* Lo posiciona exactamente debajo de la barra del header */
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-white); /* Reemplaza por tu variable de color de fondo, ej: var(--bg-color) */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Una sombra suave para separarlo del contenido */
+    
+    /* EL TRUCO DE ANIMACIÓN CON GRID */
+    display: grid;
+    grid-template-rows: 0fr; /* Altura 0 */
+    transition: grid-template-rows 0.4s ease-in-out; /* Velocidad y suavidad de la animación */
+}
+
+/* 3. El contenedor de los links (Debe ocultar el contenido cuando la altura es 0) */
+.header__nav ul {
+    overflow: hidden; /* Esto es clave para que los links no se escapen cuando está cerrado */
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+/* 4. Estilo de los links en móvil para que parezcan una lista */
+.header__nav li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0; /* Una línea separadora opcional */
+}
+
+.header__nav a {
+    display: block;
+    padding: 1.5rem; /* Espacio cómodo para tocar con el dedo (Touch target) */
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 5. LA CLASE MÁGICA (La que agrega Javascript) */
+.header__nav.is-active {
+    grid-template-rows: 1fr; /* Se expande suavemente hasta el alto total de sus links */
+}
+
+/* --- ESTILOS PARA ESCRITORIO --- */
+@media (min-width: 768px) {
+    /* Reseteamos los estilos para pantallas grandes */
+    .header__nav {
+        position: static; 
+        box-shadow: none;
+        display: block; /* Rompemos el grid de móvil */
+    }
+    
+    .header__nav ul {
+        overflow: visible;
+        flex-direction: row; /* Links uno al lado del otro */
+        gap: 2rem; /* Separación entre links en PC */
+        border: none;
+    }
+
+    .header__nav li {
+        width: auto;
+        border-bottom: none;
+    }
+
+    .header__nav a {
+        padding: 0;
+    }
+
+    /* Ocultamos el botón de la hamburguesa */
+    .header__toggle {
+        display: none;
+    }
+}
 
 
 .header__brand{
@@ -56,6 +138,11 @@ body {
 .header__nav,
 .header__cta{
     display: none;
+}
+
+.header__nav.is-active {
+    display: block; 
+    /* Aquí pondrías el position: absolute, background, etc., para tu menú desplegable */
 }
 
 /* === header queeries === */
