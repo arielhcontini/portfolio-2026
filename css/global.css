@@ -601,10 +601,10 @@ color: var(--zinc-300);
    CONTACT SECTION
    =========================== */
 
-.contact .section-container {
+.contact {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-40);
+  gap: var(--spacing-56);
 }
 
 .contact__form-wrapper {
@@ -694,7 +694,7 @@ color: var(--zinc-300);
 }
 
 .contact__title {
-  text-align: start;
+  text-align: center;
 }
 
 .contact__description {
@@ -709,7 +709,12 @@ color: var(--zinc-300);
   gap: var(--spacing-8);
 }
 
-.contact__email,
+.contact__email{
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 600;
+  color: var(--primary-black);
+}
+
 .contact__phone {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   font-weight: 600;
