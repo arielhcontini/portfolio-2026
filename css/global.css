@@ -701,12 +701,14 @@ color: var(--zinc-300);
   font-size: clamp(0.875rem, 2vw, 1rem);
   line-height: 1.5;
   color: var(--zinc-500);
+  text-align: center;
 }
 
 .contact__details {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-8);
+  align-items: center;
 }
 
 .contact__email{
