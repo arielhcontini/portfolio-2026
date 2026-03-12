@@ -70,6 +70,7 @@ html {
     flex-direction: column;
     padding: 0;
     margin: 0;
+    background-color: red;
 }
 
 /* 4. Estilo de los links en móvil para que parezcan una lista */
@@ -81,7 +82,7 @@ html {
 
 .header__nav a {
     display: block;
-    padding: 1.5rem; /* Espacio cómodo para tocar con el dedo (Touch target) */
+    padding: var(--spacing-24); /* Espacio cómodo para tocar con el dedo (Touch target) */
     text-decoration: none;
     color: inherit;
 }
@@ -106,6 +107,8 @@ html {
         flex-direction: row; /* Links uno al lado del otro */
         gap: 1.6rem; /* Separación entre links en PC */
         border: none;
+        align-items: center;
+        justify-content: center;
     }
 
     .header__nav li {
@@ -150,6 +153,9 @@ html {
 /* === header queeries === */
 
 @media (min-width:1024px){
+    .header__title{
+        z-index: 10000;
+    }
     .header__nav, .header__cta{
         display: block;
     }
@@ -162,6 +168,7 @@ html {
         gap: var(--spacing-40);
         font-size: 16px;
         font-weight: 600;
+        background-color: transparent;
     }
 
     .header__cta{
