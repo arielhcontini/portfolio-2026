@@ -486,15 +486,14 @@ border-radius: 8px;
 
 
 .experience{
-    background-color: var(--zinc-800);
+    background-color: var(--primary-black);
     color: var(--primary-white);
-    backdrop-filter: contrast(200%);
 }
 
 
 .experience-card{
     padding: var(--spacing-32) var(--spacing-24);
-    border: 1px solid var(--zinc-500);
+    border: 1px solid var(--zinc-800);
     border-radius: 8px;
     transition: background-color 0.3s ease;
     align-items: center;
@@ -505,14 +504,14 @@ border-radius: 8px;
 
     grid-template-areas: 'logo role' 'date date' 'description description';
 
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
+    background-color: rgba(31, 11, 50, 0.333);
+    backdrop-filter: blur(10px);
 }
 
 
 
 .experience-card:hover{
-    background-color: var(--zinc-800);
+    background-color: #08080828;
     backdrop-filter: blur(10px);
 }
 
