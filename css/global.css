@@ -111,6 +111,7 @@ html {
         position: relative;
         border-radius: var(--spacing-16);
         padding: var(--spacing-16);
+        margin: 0 AUTO;
     }
     /* Reseteamos los estilos para pantallas grandes */
     .header__nav {
@@ -218,7 +219,7 @@ html {
     gap: var(--spacing-32);
     border-bottom: 1px var(--zinc-300) solid;
     margin: 0 auto;
-    padding-top: var(--spacing-72);
+
 }
 
 .hero__content{
