@@ -43,7 +43,7 @@ html {
     max-width: var(--max-width);
     margin: 0 auto;
     z-index: 100;
-    position: fixed;
+    position: relative;
     width: 100%;
     height: auto;
     background-color: rgba(0, 0, 0, 0.9);
@@ -111,7 +111,7 @@ html {
         position: relative;
         border-radius: var(--spacing-16);
         padding: var(--spacing-16);
-        margin: 0 AUTO;
+        margin: 0 auto;
     }
     /* Reseteamos los estilos para pantallas grandes */
     .header__nav {
