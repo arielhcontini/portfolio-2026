@@ -7,6 +7,7 @@ html {
   scroll-behavior: smooth;
 }
 
+
 .section-container{
     max-width: var(--max-width);
     margin: 0 auto;
@@ -148,7 +149,8 @@ html {
         color: var(--primary-white);
         border-radius: var(--spacing-16);
         padding: var(--spacing-16);
-        top: 0;
+        top: 4px;
+        background-color: var(--primary-black);
     }
     /* Reseteamos los estilos para pantallas grandes */
     .header__nav {
@@ -170,7 +172,7 @@ html {
 
     .header__nav li {
         border-bottom: none;
-        color: var(--primary-black);
+        color: var(--primary-white);
         background-color: transparent;
     }
 
@@ -201,6 +203,8 @@ html {
     text-align: center;
     border-radius: var(--spacing-56);
     position: relative;
+    background-color: var(--primary-black);
+    top: 1rem;
 }
 
 
@@ -224,7 +228,7 @@ html {
     }
     .header__nav li {
         border-bottom: none;
-        color: var(--zinc-800);
+        color: var(--primary-white);
         background-color: transparent;
         position: relative;
     }
@@ -251,6 +255,7 @@ html {
     gap: var(--spacing-8);
     border-bottom: 1px var(--zinc-300) solid;
     margin: var(--spacing-32) auto;
+    background-color: var(--primary-white);
 }
 
 .hero__content{
@@ -346,6 +351,17 @@ color: var(--primary-black);
 }
 
 
+@media (min-width:1024px){
+
+    
+
+
+}
+
+
+.skills{
+    background-color: var(--primary-white);
+}
 
 /* === SKILLS === */
 
@@ -461,14 +477,17 @@ color: var(--primary-black);
         gap: var(--spacing-40);
     }
 }
-    */
-
- SECTION --- */
+    */ 
+    
+ about{
+    background-color: var(--primary-white);
+ }   
 .about__container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-40);
+  background-color: var(--primary-white);
 }
 
 .about__image-wrapper {
@@ -509,6 +528,7 @@ border-radius: 8px;
     align-items: flex-start;
     justify-content: space-between;
     gap: var(--spacing-40);
+     background-color: var(--primary-white);
   }
 
   .about__image {
@@ -525,6 +545,13 @@ border-radius: 8px;
     flex: 1;
   }
 }
+
+@media (min-width: 1024px) {
+    .about__container{
+        background-color: var(--primary-white);
+    }
+}
+
 
 /* EXPERIENCE SECTION */
 
@@ -688,6 +715,7 @@ color: var(--zinc-300);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-56);
+  background-color: var(--primary-white);
 }
 
 .contact__form-wrapper {
