@@ -73,6 +73,13 @@ html {
     background-color: transparent;
 }
 
+.header__logo{
+    display: flex;
+    flex-direction: row;
+    width: 40px;
+    height: auto;
+}
+
 /* 3. El contenedor de los links (Debe ocultar el contenido cuando la altura es 0) */
 .header__nav ul {
     overflow: hidden; /* Esto es clave para que los links no se escapen cuando está cerrado */
