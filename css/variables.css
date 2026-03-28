@@ -7,6 +7,10 @@
     --primary-white:  #F2F0EB;
     --primary-neutral: grey;
 
+
+
+
+    --blur-nav: rgba(1,1,1,.222);
     /* zinc */
 
     --zinc-100:#f4f4f5;
@@ -14,6 +18,9 @@
     --zinc-300:#d4d4d8;
     --zinc-500:#71717a;
     --zinc-800:#27272a;
+    
+
+    --none: transparent;
 
     /* error */
 

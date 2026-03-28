@@ -39,25 +39,24 @@ html {
     align-items: center;
     justify-content: space-between;
     padding: var(--spacing-16);
-    border-bottom: 1px var(--zinc-300) solid;
+    border-bottom: 1px var(--zinc-500) solid;
+    width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
     z-index: 100;
-    position: relative;
+    position: fixed;
     width: 100%;
     height: auto;
+    max-height: 56px;
     background-color: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(3px);
     color: var(--primary-white);
+    top:0;
 } 
 
 .header__toggle{
     background-color: transparent;
 }
-
-
-
-
 /* 2. Estilos del Menú Móvil (Oculto por defecto) */
 .header__nav {
     text-align: center;
@@ -71,6 +70,7 @@ html {
     display: grid;
     grid-template-rows: 0fr; /* Altura 0 */
     transition: grid-template-rows 0.4s ease-in-out; /* Velocidad y suavidad de la animación */
+    background-color: transparent;
 }
 
 /* 3. El contenedor de los links (Debe ocultar el contenido cuando la altura es 0) */
@@ -103,55 +103,6 @@ html {
     grid-template-rows: 1fr; /* Se expande suavemente hasta el alto total de sus links */
 }
 
-/* --- ESTILOS PARA ESCRITORIO --- */
-@media (min-width: 768px) {
-    .header{
-        background-color: var(--primary-white);
-        color: var(--primary-black);
-        position: relative;
-        border-radius: var(--spacing-16);
-        padding: var(--spacing-16);
-        margin: 0 auto;
-    }
-    /* Reseteamos los estilos para pantallas grandes */
-    .header__nav {
-        position: static; 
-        box-shadow: none;
-        display: block; /* Rompemos el grid de móvil */
-        background-color: var(--primary-white);
-        color: var(--primary-black);
-    }
-    
-    .header__nav ul {
-        overflow: visible;
-        flex-direction: row; /* Links uno al lado del otro */
-        gap: 1.6rem; /* Separación entre links en PC */
-        border: none;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .header__nav li {
-        width: auto;
-        border-bottom: none;
-        color: var(--primary-black);
-    }
-
-    .header__nav a {
-        padding: 0;
-    }
-
-    /* Ocultamos el botón de la hamburguesa */
-    .header__toggle {
-        display: none;
-    }
-    .header__title{
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--primary-black);
-}
-}
-
 
 .header__brand{
     display: flex;
@@ -176,15 +127,79 @@ html {
     /* Aquí pondrías el position: absolute, background, etc., para tu menú desplegable */
 }
 
+/* --- ESTILOS PARA ESCRITORIO --- */
+@media (min-width: 768px) {
+    .header{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--none);
+        backdrop-filter: blur(3px);
+        color: var(--primary-white);
+        border-radius: var(--spacing-16);
+        padding: var(--spacing-16);
+        top: 0;
+    }
+    /* Reseteamos los estilos para pantallas grandes */
+    .header__nav {
+        position: static; 
+        box-shadow: none;
+        display: block; /* Rompemos el grid de móvil */
+        background-color: transparent;
+        color: var(--primary-black);
+    }
+    
+    .header__nav ul {
+        display: flex;
+        overflow: visible;
+        flex-direction: row; /* Links uno al lado del otro */
+        gap: .1rem; /* Separación entre links en PC */
+        border: none;
+        background-color:transparent;
+    }
+
+    .header__nav li {
+        border-bottom: none;
+        color: var(--primary-black);
+        background-color: transparent;
+    }
+
+    .header__nav a {
+        padding: 0;
+    }
+
+    /* Ocultamos el botón de la hamburguesa */
+    .header__toggle {
+        display: none;
+    }
+    .header__title{
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-black);
+}
+}
+
 /* === header queeries === */
 
 @media (min-width:1024px){
+
+.header{
+    width: 1024px;
+    height: auto;
+    max-height: 56px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: var(--spacing-56);
+    position: relative;
+}
+
+
     .header__title{
         z-index: 10000;
         color: var(--primary-black);
-    }
-    .header__nav, .header__cta{
-        display: block;
     }
     .header__toggle{
         display: none;
@@ -192,16 +207,26 @@ html {
     .header__nav ul{
         display: flex;
         align-items: center;
-        gap: var(--spacing-40);
+        justify-content: center;
+        gap: var(--spacing-10);
         font-size: 16px;
         font-weight: 600;
+        color: var(--zinc-800);
         background-color: transparent;
+        position: relative;
     }
+    .header__nav li {
+        border-bottom: none;
+        color: var(--zinc-800);
+        background-color: transparent;
+        position: relative;
+    }
+
 
     .header__cta{
         background-color: var(--primary-black);
         color: var(--primary-white);
-        border-radius:4px;
+        border-radius:16px;
         padding: var(--spacing-16) var(--spacing-24);
     }
 
@@ -216,17 +241,16 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-32);
+    gap: var(--spacing-8);
     border-bottom: 1px var(--zinc-300) solid;
-    margin: 0 auto;
-
+    margin: var(--spacing-32) auto;
 }
 
 .hero__content{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: var(--spacing-32);
+    gap: var(--spacing-8);
 }
 
 .hero__title{
@@ -249,7 +273,7 @@ color: var(--primary-black);
 .hero__image{
     width: 100%;
     height: auto;
-    max-width: 50vh;
+    max-width: 45vh;
     border-radius: 4px;
     padding: 0;
     margin: 0;
@@ -260,6 +284,10 @@ color: var(--primary-black);
     display: flex;
     gap: var(--spacing-24);
     margin-top: var(--spacing-32); 
+}
+
+.hero__social img{
+    width: 32px;
 }
 
 .social__link{
@@ -304,10 +332,10 @@ color: var(--primary-black);
     .hero__content{
         max-width: 50%;
     }
+
     .hero__description{
         max-width: 80%;
     }
-
 }
 
 
@@ -325,7 +353,7 @@ color: var(--primary-black);
     border-radius: 4px;
 
     background-color: var(--primary-white);
-    border: 2px solid var(--primary-black);
+    border: 1px solid var(--zinc-300);
 
     transition: transform 0.15s ease;
 
@@ -338,13 +366,13 @@ color: var(--primary-black);
 
 .skill-card:hover{
     color: var(--primary-white);
-    background-color: var(--primary-black);
-    transform: translateY(-3px);
+    background-color: oklab(16.467000000000002% 0.02379 -0.09379 / 0.551);
+    transform: translateY(-4px);
 }
 
 .skill-card:hover .skill-card__icon img{
     filter: invert(1);
-    color: var(--primary-white);
+    color: var(--zinc-500);
 }
 
 .skill-card__icon img{
@@ -364,7 +392,6 @@ color: var(--primary-black);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: var(--spacing-24);
-    border-bottom: 1px var(--zinc-300) solid;
 }
 
 
