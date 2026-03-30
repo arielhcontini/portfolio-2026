@@ -25,6 +25,7 @@ html {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 700;
+    font-size: clamp(1,75rem,5vw,2.5rem);
 }
 
 .section-title{
@@ -812,8 +813,17 @@ color: var(--zinc-300);
 .contact__details {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-8);
+  gap: var(--spacing-16);
   align-items: center;
+}
+
+.contact__details a{
+    font-size: 1rem;
+    margin: var(--spacing-8) auto;
+    transition: .5s ease;
+    border: 1px solid var(--zinc-800);
+    padding: var(--spacing-8);
+    border-radius: var(--spacing-8);
 }
 
 .contact__email{
@@ -861,8 +871,12 @@ color: var(--zinc-300);
   }
 
 .contact__details a{
+    font-size: 1rem;
     margin: var(--spacing-8) auto;
     transition: .5s ease;
+    border: 1px solid var(--zinc-800);
+    padding: var(--spacing-8);
+    border-radius: var(--spacing-8);
 }
 
 .contact__details a:hover{
