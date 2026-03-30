@@ -1,6 +1,7 @@
 body {
       font-family: 'Sora', sans-serif;
-      background-color: var(--primary-black);
+      background: #663399;
+background: linear-gradient(173deg, rgb(20, 10, 30) 0%, rgba(8, 8, 8, 1) 100%);
     }
 
 html {

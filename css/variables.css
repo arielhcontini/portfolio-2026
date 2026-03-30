@@ -22,7 +22,7 @@
 
 
     /* Gradients */
-    --gradient-100: linear-gradient(-75deg, #A793AC,#993399, #102542);
+    --gradient-100: linear-gradient(-75deg, oklab(69.932% -0.00936 -0.02109),oklab(44.027% 0.08821 -0.13394), oklab(44.027% 0.08821 -0.13394));
 
     /* spacing */
 
