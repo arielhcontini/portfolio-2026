@@ -3,16 +3,11 @@
 :root{
 
     /* primary */
-    --primary-black: #080808;
+    --primary-black: #110b14;
     --primary-white:  #F2F0EB;
     --primary-neutral: grey;
 
-
-
-
-    --blur-nav: rgba(1,1,1,.222);
     /* zinc */
-
     --zinc-100:#f4f4f5;
     --zinc-200:#e4e4e7;
     --zinc-300:#d4d4d8;
@@ -20,7 +15,6 @@
     --zinc-800:#27272a;
     
 
-    --none: transparent;
 
     /* error */
 

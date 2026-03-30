@@ -17,7 +17,7 @@ svg{
 
 button{
     cursor: pointer;
-    background-color: none;
+    background-color: transparent;
     border: none;
 }
 
@@ -31,8 +31,12 @@ textarea{
 a{
     text-decoration: none;
     color: inherit;
+    background-color: transparent;
+    background: none;
 }
 
 li{
     list-style: none;
+    background: none;
+    background-color: transparent;
 }
