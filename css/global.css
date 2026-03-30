@@ -859,4 +859,16 @@ color: var(--zinc-300);
     flex-direction: row;
     align-items: center;
   }
+
+.contact__details a{
+    margin: var(--spacing-8) auto;
+    transition: .5s ease;
+}
+
+.contact__details a:hover{
+    opacity: .80;
+    margin: var(--spacing-8) auto;
+    transition: .5s ease;
+}
+
 }
