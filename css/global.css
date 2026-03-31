@@ -1,8 +1,8 @@
 body {
-      font-family: 'Sora', sans-serif;
-      background: #663399;
+font-family: 'Sora', sans-serif;
+background: #080808;
 background: linear-gradient(173deg, rgb(20, 10, 30) 0%, rgba(8, 8, 8, 1) 100%);
-    }
+}
 
 html {
   scroll-behavior: smooth;
@@ -12,7 +12,7 @@ html {
 .section-container{
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: var(--spacing-72) var(--spacing-16);
+    padding: var(--spacing-16) var(--spacing-16);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -37,28 +37,60 @@ html {
 
 /* === HEADER === */
 
+
 .header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--spacing-16);
     width: 100%;
-    max-width: var(--max-width);
+    height: auto;
     margin: 0 auto;
     z-index: 100;
     position: fixed;
-    width: 100%;
-    height: auto;
-    max-height: 48px;
-    backdrop-filter: blur(4px);
     top:0;
+    background-color: var(--primary-black);
+    padding: var(--spacing-8);
 } 
 
 .header__toggle{
-    background-color: var(--primary-black);
-    padding: var(--spacing-16);
-    border-radius: var(--spacing-8);
+display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 50; /* Para asegurarnos de que quede por encima del menú desplegado */
 }
+
+.linea{
+width: 100%;
+  height: 4px;
+  background-color: var(--primary-white); /* El color de tu icono */
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out; /* Esto hace que la animación sea suave */
+  transform-origin: left center; /* Punto de anclaje para la rotación */
+}
+
+/* La primera línea rota 45 grados hacia abajo */
+.header__toggle.active .linea:nth-child(1) {
+  transform: rotate(50deg);
+}
+
+/* La línea del medio desaparece */
+.header__toggle.active .linea:nth-child(2) {
+  opacity: 0;
+}
+
+/* La tercera línea rota -45 grados hacia arriba */
+.header__toggle.active .linea:nth-child(3) {
+  transform: rotate(-48deg);
+}
+
+
+
 /* 2. Estilos del Menú Móvil (Oculto por defecto) */
 .header__nav {
     text-align: center;
@@ -66,18 +98,18 @@ html {
     top: 100%; /* Lo posiciona exactamente debajo de la barra del header */
     left: 0;
     width: 100%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Una sombra suave para separarlo del contenido */
-    color: var(--primary-black);
     /* EL TRUCO DE ANIMACIÓN CON GRID */
     display: grid;
     grid-template-rows: 0fr; /* Altura 0 */
     transition: grid-template-rows 0.9s ease-in-out; /* Velocidad y suavidad de la animación */
+    background-color: var(--primary-black);
 }
 
 .header__logo{
     display: flex;
     flex-direction: row;
-    width: 40px;
+    width: 32px;
+    min-width: 40px;
     height: auto;
 }
 
@@ -88,8 +120,9 @@ html {
     flex-direction: column;
     padding: 0;
     margin: 0;
-    background-color: #080808da;
+    width: 100%;
     height: 100vh;
+    background-color: var(--primary-black);
 }
 
 /* 4. Estilo de los links en móvil para que parezcan una lista */
@@ -97,7 +130,6 @@ html {
     width: 100%;
     color: var(--primary-white);
     text-align: center;
-    backdrop-filter: blur(4px);
 }
 
 .header__nav a {
@@ -137,39 +169,49 @@ html {
 
 /* --- ESTILOS PARA ESCRITORIO --- */
 @media (min-width: 768px) {
+
+    .header__logo{
+        padding: var(--spacing-8);
+        margin: 0 auto;
+    }
+
     .header{
         width: 100%;
         height: auto;
+        max-height: 32px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        border-radius: var(--spacing-16);
-        padding: var(--spacing-16);
-        top: 4px;
         color: var(--primary-white);
+        background-color: var(--primary-black);
+        margin: 0 auto;
 
     }
     /* Reseteamos los estilos para pantallas grandes */
     .header__nav {
-        position: static; 
+        width: 100%;
+        height: auto;
+        position: relative; 
         box-shadow: none;
-        display: block; /* Rompemos el grid de móvil */
+        display: flex; /* Rompemos el grid de móvil */
+        flex-direction: row;
         color: var(--primary-white);
+        margin: 0 auto;
     }
     
     .header__nav ul {
         display: flex;
         overflow: visible;
         flex-direction: row; /* Links uno al lado del otro */
-        gap: .1rem; /* Separación entre links en PC */
+        justify-content: center;
+        align-items: center;
         border: none;
-        background-color: transparent;
-        background: none;
         color: var(--primary-white);
+        padding: var(--spacing-8) 0;
+        width: 100%;
+        height: 32px;
     }
-
-
 
 
     /* Ocultamos el botón de la hamburguesa */
@@ -182,24 +224,26 @@ html {
     font-weight: 700;
     color: var(--primary-black);
 }
+
 }
 
 /* === header queeries === */
 
 @media (min-width:1024px){
 .header{
-    width: 1024px;
-    height: auto;
-    max-height: 40px;
-    margin: 0 auto;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     border: none;
-    border-radius: var(--spacing-72);
-    position: fixed;
-    left: 0;
-    right: 0;
+    background-color: var(--primary-black);
 }
 
+.header__nav{
+    width: 100%;
+    height: auto;
+    max-height: 40px;
+}
 
     .header__title{
         z-index: 10000;
@@ -209,27 +253,20 @@ html {
         display: none;
     }
     .header__nav ul{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: var(--spacing-10);
         font-size: 16px;
         font-weight: 600;
         color: var(--primary-white);
         position: relative;
     }
     .header__nav li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 32px;
         border-bottom: none;
         color: var(--primary-white);
-        position: relative;
-    }
-
-
-    .header__cta{
-        background-color: var(--primary-black);
-        color: var(--primary-white);
-        border-radius:16px;
-        padding: var(--spacing-16) var(--spacing-24);
     }
 
 }
@@ -245,7 +282,7 @@ html {
     justify-content: center;
     gap: var(--spacing-8);
     margin: var(--spacing-80) auto;
-    padding: var(--spacing-56);
+    padding: var(--spacing-24);
 
 }
 
@@ -276,7 +313,7 @@ color: var(--primary-white);
 .hero__image{
     width: 100%;
     height: auto;
-    max-width: 40vh;
+    max-width: 33vh;
     border-radius: 4px;
     padding: 0;
     margin: 0;
@@ -494,8 +531,9 @@ color: var(--primary-white);
 
 .about__image {
   width: 100%;
+  max-width: 50vw;
   height: auto;
-border-radius: 8px;
+  border-radius: 8px;
 }
 
 .about__content {
@@ -522,14 +560,14 @@ border-radius: 8px;
 @media (min-width: 768px) {
   .about__container {
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     gap: var(--spacing-40);
   }
 
   .about__image {
     width: 100%;
-    max-width:60vh;
+    max-width:50vh;
   }
 
   .about__image-wrapper {

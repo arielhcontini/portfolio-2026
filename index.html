@@ -50,11 +50,20 @@
 
     <header class="header">
         <div class="header__brand">
-            <a href="#inicio"><img class="header__logo" src="./icono-512.png" alt="Ariel Hernán Contini portfolio 2026"></a>
+            <a href="#inicio"><img class="header__logo" src="./icono-192.png" alt="Ariel Hernán Contini portfolio 2026"></a>
             <!--      <span class="header__title"></span> -->
         </div>
 
-        <button class="header__toggle" aria-label="toggle menu"><img src="./assets/toggle.svg" alt="hamburguer menu"></button>
+<!--         <button class="header__toggle" aria-label="toggle menu">
+            <img src="./assets/toggle.svg" alt="hamburguer menu">
+        </button> -->
+
+ <button id="btn-menu" class="header__toggle" aria-label="toggle menu">
+    <span class="linea"></span>
+    <span class="linea"></span>
+    <span class="linea"></span>
+        </button>
+
 
         <nav class="header__nav">
             <ul>
@@ -63,10 +72,11 @@
                 <li><a aria-label="vision" href="#about"> Visión</a></li>
                 <li><a aria-label="proyectos" href="#projects"> Proyectos</a></li>
                 <li><a aria-label="contactame" href="#contact"> Contactame</a></li>
+                <li><a class="outline" aria-label="download resume" target="_blank"
+                href="./assets/Ariel_Contini_CV_UX_Design.pdf"> CV</a> </li>
             </ul>
         </nav>
-        <button class="header__cta"><a aria-label="download resume" target="_blank"
-                href="./assets/Ariel_Contini_CV_UX_Design.pdf"> CV</a> </button>
+
     </header>
 
     <main>
@@ -143,7 +153,12 @@
                         <p class="skill-card__label"> E Commerce</p>
                     </div>
 
-
+                    <div class="skill-card">
+                        <div class="skill-card__icon">
+                            <img src="assets/brand.svg" alt="skill">
+                        </div>
+                        <p class="skill-card__label"> Branding</p>
+                    </div> 
 
                     <div class="skill-card">
                         <div class="skill-card__icon">
@@ -159,12 +174,6 @@
                         <p class="skill-card__label"> CSS</p>
                     </div>
 
-                    <div class="skill-card">
-                        <div class="skill-card__icon">
-                            <img src="assets/brand.svg" alt="skill">
-                        </div>
-                        <p class="skill-card__label"> Branding</p>
-                    </div>
 
                     <div class="skill-card">
                         <div class="skill-card__icon">
@@ -474,7 +483,12 @@
                     .catch(err => console.error('Error al registrar el Service Worker', err));
             });
         }
+
+
     </script>
+
+
+
 
 </body>
 

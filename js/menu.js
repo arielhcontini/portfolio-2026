@@ -14,6 +14,20 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             // Usamos 'remove' en lugar de 'toggle' para asegurarnos de que siempre se cierre
             navMenu.classList.remove('is-active');
+              botonMenu.classList.toggle('active');
         });
     });
+});
+
+
+// Seleccionamos el botón
+const botonMenu = document.getElementById('btn-menu');
+// Agregamos el evento de clic
+botonMenu.addEventListener('click', () => {
+  // classList.toggle hace la magia: 
+  // Si la clase 'activa' no está, la agrega. Si ya está, la quita.
+  botonMenu.classList.toggle('active');
+  
+  // AQUÍ TAMBIÉN PUEDES ABRIR TU MENÚ
+  // document.getElementById('tu-menu-navegacion').classList.toggle('mostrar-menu');
 });
