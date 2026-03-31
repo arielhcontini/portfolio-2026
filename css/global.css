@@ -276,7 +276,7 @@ color: var(--primary-white);
 .hero__image{
     width: 100%;
     height: auto;
-    max-width: 33vh;
+    max-width: 40vh;
     border-radius: 4px;
     padding: 0;
     margin: 0;
