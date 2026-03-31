@@ -18,7 +18,7 @@ html {
 .section-container{
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: var(--spacing-16) var(--spacing-16);
+    padding: var(--spacing-80) var(--spacing-16);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -268,6 +268,12 @@ width: 100%;
         height: 32px;
         border-bottom: none;
         color: var(--primary-white);
+        transition: 0.5s ease-in;
+    }
+
+        .header__nav li:hover {
+        color: #993399;
+        transition: 0.5s ease-in;
     }
 
 }
@@ -354,7 +360,7 @@ color: var(--primary-white);
 
 .social__link:hover img{
     filter: invert(1);
-        transition:all 0.5s ease;
+    transition:all 0.5s ease;
 }
 
 .social__link img{
@@ -368,6 +374,7 @@ color: var(--primary-white);
 
     .hero{
       flex-direction: row-reverse;
+      padding: var(--spacing-80);
     }
 
     .hero__content{
@@ -377,11 +384,21 @@ color: var(--primary-white);
     .hero__description{
         max-width: 80%;
     }
+
 }
 
 
 @media (min-width:1024px){
 
+    .hero__social a{
+        opacity: .666;
+       transition: 0.5s ease-in;
+    }
+ 
+    .hero__social a:hover{
+        opacity: .999;
+        transition: 0.5s ease-in;
+    }
     
 
 
