@@ -76,7 +76,6 @@ strong{
     position: fixed;
     top:0;
     background-color: var(--bg-shadow);
-    padding: var(--spacing-8);
     border-bottom: 1px solid var(--edge-gold);
 } 
 
@@ -136,7 +135,7 @@ width: 100%;
 .header__logo{
     display: flex;
     flex-direction: row;
-    width: 32px;
+    width: 56px;
     min-width: 40px;
     height: auto;
 }
@@ -151,7 +150,7 @@ width: 100%;
     width: 100%;
     height: 100vh;
     background-color: var(--bg-shadow);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(1px);
 }
 
 /* 4. Estilo de los links en móvil para que parezcan una lista */
@@ -208,7 +207,7 @@ width: 100%;
     .header{
         width: 100%;
         height: auto;
-        max-height: 32px;
+        max-height: 48px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -264,6 +263,7 @@ width: 100%;
     align-items: center;
     justify-content: center;
     border: none;
+    padding: var(--spacing-8) var(--spacing-16);
 }
 
 .header__nav{
