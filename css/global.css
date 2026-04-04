@@ -349,7 +349,7 @@ color: var(--text-alabastro);
     width: 100%;
     height: auto;
     max-width: 33vh;
-    border-radius: 4px;
+    border-radius: 1px;
     padding: 0;
     margin: 0;
 }
@@ -371,7 +371,7 @@ color: var(--text-alabastro);
     justify-content: center;
     width: 100%;
     height: 56px;
-    border-radius: 8px;
+    border-radius: 1px;
     background-color: var(--gradient-100);
     transition: all 0.5s ease;
     color: var(--primary-black);
@@ -383,7 +383,7 @@ color: var(--text-alabastro);
     color: var(--primary-white);
     transition:all 0.5s ease;
     padding: var(--spacing-8);
-    border-radius: 8px;
+    border-radius: 1px;
 }
 
 .social__link:hover img{
@@ -600,7 +600,7 @@ color: var(--text-alabastro);
   width: 100%;
   max-width: 60vw;
   height: auto;
-  border-radius: 8px;
+  border-radius: 1px;
 }
 
 .about__content {
@@ -663,7 +663,7 @@ color: var(--text-alabastro);
 .experience-card{
     padding: var(--spacing-32) var(--spacing-24);
     border: 1px solid var(--edge-gold);
-    border-radius: 8px;
+    border-radius: 1px;
     transition: background-color 0.3s ease;
     align-items: center;
 
@@ -745,7 +745,7 @@ color: var(--text-alabastro);
 
 .project-card__image-wrapper{
     width: 100%;
-    border-radius: 8px;
+    border-radius: 1px;
     overflow: hidden;
 }
 
@@ -761,7 +761,7 @@ color: var(--text-alabastro);
     gap: var(--spacing-24);
     justify-content: center;
     padding: var(--spacing-16);
-    border-radius: 8px;
+    border-radius: 1px;
 }
 
 .project-card__number{
@@ -793,7 +793,7 @@ color: var(--text-alabastro);
    
 .project-card{
     flex-direction: row;
-    border-radius: 8px;
+    border-radius: 1px;
 }
 
 .project-card:nth-child(even){
@@ -846,7 +846,7 @@ color: var(--text-alabastro);
   width: 100%;
   padding: var(--spacing-16);
   border: 1px solid var(--edge-gold);
-  border-radius: 4px;
+  border-radius: 1px;
   font-family: inherit;
   font-size: 16px;
   outline: none;
@@ -887,7 +887,7 @@ color: var(--text-alabastro);
   color: var(--text-alabastro);
   padding: var(--spacing-16) var(--spacing-32);
   border: none;
-  border-radius: 4px;
+  border-radius: 1px;
   font-weight: 600;
   font-size: 1.125rem;
   cursor: pointer;
