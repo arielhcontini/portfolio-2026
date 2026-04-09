@@ -85,7 +85,7 @@ display: flex;
   justify-content: space-between;
   width: 24px;
   height: 24px;
-  padding: 2px;
+  padding: 4px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -178,6 +178,7 @@ width: 100%;
     display: flex;
     align-items: center;
     gap: var(--spacing-12);
+    padding: var(--spacing-8);
 }
 
 .header__title{
@@ -314,8 +315,8 @@ width: 100%;
     align-items: center;
     justify-content: center;
     gap: var(--spacing-8);
-    margin: var(--spacing-80) auto;
-    padding: var(--spacing-24);
+    margin: var(--spacing-64) auto;
+    padding: var(--spacing-4);
     border-bottom: 1px solid var(--edge-gold);
 
 }
@@ -325,7 +326,7 @@ width: 100%;
     flex-direction: column;
     justify-content: center;
     gap: var(--spacing-8);
-    padding: var(--spacing-32);
+    padding: var(--spacing-16);
 }
 
 .hero__title{
@@ -348,10 +349,10 @@ color: var(--text-alabastro);
 .hero__image{
     width: 100%;
     height: auto;
-    max-width: 33vh;
+    max-width: 320px;
     border-radius: 1px;
-    padding: 0;
-    margin: 0;
+    margin: 0 auto;
+    border: 1px solid var(--edge-gold);
 }
 
 
@@ -410,7 +411,7 @@ color: var(--text-alabastro);
     }
 
     .hero__description{
-        max-width: 80%;
+        max-width: 100%;
     }
 
 }
@@ -425,16 +426,15 @@ color: var(--text-alabastro);
     align-items: center;
     justify-content: center;
     gap: var(--spacing-80);
-    margin: var(--spacing-80) auto;
-    padding: var(--spacing-64);
-
+    margin: var(--spacing-40) auto;
+    padding: var(--spacing-16);
 }
 
 
 .hero__image{
     width: 100%;
     height: auto;
-    max-width: 50vh;
+    max-width: 48vh;
     border-radius: 1px;
     padding: 0;
     margin: 0;
@@ -598,7 +598,7 @@ color: var(--text-alabastro);
 
 .about__image {
   width: 100%;
-  max-width: 60vw;
+  max-width: 40vw;
   height: auto;
   border-radius: 1px;
 }
@@ -634,7 +634,8 @@ color: var(--text-alabastro);
 
   .about__image {
     width: 100%;
-    max-width:50vh;
+    max-width:40vw;
+    border-radius: 2px;
   }
 
   .about__image-wrapper {
@@ -648,6 +649,10 @@ color: var(--text-alabastro);
 }
 
 @media (min-width: 1024px) {
+      .about__image {
+    width: 100%;
+    max-width:30vw;
+  }
 }
 
 
