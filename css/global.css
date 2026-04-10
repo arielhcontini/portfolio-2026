@@ -1,5 +1,6 @@
 body {
-background-color: var(--bg-obsidian);
+background-color:var(--bg-obsidian);
+background: linear-gradient(173deg,rgba(28, 22, 33, 1) 0%, rgba(18, 11, 26, 1) 100%);
 }
 
 html {
@@ -8,12 +9,13 @@ html {
 
 
 .texture-bg{
+    background-color: var(--bg-obsidian);
     background-image: url(../assets/bg-layer.webp);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     height: auto;
-    opacity: .999;
+    opacity: 1;
 }
 
 
@@ -55,13 +57,15 @@ strong{
 
 .section-container{
     max-width: var(--max-width);
-    margin: 0 auto;
-    padding: var(--spacing-80) var(--spacing-16);
+    margin: var(--spacing-8) auto;
+    padding: var(--spacing-80) var(--spacing-40);
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-40);
-    border-bottom: 1px solid var(--edge-gold);
+    gap: var(--spacing-48);
+    border: 1px solid var(--edge-gold);
+    border-radius: 1px;
+    background-color: var(--bg-obsidian);
 }
 
 .outline{
@@ -88,7 +92,7 @@ strong{
     z-index: 100;
     position: fixed;
     top:0;
-    background-color: var(--bg-shadow);
+    background-color: var(--bg-obsidian);
     border-bottom: 1px solid var(--edge-gold);
 } 
 
@@ -142,7 +146,7 @@ width: 100%;
     display: grid;
     grid-template-rows: 0fr; /* Altura 0 */
     transition: grid-template-rows 0.9s ease-in-out; /* Velocidad y suavidad de la animación */
-    background-color: var(--bg-obsidian);
+    background-color: var(--gradient);
 }
 
 .header__logo{
@@ -162,8 +166,7 @@ width: 100%;
     margin: 0;
     width: 100%;
     height: 100vh;
-    background-color: var(--bg-shadow);
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(5px);
 }
 
 /* 4. Estilo de los links en móvil para que parezcan una lista */
@@ -227,7 +230,6 @@ width: 100%;
         align-items: center;
         justify-content: center;
         color: var(--text-alabastro);
-        background-color: var(--bg-shadow);
         margin: 0 auto;
 
     }
@@ -438,7 +440,7 @@ color: var(--text-alabastro);
     align-items: center;
     justify-content: center;
     gap: var(--spacing-80);
-    margin: var(--spacing-80) auto;
+    margin: 0 auto;
     padding: var(--spacing-80);
 }
 
@@ -446,7 +448,7 @@ color: var(--text-alabastro);
 .hero__image{
     width: 100%;
     height: auto;
-    max-width: 40vh;
+    max-width: 32vh;
     border-radius: 2px;
     border: 1px solid var(--edge-gold);
     padding: 0;
@@ -469,7 +471,7 @@ color: var(--text-alabastro);
 
 
 .skills{
-    background-color: var(--bg-obsidian);
+    background-color: transparent;
 }
 
 /* === SKILLS === */
@@ -504,8 +506,10 @@ color: var(--text-alabastro);
 
 .skill-card:hover{
     color: var(--text-alabastro);
-    background-color: var(--basalto);
+    background-color: var(--bg-obsidian);
+    background-repeat: no-repeat;
     transform: translateY(-4px);
+    backdrop-filter: blur(10px);
 }
 
 .skill-card:hover .skill-card__icon img{
@@ -673,7 +677,7 @@ color: var(--text-alabastro);
 
 
 .experience{
-    background-color: var(--bg-obsidian);
+    background-color: transparent;
      color: var(--text-alabastro);
 }
 
@@ -745,7 +749,7 @@ color: var(--text-alabastro);
 /* PROJECTS */ 
 
 .projects{
-    background-color: var(--bg-obsidian);
+    background-color: transparent;
 }
 
 .projects__title{
@@ -839,7 +843,7 @@ color: var(--text-alabastro);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-56);
-  background-color: var(--bg-obsidian);
+  background-color: transparent;
    color: var(--text-alabastro);
 }
 

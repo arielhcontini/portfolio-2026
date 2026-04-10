@@ -3,7 +3,6 @@
 :root{
 
     /* primary */
-    --primary-black: #120B1A;
 
     /* golden */
     --primary-gold: #C5A059;
@@ -15,6 +14,9 @@
 
     --text-alabastro: #F4F1EE;
     --basalto: #2D2430;
+
+
+    --gradient: linear-gradient(173deg,rgba(28, 22, 33, 0.66) 0%, rgba(18, 11, 26, 0.8) 100%);
 
     /* spacing */
 
