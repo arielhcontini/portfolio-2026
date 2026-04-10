@@ -1,6 +1,5 @@
 body {
 background-color:var(--bg-obsidian);
-background: linear-gradient(173deg,rgba(28, 22, 33, 1) 0%, rgba(18, 11, 26, 1) 100%);
 }
 
 html {
@@ -65,7 +64,7 @@ strong{
     gap: var(--spacing-48);
     border: 1px solid var(--edge-gold);
     border-radius: 1px;
-    background-color: var(--bg-obsidian);
+    background: linear-gradient(173deg,rgba(28, 22, 33, 0.973) 0%, rgba(18, 11, 26, 0.969) 100%);
 }
 
 .outline{
