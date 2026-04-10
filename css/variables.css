@@ -10,6 +10,7 @@
 
     /* obsidiana */
     --bg-obsidian: #120B1A;
+    --bg-obsidian-alpha: #120b1aed;
     --bg-shadow: #1C1621;
 
     --text-alabastro: #F4F1EE;
@@ -32,6 +33,8 @@
     --spacing-64: 64px;
     --spacing-72:72px;
     --spacing-80:80px;
+    --spacing-88:88px;
+    --spacing-96:96px;
 
 
     /* MAX WIDTH */
