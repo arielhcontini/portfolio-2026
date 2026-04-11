@@ -64,7 +64,8 @@ strong{
     gap: var(--spacing-48);
     border: 1px solid var(--edge-gold);
     border-radius: 1px;
-    background: linear-gradient(173deg,rgba(28, 22, 33, 0.973) 0%, rgba(18, 11, 26, 0.969) 100%);
+    background: linear-gradient(180deg,rgba(28, 22, 33, 0.743) 0%, rgba(18, 11, 26, 0.77) 100%);
+    backdrop-filter: blur(3px);
 }
 
 .outline{
@@ -231,6 +232,7 @@ width: 100%;
         justify-content: center;
         color: var(--text-alabastro);
         margin: 0 auto;
+        border-bottom: 1px solid var(--edge-gold);
 
     }
     /* Reseteamos los estilos para pantallas grandes */
@@ -280,6 +282,7 @@ width: 100%;
     justify-content: center;
     border: none;
     padding: var(--spacing-8) var(--spacing-16);
+    border-bottom: 1px solid var(--edge-gold);
 }
 
 .header__nav{
