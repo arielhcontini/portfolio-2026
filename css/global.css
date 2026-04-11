@@ -152,7 +152,7 @@ width: 100%;
 .header__logo{
     display: flex;
     flex-direction: row;
-    width: 40px;
+    width: 32px;
     height: auto;
 }
 
