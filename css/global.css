@@ -335,6 +335,7 @@ width: 100%;
     margin: var(--spacing-80) auto;
     padding: var(--spacing-8);
     border-bottom: 1px solid var(--edge-gold);
+    background-color: var(--gradient);
 
 }
 
@@ -473,7 +474,7 @@ color: var(--text-alabastro);
 
 
 .skills{
-    background-color: transparent;
+    background-color: var(--gradient);
 }
 
 /* === SKILLS === */
@@ -607,6 +608,7 @@ color: var(--text-alabastro);
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-40);
+  background-color: var(--gradient-secondary);
 }
 
 .about__image-wrapper {
@@ -617,7 +619,7 @@ color: var(--text-alabastro);
 
 .about__image {
   width: 100%;
-  max-width: 40vw;
+  max-width: 30vw;
   height: auto;
   border-radius: 1px;
 }
@@ -679,7 +681,7 @@ color: var(--text-alabastro);
 
 
 .experience{
-    background-color: transparent;
+    background-color: var(--gradient-secondary);
      color: var(--text-alabastro);
 }
 
