@@ -671,7 +671,7 @@ color: var(--text-alabastro);
 @media (min-width: 1024px) {
       .about__image {
     width: 100%;
-    max-width:25vw;
+    max-width:16vw;
   }
 }
 
@@ -716,6 +716,8 @@ color: var(--text-alabastro);
 .experience-card__logo{
     grid-area: logo;
     width: 100%;
+    height: auto;
+    max-width: 24px;
 }
 
 .experience-card__role{
