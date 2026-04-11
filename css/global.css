@@ -723,7 +723,7 @@ color: var(--text-alabastro);
 
 .experience-card__role{
     grid-area: role;
-    font-size: 1.25rem;
+    font-size: 1.6rem;
     font-weight: 600;
     align-self: end;
      color: var(--text-alabastro);
@@ -733,7 +733,7 @@ color: var(--text-alabastro);
 
 .experience-card__date{
 color: var(--text-alabastro);
-font-size: 1rem;
+font-size: .8rem;
 font-weight: 600;
 grid-area: date;
 }
