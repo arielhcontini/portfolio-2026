@@ -18,7 +18,7 @@
 
 
     --gradient: linear-gradient(180deg,rgba(28, 22, 33, 0.66) 0%, rgba(18, 11, 26, 0.8) 100%);
-    --gradient-secondary: linear-gradient(180deg,rgba(18, 11, 26, 0.8) 100% ,rgba(28, 22, 33, 0.66) 0% );
+    --gradient-secondary: linear-gradient(180deg,#120b1acc 100% ,rgba(28, 22, 33, 0.66) 0% );
 
     /* spacing */
 

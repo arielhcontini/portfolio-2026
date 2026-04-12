@@ -700,14 +700,14 @@ color: var(--text-alabastro);
     grid-template-areas: 'logo role' 'date date' 'description description';
 
     background-color: var(--bg-obsidian);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(1px);
     transition: 3s ease;
 }
 
 
 
 .experience-card:hover{
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(2px);
     background: var(--gradient);
     transition: 3s ease;
 }
