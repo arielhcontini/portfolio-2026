@@ -201,7 +201,11 @@ width: 100%;
 }
 
 .header__title{
-    font-size: 20px;
+      font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+    font-size: 16px;
     font-weight: 700;
 }
 
@@ -220,11 +224,15 @@ width: 100%;
 @media (min-width: 768px) {
 
     .header__logo{
-        width: 32px;
+        width: 24px;
         height: auto;
         margin: 0 auto;
         z-index: 100;
     }
+
+.header__title{
+display: none;
+}
 
     .header{
         width: 100%;
@@ -277,6 +285,11 @@ width: 100%;
 /* === header queeries === */
 
 @media (min-width:1024px){
+
+.header__title{
+    display: block;
+}
+
 .header{
     display: flex;
     flex-direction: row;
@@ -292,7 +305,6 @@ width: 100%;
 }
 
     .header__title{
-        z-index: 10000;
         color: var(--text-alabastro);
     }
     .header__toggle{
@@ -301,10 +313,9 @@ width: 100%;
     .nav__links{
         display: flex;
         flex-direction: row;
-        gap: var(--spacing-4);
         width: 100%;
         height: auto;
-        font-size: 16px;
+        font-size: 12px;
         font-weight: 700;
         color: var(--text-alabastro);
         position: relative;
@@ -312,11 +323,11 @@ width: 100%;
     }
     .nav__link {
         display: block;
-        width: 100%;
+        width: 120px;
         height: auto;
         color: var(--text-alabastro);
         transition: 0.5s ease-in;
-        z-index: 1000;
+        z-index: 10000;
     }
 
     .nav__link a{
