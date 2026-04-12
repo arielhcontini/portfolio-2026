@@ -9,15 +9,16 @@ html {
 
 .glass__style{
     width: 100%;
-    height: 96px;
+    height: 72px;
     display: flex;
     flex-direction: column;
+    background: var(--gradient);
     background-image: url(../assets/bg-layer.webp);
     background-repeat: no-repeat;
     background-size: cover;
-    backdrop-filter: blur(60px);
+    backdrop-filter: blur(66px);
     color: transparent;
-    opacity: .999;
+    opacity: .299;
     cursor: pointer;
 }
 
@@ -416,6 +417,9 @@ color: var(--text-alabastro);
     border-radius: 1px;
     margin: 0 auto;
     border: 1px solid var(--edge-gold);
+    display: flex;
+    flex-direction: column;
+    border-radius: 1px;
 }
 
 
