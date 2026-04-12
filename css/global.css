@@ -12,6 +12,7 @@ html {
     height: 96px;
     display: flex;
     flex-direction: column;
+    background-image: url(../assets/bg-layer.webp);
     backdrop-filter: blur(55px);
     color: transparent;
     opacity: .999;
