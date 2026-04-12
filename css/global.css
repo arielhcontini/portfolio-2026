@@ -16,6 +16,7 @@ html {
     backdrop-filter: blur(55px);
     color: transparent;
     opacity: .999;
+    cursor: pointer;
 }
 
 .texture-bg{
