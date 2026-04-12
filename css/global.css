@@ -111,7 +111,7 @@ display: flex;
 
 .linea{
 width: 100%;
-  height: 4px;
+  height: 3px;
   background-color: var(--text-alabastro); /* El color de tu icono */
   border-radius: 8px;
   transition: all 0.3s ease-in-out; /* Esto hace que la animación sea suave */
@@ -648,7 +648,7 @@ color: var(--text-alabastro);
   flex-direction: column;
   gap: var(--spacing-16);
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.2;
   color: var(--text-alabastro);
 }
 
