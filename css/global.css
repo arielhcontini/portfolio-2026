@@ -13,7 +13,9 @@ html {
     display: flex;
     flex-direction: column;
     background-image: url(../assets/bg-layer.webp);
-    backdrop-filter: blur(55px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(60px);
     color: transparent;
     opacity: .999;
     cursor: pointer;
