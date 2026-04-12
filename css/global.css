@@ -620,6 +620,7 @@ color: var(--text-alabastro);
   align-items: center;
   gap: var(--spacing-40);
   background-color: var(--gradient-secondary);
+  padding: var(--spacing-40);
 }
 
 .about__image-wrapper {
@@ -638,7 +639,7 @@ color: var(--text-alabastro);
 .about__content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-24);
+  gap: var(--spacing-64);
   width: 100%;
 }
 
@@ -652,7 +653,7 @@ color: var(--text-alabastro);
   flex-direction: column;
   gap: var(--spacing-16);
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--text-alabastro);
 }
 
@@ -661,13 +662,13 @@ color: var(--text-alabastro);
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-40);
+    gap: var(--spacing-48);
   }
 
   .about__image {
     width: 100%;
-    max-width:40vw;
-    border-radius: 2px;
+    max-width:50vw;
+    border-radius: 1px;
   }
 
   .about__image-wrapper {
@@ -681,9 +682,10 @@ color: var(--text-alabastro);
 }
 
 @media (min-width: 1024px) {
-      .about__image {
+    .about__image {
     width: 100%;
-    max-width:16vw;
+    max-width:20vw;
+    height: auto;
   }
 }
 
@@ -820,6 +822,13 @@ color: var(--text-alabastro);
     font-weight: 800;
     line-height: 1.2;
     color: var(--text-alabastro);
+}
+
+
+.project-card__role{
+font-family: "Roboto Mono", monospace;
+color: var(--text-alabastro-opacity);
+font-size: 11px;
 }
 
 .project-card__description{
