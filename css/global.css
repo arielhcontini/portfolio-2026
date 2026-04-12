@@ -89,7 +89,7 @@ strong{
     width: 100%;
     height: auto;
     margin: 0 auto;
-    z-index: 100;
+    z-index: 100000;
     position: fixed;
     top:0;
     background-color: var(--bg-obsidian);
@@ -117,22 +117,6 @@ width: 100%;
   transition: all 0.3s ease-in-out; /* Esto hace que la animación sea suave */
   transform-origin: left center; /* Punto de anclaje para la rotación */
 }
-
-/* La primera línea rota 45 grados hacia abajo */
-.header__toggle.active .linea:nth-child(1) {
-  transform: rotate(50deg);
-}
-
-/* La línea del medio desaparece */
-.header__toggle.active .linea:nth-child(2) {
-  opacity: 0;
-}
-
-/* La tercera línea rota -45 grados hacia arriba */
-.header__toggle.active .linea:nth-child(3) {
-  transform: rotate(-50deg);
-}
-
 
 
 /* 2. Estilos del Menú Móvil (Oculto por defecto) */
