@@ -100,8 +100,8 @@ strong{
 display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   padding: 8px;
   background: transparent;
   border: none;
@@ -150,14 +150,14 @@ width: 100%;
 }
 
 .header__logo{
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: row;
-    width: 32px;
-    height: auto;
 }
 
 /* 3. El contenedor de los links (Debe ocultar el contenido cuando la altura es 0) */
-.header__nav ul {
+.nav__links{
     overflow: hidden; /* Esto es clave para que los links no se escapen cuando está cerrado */
     display: flex;
     flex-direction: column;
@@ -165,21 +165,23 @@ width: 100%;
     margin: 0;
     width: 100%;
     height: 100vh;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(2px);
     background-color: var(--bg-obsidian-alpha);
 }
 
 /* 4. Estilo de los links en móvil para que parezcan una lista */
-.header__nav li {
+.nav__link{
     width: 100%;
     color: var(--text-alabastro);
     text-align: center;
     font-family:"Roboto Mono", monospace;;
+    cursor: pointer;
 }
 
 .header__nav a {
-    display: block;
-    padding: var(--spacing-24); /* Espacio cómodo para tocar con el dedo (Touch target) */
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-16); /* Espacio cómodo para tocar con el dedo (Touch target) */
     text-decoration: none;
     color: inherit;
 }
@@ -193,7 +195,7 @@ width: 100%;
 .header__brand{
     display: flex;
     align-items: center;
-    gap: var(--spacing-12);
+    gap: var(--spacing-8);
     padding: var(--spacing-8);
 }
 
@@ -217,14 +219,15 @@ width: 100%;
 @media (min-width: 768px) {
 
     .header__logo{
-        padding: var(--spacing-8);
+        width: 32px;
+        height: auto;
         margin: 0 auto;
+        z-index: 100;
     }
 
     .header{
         width: 100%;
         height: auto;
-        max-height: 48px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -245,16 +248,15 @@ width: 100%;
         margin: 0 auto;
     }
     
-    .header__nav ul {
+    .nav__links {
         display: flex;
         overflow: visible;
         flex-direction: row; /* Links uno al lado del otro */
         justify-content: center;
         align-items: center;
         border: none;
-        padding: var(--spacing-8) 0;
         width: 100%;
-        height: 32px;
+        height: auto;
     }
 
 
@@ -264,7 +266,7 @@ width: 100%;
     }
 
     .header__title{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--text-alabastro);
 }
@@ -280,14 +282,12 @@ width: 100%;
     align-items: center;
     justify-content: center;
     border: none;
-    padding: var(--spacing-8) var(--spacing-16);
-    border-bottom: 1px solid var(--edge-gold);
+    padding: var(--spacing-4) var(--spacing-4);
 }
 
 .header__nav{
     width: 100%;
     height: auto;
-    max-height: 40px;
 }
 
     .header__title{
@@ -297,25 +297,35 @@ width: 100%;
     .header__toggle{
         display: none;
     }
-    .header__nav ul{
-        font-size: 16px;
-        font-weight: 600;
-        color: var(--text-alabastro);
-        position: relative;
-    }
-    .header__nav li {
+    .nav__links{
         display: flex;
         flex-direction: row;
-        align-items: center;
-        justify-content: center;
+        gap: var(--spacing-4);
         width: 100%;
-        height: 32px;
-        border-bottom: none;
+        height: auto;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--text-alabastro);
+        position: relative;
+
+    }
+    .nav__link {
+        display: block;
+        width: 100%;
+        height: auto;
         color: var(--text-alabastro);
         transition: 0.5s ease-in;
+        z-index: 1000;
     }
 
-        .header__nav li:hover {
+    .nav__link a{
+        display: inline;
+        width: 100%;
+        height: auto;
+        padding: var(--spacing-4);
+    }
+
+        .header__nav .nav__link:hover {
         color: var(--primary-gold);
         transition: 0.5s ease-in;
     }
@@ -619,7 +629,7 @@ color: var(--text-alabastro);
 
 .about__image {
   width: 100%;
-  max-width: 30vw;
+  max-width: 50vw;
   height: auto;
   border-radius: 1px;
 }
