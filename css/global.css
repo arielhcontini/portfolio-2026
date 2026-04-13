@@ -28,7 +28,7 @@ margin: 0 auto;
 width: 100%;
 height: auto;
 transition: 1s ease;
-opacity: .999;
+opacity: 1;
 position: absolute;
 top: 33vh;
 }
@@ -39,13 +39,14 @@ top: 33vh;
     height: auto;
     margin: 0 auto;
     opacity: 1;
+    border-radius: 1px;
 }
 
 .cover__img:hover{
     width: 100%;
     height: auto;
     margin: 0 auto;
-    opacity: .6;
+    opacity: .999;
 }
 
 
@@ -55,6 +56,7 @@ top: 33vh;
 .cover{
 position:relative;
 width: 100%;
+max-width: 240px;
 height: auto;
 display: flex;
 flex-direction: column;
@@ -68,14 +70,14 @@ margin: var(--spacing-8) auto;
 width: 100%;
 height: auto;
 transition: 1s ease;
-opacity: .333;
+opacity: 1;
 top:0;
 bottom: 0;
 }
 
 .cover__container:hover{
-transition: 2s ease;
-opacity: .888;
+transition: 1s ease;
+opacity: .999;
 top:0;
 bottom: 0;
 }
@@ -84,10 +86,10 @@ bottom: 0;
     position: relative;
     width: 100%;
     height: auto;
-    opacity: .8;
+    opacity: .999;
     z-index: 10000;
     top: 22vh;
-    transition: 1s ease-in-out;
+    transition: 1s ease-in;
 }
 
 .cover__img:hover{
