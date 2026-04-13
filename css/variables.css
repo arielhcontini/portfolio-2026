@@ -20,6 +20,7 @@
 
     --gradient: linear-gradient(180deg,rgba(28, 22, 33, 0.202) 0%, rgba(18, 11, 26, 0.8) 100%);
     --gradient-secondary: linear-gradient(180deg,#120b1a2e 100% ,rgba(28, 22, 33, 0.66) 0% );
+    --gradient-nav: linear-gradient(0deg,rgba(18, 11, 26, 1) 0%, rgba(255, 255, 255, 0) 100%);
 
     /* spacing */
 

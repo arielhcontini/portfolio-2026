@@ -104,12 +104,13 @@ strong{
     width: 100%;
     height: auto;
     margin: 0 auto;
+    padding: var(--spacing-8);
     z-index: 100000;
     position: fixed;
     top:0;
     border-bottom: 1px solid var(--edge-gold);
     backdrop-filter: blur(44px);
-     background-color: var(--bg-obsidian-alpha);
+    background-color: var(--bg-obsidian-alpha);
 } 
 
 .header__toggle{
@@ -158,8 +159,7 @@ width: 100%;
 }
 
 .nav__bottom{
-
- position: fixed;
+   position: fixed;
    left: 0;
    bottom: 0;
    width: 100%;
@@ -168,7 +168,7 @@ width: 100%;
    z-index: 5;
    color: none;
    text-align: center;
-   background: var(--gradient-secondary);
+   background: var(--gradient-nav);
    backdrop-filter: blur(66px);
    opacity: .888;
 }
@@ -190,11 +190,11 @@ width: 100%;
     overflow: hidden; /* Esto es clave para que los links no se escapen cuando está cerrado */
     display: flex;
     flex-direction: column;
-    padding: 0;
-    margin: 0;
+    margin:  0 auto;
     width: 100%;
     height: 100vh;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(10px);
+    background-color: var(--bg-obsidian);
 }
 
 /* 4. Estilo de los links en móvil para que parezcan una lista */
@@ -662,7 +662,7 @@ color: var(--text-alabastro);
   align-items: center;
   gap: var(--spacing-40);
   background-color: var(--gradient-secondary);
-  padding: var(--spacing-64);
+  padding: var(--spacing-24);
 }
 
 .about__image-wrapper {
