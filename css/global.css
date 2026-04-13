@@ -6,6 +6,105 @@ html {
   scroll-behavior: smooth;
 }
 
+.gradient-bg{
+    background: var(--gradient-secondary);
+}
+
+
+.cover{
+position:relative;
+width: 100%;
+max-width: 400px;
+height: auto;
+display: flex;
+flex-direction: column;
+padding: var(--spacing-40);
+align-items: center;
+justify-content: center;
+margin: 0 auto;
+}
+
+.cover__container{
+width: 100%;
+height: auto;
+transition: 1s ease;
+opacity: .999;
+position: absolute;
+top: 33vh;
+}
+
+.cover__img{
+    width: 55%;
+    max-width: 960px;
+    height: auto;
+    margin: 0 auto;
+    opacity: 1;
+}
+
+.cover__img:hover{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    opacity: .6;
+}
+
+
+
+@media (min-width:1024px){
+
+.cover{
+position:relative;
+width: 100%;
+height: auto;
+display: flex;
+flex-direction: column;
+padding: var(--spacing-64);
+align-items: center;
+justify-content: center;
+margin: var(--spacing-8) auto;
+}
+
+.cover__container{
+width: 100%;
+height: auto;
+transition: 1s ease;
+opacity: .333;
+top:0;
+bottom: 0;
+}
+
+.cover__container:hover{
+transition: 2s ease;
+opacity: .888;
+top:0;
+bottom: 0;
+}
+
+.cover__img{
+    position: relative;
+    width: 100%;
+    height: auto;
+    opacity: .8;
+    z-index: 10000;
+    top: 22vh;
+    transition: 1s ease-in-out;
+}
+
+.cover__img:hover{
+    width: 100%;
+    height: auto;
+    opacity: .1;
+    transition: 1s ease-in;
+}
+
+
+}
+
+
+
+.portfolio__botton{
+opacity: .111;
+}
 
 .glass__style{
     width: 100%;
@@ -1033,7 +1132,7 @@ font-size: 11px;
     transition: .5s ease;
     border: 1px solid var(--edge-gold);
     padding: var(--spacing-8);
-    border-radius: var(--spacing-8);
+    border-radius:1px;
 }
 
 .contact__email{
