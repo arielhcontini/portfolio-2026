@@ -71,8 +71,8 @@ strong{
 
 .section-container{
     max-width: var(--max-width);
-    margin: var(--spacing-8) auto;
-    padding: var(--spacing-88) var(--spacing-16);
+    margin: var(--spacing-16) auto;
+    padding: var(--spacing-96) var(--spacing-16);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -724,6 +724,9 @@ color: var(--text-alabastro);
 }
 
 @media (min-width: 1024px) {
+    .about__container{
+        padding: var(--spacing-64) var(--spacing-32);
+    }
     .about__image {
     width: 100%;
     max-width:20vw;
