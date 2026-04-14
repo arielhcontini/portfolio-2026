@@ -7,11 +7,7 @@ html {
   scroll-behavior: smooth;
 }
 
-
-
-
 /* PORTADA */
-
 
 .cover{
 position:relative;
@@ -43,10 +39,6 @@ opacity: 1;
     transition: 4s ease;
 }
 
-
-
-
-
 @media (min-width:1024px){
 
 .cover{
@@ -65,19 +57,17 @@ position: relative;
 width: 100%;
 height: auto;
 transition: 1s ease;
-opacity: 1;
+opacity: .444;
 }
 
-.cover__img{
-    width: 100%;
-    height: auto;
-    opacity: .555;
-    transition: 1s ease-in;
-}
+.cover__container:hover{
+position: relative;
+width: 100%;
+height: auto;
+transition: 1s ease;
+opacity: .888;
 }
 
-.portfolio__botton{
-opacity: .111;
 }
 
 .glass__style{
