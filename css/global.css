@@ -801,7 +801,7 @@ color: var(--text-alabastro);
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-48);
+    gap: var(--spacing-56);
   }
 
   .about__image {
@@ -822,12 +822,16 @@ color: var(--text-alabastro);
 
 @media (min-width: 1024px) {
     .about__container{
-        padding: var(--spacing-64) var(--spacing-32);
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding: var(--spacing-96) var(--spacing-32);
     }
     .about__image {
     width: 100%;
-    max-width:20vw;
+    max-width:30vw;
     height: auto;
+    padding: var(--spacing-48);
   }
 }
 
