@@ -257,32 +257,6 @@ width: 100%;
     flex-direction: row;
 }
 
-.nav__bottom{
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   height: auto;
-   min-height: 40px;
-   z-index: 5000;
-   color: none;
-   text-align: center;
-   background: var(--gradient-bg);
-   opacity: 1;
-}
-
-
-.button__botton{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-width: 160px;
-    height: auto;
-    min-height: 64px;
-    align-items: center;
-    justify-content: center;
-}
-
 /* 3. El contenedor de los links (Debe ocultar el contenido cuando la altura es 0) */
 .nav__links{
     overflow: hidden; /* Esto es clave para que los links no se escapen cuando está cerrado */
@@ -553,7 +527,6 @@ color: var(--text-alabastro);
 }
 
 .social__link:hover img{
-    filter: invert(1);
     transition:all 0.5s ease;
 }
 
