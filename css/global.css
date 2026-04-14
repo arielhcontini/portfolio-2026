@@ -170,7 +170,7 @@ strong{
     position: fixed;
     top:0;
     border-bottom: 1px solid var(--edge-gold);
-    background-color: var(--bg-obsidian-alpha);
+    background-color: var(--bg-obsidian);
 } 
 
 .header__toggle{
@@ -224,12 +224,12 @@ width: 100%;
    bottom: 0;
    width: 100%;
    height: auto;
-   min-height: 72px;
+   min-height: 40px;
    z-index: 5;
    color: none;
    text-align: center;
-   background: var(--gradient-nav);
-   opacity: .888;
+   background: var(--gradient-bg);
+   opacity: 1;
 }
 
 
@@ -466,6 +466,7 @@ color: var(--text-alabastro);
 }
 
 .hero__description{
+    margin: 8px auto;
     font-size: 12px;
     font-weight: 400;
     color: var(--text-alabastro);
@@ -558,6 +559,9 @@ color: var(--text-alabastro);
     padding:var(--spacing-96);
 }
 
+.hero__description{
+    margin-top: var(--spacing-8);
+}
 
 .hero__image{
     width: 100%;
