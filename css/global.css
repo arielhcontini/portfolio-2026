@@ -32,10 +32,10 @@ opacity: 1;
     position: relative;
     width: 100%;
     height: auto;
-    margin: 30vh auto;
+    margin: 33vh auto;
     border-radius: 1px;
     z-index: 10000;
-    opacity: .99;
+    opacity: .1;
     transition: 4s ease;
 }
 
@@ -67,7 +67,7 @@ opacity: 1;
 .cover__img{
     width: 100%;
     height: auto;
-    opacity: .68;
+    opacity: .555;
     transition: 1s ease-in;
 }
 

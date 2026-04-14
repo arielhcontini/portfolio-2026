@@ -17,7 +17,9 @@
      --text-alabastro-opacity: #f4f1eeae;
     --basalto: #2D2430;
 
-    --gradient-bg: linear-gradient(90deg,rgba(45, 36, 48, 1) 0%, rgba(18, 11, 26, 1) 50%, rgba(28, 22, 33, 1) 100%);
+
+    --gradient-bg:
+linear-gradient(24deg,rgba(45, 36, 48, 1) 0%, rgba(18, 11, 26, 1) 50%, rgba(28, 22, 33, 1) 100%);
     --gradient: linear-gradient(180deg,rgba(28, 22, 33, 0.202) 0%, rgba(18, 11, 26, 0.8) 100%);
     --gradient-secondary: linear-gradient(180deg,#120b1a2e 100% ,rgba(28, 22, 33, 0.66) 0% );
     --gradient-nav: linear-gradient(0deg,rgba(18, 11, 26, 1) 0%, rgba(255, 255, 255, 0) 100%);
