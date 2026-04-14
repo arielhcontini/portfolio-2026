@@ -9,6 +9,10 @@ html {
 
 
 
+
+/* PORTADA */
+
+
 .cover{
 position:relative;
 width: 100%;
@@ -35,7 +39,7 @@ opacity: 1;
     margin: 33vh auto;
     border-radius: 1px;
     z-index: 10000;
-    opacity: .1;
+    opacity: 1;
     transition: 4s ease;
 }
 
@@ -70,11 +74,7 @@ opacity: 1;
     opacity: .555;
     transition: 1s ease-in;
 }
-
-
 }
-
-
 
 .portfolio__botton{
 opacity: .111;
