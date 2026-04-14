@@ -89,7 +89,6 @@ opacity: .111;
     background-image: url(../assets/bg-layer.webp);
     background-repeat: no-repeat;
     background-size: cover;
-    backdrop-filter: blur(66px);
     color: transparent;
     opacity: .299;
     cursor: pointer;
@@ -153,7 +152,6 @@ strong{
     border: 1px solid var(--edge-gold);
     border-radius: 1px;
     background: linear-gradient(180deg,rgba(28, 22, 33, 0.743) 0%, rgba(18, 11, 26, 0.77) 100%);
-    backdrop-filter: blur(3px);
 }
 
 .outline{
@@ -182,7 +180,6 @@ strong{
     position: fixed;
     top:0;
     border-bottom: 1px solid var(--edge-gold);
-    backdrop-filter: blur(44px);
     background-color: var(--bg-obsidian-alpha);
 } 
 
@@ -242,7 +239,6 @@ width: 100%;
    color: none;
    text-align: center;
    background: var(--gradient-nav);
-   backdrop-filter: blur(66px);
    opacity: .888;
 }
 
@@ -266,7 +262,6 @@ width: 100%;
     margin:  0 auto;
     width: 100%;
     height: 100vh;
-    backdrop-filter: blur(10px);
     background-color: var(--bg-obsidian);
 }
 
@@ -625,8 +620,6 @@ color: var(--text-alabastro);
 
     color:var(--text-alabastro);
 
-    backdrop-filter: blur(5px);
-
 }
 
 .skills__title{
@@ -638,7 +631,6 @@ color: var(--text-alabastro);
     background-color: var(--bg-obsidian);
     background-repeat: no-repeat;
     transform: translateY(-4px);
-    backdrop-filter: blur(10px);
 }
 
 .skill-card:hover .skill-card__icon img{
@@ -831,14 +823,12 @@ color: var(--text-alabastro);
     grid-template-areas: 'logo role' 'date date' 'description description';
 
     background-color: var(--bg-obsidian);
-    backdrop-filter: blur(1px);
     transition: 3s ease;
 }
 
 
 
 .experience-card:hover{
-    backdrop-filter: blur(2px);
     background: var(--gradient);
     transition: 3s ease;
 }
