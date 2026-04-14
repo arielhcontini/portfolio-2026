@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 :root{
 
-    /* primary */
-
     /* golden */
     --primary-gold: #C5A059;
     --edge-gold: #c59f5920;
@@ -11,17 +9,20 @@
     /* obsidiana */
     --bg-obsidian: #120B1A;
     --bg-obsidian-alpha: #120b1a8f;
+
+    /* text style */
+    --text-alabastro: #F4F1EE;
+    --text-alabastro-opacity: #f4f1eeae;
+    
+    --purple: #7c6b8a;
+    --basalto: #2D2430;
     --bg-shadow: #1C1621;
 
-    --text-alabastro: #F4F1EE;
-     --text-alabastro-opacity: #f4f1eeae;
-    --basalto: #2D2430;
-
-
+    /* gradient background */
     --gradient-bg:linear-gradient(24deg,rgba(45, 36, 48, 1) 0%, rgba(18, 11, 26, 1) 50%, rgba(28, 22, 33, 1) 100%);
-    --gradient: linear-gradient(180deg,rgba(28, 22, 33, 0.202) 0%, rgba(18, 11, 26, 0.8) 100%);
-    --gradient-secondary: linear-gradient(180deg,#120b1a2e 100% ,rgba(28, 22, 33, 0.66) 0% );
-    --gradient-nav: linear-gradient(0deg,rgba(18, 11, 26, 1) 0%, rgba(255, 255, 255, 0) 100%);
+
+    /* Rounded */
+    --radius:1px;
 
     /* spacing */
 

@@ -44,15 +44,19 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
     <!-- web app -->
     <link rel="manifest" href="../manifiest.json">
+      <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
 
-<body id="inicio" oncontextmenu="return false" onkeydown="return false">
+<body id="inicio" oncontextmenu="return false" onkeydown="return false" class="gradient--v">
 
 
 
 <main>
 
-<section class="cover">
+<section class="cover animate__fadeIn">
     <div class="cover__container">
         <a href="./portfolio/">
             <img src="./assets/cover.webp" alt="imagen de logo color purpura" class="cover__img">
@@ -60,16 +64,16 @@
     </div>
 </section>
 
-<nav class="nav__bottom glass__style">
-    <a href="./portfolio/" aria-label="boton escondido"><span>by ahri iterea</span>
-    </a>
- </nav>
+
 
 
 </main>
 
 
-
+<nav class="nav__bottom">
+    <a href="./portfolio/" aria-label="boton escondido" class="up__botton"><img src="./assets/down.svg" alt="arriba">
+    </a>
+ </nav>
 
     <!-- service worker -->
     <script>
@@ -80,11 +84,18 @@
                     .catch(err => console.error('Error al registrar el Service Worker', err));
             });
         }
-
-
     </script>
 
 
+<!-- Seguir mouse con animacion de gradiente -->
+<script>
+  document.body.addEventListener("pointermove", (e)=>{
+  const { currentTarget: el, clientX: x, clientY: y } = e;
+  const { top: t, left: l, width: w, height: h } = el.getBoundingClientRect();
+  el.style.setProperty('--posX',  x-l-w/2);
+  el.style.setProperty('--posY',  y-t-h/2);
+})
+</script>
 
 
 </body>
