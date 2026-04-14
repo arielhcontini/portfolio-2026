@@ -54,7 +54,7 @@ margin:0 auto;
 
 .cover__container{
 position: relative;
-width: 100%;
+width: 90%;
 height: auto;
 transition: 1s ease;
 opacity: .444;
