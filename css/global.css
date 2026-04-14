@@ -473,17 +473,14 @@ display: none;
 /* === HERO === */
 
 .hero{
-    padding: var(--spacing-40) var(--spacing-16);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: var(--spacing-8);
-    margin: var(--spacing-80) auto;
-    padding: var(--spacing-8);
     border-bottom: 1px solid var(--edge-gold);
     background-color: var(--gradient);
-
+    padding: var(--spacing-64) var(--spacing-16);
 }
 
 .hero__content{
@@ -515,7 +512,7 @@ color: var(--text-alabastro);
 .hero__image{
     width: 100%;
     height: auto;
-    max-width: 320px;
+    max-width: 400px;
     border-radius: var(--radius);
     margin: 0 auto;
     border: 1px solid var(--edge-gold);
