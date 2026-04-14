@@ -875,7 +875,7 @@ color: var(--text-alabastro);
     grid-area: logo;
     width: 100%;
     height: auto;
-    max-width: 24px;
+    max-width: 32px;
 }
 
 .experience-card__role{
