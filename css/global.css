@@ -488,6 +488,7 @@ color: var(--text-alabastro);
     align-items: center;
     justify-content: center;
     width: 100%;
+    max-width: 160px;
     height: 56px;
     border-radius: var(--radius);
     background-color: var(--gradient-100);
@@ -569,7 +570,9 @@ color: var(--text-alabastro);
         transition: 0.5s ease-in;
     }
     
-
+    .social__link{
+        max-width:80px ;
+    }
 
 }
 
