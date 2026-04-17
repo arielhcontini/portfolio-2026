@@ -48,7 +48,7 @@ opacity: 1;
     position: relative;
     width: 100%;
     height: auto;
-    margin: 24vh auto;
+    margin: 16vh auto;
     border-radius: var(--radius);
     z-index: 10000;
     opacity: 1;
