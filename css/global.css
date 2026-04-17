@@ -18,7 +18,7 @@ html {
     color: var(--text-alabastro-opacity);
     opacity: .333;
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 
@@ -691,7 +691,7 @@ color: var(--text-alabastro);
 
 .skills__grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: var(--spacing-24);
 }
 
