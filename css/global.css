@@ -304,6 +304,7 @@ width: 100%;
     text-align: center;
     font-family:"Roboto Mono", monospace;;
     cursor: pointer;
+    font-weight: 12px;
     background-color: transparent;
 }
 
@@ -357,6 +358,7 @@ width: 100%;
         margin: 0 auto;
         z-index: 100;
     }
+
 
 .header__title{
 display: none;
