@@ -75,6 +75,7 @@ width: 80%;
 height: auto;
 transition: 1s ease;
 opacity: .555;
+
 }
 
 .cover__container:hover{
@@ -95,11 +96,13 @@ opacity: .999;
   font-family: "Roboto Mono", monospace;
   color: var(--text-alabastro); /* Un gris técnico, no blanco puro para no robarle peso al logo */
   font-size: 16px;
-  letter-spacing: 1px; 
+  letter-spacing: 2px; 
   margin: 0 auto;
   text-align: center;
   /* IMPORTANTE: Hacer que el texto también dispare el clic si lo tocan por error */
   pointer-events: none; 
+  border: 1px solid var(--edge-gold);
+  padding: var(--spacing-4) var(--spacing-8);
 }
 
 /* El cursor parpadeante (el truco psicológico para llamar la atención) */
@@ -499,7 +502,7 @@ color: var(--text-alabastro);
 .hero__image{
     width: 100%;
     height: auto;
-    max-width: 400px;
+    max-width: 360px;
     border-radius: var(--radius);
     margin: 0 auto;
     border: 1px solid var(--edge-gold);

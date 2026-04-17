@@ -33,6 +33,8 @@ a{
     color: inherit;
     background-color: transparent;
     background: none;
+    -webkit-tap-highlight-color: transparent; 
+    outline: none;
 }
 
 li{
