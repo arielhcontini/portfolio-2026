@@ -19,6 +19,8 @@ button{
     cursor: pointer;
     background-color: transparent;
     border: none;
+    -webkit-tap-highlight-color: transparent; 
+    outline: none;
 }
 
 button,
