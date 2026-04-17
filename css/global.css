@@ -576,7 +576,7 @@ color: var(--text-alabastro);
 
     .hero{
       flex-direction: row-reverse;
-      padding: var(--spacing-40);
+      padding: var(--spacing-96) var(--spacing-16);
     }
 
     .hero__content{
@@ -599,7 +599,7 @@ color: var(--text-alabastro);
     justify-content: center;
     gap: var(--spacing-96);
     margin: 0 auto;
-    padding:var(--spacing-72) var(--spacing-16);
+    padding:var(--spacing-96) var(--spacing-16);
 }
 
 .hero__description{
