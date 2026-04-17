@@ -30,7 +30,7 @@ opacity: 1;
     position: relative;
     width: 100%;
     height: auto;
-    margin: 33vh auto;
+    margin: 24vh auto;
     border-radius: var(--radius);
     z-index: 10000;
     opacity: 1;
@@ -77,7 +77,6 @@ opacity: .999;
   font-family: "Roboto Mono", monospace;
   color: var(--text-alabastro); /* Un gris técnico, no blanco puro para no robarle peso al logo */
   font-size: 16px;
-  letter-spacing: 2px; 
   margin: 0 auto;
   text-align: center;
   /* IMPORTANTE: Hacer que el texto también dispare el clic si lo tocan por error */
