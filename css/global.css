@@ -29,7 +29,7 @@ html {
 .cover{
 position:relative;
 width: 100%;
-max-width: 240px;
+max-width: 160px;
 height: auto;
 display: flex;
 flex-direction: column;
@@ -90,11 +90,13 @@ opacity: .999;
 
 /* Estilo del CTA para que parezca una terminal */
 .mobile-cta {
+  width: 100%;
+  height: auto;
   font-family: "Roboto Mono", monospace;
   color: var(--text-alabastro); /* Un gris técnico, no blanco puro para no robarle peso al logo */
   font-size: 16px;
-  letter-spacing: 1px;
-  margin-top: var(--spacing-24);
+  letter-spacing: 1px; 
+  margin: 0 auto;
   text-align: center;
   /* IMPORTANTE: Hacer que el texto también dispare el clic si lo tocan por error */
   pointer-events: none; 
