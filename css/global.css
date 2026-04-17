@@ -521,6 +521,9 @@ color: var(--text-alabastro);
     width: 32px;
 }
 
+
+
+
 .social__link{
     display: flex;
     align-items: center;
@@ -532,7 +535,7 @@ color: var(--text-alabastro);
     background-color: var(--gradient-100);
     transition: all 0.5s ease;
     color: var(--primary-black);
-    padding:var(--spacing-8)
+    padding:var(--spacing-8);
 }
 
 .social__link :hover{
