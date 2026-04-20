@@ -23,6 +23,8 @@ html {
 
 
 
+
+
 /* PORTADA */
 
 .cover{
@@ -544,13 +546,14 @@ color: var(--text-alabastro);
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 160px;
-    height: 56px;
+    max-width: 80px;
+    height: 80px;
     border-radius: var(--radius);
     background-color: var(--gradient-100);
-    transition: all 0.5s ease;
+    transition: all 0.9s ease;
     color: var(--primary-black);
-    padding:var(--spacing-8);
+    padding-top:var(--spacing-80);
+    margin: 0 auto;
 }
 
 .social__link :hover{
@@ -566,8 +569,8 @@ color: var(--text-alabastro);
 }
 
 .social__link img{
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
 }
 
 /* === hero queeries === */
@@ -860,8 +863,10 @@ color: var(--text-alabastro);
 
 
 .experience{
+    width: 100%;
+    height: auto;
     background-color: var(--gradient-secondary);
-     color: var(--text-alabastro);
+    color: var(--text-alabastro);
 }
 
 
