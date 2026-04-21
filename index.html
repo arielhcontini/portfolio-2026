@@ -37,7 +37,6 @@
     <meta http-equiv="Cache-Control" content="no-cache">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/variables.css">
-    <link rel="stylesheet" href="../css/global.css">
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
@@ -50,27 +49,148 @@
   />
 </head>
 
-<body id="inicio" oncontextmenu="return false" onkeydown="return false" class="gradient--v">
+<style>
+        body { margin: 0; background-color: #F4F1EE; overflow: hidden; 
+        font-family: monospace; }
+        canvas { display: flex; }
+        
+        /* Estilos para el texto superior al canvas */
+        #ui {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none; /* Permite que el mouse pase a través del texto al canvas */
+            text-align: center;
+            z-index: 10;
+        }
+        .btn-iniciar {
+            color: #F4F1EE;
+            margin-top: 320px;
+            letter-spacing: 4px;
+            border: 1px solid #c59f5911;
+            padding: 8px 24px;
+            background: #120B1A;
+            cursor: pointer;
+            pointer-events: auto;
+        }
+    </style>
 
 
+<body>
 
 <main>
 
-<section class="cover animate__fadeIn">
-<a href="./portfolio/">
-<div class="cover__container">
-
-            <img src="./assets/cover.webp" alt="imagen de logo color purpura" class="cover__img" draggable="false" >
-                <div class="mobile-cta">
-            <span> >INICIAR</span><span class="cursor-blink">_</span>
-            </div>
-     
-    </div>
-
-               </a>
-</section>
 
 
+
+<div id="ui">
+        <a href="./portfolio/" aria-label="Iniciar Portfolio"><button class="btn-iniciar">>INICIAR_</button>
+</a>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+        // --- 1. CONFIGURACIÓN BÁSICA ---
+        const scene = new THREE.Scene();
+        // Fondo degradado similar a tu captura
+        scene.background = new THREE.Color(0x0d0214); 
+
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        document.body.appendChild(renderer.domElement);
+
+        // --- 2. CREACIÓN DEL ISOLOGOTIPO ---
+        const group = new THREE.Group(); // Grupo para contener ambas partes del logo
+        
+        const extrudeSettings = {
+            steps: 1,
+            depth: 0.01, // Grosor del logo
+            bevelEnabled: true,
+            bevelThickness: 0.05,
+            bevelSize: 0.01,
+            bevelSegments: 3
+        };
+
+        // Material con acabado metálico/mate sutil
+        const material = new THREE.MeshStandardMaterial({ 
+            color: 0xFFFFFF, 
+            roughness: 0.444, 
+            metalness: 0.999 
+        });
+
+        // Parte Inferior Izquierda (Triángulo)
+        const shape1 = new THREE.Shape();
+        shape1.moveTo(-1, -1);
+        shape1.lineTo(0.9, -1);
+        shape1.lineTo(-1, 0.9);
+        shape1.closePath();
+
+        // Parte Superior Derecha (Triángulo)
+        const shape2 = new THREE.Shape();
+        shape2.moveTo(1, 1);
+        shape2.lineTo(-0.9, 1);
+        shape2.lineTo(1, -0.9);
+        shape2.closePath();
+
+        const geo1 = new THREE.ExtrudeGeometry(shape1, extrudeSettings);
+        const geo2 = new THREE.ExtrudeGeometry(shape2, extrudeSettings);
+
+        const mesh1 = new THREE.Mesh(geo1, material);
+        const mesh2 = new THREE.Mesh(geo2, material);
+
+        group.add(mesh1);
+        group.add(mesh2);
+        scene.add(group);
+
+        // --- 3. ILUMINACIÓN ---
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0x7a22ff, 15); // Luz púrpura para atmósfera
+        pointLight.position.set(5, 5, 5);
+        scene.add(pointLight);
+
+        const directLight = new THREE.DirectionalLight(0xffffff, 1);
+        directLight.position.set(-5, 5, 5);
+        scene.add(directLight);
+
+        // --- 4. CONTROLES ---
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true; // Rotación suave
+        controls.autoRotate = true;    // El logo gira solo hasta que el usuario lo toca
+        controls.autoRotateSpeed = 2;
+
+        // --- 5. ANIMACIÓN ---
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update(); // Necesario para el damping y autoRotate
+            renderer.render(scene, camera);
+        }
+
+        // Ajuste de ventana dinámico
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        animate();
+    </script>
 
 
 </main>
