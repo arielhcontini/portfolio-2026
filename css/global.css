@@ -118,7 +118,7 @@ opacity: .999;
 
 @media (min-width: 1024px) {
   .mobile-cta {
-    display: none;
+    display: block;
   }
 }
 
@@ -203,7 +203,7 @@ strong{
 
 .section-container{
     max-width: var(--max-width);
-    margin: var(--spacing-24) auto;
+    margin: var(--spacing-40) auto;
     padding: var(--spacing-96) var(--spacing-16);
     width: 100%;
     display: flex;
@@ -633,7 +633,7 @@ color: var(--text-alabastro);
 }
 
     .hero__social a{
-        opacity: .666;
+        opacity: .333;
        transition: 0.5s ease-in;
     }
  
