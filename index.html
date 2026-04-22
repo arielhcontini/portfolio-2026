@@ -51,16 +51,25 @@
 </head>
 
 <style>
-        body { margin: 0; 
+        body { 
+            margin:0 auto; 
             background-color: #2D2430; 
             overflow: hidden; 
             font-family: monospace; }
-        canvas { display: flex; }
+        canvas { 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: auto;
+        }
         
         /* Estilos para el texto superior al canvas */
         #ui {
+            width: 100%;
+            height: auto;
             position: absolute;
-            top: 50%;
+            top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
             pointer-events: none; /* Permite que el mouse pase a través del texto al canvas */
@@ -68,14 +77,26 @@
             z-index: 10;
         }
         .btn-iniciar {
-            color: #F4F1EE;
+            color: #f4f1ee33;
             margin-top: 320px;
             letter-spacing: 4px;
-            border: 1px solid #c59f5911;
+            border: 1px solid #c59f590a;
             padding: 8px 24px;
             background: #120b1a1b;
             cursor: pointer;
             pointer-events: auto;
+            transition: 1.5s ease;
+        }
+            .btn-iniciar:hover{
+            color: #F4F1EE;
+            margin-top: 320px;
+            letter-spacing: 4px;
+            border: 1px solid #c59f5954;
+            padding: 8px 24px;
+            background: #120b1a00;
+            cursor: pointer;
+            pointer-events: auto;
+            transition: 1s ease;
         }
     </style>
 
@@ -195,10 +216,8 @@
         animate();
     </script>
 
-
-
-
 </main>
+
 
 
 
@@ -224,6 +243,8 @@
   el.style.setProperty('--posY',  y-t-h/2);
 })
 </script>
+
+
 
 
 </body>
