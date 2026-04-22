@@ -112,7 +112,8 @@
 
 
 
-    <script type="importmap">
+
+<script type="importmap">
         {
             "imports": {
                 "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
@@ -122,6 +123,135 @@
     </script>
 
     <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+        // --- 1. CONFIGURACIÓN BÁSICA ---
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x7c6b8a); 
+
+        const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        document.body.appendChild(renderer.domElement);
+
+        // --- 2. CARGA DE TEXTURA (DESDE LA NUBE) ---
+        const loader = new THREE.TextureLoader();
+        
+        // Habilitamos CORS para que Three.js pueda leer la imagen desde otro dominio
+        loader.crossOrigin = "anonymous"; 
+
+        // REEMPLAZA ESTE LINK con el de tu PNG (GitHub Raw, Cloudinary, etc.)
+        const urlTextura = 'https://raw.githubusercontent.com/arielhcontini/imagenes-para-hydra/refs/heads/main/texture_1.webp'; 
+        const miTextura = loader.load(urlTextura);
+
+        // Ajustamos la textura para que no se vea al revés si es necesario
+        miTextura.wrapS = miTextura.wrapT = THREE.RepeatWrapping;
+
+        // --- 3. CONFIGURACIÓN DE MATERIALES ---
+        // Material para las caras Frontales y Traseras (USA LA TEXTURA)
+        const materialFrente = new THREE.MeshStandardMaterial({ 
+            map: miTextura,
+            transparent: true, // Importante si tu PNG tiene transparencia
+            roughness: 0.3, 
+            metalness: 0.888 
+        });
+
+        // Material para los Bordes/Laterales (COLOR SÓLIDO METALIZADO)
+        const materialBorde = new THREE.MeshStandardMaterial({ 
+            color: 0xF4F1FF, 
+            roughness: 0.1, 
+            metalness: 1 
+        });
+
+        // El ExtrudeGeometry usa un array: el índice 0 es el frente/dorso, el 1 es el lateral
+        const materialesArray = [materialFrente, materialBorde];
+
+        // --- 4. CREACIÓN DEL ISOLOGOTIPO ---
+        const group = new THREE.Group();
+        
+        const extrudeSettings = {
+            steps: 1,
+            depth: 0.1, // Aumenté un poco el grosor para que se note el borde texturizado
+            bevelEnabled: true,
+            bevelThickness: 0.05,
+            bevelSize: 0.01,
+            bevelSegments: 3
+        };
+
+        const shape1 = new THREE.Shape();
+        shape1.moveTo(-1, -1);
+        shape1.lineTo(0.9, -1);
+        shape1.lineTo(-1, 0.9);
+        shape1.closePath();
+
+        const shape2 = new THREE.Shape();
+        shape2.moveTo(1, 1);
+        shape2.lineTo(-0.9, 1);
+        shape2.lineTo(1, -0.9);
+        shape2.closePath();
+
+        const geo1 = new THREE.ExtrudeGeometry(shape1, extrudeSettings);
+        const geo2 = new THREE.ExtrudeGeometry(shape2, extrudeSettings);
+
+        // Aplicamos el array de materiales a los meshes
+        const mesh1 = new THREE.Mesh(geo1, materialesArray);
+        const mesh2 = new THREE.Mesh(geo2, materialesArray);
+
+        group.add(mesh1);
+        group.add(mesh2);
+        scene.add(group);
+
+        // --- 5. ILUMINACIÓN ---
+        const ambientLight = new THREE.AmbientLight(0xffffff, 2); // Bajé un poco la intensidad para no "lavar" la textura
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xC5A059, 15);
+        pointLight.position.set(1, -5, 5);
+        scene.add(pointLight);
+
+        const directLight = new THREE.DirectionalLight(0xffffff, 2);
+        directLight.position.set(-5, 5, 5);
+        scene.add(directLight);
+
+        // --- 6. CONTROLES ---
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 4; // Bajé la velocidad para apreciar mejor la textura
+
+        // --- 7. ANIMACIÓN ---
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        animate();
+    </script>
+
+
+
+
+<!--     <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script> -->
+
+ <!--    <script type="module">
         import * as THREE from 'three';
         import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
@@ -214,7 +344,7 @@
         });
 
         animate();
-    </script>
+    </script> -->
 
 </main>
 
