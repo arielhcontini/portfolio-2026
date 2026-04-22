@@ -52,7 +52,7 @@
 
 <style>
         body { margin: 0; 
-            background-color: #080808; 
+            background-color: #120B1A; 
             overflow: hidden; 
             font-family: monospace; }
         canvas { display: flex; }
@@ -131,9 +131,9 @@
 
         // Material con acabado metálico/mate sutil
         const material = new THREE.MeshStandardMaterial({ 
-            color: 0xF4F1EE, 
-            roughness: 0.444, 
-            metalness: 0.888 
+            color: 0xF4F1FF, 
+            roughness: 0.333, 
+            metalness: 1 
         });
 
         // Parte Inferior Izquierda (Triángulo)
@@ -164,8 +164,8 @@
         const ambientLight = new THREE.AmbientLight(0xffffff, 9);
         scene.add(ambientLight);
 
-        const pointLight = new THREE.PointLight(0x119900, 10); // Luz púrpura para atmósfera
-        pointLight.position.set(1, 5, 5);
+        const pointLight = new THREE.PointLight(0xC5A059, 10); // Luz púrpura para atmósfera
+        pointLight.position.set(1, -5, 5);
         scene.add(pointLight);
 
         const directLight = new THREE.DirectionalLight(0xffffff, 1);
@@ -176,7 +176,7 @@
         const controls = new OrbitControls(camera, renderer.domElement);
         controls.enableDamping = true; // Rotación suave
         controls.autoRotate = true;    // El logo gira solo hasta que el usuario lo toca
-        controls.autoRotateSpeed = 10;
+        controls.autoRotateSpeed = 8;
 
         // --- 5. ANIMACIÓN ---
         function animate() {
