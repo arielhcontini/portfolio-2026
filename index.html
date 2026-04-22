@@ -77,7 +77,7 @@
             z-index: 10;
         }
         .btn-iniciar {
-            color: #f4f1ee33;
+            color: #f4f1ee;
             margin-top: 320px;
             letter-spacing: 4px;
             border: 1px solid #c59f590a;
@@ -88,7 +88,7 @@
             transition: 1.5s ease;
         }
             .btn-iniciar:hover{
-            color: #F4F1EE;
+            color: #080808;
             margin-top: 320px;
             letter-spacing: 4px;
             border: 1px solid #c59f5954;
@@ -232,17 +232,6 @@
             });
         }
     </script>
-
-
-<!-- Seguir mouse con animacion de gradiente -->
-<script>
-  document.body.addEventListener("pointermove", (e)=>{
-  const { currentTarget: el, clientX: x, clientY: y } = e;
-  const { top: t, left: l, width: w, height: h } = el.getBoundingClientRect();
-  el.style.setProperty('--posX',  x-l-w/2);
-  el.style.setProperty('--posY',  y-t-h/2);
-})
-</script>
 
 
 
