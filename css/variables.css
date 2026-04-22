@@ -4,8 +4,15 @@
 
     color-scheme: light dark;
 
+    /* light-mode colors */
+    --text-obsidian: #120B1A;
+    --bg-alabastro: #f4f1eeeb;
+    --bg-alabastro-gold: #352d1e1d;
+    --bg-purple: #7c6b8a;
+    --edge-obsidian:#120B1A;
 
-    /* golden */
+
+    /* color gold */
     --primary-gold: #C5A059;
     --edge-gold: #c59f5911;
 
@@ -14,7 +21,8 @@
     --bg-obsidian-alpha: #120b1a8f;
 
     /* text style */
-    --text-alabastro: #F4F1EE;
+    --text-alabastro: #f4f1ee;
+    --text-obsidian: #120B1A;
     --text-alabastro-opacity: #f4f1eeae;
     
     --purple: #7c6b8a;
