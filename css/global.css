@@ -5,6 +5,11 @@ html {
   scroll-behavior: smooth;
 }
 
+
+
+
+
+
 /* PORTADA */
 
 .cover{
@@ -169,7 +174,6 @@ strong{
     gap: var(--spacing-48);
     border-radius: var(--radius);
     background-color: light-dark(var(--bg-alabastro), var(--bg-obsidian));
-    backdrop-filter: blur(66px);
 }
 
 .outline{
