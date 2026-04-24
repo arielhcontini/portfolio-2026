@@ -127,6 +127,10 @@ opacity: .999;
      background-blend-mode: soft-light, soft-light, lighten, lighten, lighten, soft-light, hard-light;
 }
 
+
+
+
+
 p{
   font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
@@ -173,7 +177,7 @@ strong{
     flex-direction: column;
     gap: var(--spacing-48);
     border-radius: var(--radius);
-    background-color: light-dark(var(--bg-alabastro), var(--bg-obsidian));
+    background: var(--gradient-dark);
 }
 
 .outline{
