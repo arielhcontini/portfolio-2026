@@ -5,10 +5,13 @@ html {
   scroll-behavior: smooth;
 }
 
-
-
-
-
+.texture-bg{
+    background-image: url(../assets/bg-layer.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+}
 
 /* PORTADA */
 
@@ -466,7 +469,7 @@ font-weight: 400;
 
 .hero__description{
     margin: 8px auto;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 400;
      color: light-dark(var(--text-obsidian), var(--text-alabastro));
     line-height: 1.5;
@@ -488,10 +491,12 @@ font-weight: 400;
     display: flex;
     gap: var(--spacing-24);
     margin-top: var(--spacing-32); 
+    opacity: .888;
 }
 
 .hero__social img{
     width: 32px;
+    opacity: .888;
 }
 
 
@@ -589,7 +594,7 @@ font-weight: 400;
 }
 
     .hero__social a{
-        opacity: .333;
+        opacity: .888;
        transition: 0.5s ease-in;
     }
  
