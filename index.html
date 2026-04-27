@@ -6,56 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Hola, que bueno verte!</title>
     <meta name="description"
-        content="Soy Ariel, mi trabajo consiste en unir la creatividad con metodologías rigurosas para transformar el diseño en un motor de ingresos. Me especializo en la optimización de activos visuales generados por agentes, aplicando principios de
-    psicología del consumidor para asegurar que cada pieza no solo sea estética, sino que impulse la conversión y el impacto en el mercado.">
+        content="Soy Ariel, mi trabajo consiste en unir la creatividad con metodologías rigurosas para transformar el diseño en un motor de ingresos. Me especializo en la optimización de activos visuales generados por agentes, aplicando principios de psicología del consumidor para asegurar que cada pieza no solo sea estética, sino que impulse la conversión y el impacto en el mercado.">
     <meta property="og:image" content="assets/web-img.webp" />
     <meta name="keywords" content="design, designer, generative, AI, IA, UX, UI, frontend, developer," />
-    <meta name="robots" content="noindex,nofollow">
+    <meta name="robots" content="index,follow">
     <meta name="subject" content="portfolio">
     <meta name="copyright" content="iterea">
     <meta name="language" content="ES">
-    <meta name="robots" content="index,follow" />
-    <meta name="abstract" content="Soy Ariel, mi trabajo consiste en unir la creatividad con metodologías rigurosas para transformar el diseño en un motor de ingresos.">
-    <meta name="topic" content="Ariel H. Contini | Generative Designer">
-    <meta name="summary" content="">
-    <meta name="Classification" content="Business">
-    <meta name="author" content="Ariel Hernán Contini, arielhcontini@gmail.com">
-    <meta name="designer" content="Ariel Hernán Contini">
-    <meta name="copyright" content=" Creative Commons">
-    <meta name="reply-to" content="arielhcontini@gmail.com">
-    <meta name="owner" content="">
     <meta name="url" content="https://arielhcontini.online/">
-    <meta name="identifier-URL" content="https://arielhcontini.online/">
-    <meta name="directory" content="submission">
-    <meta name="category" content="Designer Portfolio">
-    <meta name="coverage" content="Worldwide">
-    <meta name="distribution" content="Global">
-    <meta name="rating" content="General">
-    <meta name="revisit-after" content="7 days">
-    <meta http-equiv="Expires" content="0">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/global.css">
-    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
-    <!-- web app -->
     <link rel="manifest" href="../manifiest.json">
-      <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
-</head>
-
-<style>
+    
+    <style>
         body { 
             margin:0 auto; 
             background-color: #2D2430; 
             overflow: hidden; 
-            font-family: monospace; }
+            font-family: monospace; 
+        }
             
         canvas { 
             display: flex;
@@ -63,9 +30,11 @@
             justify-content: center;
             width: 100%;
             height: auto;
+            /* FOUC FIX: Nace invisible para que GSAP lo revele */
+            visibility: hidden;
+            opacity: 0;
         }
         
-        /* Estilos para el texto superior al canvas */
         #ui {
             width: 100%;
             height: auto;
@@ -73,10 +42,14 @@
             top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
-            pointer-events: none; /* Permite que el mouse pase a través del texto al canvas */
+            pointer-events: none; 
             text-align: center;
             z-index: 10;
+            /* FOUC FIX: Nace invisible */
+            visibility: hidden;
+            opacity: 0;
         }
+
         .btn-iniciar {
             color: #f4f1ee;
             margin-top: 320px;
@@ -88,274 +61,169 @@
             pointer-events: auto;
             transition: 1.5s ease;
         }
-            .btn-iniciar:hover{
+
+        .btn-iniciar:hover {
             color: #080808;
-            margin-top: 320px;
             letter-spacing: 4px;
             border: 1px solid #c59f5954;
-            padding: 8px 24px;
             background: #120b1a00;
-            cursor: pointer;
-            pointer-events: auto;
             transition: 1s ease;
         }
     </style>
-
+</head>
 
 <body oncontextmenu="return false" onkeydown="return false">
 
-<main>
+    <main>
+        <div id="ui">
+            <a href="./portfolio/" aria-label="Iniciar Portfolio">
+                <button class="btn-iniciar">>INICIAR_</button>
+            </a>
+        </div>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
-
-<div id="ui">
-<a href="./portfolio/" aria-label="Iniciar Portfolio"><button class="btn-iniciar">>INICIAR_</button></a>
-</div>
-
-
-
-
-
-<script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+                }
             }
-        }
-</script>
+        </script>
 
-<script type="module">
-        import * as THREE from 'three';
-        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        <script type="module">
+            import * as THREE from 'three';
+            import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-        // --- 1. CONFIGURACIÓN BÁSICA ---
-        const scene = new THREE.Scene();
-        scene.background = new THREE.Color(0x7c6b8a); 
+            // --- 1. CONFIGURACIÓN BÁSICA ---
+            const scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x7c6b8a); 
 
-        const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 5;
+            const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 1000);
+            // Iniciamos la cámara más lejos para la animación de entrada
+            camera.position.z = 12;
 
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(window.devicePixelRatio);
-        document.body.appendChild(renderer.domElement);
-
-        // --- 2. CARGA DE TEXTURA (DESDE LA NUBE) ---
-        const loader = new THREE.TextureLoader();
-        
-        // Habilitamos CORS para que Three.js pueda leer la imagen desde otro dominio
-        loader.crossOrigin = "anonymous"; 
-
-        // REEMPLAZA ESTE LINK con el de tu PNG (GitHub Raw, Cloudinary, etc.)
-        const urlTextura = 'https://raw.githubusercontent.com/arielhcontini/imagenes-para-hydra/refs/heads/main/texture_1.webp'; 
-        const miTextura = loader.load(urlTextura);
-
-        // Ajustamos la textura para que no se vea al revés si es necesario
-        miTextura.wrapS = miTextura.wrapT = THREE.RepeatWrapping;
-
-        // --- 3. CONFIGURACIÓN DE MATERIALES ---
-        // Material para las caras Frontales y Traseras (USA LA TEXTURA)
-        const materialFrente = new THREE.MeshStandardMaterial({ 
-            map: miTextura,
-            transparent: true, // Importante si tu PNG tiene transparencia
-            roughness: 0.3, 
-            metalness: 0.888 
-        });
-
-        // Material para los Bordes/Laterales (COLOR SÓLIDO METALIZADO)
-        const materialBorde = new THREE.MeshStandardMaterial({ 
-            color: 0xF4F1FF, 
-            roughness: 0.1, 
-            metalness: 1 
-        });
-
-        // El ExtrudeGeometry usa un array: el índice 0 es el frente/dorso, el 1 es el lateral
-        const materialesArray = [materialFrente, materialBorde];
-
-        // --- 4. CREACIÓN DEL ISOLOGOTIPO ---
-        const group = new THREE.Group();
-        
-        const extrudeSettings = {
-            steps: 1,
-            depth: 0.1, // Aumenté un poco el grosor para que se note el borde texturizado
-            bevelEnabled: true,
-            bevelThickness: 0.05,
-            bevelSize: 0.01,
-            bevelSegments: 3
-        };
-
-        const shape1 = new THREE.Shape();
-        shape1.moveTo(-1, -1);
-        shape1.lineTo(0.9, -1);
-        shape1.lineTo(-1, 0.9);
-        shape1.closePath();
-
-        const shape2 = new THREE.Shape();
-        shape2.moveTo(1, 1);
-        shape2.lineTo(-0.9, 1);
-        shape2.lineTo(1, -0.9);
-        shape2.closePath();
-
-        const geo1 = new THREE.ExtrudeGeometry(shape1, extrudeSettings);
-        const geo2 = new THREE.ExtrudeGeometry(shape2, extrudeSettings);
-
-        // Aplicamos el array de materiales a los meshes
-        const mesh1 = new THREE.Mesh(geo1, materialesArray);
-        const mesh2 = new THREE.Mesh(geo2, materialesArray);
-
-        group.add(mesh1);
-        group.add(mesh2);
-        scene.add(group);
-
-        // --- 5. ILUMINACIÓN ---
-        const ambientLight = new THREE.AmbientLight(0xffffff, 2); // Bajé un poco la intensidad para no "lavar" la textura
-        scene.add(ambientLight);
-
-        const pointLight = new THREE.PointLight(0xC5A059, 15);
-        pointLight.position.set(1, -5, 5);
-        scene.add(pointLight);
-
-        const directLight = new THREE.DirectionalLight(0xffffff, 2);
-        directLight.position.set(-5, 5, 5);
-        scene.add(directLight);
-
-        // --- 6. CONTROLES ---
-        const controls = new OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true;
-        controls.autoRotate = true;
-        controls.autoRotateSpeed = 4; // Bajé la velocidad para apreciar mejor la textura
-
-        // --- 7. ANIMACIÓN ---
-        function animate() {
-            requestAnimationFrame(animate);
-            controls.update();
-            renderer.render(scene, camera);
-        }
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
+            const renderer = new THREE.WebGLRenderer({ antialias: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
-        });
+            renderer.setPixelRatio(window.devicePixelRatio);
+            document.body.appendChild(renderer.domElement);
 
-        animate();
-</script>
+            // --- 2. CARGA DE TEXTURA ---
+            const loader = new THREE.TextureLoader();
+            loader.crossOrigin = "anonymous"; 
+            const urlTextura = 'https://raw.githubusercontent.com/arielhcontini/imagenes-para-hydra/refs/heads/main/texture_1.webp'; 
+            const miTextura = loader.load(urlTextura);
+            miTextura.wrapS = miTextura.wrapT = THREE.RepeatWrapping;
 
+            // --- 3. CONFIGURACIÓN DE MATERIALES ---
+            const materialFrente = new THREE.MeshStandardMaterial({ 
+                map: miTextura,
+                transparent: true,
+                roughness: 0.3, 
+                metalness: 0.888 
+            });
 
+            const materialBorde = new THREE.MeshStandardMaterial({ 
+                color: 0xF4F1FF, 
+                roughness: 0.1, 
+                metalness: 1 
+            });
 
+            const materialesArray = [materialFrente, materialBorde];
 
-<!--     <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            // --- 4. CREACIÓN DEL ISOLOGOTIPO ---
+            const group = new THREE.Group();
+            
+            const extrudeSettings = {
+                steps: 1,
+                depth: 0.1,
+                bevelEnabled: true,
+                bevelThickness: 0.05,
+                bevelSize: 0.01,
+                bevelSegments: 3
+            };
+
+            const shape1 = new THREE.Shape();
+            shape1.moveTo(-1, -1);
+            shape1.lineTo(0.9, -1);
+            shape1.lineTo(-1, 0.9);
+            shape1.closePath();
+
+            const shape2 = new THREE.Shape();
+            shape2.moveTo(1, 1);
+            shape2.lineTo(-0.9, 1);
+            shape2.lineTo(1, -0.9);
+            shape2.closePath();
+
+            const geo1 = new THREE.ExtrudeGeometry(shape1, extrudeSettings);
+            const geo2 = new THREE.ExtrudeGeometry(shape2, extrudeSettings);
+
+            const mesh1 = new THREE.Mesh(geo1, materialesArray);
+            const mesh2 = new THREE.Mesh(geo2, materialesArray);
+
+            group.add(mesh1);
+            group.add(mesh2);
+            scene.add(group);
+
+            // --- 5. ILUMINACIÓN ---
+            const ambientLight = new THREE.AmbientLight(0xffffff, 2);
+            scene.add(ambientLight);
+
+            const pointLight = new THREE.PointLight(0xC5A059, 15);
+            pointLight.position.set(1, -5, 5);
+            scene.add(pointLight);
+
+            const directLight = new THREE.DirectionalLight(0xffffff, 2);
+            directLight.position.set(-5, 5, 5);
+            scene.add(directLight);
+
+            // --- 6. CONTROLES ---
+            const controls = new OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.autoRotate = true;
+            controls.autoRotateSpeed = 4;
+
+            // --- 7. ANIMACIÓN 3D LOOP ---
+            function animate() {
+                requestAnimationFrame(animate);
+                controls.update();
+                renderer.render(scene, camera);
             }
-        }
-    </script> -->
 
- <!--    <script type="module">
-        import * as THREE from 'three';
-        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
 
-        // --- 1. CONFIGURACIÓN BÁSICA ---
-        const scene = new THREE.Scene();
-        // Fondo degradado similar a tu captura
-        scene.background = new THREE.Color(0x7c6b8a); 
+            animate();
 
-        const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 5;
+            // --- 8. SECUENCIA DE ENTRADA GSAP CINEMÁTICA ---
+            const tl = gsap.timeline();
 
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(window.devicePixelRatio);
-        document.body.appendChild(renderer.domElement);
+            // 1. Revelamos el canvas gradualmente (autoAlpha maneja visibility y opacity)
+            tl.to("canvas", { 
+                duration: 2, 
+                autoAlpha: 1, 
+                ease: "power2.inOut" 
+            }, 0)
+            // 2. Al MISMO TIEMPO, acercamos la cámara 3D desde z:12 hasta z:5
+            .to(camera.position, { 
+                duration: 3, 
+                z: 5, 
+                ease: "power3.out" 
+            }, 0)
+            // 3. Cuando el monolito ya está presente, emerge el botón UI desde abajo
+            .fromTo("#ui", 
+                { autoAlpha: 0, y: 30 },
+                { duration: 1.5, autoAlpha: 1, y: 0, ease: "power3.out" },
+                "-=1.5" // Arranca 1.5 segundos antes de que termine el movimiento de la cámara
+            );
 
-        // --- 2. CREACIÓN DEL ISOLOGOTIPO ---
-        const group = new THREE.Group(); // Grupo para contener ambas partes del logo
-        
-        const extrudeSettings = {
-            steps: 1,
-            depth: 0.01, // Grosor del logo
-            bevelEnabled: true,
-            bevelThickness: 0.05,
-            bevelSize: 0.01,
-            bevelSegments: 3
-        };
+        </script>
+    </main>
 
-        // Material con acabado metálico/mate sutil
-        const material = new THREE.MeshStandardMaterial({ 
-            color: 0xF4F1FF, 
-            roughness: 0.333, 
-            metalness: 1 
-        });
-
-        // Parte Inferior Izquierda (Triángulo)
-        const shape1 = new THREE.Shape();
-        shape1.moveTo(-1, -1);
-        shape1.lineTo(0.9, -1);
-        shape1.lineTo(-1, 0.9);
-        shape1.closePath();
-
-        // Parte Superior Derecha (Triángulo)
-        const shape2 = new THREE.Shape();
-        shape2.moveTo(1, 1);
-        shape2.lineTo(-0.9, 1);
-        shape2.lineTo(1, -0.9);
-        shape2.closePath();
-
-        const geo1 = new THREE.ExtrudeGeometry(shape1, extrudeSettings);
-        const geo2 = new THREE.ExtrudeGeometry(shape2, extrudeSettings);
-
-        const mesh1 = new THREE.Mesh(geo1, material);
-        const mesh2 = new THREE.Mesh(geo2, material);
-
-        group.add(mesh1);
-        group.add(mesh2);
-        scene.add(group);
-
-        // --- 3. ILUMINACIÓN ---
-        const ambientLight = new THREE.AmbientLight(0xffffff, 9);
-        scene.add(ambientLight);
-
-        const pointLight = new THREE.PointLight(0xC5A059, 10); // Luz púrpura para atmósfera
-        pointLight.position.set(1, -5, 5);
-        scene.add(pointLight);
-
-        const directLight = new THREE.DirectionalLight(0xffffff, 1);
-        directLight.position.set(-5, 5, 5);
-        scene.add(directLight);
-
-        // --- 4. CONTROLES ---
-        const controls = new OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true; // Rotación suave
-        controls.autoRotate = true;    // El logo gira solo hasta que el usuario lo toca
-        controls.autoRotateSpeed = 8;
-
-        // --- 5. ANIMACIÓN ---
-        function animate() {
-            requestAnimationFrame(animate);
-            controls.update(); // Necesario para el damping y autoRotate
-            renderer.render(scene, camera);
-        }
-
-        // Ajuste de ventana dinámico
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        animate();
-    </script> -->
-
-</main>
-
-
-
-
-
-    <!-- service worker -->
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
@@ -365,10 +233,5 @@
             });
         }
     </script>
-
-
-
-
 </body>
-
 </html>
