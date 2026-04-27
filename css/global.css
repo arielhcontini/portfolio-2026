@@ -13,17 +13,12 @@ html {
     height: auto;
 }
 
-
-/* BLINDAJE ANTI FOUC */
 /* BLINDAJE ANTI-PARPADEO (GSAP FOUC FIX) */
-/* Los elementos del Hero nacen invisibles. GSAP los revelará. */
-.hero__image,
-.hero__title,
-.hero__description,
-.hero__social a {
+.hero__image, .hero__title, .hero__description, .hero__social a,
+.section-title, .skill-card, .experience-card, .project-card, 
+.about__image-wrapper, .about__text p {
     visibility: hidden;
 }
-
 
 /* PORTADA */
 
