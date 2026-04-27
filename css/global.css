@@ -31,7 +31,6 @@ z-index: 9999;
 .cover__container{
 width: 100%;
 height: auto;
-transition: 1s ease;
 opacity: 1;
 }
 
@@ -43,7 +42,6 @@ opacity: 1;
     border-radius: var(--radius);
     z-index: 10000;
     opacity: 1;
-    transition: 2s ease;
 }
 
 @media (min-width:1024px){
@@ -64,7 +62,6 @@ z-index: 9999;
 position: relative;
 width: 100%;
 height: auto;
-transition: 2s ease;
 opacity: .666;
 
 }
@@ -73,7 +70,6 @@ opacity: .666;
 position: relative;
 width: 100%;
 height: auto;
-transition: 2s ease;
 opacity: .999;
 }
 
@@ -229,7 +225,6 @@ width: 100%;
   height: 3px;
   background-color: light-dark(var(--text-obsidian), var(--text-alabastro)); /* El color de tu icono */
   border-radius: var(--radius);
-  transition: all 0.3s ease-in-out; /* Esto hace que la animación sea suave */
   transform-origin: left center; /* Punto de anclaje para la rotación */
 }
 
@@ -244,7 +239,6 @@ width: 100%;
     /* EL TRUCO DE ANIMACIÓN CON GRID */
     display: grid;
     grid-template-rows: 0fr; /* Altura 0 */
-    transition: grid-template-rows 0.9s ease-in-out; /* Velocidad y suavidad de la animación */
     background-color: transparent;
 }
 
@@ -418,7 +412,6 @@ display: none;
         display: block;
         width: 120px;
         height: auto;
-        transition: 0.5s ease-in;
         z-index: 10000;
     }
 
@@ -427,10 +420,6 @@ display: none;
         width: 100%;
         height: auto;
         padding: var(--spacing-4);    
-    }
-
-        .header__nav .nav__link:hover {
-        transition: 0.5s ease-in;
     }
 
 }
@@ -511,7 +500,6 @@ font-weight: 400;
     height: 80px;
     border-radius: var(--radius);
     background-color: var(--gradient-100);
-    transition: all 0.9s ease;
    color: light-dark(var(--text-obsidian), var(--text-alabastro));
     padding-top:var(--spacing-80);
     margin: 0 auto;
@@ -520,13 +508,8 @@ font-weight: 400;
 .social__link :hover{
     background-color: var(--primary-black);
     color: var(--primary-white);
-    transition:all 0.5s ease;
     padding: var(--spacing-8);
    border-radius: var(--radius);
-}
-
-.social__link:hover img{
-    transition:all 0.5s ease;
 }
 
 .social__link img{
@@ -594,13 +577,11 @@ font-weight: 400;
 }
 
     .hero__social a{
-        opacity: .888;
-       transition: 0.5s ease-in;
+        opacity: 1;
     }
  
     .hero__social a:hover{
-        opacity: .999;
-        transition: 0.5s ease-in;
+        opacity: 1;
     }
     
     .social__link{
@@ -629,7 +610,6 @@ font-weight: 400;
     background-color: light-dark(var(--bg-alabastro), var(--bg-obsidian));
     border: 1px solid light-dark(var(--edge-obsidian), var(--edge-gold));
 
-    transition: transform 0.15s ease;
 
     cursor: pointer;
     text-align: center;
@@ -832,7 +812,6 @@ font-weight: 400;
     padding: var(--spacing-32) var(--spacing-24);
     border: 1px solid light-dark(var(--edge-obsidian), var(--edge-gold));
     border-radius: var(--radius);
-    transition: background-color 0.3s ease;
     align-items: center;
 
     display: grid;
@@ -842,14 +821,12 @@ font-weight: 400;
     grid-template-areas: 'logo role' 'date date' 'description description';
 
     background-color: light-dark(var(--bg-alabastro), var(--bg-obsidian));
-    transition: 3s ease;
 }
 
 
 
 .experience-card:hover{
     background: var(--gradient);
-    transition: 3s ease;
 }
 
 
@@ -1026,7 +1003,6 @@ border: 1px solid light-dark(var(--edge-obsidian), var(--edge-gold));
   font-family: inherit;
   font-size: 16px;
   outline: none;
-  transition: box-shadow 0.2s, border-color 0.2s;
 }
 
 .contact__input:focus,
@@ -1066,7 +1042,6 @@ border: 1px solid light-dark(var(--edge-obsidian), var(--edge-gold));
   font-weight: 600;
   font-size: 1.125rem;
   cursor: pointer;
-  transition: opacity 0.2s;
 }
 
 .contact__button:hover {
@@ -1107,7 +1082,6 @@ border: 1px solid light-dark(var(--edge-obsidian), var(--edge-gold));
     font-family: "Roboto Mono", monospace;
     font-size: 1rem;
     margin: var(--spacing-8) auto;
-    transition: .5s ease;
    border: 1px solid light-dark(var(--edge-obsidian), var(--edge-gold));
     padding: var(--spacing-8);
     border-radius: var(--radius);
@@ -1185,7 +1159,6 @@ font-weight: 600;
 .contact__details a{
     font-size: 1rem;
     margin: var(--spacing-8) auto;
-    transition: .5s ease;
     padding: var(--spacing-8);
     border-radius: var(--radius);
 }
@@ -1193,7 +1166,6 @@ font-weight: 600;
 .contact__details a:hover{
     opacity: .90;
     margin: var(--spacing-8) auto;
-    transition: .5s ease;
 }
 
 }
