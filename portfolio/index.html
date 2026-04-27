@@ -406,29 +406,27 @@
 // Registramos el plugin
 gsap.registerPlugin(ScrollTrigger);
 
-// 1. ANIMACIÓN DEL HERO (Aparición garantizada)
+// 1. ANIMACIÓN DEL HERO (Aparición sin destellos)
 const tlHero = gsap.timeline();
 
-// Usamos fromTo: { estado inicial }, { estado final }
+// Usamos autoAlpha en lugar de opacity
 tlHero.fromTo(".hero__image", 
-    { opacity: 0, x: -30 }, 
-    { duration: 1.2, opacity: 1, x: 0, ease: "power3.out" }
+    { autoAlpha: 0, x: -30 }, 
+    { duration: 1.2, autoAlpha: 1, x: 0, ease: "power3.out" }
 )
 .fromTo(".hero__title", 
-    { opacity: 0, y: 30 }, 
-    { duration: 1, opacity: 1, y: 0, ease: "power3.out" }, 
+    { autoAlpha: 0, y: 30 }, 
+    { duration: 1, autoAlpha: 1, y: 0, ease: "power3.out" }, 
     "-=0.8"
 )
 .fromTo(".hero__description", 
-    { opacity: 0, y: 20 }, 
-    { duration: 1, opacity: 1, y: 0, ease: "power3.out" }, 
+    { autoAlpha: 0, y: 20 }, 
+    { duration: 1, autoAlpha: 1, y: 0, ease: "power3.out" }, 
     "-=0.6"
 )
 .fromTo(".hero__social a", 
-    { opacity: 0, y: 15 }, 
-    // Forzamos la opacidad final a 1 para que aparezcan completos. 
-    // Luego el CSS manejará el hover.
-    { duration: 0.8, opacity: 1, y: 0, stagger: 0.15, ease: "power2.out" }, 
+    { autoAlpha: 0, y: 15 }, 
+    { duration: 0.8, autoAlpha: 1, y: 0, stagger: 0.15, ease: "power2.out" }, 
     "-=0.5"
 );
 
