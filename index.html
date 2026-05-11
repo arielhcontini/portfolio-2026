@@ -71,7 +71,7 @@
 
         // --- 2. GEOMETRÍA: TETRAEDRO (TRIÁNGULO 3D) ---
         // Radio 4.5 (más pequeño), Detalle 5 (para permitir deformación)
-        let geometry = new THREE.TetrahedronGeometry(1.5, 3);
+        let geometry = new THREE.TetrahedronGeometry(1.5, 128);
         geometry = geometry.toNonIndexed(); 
 
         // Material blanco puro, sin texturas ni colores
@@ -79,7 +79,7 @@
             color: 0x331199,       
             flatShading: true,     
             roughness: 1.999,        
-            metalness: 0.999
+            metalness: 1.333
         });
 
         const tetraMesh = new THREE.Mesh(geometry, material);
@@ -90,13 +90,13 @@
         const count = posAttribute.count;
 
         // --- 3. LUZ AMARILLA MUY PÁLIDA (CASI BLANCA) ---
-        const lightColor = 0xfffae9; // Amarillo/Blanco cálido
+        const lightColor = 0xfffae1; // Amarillo/Blanco cálido
         
         const pointLight = new THREE.PointLight(lightColor, 900, 1000);
         scene.add(pointLight);
 
         // Luz ambiental gris muy oscura para que los lados no iluminados mantengan volumen
-        scene.add(new THREE.AmbientLight(0x99aeff, 1.15));
+        scene.add(new THREE.AmbientLight(0x99aeff, 1.95));
 
         // --- 4. INTERACCIÓN ---
         const raycaster = new THREE.Raycaster();
@@ -104,7 +104,7 @@
         const pointerCoords = new THREE.Vector2(-1000, -1000);
         const interaction3D = new THREE.Vector3();
         
-        const lightTarget = new THREE.Vector3(0, 0, 8); 
+        const lightTarget = new THREE.Vector3(0, 0, 16); 
 
         function setPointer(clientX, clientY) {
             pointerCoords.x = (clientX / window.innerWidth) * 2 - 1;
@@ -128,7 +128,7 @@
             if (raycaster.ray.intersectPlane(mathPlane, interaction3D)) {
                 lightTarget.lerp(interaction3D, 0.1);
             } else {
-                lightTarget.lerp(new THREE.Vector3(0, 0, 8), 0.9);
+                lightTarget.lerp(new THREE.Vector3(0, 0, 8), 0.999);
             }
             
             pointLight.position.copy(lightTarget);
@@ -140,7 +140,7 @@
                 const oz = originalPos[i * 3 + 2];
 
                 const distToCenter = Math.sqrt(ox*ox + oy*oy + oz*oz);
-                const wave = Math.sin(time * 3 + oy * 0.999) * 0.15;
+                const wave = Math.sin(time * 3 + oy * 9.999) * 9.99;
 
                 const dx = ox - lightTarget.x;
                 const dy = oy - lightTarget.y;
@@ -160,9 +160,9 @@
             geometry.computeVertexNormals();
 
             // Rotación adaptada a la forma piramidal
-            tetraMesh.rotation.y = time * 2.15;
-            tetraMesh.rotation.x = time * 1.111;
-            tetraMesh.rotation.z = Math.sin(time * 0.05) * 1.333;
+            tetraMesh.rotation.y = time * 1.155;
+            tetraMesh.rotation.x = time * 1.155;
+            tetraMesh.rotation.z = Math.sin(time * 0.05) * 1.999;
 
             renderer.render(scene, camera);
         }
