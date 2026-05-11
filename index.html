@@ -9,7 +9,7 @@
         html, body {
             margin: 0; padding: 0; width: 100%; height: 100%;
             /* Un negro puro y profundo para máximo contraste */
-            background-color: #050505; 
+            background-color: #663399; 
             overflow: hidden; font-family: monospace;
             -webkit-touch-callout: none; user-select: none;
         }
@@ -104,7 +104,7 @@
         const pointerCoords = new THREE.Vector2(-1000, -1000);
         const interaction3D = new THREE.Vector3();
         
-        const lightTarget = new THREE.Vector3(0, 0, 16); 
+        const lightTarget = new THREE.Vector3(0, 0, 8); 
 
         function setPointer(clientX, clientY) {
             pointerCoords.x = (clientX / window.innerWidth) * 2 - 1;
@@ -128,7 +128,7 @@
             if (raycaster.ray.intersectPlane(mathPlane, interaction3D)) {
                 lightTarget.lerp(interaction3D, 0.1);
             } else {
-                lightTarget.lerp(new THREE.Vector3(0, 0, 8), 0.999);
+                lightTarget.lerp(new THREE.Vector3(0, 0, 8), 0.1);
             }
             
             pointLight.position.copy(lightTarget);
@@ -140,7 +140,7 @@
                 const oz = originalPos[i * 3 + 2];
 
                 const distToCenter = Math.sqrt(ox*ox + oy*oy + oz*oz);
-                const wave = Math.sin(time * 3 + oy * 9.999) * 9.99;
+                const wave = Math.sin(time * 3 + oy * 9.999) * .99;
 
                 const dx = ox - lightTarget.x;
                 const dy = oy - lightTarget.y;
