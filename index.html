@@ -71,15 +71,15 @@
 
         // --- 2. GEOMETRÍA: TETRAEDRO (TRIÁNGULO 3D) ---
         // Radio 4.5 (más pequeño), Detalle 5 (para permitir deformación)
-        let geometry = new THREE.TetrahedronGeometry(4.5, 5);
+        let geometry = new THREE.TetrahedronGeometry(4.5, 90);
         geometry = geometry.toNonIndexed(); 
 
         // Material blanco puro, sin texturas ni colores
         const material = new THREE.MeshStandardMaterial({
             color: 0xffffff,       
             flatShading: true,     
-            roughness: 0.8,        
-            metalness: 0.1
+            roughness: 1.0,        
+            metalness: 1.15
         });
 
         const tetraMesh = new THREE.Mesh(geometry, material);
@@ -92,11 +92,11 @@
         // --- 3. LUZ AMARILLA MUY PÁLIDA (CASI BLANCA) ---
         const lightColor = 0xfffae6; // Amarillo/Blanco cálido
         
-        const pointLight = new THREE.PointLight(lightColor, 600, 30);
+        const pointLight = new THREE.PointLight(lightColor, 100, 90);
         scene.add(pointLight);
 
         // Luz ambiental gris muy oscura para que los lados no iluminados mantengan volumen
-        scene.add(new THREE.AmbientLight(0xffffff, 0.15));
+        scene.add(new THREE.AmbientLight(0xffffff, 1.95));
 
         // --- 4. INTERACCIÓN ---
         const raycaster = new THREE.Raycaster();
@@ -148,7 +148,7 @@
                 const distToTargetSq = dx*dx + dy*dy + dz*dz;
 
                 // Ajustamos el radio de influencia (15) y la fuerza (2) por ser más pequeño
-                const pullStrength = Math.exp(-distToTargetSq / 15) * 2.0; 
+                const pullStrength = Math.exp(-distToTargetSq / 15) * 5.0; 
 
                 const newRadius = distToCenter + wave + pullStrength;
                 const scale = newRadius / distToCenter;
