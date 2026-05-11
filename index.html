@@ -57,10 +57,10 @@
 
         // --- 1. ESCENA ULTRA MINIMALISTA ---
         const scene = new THREE.Scene();
-        scene.fog = new THREE.Fog(0x050505, 20, 60);
+        scene.fog = new THREE.Fog(0x151111, 20, 60);
 
         const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.set(0, 0, 30); 
+        camera.position.set(0, 0, 40); 
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -71,15 +71,15 @@
 
         // --- 2. GEOMETRÍA: TETRAEDRO (TRIÁNGULO 3D) ---
         // Radio 4.5 (más pequeño), Detalle 5 (para permitir deformación)
-        let geometry = new THREE.TetrahedronGeometry(4.5, 90);
+        let geometry = new THREE.TetrahedronGeometry(1.5, 3);
         geometry = geometry.toNonIndexed(); 
 
         // Material blanco puro, sin texturas ni colores
         const material = new THREE.MeshStandardMaterial({
-            color: 0xffffff,       
+            color: 0x335599,       
             flatShading: true,     
-            roughness: 1.0,        
-            metalness: 1.15
+            roughness: 1.999,        
+            metalness: 0.666
         });
 
         const tetraMesh = new THREE.Mesh(geometry, material);
@@ -90,13 +90,13 @@
         const count = posAttribute.count;
 
         // --- 3. LUZ AMARILLA MUY PÁLIDA (CASI BLANCA) ---
-        const lightColor = 0xfffae6; // Amarillo/Blanco cálido
+        const lightColor = 0xfffae9; // Amarillo/Blanco cálido
         
-        const pointLight = new THREE.PointLight(lightColor, 100, 90);
+        const pointLight = new THREE.PointLight(lightColor, 900, 1000);
         scene.add(pointLight);
 
         // Luz ambiental gris muy oscura para que los lados no iluminados mantengan volumen
-        scene.add(new THREE.AmbientLight(0xffffff, 1.95));
+        scene.add(new THREE.AmbientLight(0x99aeff, 1.15));
 
         // --- 4. INTERACCIÓN ---
         const raycaster = new THREE.Raycaster();
@@ -128,7 +128,7 @@
             if (raycaster.ray.intersectPlane(mathPlane, interaction3D)) {
                 lightTarget.lerp(interaction3D, 0.1);
             } else {
-                lightTarget.lerp(new THREE.Vector3(0, 0, 8), 0.05);
+                lightTarget.lerp(new THREE.Vector3(0, 0, 8), 0.5);
             }
             
             pointLight.position.copy(lightTarget);
@@ -148,7 +148,7 @@
                 const distToTargetSq = dx*dx + dy*dy + dz*dz;
 
                 // Ajustamos el radio de influencia (15) y la fuerza (2) por ser más pequeño
-                const pullStrength = Math.exp(-distToTargetSq / 15) * 5.0; 
+                const pullStrength = Math.exp(-distToTargetSq / 95) * 6.0; 
 
                 const newRadius = distToCenter + wave + pullStrength;
                 const scale = newRadius / distToCenter;
@@ -160,9 +160,9 @@
             geometry.computeVertexNormals();
 
             // Rotación adaptada a la forma piramidal
-            tetraMesh.rotation.y = time * 0.15;
+            tetraMesh.rotation.y = time * 2.15;
             tetraMesh.rotation.x = time * 0.1;
-            tetraMesh.rotation.z = Math.sin(time * 0.05) * 0.2;
+            tetraMesh.rotation.z = Math.sin(time * 0.05) * 1.9;
 
             renderer.render(scene, camera);
         }
