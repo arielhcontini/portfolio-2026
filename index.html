@@ -81,7 +81,7 @@
             color: 0x331199,       
             flatShading: true,     
             roughness: 1.0,        
-            metalness: 1.333
+            metalness: 1.111
         });
 
         const tetraMesh = new THREE.Mesh(geometry, material);
@@ -124,7 +124,7 @@
         // --- 5. BUCLE DE ANIMACIÓN ---
         function animate() {
             requestAnimationFrame(animate);
-            const time = performance.now() * 0.00001;
+            const time = performance.now() * 0.0001;
 
             raycaster.setFromCamera(pointerCoords, camera);
             if (raycaster.ray.intersectPlane(mathPlane, interaction3D)) {
@@ -142,7 +142,7 @@
                 const oz = originalPos[i * 3 + 2];
 
                 const distToCenter = Math.sqrt(ox*ox + oy*oy + oz*oz);
-                const wave = Math.sin(time * 3 + oy * 9.999) * 9.99;
+                const wave = Math.sin(time * 3 + oy * 3.999) * 9.99;
 
                 const dx = ox - lightTarget.x;
                 const dy = oy - lightTarget.y;
