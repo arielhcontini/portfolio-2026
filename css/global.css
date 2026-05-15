@@ -1,14 +1,17 @@
 body {
   background-color: light-dark(var(--bg-alabastro-gold), var(--bg-obsidian));
+  cursor: crosshair;
+  color: light-dark(var(--text-obsidian), var(--text-alabastro));
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 html {
   scroll-behavior: smooth;
 }
 
 .texture-bg{
-    background-image: url(../assets/bg-layer.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 100%;
     height: auto;
 }
@@ -150,6 +153,7 @@ h1{
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
+  font-size: var(--H1);
 }
 
 
@@ -158,6 +162,8 @@ h2{
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
+  font-size: var(--H2);
+  letter-spacing: .333rem;
 }
 
 
@@ -177,21 +183,21 @@ strong{
 .section-container{
     max-width: var(--max-width);
     margin: var(--spacing-40) auto;
-    padding: var(--spacing-96) var(--spacing-16);
+    padding: var(--spacing-96) var(--spacing-24);
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-48);
     border-radius: var(--radius);
-    background: var(--gradient-dark);
+     background: linear-gradient(180deg, var(--bg-obsidian), var(--edge-gold));
 }
 
 .outline{
-    background: var(--primary-gold);
+    background: linear-gradient(180deg, var(--bg-alabastro), var(--purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-weight: 700;
+    font-weight: 800;
     font-size: clamp(1,75rem,5vw,2.5rem);
 }
 
@@ -211,7 +217,6 @@ strong{
     top:0;
     border-bottom: 1px solid var(--edge-gold);
     background-color: light-dark(var(--bg-alabastro),var(--bg-obsidian));
-    backdrop-filter: blur(66px);
 } 
 
 .header__toggle{
@@ -442,7 +447,7 @@ display: none;
     gap: var(--spacing-8);
     border-bottom: 1px solid light-dark(var(--edge-obsidian), var(--edge-gold));
     background-color: light-dark(var(--bg-alabastro), var(--bg-obsidian));
-    padding: var(--spacing-64) var(--spacing-16);
+    padding: var(--spacing-64) var(--spacing-32);
 }
 
 .hero__content{
@@ -454,7 +459,7 @@ display: none;
 }
 
 .hero__title{
-font-size: clamp(1.5rem, 4vw, 2.5rem);
+font-size: clamp(1.6rem, 8vw, 3.2rem);
 font-weight: 400;
  color: light-dark(var(--text-obsidian), var(--text-alabastro));
 }

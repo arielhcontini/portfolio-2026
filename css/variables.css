@@ -53,6 +53,16 @@
     --spacing-96:96px;
 
 
+    --H1: clamp(1.75rem, 5vw, 2.5rem);
+    --H2: clamp(1.5rem, 4vw, 2rem);
+    --H3: clamp(1.25rem, 3vw, 1.75rem);
+    --H4: clamp(1rem, 2vw, 1.5rem);
+    --H5: clamp(0.875rem, 1.5vw, 1.25rem);
+    --H6: clamp(0.75rem, 1vw, 1rem);    
+    
+    --p: clamp(0.875rem, 1.5vw, 1.25rem);
+
+
     /* MAX WIDTH */
 
     --max-width:1024px;

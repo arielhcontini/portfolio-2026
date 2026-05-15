@@ -53,14 +53,15 @@
         html, body {
             margin: 0; padding: 0; width: 100%; height: 100%;
             /* Un negro puro y profundo para máximo contraste */
-            background-color: #663399; 
+            background-color: #030303; 
             overflow: hidden; font-family: monospace;
             -webkit-touch-callout: none; user-select: none;
+            cursor: url('./assets/favicon.ico'), auto;
         }
         
         canvas { 
             display: block; position: fixed; top: 0; left: 0; 
-            width: 100%; height: 100%; opacity: 0; transition: opacity 1.5s ease;
+            width: 100%; height: auto; opacity: 0; transition: opacity 1.5s ease;
         }
         
         #ui {
@@ -70,10 +71,11 @@
         }
 
         .cta {
-            color: #ffffff66; letter-spacing: 5px; font-size: 11px; text-decoration: none;
-            pointer-events: auto; transition: 0.6s ease; padding: 15px 25px; display: inline-block;
+            color: #f4f1ee28; letter-spacing: 3px; font-size: 12px; text-decoration: none;
+            pointer-events: auto; transition: 0.666s ease; padding: 15px 25px; display: inline-block;
             border: 1px solid transparent;
-            background-color: #120B1A;
+            background-color: #120b1a00;
+            backdrop-filter: blur(40px);
         }
         
         .cta:hover { 
@@ -87,7 +89,7 @@
 
 <body>
     <div id="ui">
-        <a href="#" class="cta">>discover</a>
+        <a href="./portfolio" class="cta"> >PORTFOLIO_</a>
     </div>
 
     <script type="importmap">
@@ -103,10 +105,10 @@
 
         // --- 1. ESCENA ULTRA MINIMALISTA ---
         const scene = new THREE.Scene();
-        scene.fog = new THREE.Fog(0x151144, 10, 10);
+        scene.fog = new THREE.Fog(0x771166, 10, 0.1);
 
-        const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 10);
-        camera.position.set(0, 0, 5); 
+        const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.666, 10);
+        camera.position.set(0, 0, 3.5); 
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -117,7 +119,7 @@
 
         // --- 2. GEOMETRÍA: TETRAEDRO (TRIÁNGULO 3D) ---
         // Radio 4.5 (más pequeño), Detalle 5 (para permitir deformación)
-        let geometry = new THREE.TetrahedronGeometry(8.5, 16);
+        let geometry = new THREE.TetrahedronGeometry(6.5, 16);
         geometry = geometry.toNonIndexed(); 
 
         // Material blanco puro, sin texturas ni colores
@@ -138,7 +140,7 @@
         // --- 3. LUZ AMARILLA MUY PÁLIDA (CASI BLANCA) ---
         const lightColor = 0xfffae1; // Amarillo/Blanco cálido
         
-        const pointLight = new THREE.PointLight(lightColor, 666, 1000);
+        const pointLight = new THREE.PointLight(lightColor, 333, 100);
         scene.add(pointLight);
 
         // Luz ambiental gris muy oscura para que los lados no iluminados mantengan volumen
@@ -168,13 +170,13 @@
         // --- 5. BUCLE DE ANIMACIÓN ---
         function animate() {
             requestAnimationFrame(animate);
-            const time = performance.now() * 0.0001;
+            const time = performance.now() * 0.000007;
 
             raycaster.setFromCamera(pointerCoords, camera);
             if (raycaster.ray.intersectPlane(mathPlane, interaction3D)) {
                 lightTarget.lerp(interaction3D, 0.1);
             } else {
-                lightTarget.lerp(new THREE.Vector3(0, 0, 10), 6.66);
+                lightTarget.lerp(new THREE.Vector3(0, 0, 1), 3.66);
             }
             
             pointLight.position.copy(lightTarget);
