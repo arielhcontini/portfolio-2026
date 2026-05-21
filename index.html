@@ -314,26 +314,25 @@
         });
     </script>
 
-    <script type="module">
+<script type="module">
         import * as THREE from 'three';
 
         const scene = new THREE.Scene();
-        scene.fog = new THREE.Fog(0x221166, 10, 0.1);
+        scene.fog = new THREE.Fog(0x771166, 10, 0.1);
 
-        const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.333, 10);
-        camera.position.set(0, 0, 5.5); 
+        const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.666, 10);
+        camera.position.set(0, 0, 3.5); 
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         
-        // Asignamos ID para CSS
         renderer.domElement.id = 'bg-three';
         document.body.appendChild(renderer.domElement);
 
         setTimeout(() => renderer.domElement.style.opacity = "1", 100);
 
-        let geometry = new THREE.TetrahedronGeometry(1.5, 8);
+        let geometry = new THREE.TetrahedronGeometry(9.5, 64);
         geometry = geometry.toNonIndexed(); 
 
         const material = new THREE.MeshStandardMaterial({
@@ -351,15 +350,20 @@
         const count = posAttribute.count;
 
         const lightColor = 0xfffae1; 
-        const pointLight = new THREE.PointLight(lightColor, 333, 100);
+        
+        // Bajamos un poco la intensidad inicial para que el toque resalte más
+        const pointLight = new THREE.PointLight(lightColor, 150, 100); 
         scene.add(pointLight);
-        scene.add(new THREE.AmbientLight(0x99aeff, 8.95));
+        scene.add(new THREE.AmbientLight(0x99aeff, 12.95));
 
         const raycaster = new THREE.Raycaster();
         const mathPlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), -1); 
         const pointerCoords = new THREE.Vector2(-1000, -1000);
         const interaction3D = new THREE.Vector3();
-        const lightTarget = new THREE.Vector3(0, 0, 8); 
+        const lightTarget = new THREE.Vector3(0, 0, 1); 
+
+        // NUEVA VARIABLE: Controla la "fuerza" del toque (de 0 a 1)
+        let effectStrength = 0; 
 
         function setPointer(clientX, clientY) {
             pointerCoords.x = (clientX / window.innerWidth) * 2 - 1;
@@ -371,21 +375,39 @@
         window.addEventListener('touchmove', (e) => {
             if(e.touches.length > 0) setPointer(e.touches[0].clientX, e.touches[0].clientY);
         }, { passive: true });
+        
+        // Cuando el mouse sale de la ventana o se levanta el dedo
         window.addEventListener('touchend', () => pointerCoords.set(-1000, -1000));
+        document.addEventListener('mouseleave', () => pointerCoords.set(-1000, -1000));
 
         function animate() {
             requestAnimationFrame(animate);
-            const time = performance.now() * 0.00007;
+            const time = performance.now() * 0.000007;
+
+            // Determinamos si el usuario está interactuando (si las coordenadas no son -1000)
+            const isInteracting = pointerCoords.x !== -1000;
 
             raycaster.setFromCamera(pointerCoords, camera);
-            if (raycaster.ray.intersectPlane(mathPlane, interaction3D)) {
-                lightTarget.lerp(interaction3D, 0.1);
+
+            if (isInteracting) {
+                // FADE IN RÁPIDO pero sutil (0.05 de velocidad)
+                effectStrength += (1.0 - effectStrength) * 0.05; 
+                
+                if (raycaster.ray.intersectPlane(mathPlane, interaction3D)) {
+                    lightTarget.lerp(interaction3D, 0.1); 
+                }
             } else {
-                /* AQUÍ ESTÁ EL CAMBIO CLAVE PARA EVITAR EL PANTALLAZO */
+                // FADE OUT MUY LENTO (0.015 de velocidad) da la sensación de apaciguamiento
+                effectStrength += (0.0 - effectStrength) * 0.015; 
+                
+                // La luz vuelve a su centro lentamente
                 lightTarget.lerp(new THREE.Vector3(0, 0, 1), 0.02); 
             }
             
             pointLight.position.copy(lightTarget);
+            
+            // Animamos la intensidad de la luz: de 150 (reposo) a 350 (tocado)
+            pointLight.intensity = 150 + (200 * effectStrength);
 
             for (let i = 0; i < count; i++) {
                 const ox = originalPos[i * 3];
@@ -393,6 +415,8 @@
                 const oz = originalPos[i * 3 + 2];
 
                 const distToCenter = Math.sqrt(ox*ox + oy*oy + oz*oz);
+                
+                // La ola base natural de la geometría
                 const wave = Math.sin(time * 3 + oy * 1.333) * 9;
 
                 const dx = ox - lightTarget.x;
@@ -400,7 +424,9 @@
                 const dz = oz - lightTarget.z;
                 const distToTargetSq = dx*dx + dy*dy + dz*dz;
 
-                const pullStrength = Math.exp(-distToTargetSq / 2) * 2; 
+                // Calculamos la atracción física, y la MULTIPLICAMOS por nuestro fade
+                // Subí el multiplicador final a 2.5 para compensar la suavidad del fade
+                const pullStrength = (Math.exp(-distToTargetSq / 2) * 2.5) * effectStrength; 
 
                 const newRadius = distToCenter + wave + pullStrength;
                 const scale = newRadius / distToCenter;
@@ -411,6 +437,7 @@
             posAttribute.needsUpdate = true;
             geometry.computeVertexNormals();
 
+            // Rotación constante
             tetraMesh.rotation.y = time * 0.155;
             tetraMesh.rotation.x = time * 0.155;
             tetraMesh.rotation.z = Math.sin(time * 0.05) * 0.999;
