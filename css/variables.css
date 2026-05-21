@@ -26,11 +26,11 @@
     --text-alabastro-opacity: #f4f1eeae;
     
     --purple: #7c6b8a;
-    --basalto: #2d2430a9;
+    --basalto: #2d2430;
     --bg-shadow: #1C1621;
 
     /* gradient background */
-    --gradient-dark: linear-gradient(0deg,rgba(45, 36, 48, .0666) 0%, rgba(18, 11, 26, .01) 50%, rgba(28, 22, 33, .0666) 100%);
+    --gradient-dark: linear-gradient(0deg,rgba(16, 13, 17, 0.413) 0%, rgba(18, 11, 26, 1) 50%, rgba(28, 22, 33, .0666) 100%);
 
     /* Rounded */
     --radius:1px;

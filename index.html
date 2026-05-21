@@ -250,8 +250,9 @@
             <div class="section-container">
                 <div class="contact__info">
                     <h2 class="contact__title section-title" style="max-width: 25ch; margin: 0 auto; line-height: 1.3;">
-                     <strong class="outline"> La comunicación visual</strong> es un activo estratégico.
-                     <br /><br />
+                     <strong class="outline"> La comunicación visual</strong> <br/>
+                    es un activo estratégico.
+                     <br/><br/>
                      El diseño<span class="outline"> es una inversión.</span>
                     </h2>
 <div class="contact__details">
@@ -323,15 +324,15 @@
         // =========================================================
         const CONFIG = {
             // --- 1. COLORES (Usa 0x en lugar de #) ---
-            colorNiebla: 0x331199,        // Color de la profundidad (Magenta oscuro)
-            colorGeometria: 0x663399,     // Color base del objeto (Gris azulado)
+            colorNiebla: 0x771166,        // Color de la profundidad (Magenta oscuro)
+            colorGeometria: 0x668899,     // Color base del objeto (Gris azulado)
             colorLuzToque: 0xfffae1,      // Luz del dedo (Blanco/Amarillo cálido)
             colorLuzAmbiente: 0x99aeff,   // Luz de relleno para sombras (Azul claro)
-            intensidadLuzBase: 100,       // Brillo de la luz cuando no tocas
-            intensidadLuzToque: 400,      // Cuánto brillo SE SUMA al tocar
+            intensidadLuzBase: 150,       // Brillo de la luz cuando no tocas
+            intensidadLuzToque: 200,      // Cuánto brillo SE SUMA al tocar
 
             // --- 2. GEOMETRÍA BASE ---
-            radio: 9.5,                   // Tamaño general de la figura
+            radio: 1.5,                   // Tamaño general de la figura
             detalle: 12,                  // Resolución: a menor número, más poligonal (0 a 128)
             
             // --- 3. MATERIAL (Textura visual) ---
@@ -340,8 +341,8 @@
             flatShading: true,            // true = Se ven las facetas (low-poly), false = Superficie lisa
 
             // --- 4. MOVIMIENTO Y DEFORMACIÓN ---
-            velOlaBase: 10,                // Velocidad de la ondulación en reposo
-            fuerzaOlaBase: 9,             // Qué tan grandes son las "olas" de la figura
+            velOlaBase: 8,                // Velocidad de la ondulación en reposo
+            fuerzaOlaBase: 10,             // Qué tan grandes son las "olas" de la figura
             atraccionDedo: 2.5,           // Cuánto se estira la malla hacia tu toque
             velRotacionX: 0.155,          // Velocidad de giro en el eje X
             velRotacionY: 0.155           // Velocidad de giro en el eje Y
@@ -394,7 +395,7 @@
         const interaction3D = new THREE.Vector3();
         const lightTarget = new THREE.Vector3(0, 0, 1); 
 
-        let effectStrength = 0; 
+        let effectStrength = 1; 
 
         function setPointer(clientX, clientY) {
             pointerCoords.x = (clientX / window.innerWidth) * 2 - 1;
