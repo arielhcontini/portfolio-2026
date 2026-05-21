@@ -139,7 +139,7 @@
                 <h1 class="hero__title"> Ariel Contini<br> <span class="outline"> Diseñador</span></h1> <br>
                
                 <p class="hero__description">
-                    <strong>Convierto el diseño en un motor de&nbsp;ingresos.</strong><br><br>
+                    <strong>Uso el diseño como motor de&nbsp;ingresos.</strong><br><br>
                     Uniendo creatividad y metodología rigurosa, optimizo activos visuales para que vayan más allá de la estética. Aplico la psicología del consumidor para crear experiencias sin fricción que impulsan <strong>conversiones medibles</strong> y un impacto real en tu&nbsp;mercado.        
                 </p>
 
@@ -426,7 +426,7 @@
 
                 // Calculamos la atracción física, y la MULTIPLICAMOS por nuestro fade
                 // Subí el multiplicador final a 2.5 para compensar la suavidad del fade
-                const pullStrength = (Math.exp(-distToTargetSq / 2) * 2.5) * effectStrength; 
+                const pullStrength = (Math.exp(-distToTargetSq / 2) * 0.2) * effectStrength; 
 
                 const newRadius = distToCenter + wave + pullStrength;
                 const scale = newRadius / distToCenter;
@@ -440,7 +440,7 @@
             // Rotación constante
             tetraMesh.rotation.y = time * 0.155;
             tetraMesh.rotation.x = time * 0.155;
-            tetraMesh.rotation.z = Math.sin(time * 0.05) * 0.999;
+            tetraMesh.rotation.z = Math.sin(time * 0.09) * 0.999;
 
             renderer.render(scene, camera);
         }
