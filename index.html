@@ -43,7 +43,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
-    <!-- web app -->
     <link rel="manifest" href="../manifiest.json">
 
     <style>
@@ -146,7 +145,6 @@
 
                 <div class="hero__social">
                     <a href="https://www.linkedin.com/in/arielhcontini/" target="_blank" aria-label="linkedin"> <img src="../assets/in.svg" alt="Linkedin"></a>
-                    <!-- <a href="https://www.behance.net/arielhcontini" target="_blank" aria-label="behance"> <img src="../assets/be.svg" alt="Behance"></a> -->
                     <a href="https://github.com/arielhcontini" aria-label="github" target="_blank"> <img src="../assets/git.svg" alt="Github"></a>
                     <a href="https://platzi.com/p/arielhernancontini/" aria-label="platzi" target="_blank"> <img src="../assets/platzi.svg" alt="Platzi"></a>
                 </div>
@@ -256,10 +254,7 @@
                      <br /><br />
                      El diseño<span class="outline"> es una inversión.</span>
                     </h2>
-<!--                     <p class="contact__description" style="margin-top: 24px;">
-                      Hablemos sobre tu próximo proyecto.
-                    </p> -->
-                    <div class="contact__details">
+<div class="contact__details">
                         <a href="https://calendly.com/arielhcontini/30min" target="_blank" class="calendly"><span> AGENDAR REUNIÓN</span></a>
                         <a href="mailto:arielhcontini@gmail.com" target="_blank" class="contact__email"><span> arielhcontini@gmail.com</span></a>
                         <a class="social__link up" href="#inicio"><button><img src="../assets/up.svg" alt="Ir arriba"></button></a>
@@ -345,7 +340,7 @@
             color: 0x668899,       
             flatShading: true,     
             roughness: 1.0,        
-            metalness: 1.999
+            metalness: 1.666
         });
 
         const tetraMesh = new THREE.Mesh(geometry, material);
@@ -358,7 +353,7 @@
         const lightColor = 0xfffae1; 
         const pointLight = new THREE.PointLight(lightColor, 333, 100);
         scene.add(pointLight);
-        scene.add(new THREE.AmbientLight(0x99aeff, 9.95));
+        scene.add(new THREE.AmbientLight(0x99aeff, 12.95));
 
         const raycaster = new THREE.Raycaster();
         const mathPlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), -1); 
@@ -386,7 +381,8 @@
             if (raycaster.ray.intersectPlane(mathPlane, interaction3D)) {
                 lightTarget.lerp(interaction3D, 0.1);
             } else {
-                lightTarget.lerp(new THREE.Vector3(0, 0, 1), 3.66);
+                /* AQUÍ ESTÁ EL CAMBIO CLAVE PARA EVITAR EL PANTALLAZO */
+                lightTarget.lerp(new THREE.Vector3(0, 0, 1), 0.02); 
             }
             
             pointLight.position.copy(lightTarget);
