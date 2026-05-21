@@ -317,8 +317,40 @@
 <script type="module">
         import * as THREE from 'three';
 
+        // =========================================================
+        // 🎛️ PANEL DE CONTROL: DIRECCIÓN DE ARTE Y FÍSICA
+        // ¡Modifica solo los valores de este bloque!
+        // =========================================================
+        const CONFIG = {
+            // --- 1. COLORES (Usa 0x en lugar de #) ---
+            colorNiebla: 0x331199,        // Color de la profundidad (Magenta oscuro)
+            colorGeometria: 0x663399,     // Color base del objeto (Gris azulado)
+            colorLuzToque: 0xfffae1,      // Luz del dedo (Blanco/Amarillo cálido)
+            colorLuzAmbiente: 0x99aeff,   // Luz de relleno para sombras (Azul claro)
+            intensidadLuzBase: 100,       // Brillo de la luz cuando no tocas
+            intensidadLuzToque: 400,      // Cuánto brillo SE SUMA al tocar
+
+            // --- 2. GEOMETRÍA BASE ---
+            radio: 9.5,                   // Tamaño general de la figura
+            detalle: 12,                  // Resolución: a menor número, más poligonal (0 a 128)
+            
+            // --- 3. MATERIAL (Textura visual) ---
+            rugosidad: 1.0,               // De 0.0 (espejo/plástico) a 1.0 (mate/arcilla)
+            metalizado: 1.666,            // Nivel de reflexión metálica
+            flatShading: true,            // true = Se ven las facetas (low-poly), false = Superficie lisa
+
+            // --- 4. MOVIMIENTO Y DEFORMACIÓN ---
+            velOlaBase: 10,                // Velocidad de la ondulación en reposo
+            fuerzaOlaBase: 9,             // Qué tan grandes son las "olas" de la figura
+            atraccionDedo: 2.5,           // Cuánto se estira la malla hacia tu toque
+            velRotacionX: 0.155,          // Velocidad de giro en el eje X
+            velRotacionY: 0.155           // Velocidad de giro en el eje Y
+        };
+        // =========================================================
+
+        // --- INICIO DE LA LÓGICA (No necesitas tocar esto) ---
         const scene = new THREE.Scene();
-        scene.fog = new THREE.Fog(0x771166, 10, 0.1);
+        scene.fog = new THREE.Fog(CONFIG.colorNiebla, 10, 0.1);
 
         const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.666, 10);
         camera.position.set(0, 0, 3.5); 
@@ -332,14 +364,16 @@
 
         setTimeout(() => renderer.domElement.style.opacity = "1", 100);
 
-        let geometry = new THREE.TetrahedronGeometry(9.5, 64);
+        // APLICANDO CONFIGURACIÓN DE GEOMETRÍA
+        let geometry = new THREE.TetrahedronGeometry(CONFIG.radio, CONFIG.detalle);
         geometry = geometry.toNonIndexed(); 
 
+        // APLICANDO CONFIGURACIÓN DE MATERIAL
         const material = new THREE.MeshStandardMaterial({
-            color: 0x668899,       
-            flatShading: true,     
-            roughness: 1.0,        
-            metalness: 1.666
+            color: CONFIG.colorGeometria,       
+            flatShading: CONFIG.flatShading,     
+            roughness: CONFIG.rugosidad,        
+            metalness: CONFIG.metalizado
         });
 
         const tetraMesh = new THREE.Mesh(geometry, material);
@@ -349,12 +383,10 @@
         const originalPos = new Float32Array(posAttribute.array);
         const count = posAttribute.count;
 
-        const lightColor = 0xfffae1; 
-        
-        // Bajamos un poco la intensidad inicial para que el toque resalte más
-        const pointLight = new THREE.PointLight(lightColor, 150, 100); 
+        // APLICANDO CONFIGURACIÓN DE LUCES
+        const pointLight = new THREE.PointLight(CONFIG.colorLuzToque, CONFIG.intensidadLuzBase, 100); 
         scene.add(pointLight);
-        scene.add(new THREE.AmbientLight(0x99aeff, 12.95));
+        scene.add(new THREE.AmbientLight(CONFIG.colorLuzAmbiente, 12.95));
 
         const raycaster = new THREE.Raycaster();
         const mathPlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), -1); 
@@ -362,7 +394,6 @@
         const interaction3D = new THREE.Vector3();
         const lightTarget = new THREE.Vector3(0, 0, 1); 
 
-        // NUEVA VARIABLE: Controla la "fuerza" del toque (de 0 a 1)
         let effectStrength = 0; 
 
         function setPointer(clientX, clientY) {
@@ -376,7 +407,6 @@
             if(e.touches.length > 0) setPointer(e.touches[0].clientX, e.touches[0].clientY);
         }, { passive: true });
         
-        // Cuando el mouse sale de la ventana o se levanta el dedo
         window.addEventListener('touchend', () => pointerCoords.set(-1000, -1000));
         document.addEventListener('mouseleave', () => pointerCoords.set(-1000, -1000));
 
@@ -384,49 +414,37 @@
             requestAnimationFrame(animate);
             const time = performance.now() * 0.000007;
 
-            // Determinamos si el usuario está interactuando (si las coordenadas no son -1000)
             const isInteracting = pointerCoords.x !== -1000;
-
             raycaster.setFromCamera(pointerCoords, camera);
 
             if (isInteracting) {
-                // FADE IN RÁPIDO pero sutil (0.05 de velocidad)
                 effectStrength += (1.0 - effectStrength) * 0.05; 
-                
                 if (raycaster.ray.intersectPlane(mathPlane, interaction3D)) {
                     lightTarget.lerp(interaction3D, 0.1); 
                 }
             } else {
-                // FADE OUT MUY LENTO (0.015 de velocidad) da la sensación de apaciguamiento
                 effectStrength += (0.0 - effectStrength) * 0.015; 
-                
-                // La luz vuelve a su centro lentamente
                 lightTarget.lerp(new THREE.Vector3(0, 0, 1), 0.02); 
             }
             
             pointLight.position.copy(lightTarget);
-            
-            // Animamos la intensidad de la luz: de 150 (reposo) a 350 (tocado)
-            pointLight.intensity = 150 + (200 * effectStrength);
+            pointLight.intensity = CONFIG.intensidadLuzBase + (CONFIG.intensidadLuzToque * effectStrength);
 
+            // APLICANDO CONFIGURACIÓN DE DEFORMACIÓN FÍSICA
             for (let i = 0; i < count; i++) {
                 const ox = originalPos[i * 3];
                 const oy = originalPos[i * 3 + 1];
                 const oz = originalPos[i * 3 + 2];
 
                 const distToCenter = Math.sqrt(ox*ox + oy*oy + oz*oz);
-                
-                // La ola base natural de la geometría
-                const wave = Math.sin(time * 3 + oy * 1.333) * 9;
+                const wave = Math.sin(time * CONFIG.velOlaBase + oy * 1.333) * CONFIG.fuerzaOlaBase;
 
                 const dx = ox - lightTarget.x;
                 const dy = oy - lightTarget.y;
                 const dz = oz - lightTarget.z;
                 const distToTargetSq = dx*dx + dy*dy + dz*dz;
 
-                // Calculamos la atracción física, y la MULTIPLICAMOS por nuestro fade
-                // Subí el multiplicador final a 2.5 para compensar la suavidad del fade
-                const pullStrength = (Math.exp(-distToTargetSq / 2) * 0.2) * effectStrength; 
+                const pullStrength = (Math.exp(-distToTargetSq / 2) * CONFIG.atraccionDedo) * effectStrength; 
 
                 const newRadius = distToCenter + wave + pullStrength;
                 const scale = newRadius / distToCenter;
@@ -437,10 +455,10 @@
             posAttribute.needsUpdate = true;
             geometry.computeVertexNormals();
 
-            // Rotación constante
-            tetraMesh.rotation.y = time * 0.155;
-            tetraMesh.rotation.x = time * 0.155;
-            tetraMesh.rotation.z = Math.sin(time * 0.09) * 0.999;
+            // APLICANDO ROTACIÓN
+            tetraMesh.rotation.x = time * CONFIG.velRotacionX;
+            tetraMesh.rotation.y = time * CONFIG.velRotacionY;
+            tetraMesh.rotation.z = Math.sin(time * 0.05) * 0.999;
 
             renderer.render(scene, camera);
         }
