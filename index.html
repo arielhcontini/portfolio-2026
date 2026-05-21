@@ -318,10 +318,10 @@
         import * as THREE from 'three';
 
         const scene = new THREE.Scene();
-        scene.fog = new THREE.Fog(0x771166, 10, 0.1);
+        scene.fog = new THREE.Fog(0x221166, 10, 0.1);
 
-        const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.666, 10);
-        camera.position.set(0, 0, 3.5); 
+        const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.333, 10);
+        camera.position.set(0, 0, 5.5); 
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -333,7 +333,7 @@
 
         setTimeout(() => renderer.domElement.style.opacity = "1", 100);
 
-        let geometry = new THREE.TetrahedronGeometry(9.5, 64);
+        let geometry = new THREE.TetrahedronGeometry(1.5, 8);
         geometry = geometry.toNonIndexed(); 
 
         const material = new THREE.MeshStandardMaterial({
@@ -353,7 +353,7 @@
         const lightColor = 0xfffae1; 
         const pointLight = new THREE.PointLight(lightColor, 333, 100);
         scene.add(pointLight);
-        scene.add(new THREE.AmbientLight(0x99aeff, 12.95));
+        scene.add(new THREE.AmbientLight(0x99aeff, 8.95));
 
         const raycaster = new THREE.Raycaster();
         const mathPlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), -1); 
@@ -375,7 +375,7 @@
 
         function animate() {
             requestAnimationFrame(animate);
-            const time = performance.now() * 0.000007;
+            const time = performance.now() * 0.00007;
 
             raycaster.setFromCamera(pointerCoords, camera);
             if (raycaster.ray.intersectPlane(mathPlane, interaction3D)) {

@@ -190,6 +190,7 @@ strong{
     gap: var(--spacing-48);
     border-radius: var(--radius);
     background: linear-gradient(180deg, var(--bg-obsidian), var(--edge-gold));
+    backdrop-filter: blur(8px);
 }
 
 .outline{
@@ -446,8 +447,9 @@ display: none;
     justify-content: center;
     gap: var(--spacing-8);
     border-bottom: 1px solid light-dark(var(--edge-obsidian), var(--edge-gold));
-    background-color: light-dark(var(--bg-alabastro), var(--bg-obsidian));
+    background-color: light-dark(var(--bg-alabastro), var(--basalto));
     padding: var(--spacing-64) var(--spacing-32);
+    backdrop-filter: blur(8px);
 }
 
 .hero__content{
