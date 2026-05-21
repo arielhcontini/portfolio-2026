@@ -189,7 +189,7 @@ strong{
     flex-direction: column;
     gap: var(--spacing-48);
     border-radius: var(--radius);
-     background: linear-gradient(180deg, var(--bg-obsidian), var(--edge-gold));
+    background: linear-gradient(180deg, var(--bg-obsidian), var(--edge-gold));
 }
 
 .outline{
@@ -838,7 +838,9 @@ font-weight: 400;
 
 
 .experience-card:hover{
-    background: var(--gradient);
+    background: var(--bg-obsidian);
+     color: light-dark(var(--text-obsidian), var(--text-alabastro));
+     transform: translateY(-4px);
 }
 
 
@@ -1151,6 +1153,7 @@ font-weight: 600;
   .contact .section-container {
     flex-direction: row;
     align-items: center;
+    text-align: center;
   }
 
   .contact__description{
@@ -1158,7 +1161,7 @@ font-weight: 600;
     flex-direction: column;
     width: 100%;
     height: auto;
-    padding: var(--spacing-16);
+    padding: var(--spacing-8);
     text-align: center;
   }
 
