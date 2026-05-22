@@ -183,13 +183,19 @@ strong{
 .section-container{
     max-width: var(--max-width);
     margin: var(--spacing-40) auto;
-    padding: var(--spacing-96) var(--spacing-24);
+    padding: var(--spacing-48) var(--spacing-24);
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-48);
     border-radius: var(--radius);
     background: linear-gradient(180deg, var(--bg-obsidian), var(--edge-gold));
+}
+
+@media (min-width: 768px) {
+    .section-container {
+        padding: var(--spacing-96) var(--spacing-24);
+    }
 }
 
 .outline{
@@ -954,9 +960,16 @@ font-size: 11px;
 }
 
 .project-card__link{
-    width: 16px;
-    display: inline-block;
+    width: 44px; /* Increased for better touch target (Mobile First) */
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: var(--spacing-8);
+}
+
+.project-card__link img {
+    width: 16px; /* Maintain icon visual size */
 }
 
 @media(min-width:768px){
