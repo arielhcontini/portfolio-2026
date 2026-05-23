@@ -30,7 +30,7 @@
     --bg-shadow: #1C1621;
 
     /* gradient background */
-    --gradient-dark: linear-gradient(0deg,rgba(16, 13, 17, 0.413) 0%, rgba(18, 11, 26, 1) 50%, rgba(28, 22, 33, .0666) 100%);
+    --gradient-dark: linear-gradient(0deg,rgba(16, 13, 17, 0.888) 0%, rgba(18, 11, 26, 1) 50%, rgba(28, 22, 33, .999) 100%);
 
     /* Rounded */
     --radius:1px;

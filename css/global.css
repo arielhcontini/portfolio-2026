@@ -489,7 +489,6 @@ font-weight: 400;
     max-width: 360px;
     border-radius: var(--radius);
     margin: 0 auto;
-    border: 1px solid var(--edge-gold);
     display: flex;
     flex-direction: column;
 }
@@ -590,7 +589,6 @@ font-weight: 400;
     height: auto;
     max-width: 40vh;
     border-radius: var(--radius);
-    border: 1px solid var(--edge-gold);
     padding: 0;
     margin: 0;
 }
