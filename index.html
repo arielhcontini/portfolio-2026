@@ -133,7 +133,7 @@
     </header>
 
     <main>
-        <section id="inicio" class="hero section-container" style="display:none;">
+        <section id="inicio" class="hero section-container">
             <img class="hero__image" src="../assets/ari.webp" width="1080" height="1080" fetchpriority="high" alt="Ariel Contini">
             <div class="hero__content">
                 <h1 class="hero__title"> Ariel Contini<br> <span class="outline"> Diseñador</span></h1> <br>
@@ -388,7 +388,9 @@
 
         // APLICANDO CONFIGURACIÓN DE GEOMETRÍA
         let geometry = new THREE.TetrahedronGeometry(CONFIG.radio, CONFIG.detalle);
-        geometry = geometry.toNonIndexed(); 
+        if (geometry.index) {
+            geometry = geometry.toNonIndexed(); 
+        }
 
         // APLICANDO CONFIGURACIÓN DE MATERIAL
         const material = new THREE.MeshStandardMaterial({
