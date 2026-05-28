@@ -48,7 +48,7 @@
     <style>
         /* 1. Fondo Three.js sin fricción */
         body {
-            background-color: #030303; /* Fondo base para Three.js */
+            background-color: #120B1A; /* Fondo base para Three.js */
             /* Es vital que en tu global.css el body y las section no tengan un background-color opaco */
         }
         canvas#bg-three {
@@ -222,7 +222,7 @@
                         <p class="project-card__description">
                             Gestión integral de proyecto audiovisual en co-dirección con Homero Prodan. El resultado: una narrativa visual disruptiva que alineó la visión artística con los estándares de distribución&nbsp;digital.
                         </p>
-                        <a href="https://www.behance.net/gallery/244989311/biVio-chrysalis" target="_blank" class="project-card__link"><img src="../assets/readmore.svg" alt="Leer Más"></a>
+                        <a href="/bivio/" class="project-card__link"><img src="../assets/readmore.svg" alt="Leer Más"></a>
                     </div>
                 </article>
 
@@ -240,7 +240,7 @@
                         <p class="project-card__description">
                             Desde 2014, opero como partner estratégico de Juan Daffunchio en el desarrollo de experiencias inmersivas a gran&nbsp;escala.
                         </p>
-                        <a href="https://www.behance.net/gallery/244989663/Las-Pelotas-GIRA-5x5" target="_blank" class="project-card__link"><img src="../assets/readmore.svg" alt="Leer Más"></a>
+                        <a href="/las-pelotas/" class="project-card__link"><img src="../assets/readmore.svg" alt="Leer Más"></a>
                     </div>
                 </article>
             </div>
@@ -320,41 +320,62 @@
 
         // =========================================================
         // 🎛️ PANEL DE CONTROL: DIRECCIÓN DE ARTE Y FÍSICA
-        // ¡Modifica solo los valores de este bloque!
+        // ¡Modifica los valores de este bloque para ajustar la estética!
         // =========================================================
         const CONFIG = {
-            // --- 1. COLORES (Usa 0x en lugar de #) ---
-            colorNiebla: 0x771166,        // Color de la profundidad (Magenta oscuro)
-            colorGeometria: 0x668899,     // Color base del objeto (Gris azulado)
-            colorLuzToque: 0xfffae1,      // Luz del dedo (Blanco/Amarillo cálido)
-            colorLuzAmbiente: 0x99aeff,   // Luz de relleno para sombras (Azul claro)
-            intensidadLuzBase: 150,       // Brillo de la luz cuando no tocas
-            intensidadLuzToque: 200,      // Cuánto brillo SE SUMA al tocar
-
-            // --- 2. GEOMETRÍA BASE ---
-            radio: 1.5,                   // Tamaño general de la figura
-            detalle: 12,                  // Resolución: a menor número, más poligonal (0 a 128)
+            // --- 1. COLORES Y ATMÓSFERA ---
+            // Los colores usan formato hexadecimal (0xRRGGBB).
+            colorNiebla: 0x331166,        // Profundidad/Fondo: Color de la niebla en la distancia.
+            nieblaInicio: 0.1,            // Distancia donde empieza la niebla (relativo a la cámara).
+            nieblaFin: 10.0,              // Distancia donde la niebla es total.
             
-            // --- 3. MATERIAL (Textura visual) ---
-            rugosidad: 1.0,               // De 0.0 (espejo/plástico) a 1.0 (mate/arcilla)
-            metalizado: 1.666,            // Nivel de reflexión metálica
-            flatShading: true,            // true = Se ven las facetas (low-poly), false = Superficie lisa
+            colorGeometria: 0x120B1A,     // Color base del objeto principal.
+            
+            colorLuzToque: 0x320B3A,      // Luz puntual que sigue al puntero/toque.
+            intensidadLuzBase: 222,       // Brillo de la luz puntual en reposo.
+            intensidadLuzToque: 444,      // Brillo EXTRA que se suma al interactuar.
+            
+            colorLuzAmbiente: 0x990096,   // Luz que rellena las sombras (evita que el objeto sea negro total).
+            intensidadAmbiente: 12.95,    // Fuerza de la luz de relleno.
 
-            // --- 4. MOVIMIENTO Y DEFORMACIÓN ---
-            velOlaBase: 8,                // Velocidad de la ondulación en reposo
-            fuerzaOlaBase: 10,             // Qué tan grandes son las "olas" de la figura
-            atraccionDedo: 2.5,           // Cuánto se estira la malla hacia tu toque
-            velRotacionX: 0.155,          // Velocidad de giro en el eje X
-            velRotacionY: 0.155           // Velocidad de giro en el eje Y
+            // --- 2. CÁMARA Y ESPACIO ---
+            distanciaCamara: 3.5,         // Qué tan lejos está la cámara del objeto (Z-axis).
+            campoVision: 50,              // FOV: A mayor valor, más efecto "gran angular".
+
+            // --- 3. GEOMETRÍA BASE ---
+            radio: 3.33,                  // Radio general de la figura.
+            detalle: 16,                  // Nivel de detalle (0: minimalista/poligonal - 128: esfera perfecta).
+            
+            // --- 4. MATERIAL (Textura visual) ---
+            rugosidad: 1.1,               // 0.0 (espejo) a 1.0 (mate). Define qué tanto brilla.
+            metalizado: 1.6,              // 0.0 a 1.0+. Define el reflejo metálico.
+            flatShading: true,            // true: Se ven los triángulos (estética Low-Poly). false: Suave.
+
+            // --- 5. MOVIMIENTO (Vibración y Rotación) ---
+            escalaTiempo: 0.000007,       // Velocidad global de todas las animaciones.
+            
+            velRotacionX: 0.155,          // Giro constante sobre el eje X.
+            velRotacionY: 0.155,          // Giro constante sobre el eje Y.
+            amplitudRotZ: 0.99,           // Qué tanto oscila sobre el eje Z.
+            frecuenciaRotZ: 0.05,         // Qué tan rápido oscila sobre el eje Z.
+
+            // --- 6. DEFORMACIÓN (Ondas y Atracción) ---
+            velOlaBase: 8,                // Rapidez de la ondulación del objeto.
+            fuerzaOlaBase: 10,            // Amplitud de las ondas (qué tanto se deforma solo).
+            frecuenciaOla: 1.33,          // Frecuencia espacial (cantidad de "crestas" de onda).
+            
+            atraccionDedo: 2.5,           // Fuerza con la que la malla se estira hacia el puntero.
+            radioAtraccion: 2.0,          // Radio de influencia del toque (cuánta área se deforma).
+            suavizadoInteraccion: 0.05    // Qué tan "elástico" es el regreso a la forma original.
         };
         // =========================================================
 
         // --- INICIO DE LA LÓGICA (No necesitas tocar esto) ---
         const scene = new THREE.Scene();
-        scene.fog = new THREE.Fog(CONFIG.colorNiebla, 10, 0.1);
+        scene.fog = new THREE.Fog(CONFIG.colorNiebla, CONFIG.nieblaInicio, CONFIG.nieblaFin);
 
-        const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.666, 10);
-        camera.position.set(0, 0, 3.5); 
+        const camera = new THREE.PerspectiveCamera(CONFIG.campoVision, window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.set(0, 0, CONFIG.distanciaCamara); 
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -387,7 +408,7 @@
         // APLICANDO CONFIGURACIÓN DE LUCES
         const pointLight = new THREE.PointLight(CONFIG.colorLuzToque, CONFIG.intensidadLuzBase, 100); 
         scene.add(pointLight);
-        scene.add(new THREE.AmbientLight(CONFIG.colorLuzAmbiente, 12.95));
+        scene.add(new THREE.AmbientLight(CONFIG.colorLuzAmbiente, CONFIG.intensidadAmbiente));
 
         const raycaster = new THREE.Raycaster();
         const mathPlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), -1); 
@@ -395,7 +416,7 @@
         const interaction3D = new THREE.Vector3();
         const lightTarget = new THREE.Vector3(0, 0, 1); 
 
-        let effectStrength = 1; 
+        let effectStrength = 0; 
 
         function setPointer(clientX, clientY) {
             pointerCoords.x = (clientX / window.innerWidth) * 2 - 1;
@@ -413,18 +434,18 @@
 
         function animate() {
             requestAnimationFrame(animate);
-            const time = performance.now() * 0.000007;
+            const time = performance.now() * CONFIG.escalaTiempo;
 
             const isInteracting = pointerCoords.x !== -1000;
             raycaster.setFromCamera(pointerCoords, camera);
 
             if (isInteracting) {
-                effectStrength += (1.0 - effectStrength) * 0.05; 
+                effectStrength += (1.0 - effectStrength) * CONFIG.suavizadoInteraccion; 
                 if (raycaster.ray.intersectPlane(mathPlane, interaction3D)) {
                     lightTarget.lerp(interaction3D, 0.1); 
                 }
             } else {
-                effectStrength += (0.0 - effectStrength) * 0.015; 
+                effectStrength += (0.0 - effectStrength) * (CONFIG.suavizadoInteraccion * 0.3); 
                 lightTarget.lerp(new THREE.Vector3(0, 0, 1), 0.02); 
             }
             
@@ -438,14 +459,15 @@
                 const oz = originalPos[i * 3 + 2];
 
                 const distToCenter = Math.sqrt(ox*ox + oy*oy + oz*oz);
-                const wave = Math.sin(time * CONFIG.velOlaBase + oy * 1.333) * CONFIG.fuerzaOlaBase;
+                const wave = Math.sin(time * CONFIG.velOlaBase + oy * CONFIG.frecuenciaOla) * CONFIG.fuerzaOlaBase;
 
                 const dx = ox - lightTarget.x;
                 const dy = oy - lightTarget.y;
                 const dz = oz - lightTarget.z;
                 const distToTargetSq = dx*dx + dy*dy + dz*dz;
 
-                const pullStrength = (Math.exp(-distToTargetSq / 2) * CONFIG.atraccionDedo) * effectStrength; 
+                // Deformación gaussiana basada en la distancia al toque
+                const pullStrength = (Math.exp(-distToTargetSq / CONFIG.radioAtraccion) * CONFIG.atraccionDedo) * effectStrength; 
 
                 const newRadius = distToCenter + wave + pullStrength;
                 const scale = newRadius / distToCenter;
@@ -459,7 +481,7 @@
             // APLICANDO ROTACIÓN
             tetraMesh.rotation.x = time * CONFIG.velRotacionX;
             tetraMesh.rotation.y = time * CONFIG.velRotacionY;
-            tetraMesh.rotation.z = Math.sin(time * 0.05) * 0.999;
+            tetraMesh.rotation.z = Math.sin(time * CONFIG.frecuenciaRotZ) * CONFIG.amplitudRotZ;
 
             renderer.render(scene, camera);
         }
