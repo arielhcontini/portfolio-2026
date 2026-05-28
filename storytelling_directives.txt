@@ -1,0 +1,30 @@
+# Directivas de Storytelling y Evolución del Website - Portfolio 2026
+
+## Objetivo Principal
+Transformar el sitio web en una experiencia de storytelling coherente que convierta visitantes en clientes, manteniendo una estética técnica, moderna y limpia.
+
+## Registro de Trabajo
+
+### Fase 1: Definición de la Narrativa (En Proceso)
+- [ ] Definición del "Protagonista" y su visión.
+- [ ] Identificación del "Dolor del Cliente" (Problema).
+- [ ] Estructuración de la "Solución" como un viaje narrativo.
+- [ ] Definición del tono de voz y coherencia textual.
+
+### Fase 2: Implementación de Funcionalidades "Fun"
+- [ ] Botón de "Modo Juego" (Joystick) para limpiar el Main y dejar solo el fondo interactivo.
+- [ ] Iconografía coherente con la estética del sitio.
+
+### Fase 3: Refactorización de Texto
+- [ ] Hero Section (Introducción al mundo).
+- [ ] Habilidades (Herramientas del oficio).
+- [ ] Experiencia (Capítulos de éxito).
+- [ ] Hitos (Grandes batallas/logros).
+- [ ] Contacto (Llamado a la acción/Continuación de la historia).
+
+---
+## Notas Técnicas
+- El sitio utiliza Three.js para el fondo interactivo.
+- GSAP se encarga de las animaciones de entrada.
+- El diseño es Mobile First.
+- Se debe asegurar que el "Modo Juego" no rompa la navegación principal si el usuario quiere volver.
