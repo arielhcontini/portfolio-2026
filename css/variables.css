@@ -6,7 +6,7 @@
        🎨 SISTEMA DE COLOR (DIRECCIÓN DE ARTE)
        ========================================================= */
     
-    color-scheme: light dark;
+   /*  color-scheme: light dark; */
 
     /* --- Paleta Principal: Modo Claro (Light Mode) --- */
     --text-obsidian: #120B1A;           /* Color principal de texto oscuro */
