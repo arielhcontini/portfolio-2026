@@ -7,6 +7,15 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+
+::selection {
+    background: transparent;
+}
+
+::-moz-selection {
+    background: transparent;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -223,67 +232,6 @@ html {
     visibility: hidden;
 }
 
-/* PORTADA */
-
-.cover{
-position:relative;
-width: 100%;
-max-width: 320px;
-height: auto;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-margin: 0 auto;
-z-index: 9999;
-}
-
-.cover__container{
-width: 100%;
-height: auto;
-opacity: 1;
-}
-
-.cover__img{
-    position: relative;
-    width: 100%;
-    height: auto;
-    margin: 16vh auto;
-    border-radius: var(--radius);
-    z-index: 10000;
-    opacity: 1;
-}
-
-@media (min-width:1024px){
-
-.cover{
-position:relative;
-width: 100%;
-height: auto;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-margin:0 auto;
-z-index: 9999;
-}
-
-.cover__container{
-position: relative;
-width: 100%;
-height: auto;
-opacity: .666;
-
-}
-
-.cover__container:hover{
-position: relative;
-width: 100%;
-height: auto;
-opacity: .999;
-}
-
-}
 
 
 /* Estilo del CTA para que parezca una terminal */
@@ -807,7 +755,7 @@ font-weight: 400;
 
 
 .skills{
-     color:  var(--text-alabastro);
+     color:var(--text-alabastro);
 }
 
 /* === SKILLS === */
