@@ -1,5 +1,5 @@
 body {
-  background-color: var(--bg-obsidian);
+  background: var(--gradient-dark);
   cursor: crosshair;
   color: var(--text-alabastro);
   font-family: "Roboto Mono", monospace;
@@ -722,7 +722,7 @@ font-weight: 400;
 }
 
 .social__link :hover{
-    background-color: var(--primary-black);
+    background-color: var(--bg-obsidian);
     color: var(--primary-white);
     padding: var(--spacing-8);
    border-radius: var(--radius);
