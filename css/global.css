@@ -1104,16 +1104,17 @@ font-size: 11px;
 }
 
 .project-card__link{
-    width: 44px; /* Increased for better touch target (Mobile First) */
-    height: 44px;
-    display: flex;
+    width: 100%; /* Increased for better touch target (Mobile First) */
+    height: auto;
+    display: inline-block;
+    gap: var(--spacing-16);
     align-items: center;
-    justify-content: center;
-    margin-top: var(--spacing-8);
+    margin-top: var(--spacing-16);
+    font-size: 8px;
 }
 
 .project-card__link img {
-    width: 16px; /* Maintain icon visual size */
+    width: 8px; /* Maintain icon visual size */
 }
 
 @media(min-width:768px){
@@ -2994,4 +2995,196 @@ body.game-mode-active .game-mode-toggle:hover::before {
     visibility: visible !important;
     background-color: #222 !important; /* Fondo oscuro para que resalte el emoji */
     border: 2px solid var(--edge-gold) !important;
+}
+
+
+/* =========================================
+   LOGOFOLIO & BRAND ARCHITECTURE
+   ========================================= */
+
+.logofolio__intro {
+    max-width: 70ch;
+    margin-bottom: var(--spacing-48);
+    color: var(--text-alabastro-opacity);
+}
+
+/* 1. ESTILOS DE LA EVOLUCIÓN / REDISEÑO */
+.brand-evolution {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius); /* 1px sharp */
+    padding: var(--spacing-32);
+    margin-bottom: var(--spacing-64);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-40);
+}
+
+@media (min-width: 900px) {
+    .brand-evolution {
+        flex-direction: row;
+    }
+    .brand-evolution__meta { flex: 1; }
+    .brand-compare { flex: 1.2; }
+}
+
+.tech-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--purple);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: var(--spacing-8);
+}
+
+.brand-title-main {
+    font-size: var(--H3);
+    font-family: 'Libre Bodoni', serif;
+    font-style: italic;
+    color: var(--text-alabastro);
+    margin-bottom: var(--spacing-24);
+}
+
+.brand-matrix {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-24);
+}
+
+.matrix-cell strong {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--primary-gold);
+    display: block;
+    margin-bottom: var(--spacing-4);
+}
+
+.matrix-cell p {
+    font-size: 0.9rem;
+    color: var(--text-alabastro-opacity);
+    line-height: 1.5;
+}
+
+/* Bloques de Comparación Antes/Después */
+.brand-compare {
+    display: flex;
+    gap: var(--spacing-16);
+    width: 100%;
+}
+
+.compare-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-12);
+}
+
+.compare-badge {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.7rem;
+    padding: var(--spacing-4) var(--spacing-8);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    width: fit-content;
+    color: var(--text-alabastro-opacity);
+}
+
+.compare-badge.default-gold {
+    color: var(--bg-obsidian);
+    background: var(--primary-gold);
+    border: 1px solid var(--primary-gold);
+    font-weight: bold;
+}
+
+.compare-box__asset {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: var(--bg-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-24);
+}
+
+.compare-box__asset.active-border {
+    border: 1px solid var(--primary-gold);
+    background: var(--basalto);
+}
+
+.compare-box__asset img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.compare-note {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.4;
+}
+
+/* 2. ESTILOS DE LA GRILLA DE LOGOS SECUNDARIOS */
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-32);
+}
+
+.brand-card {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius);
+    background: var(--edge-obsidian);
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.brand-card:hover {
+    border-color: var(--primary-gold);
+}
+
+.brand-card__visual {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--bg-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-32);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.brand-card__visual img {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.5;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.brand-card:hover .brand-card__visual img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.brand-card__content {
+    padding: var(--spacing-24);
+}
+
+.brand-card__content h3 {
+    font-size: var(--H4);
+    color: var(--text-alabastro);
+    margin-bottom: var(--spacing-8);
+}
+
+.brand-card__content p {
+    font-size: 0.9rem;
+    color: var(--text-alabastro-opacity);
+    line-height: 1.6;
+}
+
+.brand-card__content strong {
+    color: var(--primary-gold);
+    font-weight: normal;
 }
