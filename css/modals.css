@@ -103,7 +103,6 @@
 
 .video-card {
     background: var(--edge-obsidian);
-    border: 1px solid var(--text-alabastro);
     border-radius: var(--radius);
     overflow: hidden;
     cursor: pointer;
@@ -112,7 +111,7 @@
 
 .video-card:hover {
     transform: translateY(-4px);
-    border-color: var(--text-alabastro);
+    border-color: var(--text-alabastro-opacity);
 }
 
 .video-card__thumb, .bivio-card__thumb {
@@ -149,7 +148,6 @@
 
 .bivio-card {
     background: var(--edge-obsidian);
-    border: 1px solid var(--text-alabastro);
     border-radius: var(--radius);
     overflow: hidden;
     cursor: pointer;
@@ -169,7 +167,7 @@
 .bivio-card__tags span, .card-tags span {
     font-size: 0.7rem;
     color: var(--text-alabastro);
-    border: 1px solid var(--text-alabastro);
+border-color: var(--text-alabastro-opacity);
     padding: 2px 6px;
 }
 

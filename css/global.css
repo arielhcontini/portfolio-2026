@@ -366,8 +366,8 @@ body.is-modal .topnav {
 
 body.is-modal .showcase,
 body.is-modal .showcase-page {
-    margin-top: 20px !important;
-    padding-top: 20px !important;
+    margin-top: 16px !important;
+    padding-top: 16px !important;
 }
 
 body.is-modal {
@@ -2451,6 +2451,7 @@ font-size: 11px;
     align-items: center;
     justify-content: center;
     margin-top: var(--spacing-8);
+    font-size: 12pxm;
 }
 
 .project-card__link img {
