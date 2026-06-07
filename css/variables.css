@@ -11,13 +11,8 @@
     /* --- Paleta Principal: Modo Claro (Light Mode) --- */
     --text-obsidian: #120B1A;           /* Color principal de texto oscuro */
     --bg-alabastro: #f4f1eeeb;          /* Fondo principal claro (con ligera transparencia) */
-    --bg-alabastro-gold: #352d1e1d;     /* Fondo sutil con matiz dorado */
     --bg-purple: #7c6b8a;               /* Color de acento púrpura */
     --edge-obsidian:#120b1a18;          /* Bordes y separadores sutiles */
-
-    /* --- Acentos y Detalles --- */
-    --primary-gold: #c59f59;            /* Color dorado para elementos destacados */
-    --edge-gold: #c59f5911;             /* Brillo perimetral dorado muy suave */
 
     /* --- Paleta Oscura (Obsidiana) --- */
     --bg-obsidian: #120B1A;             /* Fondo base profundo */
@@ -72,6 +67,3 @@
     --max-width: 1024px;                /* Ancho máximo del contenido central */
 
 }
-
-
-
