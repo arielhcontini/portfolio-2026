@@ -617,15 +617,18 @@ display: none;
 
 /* === HERO === */
 
-.hero{
+
+.hero {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-16);
-    background-color: var(--gradient-dark);
-    padding: var(--spacing-24) var(--spacing-8);
+    padding: var(--spacing-48) var(--spacing-24);
+    gap: var(--spacing-32);
+    position: relative;
 }
+
 
 .hero__content{
     display: flex;
@@ -709,10 +712,18 @@ font-weight: 400;
 
 @media (min-width:768px){
 
-    .hero{
-      flex-direction: row-reverse;
-      padding: var(--spacing-96) var(--spacing-16);
-    }
+    
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-48) var(--spacing-24);
+    gap: var(--spacing-32);
+    position: relative;
+}
+
 
     .hero__content{
         max-width: 60%;
@@ -727,17 +738,18 @@ font-weight: 400;
 
 @media (min-width:1024px){
 
-    .hero{
-    width: 100%;
-    height: auto;
+    
+.hero {
+    min-height: 100vh;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-96);
-    margin: 0 auto;
-    padding:var(--spacing-96) var(--spacing-16);
+    padding: var(--spacing-48) var(--spacing-24);
+    gap: var(--spacing-32);
+    position: relative;
 }
+
 
 .hero__content{
     width: 100%;
@@ -1250,15 +1262,7 @@ border: 1px solid light-dark(var(--edge-obsidian), rgba(244, 241, 238, 0.1));
   align-items: flex-start;
 }
 
-.contact__button {
-  color: var(--text-alabastro);
-  padding: var(--spacing-16) var(--spacing-32);
-  border: none;
-  border-radius: var(--radius);
-  font-weight: 600;
-  font-size: 1.125rem;
-  cursor: pointer;
-}
+
 
 .contact__button:hover {
   opacity: 0.9;
@@ -1315,15 +1319,14 @@ color: var(--text-alabastro);
   color: var(--basalto);
 }
 
-.calendly{
-    background-color: light-dark(var(--bg-obsidian),var(--bg-alabastro));
-    color: light-dark(var(--text-alabastro), var(--text-obsidian));
-    text-align: center;
-    width: 100%;
-    max-width: 240px;
-    height: auto;
-    border: 1px solid rgba(244, 241, 238, 0.1);
+
+.calendly, 
+
+.calendly:hover, .contact__button:hover {
+    background: var(--text-alabastro);
+    color: var(--bg-obsidian);
 }
+
 
 @media (min-width: 768px) {
   .contact .container {
@@ -1955,15 +1958,18 @@ display: none;
 
 /* === HERO === */
 
-.hero{
+
+.hero {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-16);
-    background-color: light-dark(var(--bg-alabastro), var(--gradient-dark));
-    padding: var(--spacing-24) var(--spacing-8);
+    padding: var(--spacing-48) var(--spacing-24);
+    gap: var(--spacing-32);
+    position: relative;
 }
+
 
 .hero__content{
     display: flex;
@@ -2047,10 +2053,18 @@ color: var(--text-alabastro);
 
 @media (min-width:768px){
 
-    .hero{
-      flex-direction: row-reverse;
-      padding: var(--spacing-96) var(--spacing-16);
-    }
+    
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-48) var(--spacing-24);
+    gap: var(--spacing-32);
+    position: relative;
+}
+
 
     .hero__content{
         max-width: 60%;
@@ -2065,17 +2079,18 @@ color: var(--text-alabastro);
 
 @media (min-width:1024px){
 
-    .hero{
-    width: 100%;
-    height: auto;
+    
+.hero {
+    min-height: 100vh;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-96);
-    margin: 0 auto;
-    padding:var(--spacing-96) var(--spacing-16);
+    padding: var(--spacing-48) var(--spacing-24);
+    gap: var(--spacing-32);
+    position: relative;
 }
+
 
 .hero__content{
     width: 100%;
@@ -2588,15 +2603,7 @@ border: 1px solid light-dark(var(--edge-obsidian), rgba(244, 241, 238, 0.1));
   align-items: flex-start;
 }
 
-.contact__button {
-  color: var(--text-alabastro);
-  padding: var(--spacing-16) var(--spacing-32);
-  border: none;
-  border-radius: var(--radius);
-  font-weight: 600;
-  font-size: 1.125rem;
-  cursor: pointer;
-}
+
 
 .contact__button:hover {
   opacity: 0.9;
@@ -2653,15 +2660,14 @@ color: var(--text-alabastro);
   color: var(--basalto);
 }
 
-.calendly{
-    background-color: light-dark(var(--bg-obsidian),var(--bg-alabastro));
-    color: light-dark(var(--text-alabastro), var(--text-obsidian));
-    text-align: center;
-    width: 100%;
-    max-width: 240px;
-    height: auto;
-    border: 1px solid rgba(244, 241, 238, 0.1);
+
+.calendly, 
+
+.calendly:hover, .contact__button:hover {
+    background: var(--text-alabastro);
+    color: var(--bg-obsidian);
 }
+
 
 @media (min-width: 768px) {
   .contact .container {
@@ -3252,4 +3258,38 @@ body.game-mode-active .game-mode-toggle:hover::before {
     font-family: var(--font-mono) !important;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+}
+
+/* RESTAURACIÓN HERO DESKTOP (Layout Balanceado) */
+@media (min-width: 768px) {
+    .hero {
+        flex-direction: row-reverse;
+        padding: var(--spacing-96) var(--spacing-48);
+        gap: var(--spacing-48);
+        text-align: left;
+    }
+
+    .hero__content {
+        max-width: 60%;
+        align-items: flex-start;
+    }
+
+    .hero__description {
+        margin: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero {
+        gap: var(--spacing-96);
+        padding: var(--spacing-96) var(--spacing-80);
+    }
+
+    .hero__content {
+        max-width: 640px;
+    }
+
+    .hero__image {
+        max-width: 400px;
+    }
 }

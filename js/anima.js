@@ -1,7 +1,7 @@
 /**
  * LYTHICS - Extreme Performance Animation Engine
  * Stack: GSAP + ScrollTrigger
- * Directivas: anti-FOUC, autoAlpha, cascada técnica.
+ * Directivas: anti-FOUC, autoAlpha, cascada técnica, integrated 3D Hero.
  */
 
 gsap.registerPlugin(ScrollTrigger);
@@ -13,6 +13,7 @@ const LythicsEngine = {
         
         this.initHero();
         this.initScrollAnimations();
+        this.initThreeScrollEffect();
     },
 
     initHero() {
@@ -23,6 +24,22 @@ const LythicsEngine = {
           .to(".hero__title", { autoAlpha: 1, y: 0, duration: 1 }, "-=1.2")
           .to(".hero__description", { autoAlpha: 1, y: 0, duration: 1 }, "-=0.8")
           .to(".hero__social a", { autoAlpha: 1, y: 0, stagger: 0.1, duration: 0.8 }, "-=0.6");
+    },
+
+    initThreeScrollEffect() {
+        // Efecto Scrub para el monolito 3D integrado
+        gsap.to("#bg-three", {
+            scrollTrigger: {
+                trigger: "#inicio",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            },
+            opacity: 0,
+            scale: 0.5,
+            y: -100,
+            filter: "blur(10px)"
+        });
     },
 
     initScrollAnimations() {

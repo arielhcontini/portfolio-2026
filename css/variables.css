@@ -72,4 +72,13 @@
     /* --- Contenedores --- */
     --max-width: 1024px;                /* Ancho máximo del contenido central */
 
+    /* =========================================================
+       🎯 GATILLOS DE CONVERSIÓN (CRO)
+       ========================================================= */
+    --cta-padding: 16px 32px;
+    --cta-border: 1px solid var(--text-alabastro);
+    
+    /* Layout Fluido */
+    --section-gap: clamp(40px, 8vh, 96px);
+
 }
