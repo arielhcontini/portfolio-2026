@@ -1,3 +1,7 @@
+/* =========================================================
+   🚀 GLOBAL STYLES - PERFORMANCE OPTIMIZED & RESTORED
+   ========================================================= */
+
 body {
   background: var(--gradient-dark);
   cursor: crosshair;
@@ -177,145 +181,6 @@ h2{
 
 
 strong{
-     color: var(--text-alabastro);
-}
-
-.section-title{
-    font-size: clamp(1.75rem, 5vw, 2.5rem);
-    font-weight: 400;
-    text-align: center;
-    margin-bottom: var(--spacing-8);
-}
-
-
-
-.section-container{
-    max-width: var(--max-width);
-    margin: var(--spacing-48) auto;
-    padding: var(--spacing-48) var(--spacing-8);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-48);
-    border-radius: var(--radius);
-    background: linear-gradient(180deg, var(--bg-obsidian), rgba(244, 241, 238, 0.1));
-}
-
-@media (min-width: 768px) {
-    .section-container {
-        padding: var(--spacing-96) var(--spacing-24);
-    }
-}
-
-body {
-  background-color: var(--bg-obsidian);
-  cursor: crosshair;
-  color:  var(--text-alabastro);
-  font-family: var(--font-primary);
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-html {
-  scroll-behavior: smooth;
-}
-
-.texture-bg{
-    width: 100%;
-    height: auto;
-}
-
-/* BLINDAJE ANTI-PARPADEO (GSAP FOUC FIX) */
-.hero__image, .hero__title, .hero__description, .hero__social a,
-.section-title, .skill-card, .experience-card, .project-card, 
-.about__image-wrapper, .about__text p {
-    visibility: hidden;
-}
-
-
-
-/* Estilo del CTA para que parezca una terminal */
-.mobile-cta {
-  width: 100%;
-  height: auto;
-  font-family: var(--font-primary);
-  color: var(--text-alabastro); /* Un gris técnico, no blanco puro para no robarle peso al logo */
-  font-size: 12px;
-  margin: 0 auto;
-  text-align: center;
-  /* IMPORTANTE: Hacer que el texto también dispare el clic si lo tocan por error */
-  pointer-events: none; 
-  border: 1px solid rgba(244, 241, 238, 0.1);
-  padding: var(--spacing-8) var(--spacing-4);
-  z-index: 10;
-}
-
-/* El cursor parpadeante (el truco psicológico para llamar la atención) */
-.cursor-blink {
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-
-@media (min-width: 1024px) {
-  .mobile-cta {
-    display: block;
-  }
-}
-
-/* BACKGROUNDS */
-
-.gradient--v{
-    height:100vh;
-    margin: 0;
-     --x: calc(var(--posX, 0) * 1px);
-    --y: calc(var(--posY, 0) * 1px);
-     background-image: 
-    linear-gradient(115deg, #120B1A, #1C1621), 
-    radial-gradient( 90% 100% at calc( 50% + var(--x)) calc( 0% + var(--y)), #1c1621, #1C1621), 
-    radial-gradient(100% 100% at calc( 80% - var(--x)) calc( 0% - var(--y)), #1C1621, #1C1621), 
-    radial-gradient(150% 210% at calc(100% + var(--x)) calc( 0% + var(--y)), #120B1A, #120B1A), 
-    radial-gradient(100% 100% at calc(100% - var(--x)) calc(30% - var(--y)), #1C1621, #7c6b8a), 
-    linear-gradient(60deg, #1C1621, #1C1621);
-     background-blend-mode: soft-light, soft-light, lighten, lighten, lighten, soft-light, hard-light;
-}
-
-
-
-
-
-p{
-  font-family: var(--font-primary);
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  color: var(--text-alabastro);
-}
-
-h1{
-  font-family: var(--font-accent);
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-size: var(--H1);
-}
-
-
-h2{
-  font-family: var(--font-accent);
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-size: var(--H2);
-  letter-spacing: .333rem;
-}
-
-
-strong{
      color:  var(--text-alabastro);
 }
 
@@ -352,7 +217,6 @@ strong{
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 800;
-    font-size: clamp(1,75rem,5vw,2.5rem);
 }
 
 /* =========================================================
@@ -456,7 +320,7 @@ width: 100%;
     width: 100%;
     color: var(--text-alabastro);
     text-align: center;
-    font-family:"Roboto Mono", monospace;;
+    font-family: var(--font-mono);
     cursor: pointer;
     font-weight: 12px;
     background-color: transparent;
@@ -882,38 +746,6 @@ font-weight: 400;
     }
 }
 
-
-/*
-.skills__grid{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-8);
-}
-
-
-@media(min-width:768px){
-    .skills{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: var(--spacing-24);
-    }
-
-    .skills__grid{
-        grid-template-columns: repeat(4,1fr);
-        gap: var(--spacing-32);
-    }
-}
-
-@media(min-width:1024px){
-
-    .skills__grid{
-        grid-template-columns: repeat(5,1fr);
-        gap: var(--spacing-40);
-    }
-}
-    */ 
-     
 
 .about__container {
   display: flex;

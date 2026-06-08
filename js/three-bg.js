@@ -13,7 +13,7 @@ const CONFIG = {
     distanciaCamara: 3.5,
     campoVision: 50,
     radio: 4.44,
-    detalle: 8,
+    detalle: 3, 
     rugosidad: .666,
     metalizado: 1.999,
     flatShading: true,

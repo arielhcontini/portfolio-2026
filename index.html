@@ -44,6 +44,10 @@
     }
     </script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Mono:wght@400;700&family=Libre+Bodoni:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -113,7 +117,7 @@
     <script type="importmap">
         {
             "imports": {
-                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.min.js"
             }
         }
     </script>
@@ -123,7 +127,7 @@
 
     <header class="header">
         <div class="header__brand">
-            <a href="#inicio"><img class="header__logo" src="assets/logo.svg" alt="Ariel Hernán Contini"></a>
+            <a href="#inicio"><img class="header__logo" src="assets/logo.svg" loading="lazy" alt="Ariel Hernán Contini"></a>
         </div>
         <button id="btn-menu" class="header__toggle" aria-label="toggle menu">
             <span class="linea"></span>
@@ -153,9 +157,9 @@
                 </p>
 
                 <div class="hero__social">
-                    <a href="https://www.linkedin.com/in/arielhcontini/" target="_blank" aria-label="linkedin"> <img src="assets/in.svg" alt="Linkedin"></a>
-                    <a href="https://github.com/arielhcontini" aria-label="github" target="_blank"> <img src="assets/git.svg" alt="Github"></a>
-                    <a href="https://platzi.com/p/arielhernancontini/" aria-label="platzi" target="_blank"> <img src="assets/platzi.svg" alt="Platzi"></a>
+                    <a href="https://www.linkedin.com/in/arielhcontini/" target="_blank" aria-label="linkedin"> <img src="assets/in.svg" loading="lazy" alt="Linkedin"></a>
+                    <a href="https://github.com/arielhcontini" aria-label="github" target="_blank"> <img src="assets/git.svg" loading="lazy" alt="Github"></a>
+                    <a href="https://platzi.com/p/arielhernancontini/" aria-label="platzi" target="_blank"> <img src="assets/platzi.svg" loading="lazy" alt="Platzi"></a>
                 </div>
             </div>
         </section>
@@ -167,12 +171,12 @@
                     Metodologías y tecnologías integradas para diseñar, validar y escalar productos digitales con precisión quirúrgica.
                 </p>
                 <div class="skills__grid">
-                    <div class="skill-card"><div class="skill-card__icon"><img src="assets/01.svg" alt="skill"></div><p class="skill-card__label"> Sistemas de Diseño</p></div>
-                    <div class="skill-card"><div class="skill-card__icon"><img src="assets/02.svg" alt="skill"></div><p class="skill-card__label"> Descubrimiento de Producto</p></div>
-                    <div class="skill-card"><div class="skill-card__icon"><img src="assets/03.svg" alt="skill"></div><p class="skill-card__label"> Consultoría IT</p></div>
-                    <div class="skill-card"><div class="skill-card__icon"><img src="assets/04.svg" alt="skill"></div><p class="skill-card__label"> Design Thinking</p></div>
-                    <div class="skill-card"><div class="skill-card__icon"><img src="assets/05.svg" alt="skill"></div><p class="skill-card__label"> Desarrollo Front-End</p></div>
-                    <div class="skill-card"><div class="skill-card__icon"><img src="assets/06.svg" alt="skill"></div><p class="skill-card__label"> Código Creativo</p></div>
+                    <div class="skill-card"><div class="skill-card__icon"><img src="assets/01.svg" loading="lazy" alt="skill"></div><p class="skill-card__label"> Sistemas de Diseño</p></div>
+                    <div class="skill-card"><div class="skill-card__icon"><img src="assets/02.svg" loading="lazy" alt="skill"></div><p class="skill-card__label"> Descubrimiento de Producto</p></div>
+                    <div class="skill-card"><div class="skill-card__icon"><img src="assets/03.svg" loading="lazy" alt="skill"></div><p class="skill-card__label"> Consultoría IT</p></div>
+                    <div class="skill-card"><div class="skill-card__icon"><img src="assets/04.svg" loading="lazy" alt="skill"></div><p class="skill-card__label"> Design Thinking</p></div>
+                    <div class="skill-card"><div class="skill-card__icon"><img src="assets/05.svg" loading="lazy" alt="skill"></div><p class="skill-card__label"> Desarrollo Front-End</p></div>
+                    <div class="skill-card"><div class="skill-card__icon"><img src="assets/06.svg" loading="lazy" alt="skill"></div><p class="skill-card__label"> Código Creativo</p></div>
                 </div>
             </div>
         </section>
@@ -246,7 +250,7 @@
                         <p class="project-card__description">
                             Gestión integral de proyecto audiovisual en co-dirección con Homero Prodan. El resultado: una narrativa visual disruptiva que alineó la visión artística con los estándares de distribución&nbsp;digital.
                         </p>
-                        <div class="project-card__link"><img src="assets/readmore.svg" alt="Leer Más">Ver caso</div>
+                        <div class="project-card__link"><img src="assets/readmore.svg" loading="lazy" alt="Leer Más">Ver caso</div>
                     </div>
                 </article>
 
@@ -264,7 +268,7 @@
                         <p class="project-card__description">
                             Desde 2014, opero como partner estratégico de Juan Daffunchio en el desarrollo de experiencias inmersivas a gran&nbsp;escala.
                         </p>
-                        <div class="project-card__link"><img src="assets/readmore.svg" alt="Leer Más">Ver caso</div>
+                        <div class="project-card__link"><img src="assets/readmore.svg" loading="lazy" alt="Leer Más">Ver caso</div>
                     </div>
                 </article>
             </div>
@@ -282,7 +286,7 @@
 <div class="contact__details">
                         <a href="https://calendly.com/arielhcontini/30min" target="_blank" class="calendly"><span> Agendar reunión</span></a>
                         <a href="mailto:arielhcontini@gmail.com" target="_blank" class="contact__email"><span> arielhcontini@gmail.com</span></a>
-                        <a class="social__link up" href="#inicio"><button><img src="assets/up.svg" alt="Ir arriba"></button></a>
+                        <a class="social__link up" href="#inicio"><button><img src="assets/up.svg" loading="lazy" alt="Ir arriba"></button></a>
                     </div>
                 </div>
             </div>
@@ -296,7 +300,7 @@
             <div class="showcase__grid">
                 <article class="bivio-card" data-video-id="RwAyVp9RrSc" data-blocked="true" data-external-url="https://youtu.be/RwAyVp9RrSc">
                     <div class="bivio-card__thumb">
-                        <img src="https://i.ytimg.com/vi/RwAyVp9RrSc/maxresdefault.jpg" alt="Chrysalis">
+                        <img src="https://i.ytimg.com/vi/RwAyVp9RrSc/maxresdefault.jpg" loading="lazy" alt="Chrysalis">
                         <div class="bivio-card__play">↗</div>
                     </div>
                     <div class="bivio-card__content">
@@ -310,7 +314,7 @@
 
                 <article class="bivio-card" data-video-id="a_Qp3i1atkw">
                     <div class="bivio-card__thumb">
-                        <img src="https://i.ytimg.com/vi/a_Qp3i1atkw/sddefault.jpg" alt="Chrysalis Slow-mosh">
+                        <img src="https://i.ytimg.com/vi/a_Qp3i1atkw/sddefault.jpg" loading="lazy" alt="Chrysalis Slow-mosh">
                         <div class="bivio-card__play">►</div>
                     </div>
                     <div class="bivio-card__content">
@@ -324,7 +328,7 @@
 
                 <article class="bivio-card" data-video-id="c8p-wvNhO6M" data-blocked="true" data-external-url="https://www.youtube.com/watch?v=c8p-wvNhO6M">
                     <div class="bivio-card__thumb">
-                        <img src="https://i.ytimg.com/vi/c8p-wvNhO6M/maxresdefault.jpg" alt="La mia historia">
+                        <img src="https://i.ytimg.com/vi/c8p-wvNhO6M/maxresdefault.jpg" loading="lazy" alt="La mia historia">
                         <div class="bivio-card__play">↗</div>
                     </div>
                     <div class="bivio-card__content">
@@ -338,7 +342,7 @@
 
                 <article class="bivio-card" data-video-id="vjC0YOhKplU">
                     <div class="bivio-card__thumb">
-                        <img src="https://i.ytimg.com/vi/vjC0YOhKplU/maxresdefault.jpg" alt="IGOR 1st Cut">
+                        <img src="https://i.ytimg.com/vi/vjC0YOhKplU/maxresdefault.jpg" loading="lazy" alt="IGOR 1st Cut">
                         <div class="bivio-card__play">►</div>
                     </div>
                     <div class="bivio-card__content">
@@ -358,7 +362,7 @@
             <div class="featured-wrapper">
                 <div class="featured-video video-card" data-video-id="f7k_mxk19wE">
                     <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/f7k_mxk19wE/maxresdefault.jpg" alt="Estallando desde el océano">
+                        <img src="https://i.ytimg.com/vi/f7k_mxk19wE/maxresdefault.jpg" loading="lazy" alt="Estallando desde el océano">
                         <div class="video-card__play">► PLAY SHOW</div>
                     </div>
                 </div>
@@ -373,7 +377,7 @@
                 <div class="secondary-grid">
                     <article class="video-card secondary-card" data-video-id="9AR9-Mc8kOU">
                         <div class="video-card__thumb">
-                            <img src="https://i.ytimg.com/vi/9AR9-Mc8kOU/maxresdefault.jpg" alt="Como se curan las heridas">
+                            <img src="https://i.ytimg.com/vi/9AR9-Mc8kOU/maxresdefault.jpg" loading="lazy" alt="Como se curan las heridas">
                             <div class="video-card__play">► VER</div>
                         </div>
                         <div class="card-content">
@@ -383,7 +387,7 @@
                     </article>
                     <article class="video-card secondary-card" data-video-id="UUuUbgmXMHI">
                         <div class="video-card__thumb">
-                            <img src="https://i.ytimg.com/vi/UUuUbgmXMHI/maxresdefault.jpg" alt="La clave">
+                            <img src="https://i.ytimg.com/vi/UUuUbgmXMHI/maxresdefault.jpg" loading="lazy" alt="La clave">
                             <div class="video-card__play">► VER</div>
                         </div>
                         <div class="card-content">
@@ -393,7 +397,7 @@
                     </article>
                     <article class="video-card secondary-card" data-video-id="keywsiC21Is">
                         <div class="video-card__thumb">
-                            <img src="https://i.ytimg.com/vi/keywsiC21Is/maxresdefault.jpg" alt="Para qué?">
+                            <img src="https://i.ytimg.com/vi/keywsiC21Is/maxresdefault.jpg" loading="lazy" alt="Para qué?">
                             <div class="video-card__play">► VER</div>
                         </div>
                         <div class="card-content">
@@ -413,5 +417,15 @@
     <script src="js/menu.js"></script>
     <script src="js/game-mode.js"></script>
     <script src="js/modals.js"></script>
+    
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Service Worker registrado con éxito:', reg.scope))
+                    .catch(err => console.error('Error al registrar el Service Worker:', err));
+            });
+        }
+    </script>
 </body>
 </html>
