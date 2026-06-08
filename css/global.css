@@ -1240,7 +1240,6 @@ color: var(--text-alabastro);
     z-index: 100000;
     display: flex;
     align-items: center;
-    backdrop-filter: blur(10px);
 }
 
 .bivio-nav__container {
@@ -1464,95 +1463,6 @@ color: var(--text-alabastro);
     display: block;
     margin-bottom: var(--spacing-4);
 }
-/* =========================================
-   GAME MODE (MODO JUEGO)
-   ========================================= */
-
-.game-mode-toggle {
-    position: fixed;
-    bottom: var(--spacing-24);
-    right: var(--spacing-24);
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background-color: light-dark(var(--bg-obsidian), var(--bg-alabastro));
-    color: var(--text-alabastro);
-    border: 1px solid rgba(244, 241, 238, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 1000000;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.game-mode-toggle:hover {
-    transform: scale(1.1);
-}
-
-.game-mode-toggle:active {
-    transform: scale(0.95);
-}
-
-.game-mode-toggle img {
-    width: 28px;
-    height: 28px;
-}
-
-/* Estado Activo del Modo Juego */
-body.game-mode-active .header,
-body.game-mode-active main > *:not(.game-mode-toggle),
-body.game-mode-active .game-mode-toggle .icon-play {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s ease;
-}
-
-body.game-mode-active main {
-    overflow: hidden;
-    height: 100vh;
-}
-
-body.game-mode-active canvas#bg-three {
-    pointer-events: auto; /* Permitimos interactuar con el canvas */
-    opacity: 1; /* Aseguramos que sea visible */
-}
-
-/* Tooltip o indicador sutil */
-.game-mode-toggle::before {
-    content: "SALIR";
-    position: absolute;
-    right: 70px;
-    background: var(--bg-obsidian);
-    color: var(--text-alabastro);
-    padding: 4px 12px;
-    font-size: 10px;
-    font-family: 'Roboto Mono', monospace;
-    white-space: nowrap;
-    border: 1px solid rgba(244, 241, 238, 0.1);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    display: none; /* Oculto por defecto */
-}
-
-body.game-mode-active .game-mode-toggle:hover::before {
-    opacity: 1;
-    display: block;
-}
-
-
-/* REFUERZO DE VISIBILIDAD PARA EL BOTÓN DE JUEGO */
-.game-mode-toggle {
-    display: flex !important; /* Asegurar que se muestre */
-    visibility: visible !important;
-    background-color: #222 !important; /* Fondo oscuro para que resalte el emoji */
-    border: 2px solid rgba(244, 241, 238, 0.1) !important;
-}
-
-
-
 /* REGLAS TÉCNICAS MONOSPACE (CRO) */
 .experience-card__date, .project-card__number, .skill-card__label, .nav__link, .header__title, .project-card__role {
     font-family: var(--font-mono) !important;

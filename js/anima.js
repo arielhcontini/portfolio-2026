@@ -19,7 +19,6 @@ const LythicsEngine = {
         requestAnimationFrame(() => {
             setTimeout(() => {
                 this.initScrollAnimations();
-                this.initThreeScrollEffect();
             }, 150); // Pequeño delay para asegurar que el LCP ya se midió
         });
     },
@@ -38,22 +37,6 @@ const LythicsEngine = {
           .to(".hero__title", { autoAlpha: 1, y: 0, duration: 1 }, "-=1.2")
           .to(".hero__description", { autoAlpha: 1, y: 0, duration: 1 }, "-=0.8")
           .to(".hero__social a", { autoAlpha: 1, y: 0, stagger: 0.1, duration: 0.8 }, "-=0.6");
-    },
-
-    initThreeScrollEffect() {
-        // Efecto Scrub para el monolito 3D integrado
-        // OPTIMIZADO: Se eliminó el "filter: blur()" ya que es devastador para el rendimiento de CPU/GPU
-        gsap.to("#bg-three", {
-            scrollTrigger: {
-                trigger: "#inicio",
-                start: "top top",
-                end: "bottom top",
-                scrub: true
-            },
-            opacity: 0,
-            scale: 0.8, // Menos agresivo para evitar recalculos pesados
-            y: -50
-        });
     },
 
     initScrollAnimations() {
