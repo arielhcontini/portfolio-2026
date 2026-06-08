@@ -1,10 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Mono:wght@400;700&family=Libre+Bodoni:ital,wght@0,600;1,600&display=swap');
+
 :root{
 
     /* =========================================================
-       🎨 SISTEMA DE COLOR (DIRECCIÓN DE ARTE)
+       🎨 SISTEMA DE COLOR Y TIPOGRAFÍA
        ========================================================= */
+    
+    /* Fuentes */
+    --font-primary: "Roboto", sans-serif;
+    --font-mono: "Roboto Mono", monospace;
+    --font-accent: "Libre Bodoni", serif;
+
     
    /*  color-scheme: light dark; */
 

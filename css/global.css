@@ -2,7 +2,7 @@ body {
   background: var(--gradient-dark);
   cursor: crosshair;
   color: var(--text-alabastro);
-  font-family: "Roboto Mono", monospace;
+  font-family: var(--font-primary);
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -99,7 +99,7 @@ opacity: .999;
 .mobile-cta {
   width: 100%;
   height: auto;
-  font-family: "Roboto Mono", monospace;
+  font-family: var(--font-primary);
   color: var(--text-alabastro); /* Un gris técnico, no blanco puro para no robarle peso al logo */
   font-size: 12px;
   margin: 0 auto;
@@ -150,7 +150,7 @@ opacity: .999;
 
 
 p{
-  font-family: "Roboto Mono", monospace;
+  font-family: var(--font-primary);
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -158,7 +158,7 @@ p{
 }
 
 h1{
-  font-family: "Libre Bodoni", serif;
+  font-family: var(--font-accent);
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
@@ -167,7 +167,7 @@ h1{
 
 
 h2{
-  font-family: "Libre Bodoni", serif;
+  font-family: var(--font-accent);
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
@@ -211,7 +211,7 @@ body {
   background-color: var(--bg-obsidian);
   cursor: crosshair;
   color:  var(--text-alabastro);
-  font-family: "Roboto Mono", monospace;
+  font-family: var(--font-primary);
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -238,7 +238,7 @@ html {
 .mobile-cta {
   width: 100%;
   height: auto;
-  font-family: "Roboto Mono", monospace;
+  font-family: var(--font-primary);
   color: var(--text-alabastro); /* Un gris técnico, no blanco puro para no robarle peso al logo */
   font-size: 12px;
   margin: 0 auto;
@@ -289,7 +289,7 @@ html {
 
 
 p{
-  font-family: "Roboto Mono", monospace;
+  font-family: var(--font-primary);
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -297,7 +297,7 @@ p{
 }
 
 h1{
-  font-family: "Libre Bodoni", serif;
+  font-family: var(--font-accent);
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
@@ -306,7 +306,7 @@ h1{
 
 
 h2{
-  font-family: "Libre Bodoni", serif;
+  font-family: var(--font-accent);
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
@@ -358,6 +358,11 @@ strong{
 /* =========================================================
    🪟 VENTANAS MODALES (MODAL VIEW)
    ========================================================= */
+body.is-modal {
+    overflow: hidden !important;
+    padding-right: var(--spacing-8); /* Evitar salto de layout por desaparición de scrollbar */
+}
+
 body.is-modal .header,
 body.is-modal .bivio-nav,
 body.is-modal .topnav {
@@ -479,7 +484,7 @@ width: 100%;
 }
 
 .header__title{
-      font-family: "Roboto Mono", monospace;
+      font-family: var(--font-primary);
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -1112,7 +1117,7 @@ color: var(--text-alabastro);
 
 
 .project-card__role{
-font-family: "Roboto Mono", monospace;
+font-family: var(--font-primary);
 color: var(--text-alabastro);
 font-size: 11px;
 }
@@ -1122,19 +1127,38 @@ font-size: 11px;
     line-height: 1.5;
 }
 
-.project-card__link{
-    width: 100%; /* Increased for better touch target (Mobile First) */
+
+
+.project-card__link {
+    width: 100%;
     height: auto;
-    display: inline-block;
-    gap: var(--spacing-16);
+    display: flex;
     align-items: center;
+    gap: var(--spacing-16);
     margin-top: var(--spacing-16);
-    font-size: 8px;
+    font-size: 16px;
+    font-family: var(--font-mono) !important;
+    text-transform: uppercase;
+    color: var(--text-alabastro);
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
 }
 
+
+
 .project-card__link img {
-    width: 8px; /* Maintain icon visual size */
+    width: 16px;
+    height: auto;
 }
+
+
+
+
+
+
+
+
 
 @media(min-width:768px){
    
@@ -1271,7 +1295,7 @@ color: var(--text-alabastro);
 }
 
 .contact__details a{
-    font-family: "Roboto Mono", monospace;
+    font-family: var(--font-primary);
     font-size: 1rem;
     margin: var(--spacing-8) auto;
    border: 1px solid rgba(244, 241, 238, 0.1);
@@ -1456,12 +1480,11 @@ color: var(--text-alabastro);
     border-radius: var(--radius); /* 1px, súper afilado */
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .bivio-card:hover {
     transform: translateY(-4px);
-    border-color: var(--text-alabastro);
 }
 
 .bivio-card__thumb {
@@ -1526,7 +1549,6 @@ color: var(--text-alabastro);
     color: var(--text-alabastro);
     background: rgba(244, 241, 238, 0.05);
     padding: var(--spacing-4) var(--spacing-8);
-    border: 1px solid rgba(244, 241, 238, 0.1);
 }
 
 .bivio-card__tags .tag-external {
@@ -1576,7 +1598,6 @@ color: var(--text-alabastro);
     font-size: 1.2rem;
     background: var(--bg-obsidian-alpha);
     padding: var(--spacing-12) var(--spacing-24);
-    border: 1px solid var(--text-alabastro);
     backdrop-filter: blur(5px);
 }
 
@@ -1801,7 +1822,7 @@ width: 100%;
 }
 
 .header__title{
-      font-family: "Roboto Mono", monospace;
+      font-family: var(--font-primary);
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -2434,7 +2455,7 @@ color: var(--text-alabastro);
 
 
 .project-card__role{
-font-family: "Roboto Mono", monospace;
+font-family: var(--font-primary);
 color: var(--text-alabastro);
 font-size: 11px;
 }
@@ -2444,19 +2465,38 @@ font-size: 11px;
     line-height: 1.5;
 }
 
-.project-card__link{
-    width: 44px; /* Increased for better touch target (Mobile First) */
-    height: 44px;
+
+
+.project-card__link {
+    width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-top: var(--spacing-8);
-    font-size: 12pxm;
+    gap: var(--spacing-16);
+    margin-top: var(--spacing-16);
+    font-size: 16px;
+    font-family: var(--font-mono) !important;
+    text-transform: uppercase;
+    color: var(--text-alabastro);
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
 }
 
+
+
 .project-card__link img {
-    width: 16px; /* Maintain icon visual size */
+    width: 16px;
+    height: auto;
 }
+
+
+
+
+
+
+
+
 
 @media(min-width:768px){
    
@@ -2593,7 +2633,7 @@ color: var(--text-alabastro);
 }
 
 .contact__details a{
-    font-family: "Roboto Mono", monospace;
+    font-family: var(--font-primary);
     font-size: 1rem;
     margin: var(--spacing-8) auto;
    border: 1px solid rgba(244, 241, 238, 0.1);
@@ -2783,7 +2823,6 @@ color: var(--text-alabastro);
 
 .bivio-card:hover {
     transform: translateY(-4px);
-    border-color: var(--text-alabastro);
 }
 
 .bivio-card__thumb {
@@ -3207,4 +3246,10 @@ body.game-mode-active .game-mode-toggle:hover::before {
 .brand-card__content strong {
     color: var(--text-alabastro);
     font-weight: normal;
+}
+/* REGLAS TÉCNICAS MONOSPACE (CRO) */
+.experience-card__date, .project-card__number, .skill-card__label, .nav__link, .header__title, .project-card__role {
+    font-family: var(--font-mono) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }

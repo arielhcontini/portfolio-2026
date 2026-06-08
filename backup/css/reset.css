@@ -1,0 +1,51 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+img,
+picture,
+video,
+canvas,
+svg{
+    display: block;
+    max-width: 100%;
+    pointer-events: none;
+}
+
+button{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    -webkit-tap-highlight-color: transparent; 
+    outline: none;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent;
+    background: none;
+    -webkit-tap-highlight-color: transparent; 
+    outline: none;
+}
+
+li{
+    list-style: none;
+    background: none;
+    background-color: transparent;
+}
+
+ul{
+    background: none;
+    background-color: transparent;
+}

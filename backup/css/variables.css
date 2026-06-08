@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+:root{
+
+    /* =========================================================
+       🎨 SISTEMA DE COLOR (DIRECCIÓN DE ARTE)
+       ========================================================= */
+    
+   /*  color-scheme: light dark; */
+
+    /* --- Paleta Principal: Modo Claro (Light Mode) --- */
+    --text-obsidian: #120B1A;           /* Color principal de texto oscuro */
+    --bg-alabastro: #f4f1eeeb;          /* Fondo principal claro (con ligera transparencia) */
+    --bg-purple: #7c6b8a;               /* Color de acento púrpura */
+    --edge-obsidian:#120b1a18;          /* Bordes y separadores sutiles */
+
+    /* --- Paleta Oscura (Obsidiana) --- */
+    --bg-obsidian: #120B1A;             /* Fondo base profundo */
+    --bg-obsidian-alpha: #120b1a8f;     /* Fondo oscuro con transparencia para capas */
+
+    /* --- Tipografía y Contrastes --- */
+    --text-alabastro: #f4f1ee;          /* Texto claro sobre fondos oscuros */
+    --text-alabastro-opacity: #f4f1eeae; /* Texto claro secundario (menos contraste) */
+    
+    --purple: #7c6b8a;                  /* Púrpura base */
+    --basalto: #2d2430;                 /* Gris violáceo para tarjetas o bloques */
+    --bg-shadow: #1C1621;               /* Color para sombras proyectadas */
+
+    /* --- Degradados --- */
+    --gradient-dark: linear-gradient(0deg,rgba(16, 13, 17, 0.888) 0%, rgba(18, 11, 26, 1) 50%, rgba(28, 22, 33, .999) 100%);
+
+    /* =========================================================
+       📐 GEOMETRÍA Y ESTRUCTURA (LAYOUT)
+       ========================================================= */
+
+    /* --- Bordes --- */
+    --radius: 1px;                      /* Curvatura de esquinas (1px para look brutalista/afilado) */
+
+    /* --- Espaciado (Escala Modular) --- */
+    --spacing-4: 4px;
+    --spacing-8: 8px;
+    --spacing-12: 12px;
+    --spacing-16: 16px;
+    --spacing-24: 24px;
+    --spacing-32: 32px;
+    --spacing-40: 40px;
+    --spacing-48: 48px;
+    --spacing-56: 56px;
+    --spacing-64: 64px;
+    --spacing-72: 72px;
+    --spacing-80: 80px;
+    --spacing-88: 88px;
+    --spacing-96: 96px;
+
+    /* --- Tipografía Fluida (Responsive) --- */
+    /* Se ajustan automáticamente según el tamaño de pantalla */
+    --H1: clamp(1.75rem, 5vw, 2.5rem);
+    --H2: clamp(1.5rem, 4vw, 2rem);
+    --H3: clamp(1.25rem, 3vw, 1.75rem);
+    --H4: clamp(1rem, 2vw, 1.5rem);
+    --H5: clamp(0.875rem, 1.5vw, 1.25rem);
+    --H6: clamp(0.75rem, 1vw, 1rem);    
+    
+    --p: clamp(0.875rem, 1.5vw, 1.25rem);
+
+    /* --- Contenedores --- */
+    --max-width: 1024px;                /* Ancho máximo del contenido central */
+
+}

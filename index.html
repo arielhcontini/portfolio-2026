@@ -110,7 +110,7 @@
     </script>
 </head>
 
-<body id="inicio" oncontextmenu="return false">
+<body id="inicio">
 
     <header class="header">
         <div class="header__brand">
@@ -280,245 +280,7 @@
         </section>
     </main>
 
-    <script src="../js/menu.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        // 1. ANIMACIÓN DEL HERO (Aparición simultánea y limpia)
-        gsap.fromTo([".hero__image", ".hero__title", ".hero__description", ".hero__social a"], 
-            { autoAlpha: 0, y: 20 }, 
-            { duration: 1.2, autoAlpha: 1, y: 0, stagger: 0.1, ease: "power3.out" }
-        );
-
-        // NOTA CLAVE PARA TODAS LAS SECCIONES DE ABAJO: 
-        // Cambié 'play none none reverse' a 'play none none none' 
-        // para evitar el bug de desaparición al usar el menú ancla.
-
-        // 2. TÍTULOS DE SECCIÓN
-        gsap.utils.toArray('.section-title').forEach(title => {
-            gsap.fromTo(title, 
-                { autoAlpha: 0, y: 20 }, 
-                {                      
-                    scrollTrigger: { trigger: title, start: "top 90%", toggleActions: "play none none none" },
-                    duration: 1, autoAlpha: 1, y: 0, ease: "power3.out"
-                }
-            );
-        });
-
-        // 3. SECCIÓN HABILIDADES
-        gsap.fromTo(".skill-card", 
-            { autoAlpha: 0, y: 20 },
-            {
-                scrollTrigger: { trigger: ".skills__grid", start: "top 85%", toggleActions: "play none none none" },
-                duration: 0.8, autoAlpha: 1, y: 0, stagger: 0.08, ease: "power3.out"
-            }
-        );
-
-        // 4. EXPERIENCIA Y PROYECTOS
-        const tarjetasExp = gsap.utils.toArray('.experience-card, .project-card, .logofolio__teaser-wrapper');
-        tarjetasExp.forEach(card => {
-            gsap.fromTo(card, 
-                { autoAlpha: 0, y: 30 },
-                {
-                    scrollTrigger: { 
-                        trigger: card, 
-                        start: "top 90%", 
-                        toggleActions: "play none none none" 
-                    },
-                    duration: 1.2, 
-                    autoAlpha: 1, 
-                    y: 0, 
-                    ease: "power3.out"
-                }
-            );
-        });
-    </script>
-
-<script type="module">
-        import * as THREE from 'three';
-
-        // =========================================================
-        // 🎛️ PANEL DE CONTROL: DIRECCIÓN DE ARTE Y FÍSICA
-        // ¡Modifica los valores de este bloque para ajustar la estética!
-        // =========================================================
-        const CONFIG = {
-            // --- 1. COLORES Y ATMÓSFERA ---
-            // Los colores usan formato hexadecimal (0xRRGGBB).
-            colorNiebla: 0x331166,        // Profundidad/Fondo: Color de la niebla en la distancia.
-            nieblaInicio: 0.1,            // Distancia donde empieza la niebla (relativo a la cámara).
-            nieblaFin: 25.0,              // Distancia donde la niebla es total.
-            
-            colorGeometria: 0x120B1A,     // Color base del objeto principal.
-            
-            colorLuzToque: 0x320B3A,      // Luz puntual que sigue al puntero/toque.
-            intensidadLuzBase: 222,       // Brillo de la luz puntual en reposo.
-            intensidadLuzToque: 666,      // Brillo EXTRA que se suma al interactuar.
-            
-            colorLuzAmbiente: 0x990096,   // Luz que rellena las sombras (evita que el objeto sea negro total).
-            intensidadAmbiente: 12.95,    // Fuerza de la luz de relleno.
-
-            // --- 2. CÁMARA Y ESPACIO ---
-            distanciaCamara: 3.5,         // Qué tan lejos está la cámara del objeto (Z-axis).
-            campoVision: 50,              // FOV: A mayor valor, más efecto "gran angular".
-
-            // --- 3. GEOMETRÍA BASE ---
-            radio: 4.44,                  // Radio general de la figura.
-            detalle: 8,                  // Nivel de detalle (0: minimalista/poligonal - 128: esfera perfecta).
-            
-            // --- 4. MATERIAL (Textura visual) ---
-            rugosidad: .666,               // 0.0 (espejo) a 1.0 (mate). Define qué tanto brilla.
-            metalizado: 1.999,              // 0.0 a 1.0+. Define el reflejo metálico.
-            flatShading: true,            // true: Se ven los triángulos (estética Low-Poly). false: Suave.
-
-            // --- 5. MOVIMIENTO (Vibración y Rotación) ---
-            escalaTiempo: 0.000007,       // Velocidad global de todas las animaciones.
-            
-            velRotacionX: 0.155,          // Giro constante sobre el eje X.
-            velRotacionY: 0.155,          // Giro constante sobre el eje Y.
-            amplitudRotZ: 0.99,           // Qué tanto oscila sobre el eje Z.
-            frecuenciaRotZ: 0.05,         // Qué tan rápido oscila sobre el eje Z.
-
-            // --- 6. DEFORMACIÓN (Ondas y Atracción) ---
-            velOlaBase: 8,                // Rapidez de la ondulación del objeto.
-            fuerzaOlaBase: 10,            // Amplitud de las ondas (qué tanto se deforma solo).
-            frecuenciaOla: 1.33,          // Frecuencia espacial (cantidad de "crestas" de onda).
-            
-            atraccionDedo: 2.5,           // Fuerza con la que la malla se estira hacia el puntero.
-            radioAtraccion: 2.0,          // Radio de influencia del toque (cuánta área se deforma).
-            suavizadoInteraccion: 0.05    // Qué tan "elástico" es el regreso a la forma original.
-        };
-        // =========================================================
-
-        // --- INICIO DE LA LÓGICA (No necesitas tocar esto) ---
-        const scene = new THREE.Scene();
-        scene.fog = new THREE.Fog(CONFIG.colorNiebla, CONFIG.nieblaInicio, CONFIG.nieblaFin);
-
-        const camera = new THREE.PerspectiveCamera(CONFIG.campoVision, window.innerWidth / window.innerHeight, 0.1, 100);
-        camera.position.set(0, 0, CONFIG.distanciaCamara); 
-
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        
-        renderer.domElement.id = 'bg-three';
-        document.body.appendChild(renderer.domElement);
-
-        setTimeout(() => renderer.domElement.style.opacity = "1", 100);
-
-        // APLICANDO CONFIGURACIÓN DE GEOMETRÍA
-        let geometry = new THREE.TetrahedronGeometry(CONFIG.radio, CONFIG.detalle);
-        if (geometry.index) {
-            geometry = geometry.toNonIndexed(); 
-        }
-
-        // APLICANDO CONFIGURACIÓN DE MATERIAL
-        const material = new THREE.MeshStandardMaterial({
-            color: CONFIG.colorGeometria,       
-            flatShading: CONFIG.flatShading,     
-            roughness: CONFIG.rugosidad,        
-            metalness: CONFIG.metalizado
-        });
-
-        const tetraMesh = new THREE.Mesh(geometry, material);
-        scene.add(tetraMesh);
-
-        const posAttribute = geometry.attributes.position;
-        const originalPos = new Float32Array(posAttribute.array);
-        const count = posAttribute.count;
-
-        // APLICANDO CONFIGURACIÓN DE LUCES
-        const pointLight = new THREE.PointLight(CONFIG.colorLuzToque, CONFIG.intensidadLuzBase, 100); 
-        scene.add(pointLight);
-        scene.add(new THREE.AmbientLight(CONFIG.colorLuzAmbiente, CONFIG.intensidadAmbiente));
-
-        const raycaster = new THREE.Raycaster();
-        const mathPlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), -1); 
-        const pointerCoords = new THREE.Vector2(-1000, -1000);
-        const interaction3D = new THREE.Vector3();
-        const lightTarget = new THREE.Vector3(0, 0, 1); 
-
-        let effectStrength = 0; 
-
-        function setPointer(clientX, clientY) {
-            pointerCoords.x = (clientX / window.innerWidth) * 2 - 1;
-            pointerCoords.y = -(clientY / window.innerHeight) * 2 + 1;
-        }
-
-        window.addEventListener('mousemove', (e) => setPointer(e.clientX, e.clientY));
-        window.addEventListener('touchstart', (e) => { if(e.touches.length > 0) setPointer(e.touches[0].clientX, e.touches[0].clientY); }, { passive: true });
-        window.addEventListener('touchmove', (e) => {
-            if(e.touches.length > 0) setPointer(e.touches[0].clientX, e.touches[0].clientY);
-        }, { passive: true });
-        
-        window.addEventListener('touchend', () => pointerCoords.set(-1000, -1000));
-        document.addEventListener('mouseleave', () => pointerCoords.set(-1000, -1000));
-
-        function animate() {
-            requestAnimationFrame(animate);
-            const time = performance.now() * CONFIG.escalaTiempo;
-
-            const isInteracting = pointerCoords.x !== -1000;
-            raycaster.setFromCamera(pointerCoords, camera);
-
-            if (isInteracting) {
-                effectStrength += (1.0 - effectStrength) * CONFIG.suavizadoInteraccion; 
-                if (raycaster.ray.intersectPlane(mathPlane, interaction3D)) {
-                    lightTarget.lerp(interaction3D, 0.1); 
-                }
-            } else {
-                effectStrength += (0.0 - effectStrength) * (CONFIG.suavizadoInteraccion * 0.3); 
-                lightTarget.lerp(new THREE.Vector3(0, 0, 1), 0.02); 
-            }
-            
-            pointLight.position.copy(lightTarget);
-            pointLight.intensity = CONFIG.intensidadLuzBase + (CONFIG.intensidadLuzToque * effectStrength);
-
-            // APLICANDO CONFIGURACIÓN DE DEFORMACIÓN FÍSICA
-            for (let i = 0; i < count; i++) {
-                const ox = originalPos[i * 3];
-                const oy = originalPos[i * 3 + 1];
-                const oz = originalPos[i * 3 + 2];
-
-                const distToCenter = Math.sqrt(ox*ox + oy*oy + oz*oz);
-                const wave = Math.sin(time * CONFIG.velOlaBase + oy * CONFIG.frecuenciaOla) * CONFIG.fuerzaOlaBase;
-
-                const dx = ox - lightTarget.x;
-                const dy = oy - lightTarget.y;
-                const dz = oz - lightTarget.z;
-                const distToTargetSq = dx*dx + dy*dy + dz*dz;
-
-                // Deformación gaussiana basada en la distancia al toque
-                const pullStrength = (Math.exp(-distToTargetSq / CONFIG.radioAtraccion) * CONFIG.atraccionDedo) * effectStrength; 
-
-                const newRadius = distToCenter + wave + pullStrength;
-                const scale = newRadius / distToCenter;
-
-                posAttribute.setXYZ(i, ox * scale, oy * scale, oz * scale);
-            }
-
-            posAttribute.needsUpdate = true;
-            geometry.computeVertexNormals();
-
-            // APLICANDO ROTACIÓN
-            tetraMesh.rotation.x = time * CONFIG.velRotacionX;
-            tetraMesh.rotation.y = time * CONFIG.velRotacionY;
-            tetraMesh.rotation.z = Math.sin(time * CONFIG.frecuenciaRotZ) * CONFIG.amplitudRotZ;
-
-            renderer.render(scene, camera);
-        }
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        animate();
-    </script>
-    <div id="project-templates" style="display: none;">
+        <div id="project-templates" style="display: none;">
         <!-- Template biVio -->
         <div id="template-bivio">
             <h2 class="section-title">biVio <br><span class="outline">Ecosistema Generativo</span></h2>
@@ -635,7 +397,12 @@
         </div>
     </div>
 
-    <script src="../js/game-mode.js"></script>
-    <script src="../js/modals.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script type="module" src="js/three-bg.js"></script>
+    <script src="js/anima.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/game-mode.js"></script>
+    <script src="js/modals.js"></script>
 </body>
 </html>

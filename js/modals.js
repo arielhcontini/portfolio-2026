@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Mostrar modal
                 modalOverlay.classList.add('active');
+                document.body.classList.add('is-modal');
                 
                 // Reset posición
                 modalWindow.style.top = '50%';
@@ -95,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Lógica de Cierre
     const closeModal = () => {
         modalOverlay.classList.remove('active');
+        document.body.classList.remove('is-modal');
         setTimeout(() => {
             modalBody.innerHTML = '';
         }, 300);
