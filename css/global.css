@@ -894,6 +894,17 @@ line-height: 1.5;
 color: var(--text-alabastro);
 }
 
+.experience-card a{
+    font-size: 12px;
+    width: 100%;
+    height: auto;
+     font-family: var(--font-mono) !important;
+    display:flex;
+    flex-direction: grid;
+    color: var(--text-alabastro);
+    text-decoration: underline;
+}
+
 @media(min-width:768px){
 
     .experience-card{
