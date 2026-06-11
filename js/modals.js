@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalTitle = document.getElementById('modal-title');
     
     // 2. Abrir Modal de Caso (Consolidado)
-    const projectCards = document.querySelectorAll('.project-card.clickable-card');
+    const projectCards = document.querySelectorAll('.clickable-card[data-modal-target]');
     
     projectCards.forEach(card => {
         card.addEventListener('click', () => {
@@ -41,7 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalBody.appendChild(content);
                 
                 // Actualizar título
-                const titleText = card.querySelector('.project-card__title').innerText;
+                const titleEl = card.querySelector('.project-card__title, .work-card__title');
+                const titleText = titleEl ? titleEl.innerText : '';
                 modalTitle.innerText = titleText;
                 
                 // Mostrar modal

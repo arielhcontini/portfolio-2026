@@ -139,6 +139,120 @@
         .lang-switch .lang-sep {
             opacity: 0.3;
         }
+
+        /* En mobile: lang-switch sube al primer lugar del nav abierto */
+        @media (max-width: 768px) {
+            .nav__link--lang {
+                order: -1;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid rgba(255,255,255,0.08);
+                margin-bottom: 0.5rem;
+                display: flex;
+                justify-content: center;
+            }
+            .lang-switch {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+        }
+
+        /* ── Work Cards: imagen + texto ── */
+        .work-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        .work-card:last-child { border-bottom: none; }
+        .work-card:nth-child(even) .work-card__image { order: 2; }
+        .work-card:nth-child(even) .work-card__body  { order: 1; }
+        .work-card__image {
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.04);
+        }
+        .work-card__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .work-card:hover .work-card__image img { transform: scale(1.03); }
+        .work-card__type {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            opacity: 0.5;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .work-card__title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        .work-card__desc {
+            font-size: 0.95rem;
+            color: #e0e0e0;
+            line-height: 1.65;
+            margin-bottom: 1.25rem;
+            max-width: 52ch;
+        }
+        .work-card__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            opacity: 0.75;
+            transition: opacity 0.2s;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+        .work-card__cta:hover { opacity: 1; }
+        .work-card__cta img { width: 18px; }
+
+        /* Mobile: stack vertical */
+        @media (max-width: 768px) {
+            .work-card {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .work-card:nth-child(even) .work-card__image,
+            .work-card:nth-child(even) .work-card__body  { order: unset; }
+        }
+
+        /* ── Modal Ama Maitea: galería ── */
+        .am-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 2rem;
+        }
+        .am-gallery__item {
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.06);
+        }
+        .am-gallery__item.am-featured {
+            grid-column: span 3;
+            aspect-ratio: 16/7;
+        }
+        .am-gallery__item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        @media (max-width: 600px) {
+            .am-gallery { grid-template-columns: 1fr 1fr; }
+            .am-gallery__item.am-featured { grid-column: span 2; }
+        }
     </style>
 
     <script type="importmap">
@@ -168,7 +282,7 @@
                 <li class="nav__link"><a aria-label="laboratorio" href="#projects" data-es="Laboratorio" data-en="Lab">Laboratorio</a></li>
                 <li class="nav__link"><a aria-label="contacto" href="#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
                 <li class="nav__link"><a class="outline" aria-label="download curriculum" target="_blank" href="assets/Ariel_Contini_CV_UX_Design.pdf">CV</a></li>
-                <li class="nav__link">
+                <li class="nav__link nav__link--lang">
                     <button class="lang-switch" id="lang-toggle" aria-label="Cambiar idioma">
                         <span class="lang-opt active" id="lang-es">ES</span>
                         <span class="lang-sep">/</span>
@@ -261,80 +375,115 @@
         </section>
 
         <!-- ══════════════════════════════════════
-             TRABAJO (ex EXPERIENCIA / RESULTADOS)
+             TRABAJO
         ══════════════════════════════════════ -->
         <section class="experience" id="experience">
             <div class="section-container">
                 <h2 class="experiencie__title section-title" data-es="TRABAJO" data-en="WORK">TRABAJO</h2>
-                <p class="experience__description" style="text-align: center; margin: 0 auto 2rem auto; color: #e0e0e0; font-size: 1.05rem; max-width: 65ch;"
+                <p class="experience__description" style="text-align: center; margin: 0 auto 3rem auto; color: #e0e0e0; font-size: 1.05rem; max-width: 65ch;"
                    data-es="Proyectos reales para marcas reales. Cada uno diferente, cada uno construido desde cero."
                    data-en="Real projects for real brands. Each one different, each one built from scratch.">
-                    Proyectos reales para marcas reales. Cada uno diferente, cada uno construido desde cero.
+                    Proyectos reales para marcas reales. Cada uno diferente, algunos construido desde cero, otros auditados y mejorados.
                 </p>
 
                 <!-- AMA MAITEA -->
-                <div class="experience-card clickable-card" data-modal-target="template-ama-maitea" style="cursor:pointer;">
-                    <div class="experience-card__logo"><img src="assets/00.svg" loading="lazy" alt="logo"></div>
-                    <h3 class="experience-card__role">Ama Maitea</h3>
-                    <span class="experience-card__date" data-es="IDENTIDAD VISUAL · PACKAGING FÍSICO" data-en="VISUAL IDENTITY · PHYSICAL PACKAGING">IDENTIDAD VISUAL · PACKAGING FÍSICO</span>
-                    <p class="experience-card__description"
-                       data-es="Chutney artesanal patagónico con Sello de Origen Chubut. Construí la identidad visual completa y un sistema de color con escala técnica — para que cada frasco se lea solo y como parte de una familia."
-                       data-en="Artisan Patagonian chutney with the Seal of Origin Chubut. I built the complete visual identity and a technical color system — so each jar reads on its own and as part of a family.">
-                        Chutney artesanal patagónico con Sello de Origen Chubut. Construí la identidad visual completa y un sistema de color con escala técnica — para que cada frasco se lea solo y como parte de una familia.
-                    </p>
-                    <div class="project-card__link"><img src="assets/readmore.svg" alt="Leer Más"><span data-es="Ver caso" data-en="View case">Ver caso</span></div>
+                <div class="work-card clickable-card" data-modal-target="template-ama-maitea" style="cursor:pointer;">
+                    <div class="work-card__image">
+                        <img src="./assets/ama-maitea.webp" alt="Ama Maitea — Identidad visual y packaging" loading="lazy">
+                    </div>
+                    <div class="work-card__body">
+                        <p class="work-card__type" data-es="IDENTIDAD VISUAL · PACKAGING FÍSICO" data-en="VISUAL IDENTITY · PHYSICAL PACKAGING">IDENTIDAD VISUAL · PACKAGING FÍSICO</p>
+                        <h3 class="work-card__title">Ama Maitea</h3>
+                        <p class="work-card__desc"
+                           data-es="Chutney artesanal patagónico con Sello de Origen Chubut. Construí la identidad visual completa y un sistema de color con escala técnica — para que cada frasco se lea solo y como parte de una familia."
+                           data-en="Artisan Patagonian chutney with the Seal of Origin Chubut. I built the complete visual identity and a technical color system — so each jar reads on its own and as part of a family.">
+                            Chutney artesanal patagónico con Sello de Origen Chubut. Construí la identidad visual completa y un sistema de color con escala técnica — para que cada frasco se lea solo y como parte de una familia.
+                        </p>
+                        <div class="work-card__cta">
+                            <img src="assets/readmore.svg" alt="">
+                            <span data-es="Ver caso" data-en="View case">Ver caso</span>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- MAHURO -->
-                <div class="experience-card">
-                    <div class="experience-card__logo"><img src="assets/00.svg" loading="lazy" alt="logo"></div>
-                    <h3 class="experience-card__role">Mahuro</h3>
-                    <span class="experience-card__date" data-es="DIRECCIÓN DE ARTE · DESARROLLO FRONTEND" data-en="ART DIRECTION · FRONTEND DEVELOPMENT">DIRECCIÓN DE ARTE · DESARROLLO FRONTEND</span>
-                    <p class="experience-card__description"
-                       data-es="Sitio web para un músico con identidad propia. El concepto: una interfaz que funciona como el booklet de un CD. Proyecto colectivo, código from scratch, acompañando la construcción de la identidad en tiempo real."
-                       data-en="Website for a musician with a distinct identity. The concept: an interface that works like a CD booklet. Collective project, code from scratch, accompanying the identity as it was built in real time.">
-                        Sitio web para un músico con identidad propia. El concepto: una interfaz que funciona como el booklet de un CD. Proyecto colectivo, código from scratch, acompañando la construcción de la identidad en tiempo real.
-                    </p>
-                    <a href="https://mahuro.art/" target="_blank" class="project-card__link"><img src="assets/readmore.svg" alt="Leer Más"><span data-es="Ver sitio" data-en="View site">Ver sitio</span></a>
+                <div class="work-card">
+                    <div class="work-card__image">
+                        <img src="./assets/velo.webp" alt="Mahuro — Dirección de arte y desarrollo web" loading="lazy">
+                    </div>
+                    <div class="work-card__body">
+                        <p class="work-card__type" data-es="DIRECCIÓN DE ARTE · DESARROLLO FRONTEND" data-en="ART DIRECTION · FRONTEND DEVELOPMENT">DIRECCIÓN DE ARTE · DESARROLLO FRONTEND</p>
+                        <h3 class="work-card__title">Mahuro</h3>
+                        <p class="work-card__desc"
+                           data-es="Sitio web para un músico con identidad propia. El concepto: una interfaz que funciona como el booklet de un CD. Proyecto colectivo, código from scratch, acompañando la construcción de la identidad en tiempo real."
+                           data-en="Website for a musician with a distinct identity. The concept: an interface that works like a CD booklet. Collective project, code from scratch, accompanying the identity as it was built in real time.">
+                            Sitio web para un músico con identidad propia. El concepto: una interfaz que funciona como el booklet de un CD. Proyecto colectivo, código from scratch, acompañando la construcción de la identidad en tiempo real.
+                        </p>
+                        <a class="work-card__cta" href="https://mahuro.art/" target="_blank">
+                            <img src="assets/readmore.svg" alt="">
+                            <span data-es="Ver sitio" data-en="View site">Ver sitio</span>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- ESPORA QÍ -->
-                <div class="experience-card">
-                    <div class="experience-card__logo"><img src="assets/00.svg" loading="lazy" alt="logo"></div>
-                    <h3 class="experience-card__role">Espora Qí</h3>
-                    <span class="experience-card__date" data-es="IDENTIDAD VISUAL · SITIO WEB · SEO" data-en="VISUAL IDENTITY · WEBSITE · SEO">IDENTIDAD VISUAL · SITIO WEB · SEO</span>
-                    <p class="experience-card__description"
-                       data-es="Marca de hongos y plantas medicinales en Lago Puelo. Identidad visual completa y sitio desde cero: navegación por producto, testimonios, puntos de venta físicos, y contacto directo por WhatsApp."
-                       data-en="Medicinal mushrooms and plants brand in Lago Puelo, Patagonia. Complete visual identity and site from scratch: product navigation, testimonials, physical sales points, and direct WhatsApp contact.">
-                        Marca de hongos y plantas medicinales en Lago Puelo. Identidad visual completa y sitio desde cero: navegación por producto, testimonios, puntos de venta físicos, y contacto directo por WhatsApp.
-                    </p>
-                    <a href="https://esporaqi.com/" target="_blank" class="project-card__link"><img src="assets/readmore.svg" alt="Leer Más"><span data-es="Ver sitio" data-en="View site">Ver sitio</span></a>
+                <div class="work-card">
+                    <div class="work-card__image">
+                        <img src="./assets/espora.webp" alt="Espora Qí — Identidad visual y sitio web" loading="lazy">
+                    </div>
+                    <div class="work-card__body">
+                        <p class="work-card__type" data-es="IDENTIDAD VISUAL · SITIO WEB · SEO" data-en="VISUAL IDENTITY · WEBSITE · SEO">IDENTIDAD VISUAL · SITIO WEB · SEO</p>
+                        <h3 class="work-card__title">Espora Qí</h3>
+                        <p class="work-card__desc"
+                           data-es="Marca de hongos y plantas medicinales en Lago Puelo. Identidad visual completa y sitio desde cero: navegación por producto, testimonios, puntos de venta físicos, y contacto directo por WhatsApp."
+                           data-en="Medicinal mushrooms and plants brand in Lago Puelo, Patagonia. Complete visual identity and site from scratch: product navigation, testimonials, physical sales points, and direct WhatsApp contact.">
+                            Marca de hongos y plantas medicinales en Lago Puelo. Identidad visual completa y sitio desde cero: navegación por producto, testimonios, puntos de venta físicos, y contacto directo por WhatsApp.
+                        </p>
+                        <a class="work-card__cta" href="https://esporaqi.com/" target="_blank">
+                            <img src="assets/readmore.svg" alt="">
+                            <span data-es="Ver sitio" data-en="View site">Ver sitio</span>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- LO DE MARÍA -->
-                <div class="experience-card">
-                    <div class="experience-card__logo"><img src="assets/00.svg" loading="lazy" alt="logo"></div>
-                    <h3 class="experience-card__role">Lo de María</h3>
-                    <span class="experience-card__date" data-es="IDENTIDAD VISUAL · SITIO WEB · GASTRONOMÍA" data-en="VISUAL IDENTITY · WEBSITE · FOOD">IDENTIDAD VISUAL · SITIO WEB · GASTRONOMÍA</span>
-                    <p class="experience-card__description"
-                       data-es="Cafetería especializada en bakery artesanal en El Bolsón. Diseñé la identidad y construí el sitio con video de hero, carta digital, sección de catering y take away."
-                       data-en="Specialty bakery café in El Bolsón, Patagonia. I designed the identity and built the site with hero video, digital menu, catering section, and take-away.">
-                        Cafetería especializada en bakery artesanal en El Bolsón. Diseñé la identidad y construí el sitio con video de hero, carta digital, sección de catering y take away.
-                    </p>
-                    <a href="https://arielhcontini.github.io/LodeMaria2024/" target="_blank" class="project-card__link"><img src="assets/readmore.svg" alt="Leer Más"><span data-es="Ver sitio" data-en="View site">Ver sitio</span></a>
+                <div class="work-card">
+                    <div class="work-card__image">
+                        <img src="./assets/maria.webp" alt="Lo de María — Identidad visual y sitio web" loading="lazy">
+                    </div>
+                    <div class="work-card__body">
+                        <p class="work-card__type" data-es="IDENTIDAD VISUAL · SITIO WEB · GASTRONOMÍA" data-en="VISUAL IDENTITY · WEBSITE · FOOD">IDENTIDAD VISUAL · SITIO WEB · GASTRONOMÍA</p>
+                        <h3 class="work-card__title">Lo de María</h3>
+                        <p class="work-card__desc"
+                           data-es="Cafetería especializada en bakery artesanal en El Bolsón. Diseñé la identidad y construí el sitio con video de hero, carta digital, sección de catering y take away."
+                           data-en="Specialty bakery café in El Bolsón, Patagonia. I designed the identity and built the site with hero video, digital menu, catering section, and take-away.">
+                            Cafetería especializada en bakery artesanal en El Bolsón. Diseñé la identidad y construí el sitio con video de hero, carta digital, sección de catering y take away.
+                        </p>
+                        <a class="work-card__cta" href="https://arielhcontini.github.io/LodeMaria2024/" target="_blank">
+                            <img src="assets/readmore.svg" alt="">
+                            <span data-es="Ver sitio" data-en="View site">Ver sitio</span>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- RYOMA -->
-                <div class="experience-card">
-                    <div class="experience-card__logo"><img src="assets/00.svg" loading="lazy" alt="logo"></div>
-                    <h3 class="experience-card__role">Ryoma Cosmética</h3>
-                    <span class="experience-card__date" data-es="E-COMMERCE · WOOCOMMERCE" data-en="E-COMMERCE · WOOCOMMERCE">E-COMMERCE · WOOCOMMERCE</span>
-                    <p class="experience-card__description"
-                       data-es="Cosmética natural con identidad patagónica. Elegí WooCommerce para que el cliente pudiera gestionar su catálogo sin depender de un developer. Hoy procesa pedidos online de forma autónoma."
-                       data-en="Natural cosmetics with a Patagonian identity. I chose WooCommerce so the client could manage their catalog without depending on a developer. Today it processes online orders autonomously.">
-                        Cosmética natural con identidad patagónica. Elegí WooCommerce para que el cliente pudiera gestionar su catálogo sin depender de un developer. Hoy procesa pedidos online de forma autónoma.
-                    </p>
-                    <a href="https://ryomacosmetica.store/" target="_blank" class="project-card__link"><img src="assets/readmore.svg" alt="Leer Más"><span data-es="Ver sitio" data-en="View site">Ver sitio</span></a>
+                <div class="work-card">
+                    <div class="work-card__image">
+                        <img src="./assets/ryoma.webp" alt="Ryoma Cosmética — E-commerce" loading="lazy">
+                    </div>
+                    <div class="work-card__body">
+                        <p class="work-card__type" data-es="E-COMMERCE · WOOCOMMERCE" data-en="E-COMMERCE · WOOCOMMERCE">E-COMMERCE · WOOCOMMERCE</p>
+                        <h3 class="work-card__title">Ryoma Cosmética</h3>
+                        <p class="work-card__desc"
+                           data-es="Cosmética natural con identidad patagónica. Elegí WooCommerce para que el cliente pudiera gestionar su catálogo sin depender de un developer. Hoy procesa pedidos online de forma autónoma."
+                           data-en="Natural cosmetics with a Patagonian identity. I chose WooCommerce so the client could manage their catalog without depending on a developer. Today it processes online orders autonomously.">
+                            Cosmética natural con identidad patagónica. Elegí WooCommerce para que el cliente pudiera gestionar su catálogo sin depender de un developer. Hoy procesa pedidos online de forma autónoma.
+                        </p>
+                        <a class="work-card__cta" href="https://ryomacosmetica.store/" target="_blank">
+                            <img src="assets/readmore.svg" alt="">
+                            <span data-es="Ver sitio" data-en="View site">Ver sitio</span>
+                        </a>
+                    </div>
                 </div>
 
             </div>
@@ -431,7 +580,8 @@
                         <br><br>
                         <span data-es="Si tenés una marca que necesita presencia digital — escribime. Trabajo desde la Patagonia con clientes en toda Argentina."
                               data-en="If you have a brand that needs a digital presence — write to me. I work from Patagonia with clients across Argentina.">
-                            Si tenés una marca que necesita presencia digital — escribime. Trabajo desde la Patagonia con clientes en toda Argentina.
+                            Si tenés una marca que necesita presencia digital — escribime. 
+                            Trabajo desde la Patagonia con clientes en toda Argentina.
                         </span>
                     </h2>
                     <div class="contact__details">
@@ -551,25 +701,45 @@
         <!-- Template Ama Maitea -->
         <div id="template-ama-maitea">
             <h2 class="section-title">Ama Maitea <br><span class="outline">Identidad Visual · Packaging</span></h2>
-            <div class="featured-wrapper">
+
+            <div class="featured-wrapper" style="margin-bottom: 1.5rem;">
                 <div class="featured-info" style="flex: 1;">
-                    <p style="margin-bottom: 1rem; color: #e0e0e0;">
-                        Chutney artesanal patagónico con Sello de Origen Chubut. El desafío era crear una identidad que funcionara en el anaquel, en la foto y en la historia del producto.
+                    <div class="card-tags" style="margin-bottom: 14px;">[Identidad Visual] [Packaging] [Sistema de Color] [Sello Origen Chubut]</div>
+                    <p style="color: #e0e0e0; margin-bottom: 1rem;">
+                        Chutney artesanal patagónico con Sello de Origen Chubut. El desafío era crear una identidad que funcionara en el anaquel, en la fotografía y en la historia del producto.
                     </p>
-                    <div class="card-tags" style="margin-bottom: 16px;">[Identidad Visual] [Packaging] [Sistema de Color] [Sello de Origen Chubut]</div>
-                    <p style="color: #e0e0e0;">
-                        Construí un sistema de color con escala técnica completa (50–900) en oklch y variaciones por variedad de producto — para que cada frasco se lea solo y como parte de una familia.
-                    </p>
-                    <a href="https://www.behance.net/gallery/242563459/Ama-Maitea" target="_blank" class="project-card__link" style="margin-top: 1.5rem; display: inline-flex;">
-                        <img src="assets/readmore.svg" alt="Ver en Behance"> Ver en Behance
+                    <a href="https://www.behance.net/gallery/242563459/Ama-Maitea" target="_blank" class="work-card__cta" style="display:inline-flex;">
+                        <img src="assets/readmore.svg" alt=""> Ver en Behance
                     </a>
                 </div>
             </div>
-            <!-- Galería de fotos — agregá tus imágenes acá -->
-            <div class="showcase__grid" style="margin-top: 2rem;">
-                <p style="color: rgba(255,255,255,0.4); font-size: 0.85rem; font-family: 'Roboto Mono', monospace;">
-                    [ Galería de imágenes — agregar fotos del proyecto ]
-                </p>
+
+            <!-- Galería de imágenes — reemplazá los src="" con tus fotos -->
+            <div class="am-gallery">
+                <!-- Imagen destacada (ancho completo) -->
+                <div class="am-gallery__item am-featured">
+                    <img src="" alt="Ama Maitea — foto destacada de producto" loading="lazy">
+                </div>
+                <!-- Fila de 3 -->
+                <div class="am-gallery__item">
+                    <img src="" alt="Ama Maitea — variedad 1" loading="lazy">
+                </div>
+                <div class="am-gallery__item">
+                    <img src="" alt="Ama Maitea — variedad 2" loading="lazy">
+                </div>
+                <div class="am-gallery__item">
+                    <img src="" alt="Ama Maitea — variedad 3" loading="lazy">
+                </div>
+                <!-- Fila de 3 -->
+                <div class="am-gallery__item">
+                    <img src="" alt="Ama Maitea — sistema de color" loading="lazy">
+                </div>
+                <div class="am-gallery__item">
+                    <img src="" alt="Ama Maitea — detalle de etiqueta" loading="lazy">
+                </div>
+                <div class="am-gallery__item">
+                    <img src="" alt="Ama Maitea — foto de contexto" loading="lazy">
+                </div>
             </div>
         </div>
 
