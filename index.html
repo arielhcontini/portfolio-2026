@@ -4,24 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ariel H. Contini | Lead Designer & Frontend Architect | Lythics</title>
-    <meta name="description" content="Diseño técnico y rendimiento extremo para la generación de leads High-Ticket. Ariel H. Contini transforma activos visuales en motores de ingresos medibles.">
-    <meta name="keywords" content="Diseño Generativo, Frontend Architect, CRO Specialist, UI/UX, B2B Leads, High-Ticket Design, Lythics">
+    <title data-es="Ariel Contini | Diseño de identidad y desarrollo web · Patagonia" data-en="Ariel Contini | Brand Identity & Web Development · Patagonia">Ariel Contini | Diseño de identidad y desarrollo web · Patagonia</title>
+    <meta name="description" content="Diseño identidades visuales y construyo sitios web desde cero. Branding, packaging, frontend y e-commerce para marcas con algo que decir.">
+    <meta name="keywords" content="diseño web patagonia, identidad visual, branding argentina, desarrollo frontend, diseñador web patagonia, diseño web el bolsón, diseñador web bariloche">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://arielhcontini.online/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://arielhcontini.online/">
-    <meta property="og:title" content="Ariel H. Contini | Lead Designer & Frontend Architect">
-    <meta property="og:description" content="Diseño técnico y rendimiento extremo. Transformo la estética en resultados comerciales medibles.">
+    <meta property="og:title" content="Ariel Contini | Diseño de identidad y desarrollo web · Patagonia">
+    <meta property="og:description" content="Diseño identidades visuales y construyo sitios web desde cero. Branding, packaging, frontend y e-commerce para marcas con algo que decir.">
     <meta property="og:image" content="https://arielhcontini.online/assets/web-img.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://arielhcontini.online/">
-    <meta property="twitter:title" content="Ariel H. Contini | Lead Designer & Frontend Architect">
-    <meta property="twitter:description" content="Diseño técnico y rendimiento extremo. Transformo la estética en resultados comerciales medibles.">
+    <meta property="twitter:title" content="Ariel Contini | Diseño de identidad y desarrollo web · Patagonia">
+    <meta property="twitter:description" content="Diseño identidades visuales y construyo sitios web desde cero. Branding, packaging, frontend y e-commerce para marcas con algo que decir.">
     <meta property="twitter:image" content="https://arielhcontini.online/assets/web-img.webp">
 
     <!-- JSON-LD Structured Data -->
@@ -30,16 +30,17 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Ariel Hernán Contini",
-      "jobTitle": "Lead Designer & Frontend Architect",
+      "jobTitle": "Brand Identity Designer & Frontend Developer",
       "url": "https://arielhcontini.online/",
       "sameAs": [
         "https://www.linkedin.com/in/arielhcontini/",
         "https://github.com/arielhcontini"
       ],
-      "knowsAbout": ["Generative Design", "Frontend Development", "Conversion Rate Optimization", "UX/UI Design"],
-      "brand": {
-        "@type": "Brand",
-        "name": "Lythics"
+      "knowsAbout": ["Brand Identity", "Visual Design", "Frontend Development", "E-commerce", "Packaging Design"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Patagonia",
+        "addressCountry": "AR"
       }
     }
     </script>
@@ -60,57 +61,83 @@
     <link rel="stylesheet" href="css/modals.css">
 
     <style>
-        /* 1. Fondo Three.js sin fricción */
+        /* Fondo Three.js */
         body {
-            background-color: #120B1A; /* Fondo base para Three.js */
-            /* Es vital que en tu global.css el body y las section no tengan un background-color opaco */
+            background-color: #120B1A;
         }
         canvas#bg-three {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
             z-index: -1;
-            pointer-events: none; /* Permite clickear los botones a través del canvas */
+            pointer-events: none;
             opacity: 0;
             transition: opacity 1.5s ease;
         }
 
-        /* 2. Reglas de Composición Tipográfica */
+        /* Tipografía */
         p {
-            line-height: 1.6; /* Interlineado cómodo para lectura */
-            max-width: 65ch; /* Longitud de línea óptima (65 caracteres) */
+            line-height: 1.6;
+            max-width: 65ch;
         }
-        
         h1, h2, h3 {
-            line-height: 1.15; /* Interlineado compacto para títulos */
-            letter-spacing: -0.02em; /* Kern ligero para dar modernidad */
+            line-height: 1.15;
+            letter-spacing: -0.02em;
         }
-
         .hero__description {
-            margin: 0 auto; /* Mantiene el bloque centrado, pero restringe su ancho */
+            margin: 0 auto;
             font-size: 1.1rem;
         }
-
-        .experience-card__description, 
+        .experience-card__description,
         .project-card__description {
-            text-align: left; /* Tiras de texto siempre a la izquierda para escanear rápido */
+            text-align: left;
             margin-top: 12px;
-            color: #e0e0e0; /* Contraste ligeramente más suave que el título */
+            color: #e0e0e0;
         }
-
         .experience-card__role,
         .experience-card__date {
             text-align: left;
             display: block;
         }
-
         .experience-card__date {
             font-size: 0.85rem;
             letter-spacing: 1px;
-            opacity: 0.7; /* Jerarquía visual: la fecha es dato secundario */
+            opacity: 0.7;
             margin-bottom: 8px;
+        }
+
+        /* ── Language Switch ── */
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 4px 6px;
+            cursor: pointer;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            color: rgba(255,255,255,0.6);
+            transition: border-color 0.2s, color 0.2s;
+            white-space: nowrap;
+        }
+        .lang-switch:hover {
+            border-color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.9);
+        }
+        .lang-switch .lang-opt {
+            padding: 2px 6px;
+            border-radius: 12px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .lang-switch .lang-opt.active {
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+        }
+        .lang-switch .lang-sep {
+            opacity: 0.3;
         }
     </style>
 
@@ -136,106 +163,215 @@
         </button>
         <nav class="header__nav">
             <ul class="nav__links">
-                <li class="nav__link"><a aria-label="habilidades" href="#skills">Habilidades</a></li>
-      <!--           <li class="nav__link"><a aria-label="experiencia" href="#experience">Experiencia</a></li> -->
-                <li class="nav__link"><a aria-label="proyectos" href="#projects">Exploraciones</a></li>
-                <li class="nav__link"><a aria-label="contactame" href="#contact">Contactame</a></li>
-                <li class="nav__link"><a class="outline" aria-label="download curriculum" target="_blank" href="assets/Ariel_Contini_CV_UX_Design.pdf"> CV</a> </li>
+                <li class="nav__link"><a aria-label="proceso" href="#skills" data-es="Proceso" data-en="Process">Proceso</a></li>
+                <li class="nav__link"><a aria-label="trabajo" href="#experience" data-es="Trabajo" data-en="Work">Trabajo</a></li>
+                <li class="nav__link"><a aria-label="laboratorio" href="#projects" data-es="Laboratorio" data-en="Lab">Laboratorio</a></li>
+                <li class="nav__link"><a aria-label="contacto" href="#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
+                <li class="nav__link"><a class="outline" aria-label="download curriculum" target="_blank" href="assets/Ariel_Contini_CV_UX_Design.pdf">CV</a></li>
+                <li class="nav__link">
+                    <button class="lang-switch" id="lang-toggle" aria-label="Cambiar idioma">
+                        <span class="lang-opt active" id="lang-es">ES</span>
+                        <span class="lang-sep">/</span>
+                        <span class="lang-opt" id="lang-en">EN</span>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main>
+
+        <!-- ══════════════════════════════════════
+             HERO
+        ══════════════════════════════════════ -->
         <section id="inicio" class="hero section-container">
             <img class="hero__image" src="assets/ari.webp" width="1080" height="1080" fetchpriority="high" alt="Ariel Hernán Contini">
             <div class="hero__content">
-                <h1 class="hero__title"> Ariel Contini<br> <span class="outline"> Diseñador</span></h1> <br>
-               
+                <h1 class="hero__title">
+                    Ariel Contini<br>
+                    <span class="outline" data-es="Diseñador & Developer" data-en="Designer & Developer">Diseñador & Developer</span>
+                </h1>
+                <br>
                 <p class="hero__description">
-                    <strong>Transformo la estética en rendimiento&nbsp;comercial.</strong><br><br>
-                    Al unir creatividad con psicología del consumidor, optimizo cada activo visual para que deje de ser solo una imagen y se convierta en una herramienta de conversión. Mi trabajo es asegurar que el diseño no solo se vea bien, sino que ejecute <strong>resultados medibles</strong>.        
+                    <strong data-es="Diseño identidades y construyo sitios." data-en="I design identities and build websites.">Diseño identidades y construyo sitios.</strong>
+                    <br><br>
+                    <span data-es="Trabajo con marcas que tienen algo que decir — y me aseguro de que eso se vea, se lea y funcione online. Lo que diseño, lo construyo. Sin intermediarios." data-en="I work with brands that have something to say — and I make sure that shows, reads, and works online. What I design, I build. No middlemen.">Trabajo con marcas que tienen algo que decir — y me aseguro de que eso se vea, se lea y funcione online. Lo que diseño, lo construyo. Sin intermediarios.</span>
                 </p>
 
                 <div class="hero__social">
-                    <a href="https://www.linkedin.com/in/arielhcontini/" target="_blank" aria-label="linkedin"> <img src="assets/in.svg" loading="lazy" alt="Linkedin"></a>
-                    <a href="https://github.com/arielhcontini" aria-label="github" target="_blank"> <img src="assets/git.svg" loading="lazy" alt="Github"></a>
-                    <a href="https://platzi.com/p/arielhernancontini/" aria-label="platzi" target="_blank"> <img src="assets/platzi.svg" loading="lazy" alt="Platzi"></a>
+                    <a href="https://www.linkedin.com/in/arielhcontini/" target="_blank" aria-label="linkedin"><img src="assets/in.svg" loading="lazy" alt="Linkedin"></a>
+                    <a href="https://github.com/arielhcontini" aria-label="github" target="_blank"><img src="assets/git.svg" loading="lazy" alt="Github"></a>
                 </div>
             </div>
         </section>
 
+        <!-- ══════════════════════════════════════
+             PROCESO (ex COMPETENCIAS CLAVE)
+        ══════════════════════════════════════ -->
         <section class="skills" id="skills">
             <div class="section-container">
-                <h2 class="skills__title section-title"> COMPETENCIAS CLAVE</h2>
-                <p class="skills__description" style="text-align: center; margin: 0 auto 2rem auto; font-size: 1.05rem; max-width: 65ch;">
-                    Metodologías y tecnologías integradas para diseñar, validar y escalar productos digitales con precisión quirúrgica.
+                <h2 class="skills__title section-title" data-es="CÓMO TRABAJO" data-en="HOW I WORK">CÓMO TRABAJO</h2>
+                <p class="skills__description" style="text-align: center; margin: 0 auto 2rem auto; font-size: 1.05rem; max-width: 65ch;"
+                   data-es="Antes de abrir Figma, entiendo el negocio. Después diseño con criterio y construyo con código real."
+                   data-en="Before opening Figma, I understand the business. Then I design with intent and build with real code.">
+                    Antes de abrir Figma, entiendo el negocio. Después diseño con criterio y construyo con código real.
                 </p>
                 <div class="skills__grid">
-                    <div class="skill-card"><div class="skill-card__icon"><img src="assets/01.svg" loading="lazy" alt="skill"></div><p class="skill-card__label"> Sistemas de Diseño</p></div>
-                    <div class="skill-card"><div class="skill-card__icon"><img src="assets/02.svg" loading="lazy" alt="skill"></div><p class="skill-card__label"> Descubrimiento de Producto</p></div>
-                    <div class="skill-card"><div class="skill-card__icon"><img src="assets/03.svg" loading="lazy" alt="skill"></div><p class="skill-card__label"> Consultoría IT</p></div>
-                    <div class="skill-card"><div class="skill-card__icon"><img src="assets/04.svg" loading="lazy" alt="skill"></div><p class="skill-card__label"> Design Thinking</p></div>
-                    <div class="skill-card"><div class="skill-card__icon"><img src="assets/05.svg" loading="lazy" alt="skill"></div><p class="skill-card__label"> Desarrollo Front-End</p></div>
-                    <div class="skill-card"><div class="skill-card__icon"><img src="assets/06.svg" loading="lazy" alt="skill"></div><p class="skill-card__label"> Código Creativo</p></div>
+                    <div class="skill-card">
+                        <div class="skill-card__icon"><img src="assets/01.svg" loading="lazy" alt="Descubrir"></div>
+                        <p class="skill-card__label" data-es="Descubro" data-en="Discover">Descubro</p>
+                        <p class="skill-card__sublabel" style="font-size:0.8rem; opacity:0.6; margin-top:4px;"
+                           data-es="Entiendo el negocio antes de diseñar."
+                           data-en="I understand the business before designing.">
+                           Entiendo el negocio antes de diseñar.
+                        </p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card__icon"><img src="assets/02.svg" loading="lazy" alt="Diseñar"></div>
+                        <p class="skill-card__label" data-es="Diseño" data-en="Design">Diseño</p>
+                        <p class="skill-card__sublabel" style="font-size:0.8rem; opacity:0.6; margin-top:4px;"
+                           data-es="Identidad, tipografía, color, jerarquía. Con criterio."
+                           data-en="Identity, typography, color, hierarchy. With intent.">
+                           Identidad, tipografía, color, jerarquía. Con criterio.
+                        </p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card__icon"><img src="assets/03.svg" loading="lazy" alt="Construir"></div>
+                        <p class="skill-card__label" data-es="Construyo" data-en="Build">Construyo</p>
+                        <p class="skill-card__sublabel" style="font-size:0.8rem; opacity:0.6; margin-top:4px;"
+                           data-es="HTML, CSS, JS o WooCommerce. Código real, sitio online."
+                           data-en="HTML, CSS, JS or WooCommerce. Real code, live site.">
+                           HTML, CSS, JS o WooCommerce. Código real, sitio online.
+                        </p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card__icon"><img src="assets/04.svg" loading="lazy" alt="Identidad Visual"></div>
+                        <p class="skill-card__label" data-es="Identidad Visual" data-en="Visual Identity">Identidad Visual</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card__icon"><img src="assets/05.svg" loading="lazy" alt="Desarrollo Frontend"></div>
+                        <p class="skill-card__label" data-es="Desarrollo Frontend" data-en="Frontend Dev">Desarrollo Frontend</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card__icon"><img src="assets/06.svg" loading="lazy" alt="E-commerce"></div>
+                        <p class="skill-card__label" data-es="E-commerce" data-en="E-commerce">E-commerce</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-       <section class="experience" id="experience">
+        <!-- ══════════════════════════════════════
+             TRABAJO (ex EXPERIENCIA / RESULTADOS)
+        ══════════════════════════════════════ -->
+        <section class="experience" id="experience">
             <div class="section-container">
-                <h2 class="experiencie__title section-title"> RESULTADOS COMPROBADOS</h2>
-                <p class="experience__description" style="text-align: center; margin: 0 auto 2rem auto; color: #e0e0e0; font-size: 1.05rem; max-width: 65ch;">
-                    Casos de estudio donde la reestructuración visual y la estrategia de producto generaron retornos tangibles.
+                <h2 class="experiencie__title section-title" data-es="TRABAJO" data-en="WORK">TRABAJO</h2>
+                <p class="experience__description" style="text-align: center; margin: 0 auto 2rem auto; color: #e0e0e0; font-size: 1.05rem; max-width: 65ch;"
+                   data-es="Proyectos reales para marcas reales. Cada uno diferente, cada uno construido desde cero."
+                   data-en="Real projects for real brands. Each one different, each one built from scratch.">
+                    Proyectos reales para marcas reales. Cada uno diferente, cada uno construido desde cero.
                 </p>
 
-                <div class="experience-card">
+                <!-- AMA MAITEA -->
+                <div class="experience-card clickable-card" data-modal-target="template-ama-maitea" style="cursor:pointer;">
                     <div class="experience-card__logo"><img src="assets/00.svg" loading="lazy" alt="logo"></div>
-                    <h3 class="experience-card__role">Ryoma</h3>
-                    <span class="experience-card__date">OCTUBRE 2025 - ENERO 2026</span>
-                    <p class="experience-card__description">
-                        <strong>Rol:</strong> Desarrollo & Estrategia E-commerce.<br>
-                        <strong>Impacto:</strong> Lanzamiento y optimización de arquitectura e-commerce de respuesta directa. El sistema logró recuperar el 100% de la inversión (ROI positivo) en los primeros 30 días, estableciendo un costo por adquisición (CPA) altamente competitivo en su&nbsp;nicho.
+                    <h3 class="experience-card__role">Ama Maitea</h3>
+                    <span class="experience-card__date" data-es="IDENTIDAD VISUAL · PACKAGING FÍSICO" data-en="VISUAL IDENTITY · PHYSICAL PACKAGING">IDENTIDAD VISUAL · PACKAGING FÍSICO</span>
+                    <p class="experience-card__description"
+                       data-es="Chutney artesanal patagónico con Sello de Origen Chubut. Construí la identidad visual completa y un sistema de color con escala técnica — para que cada frasco se lea solo y como parte de una familia."
+                       data-en="Artisan Patagonian chutney with the Seal of Origin Chubut. I built the complete visual identity and a technical color system — so each jar reads on its own and as part of a family.">
+                        Chutney artesanal patagónico con Sello de Origen Chubut. Construí la identidad visual completa y un sistema de color con escala técnica — para que cada frasco se lea solo y como parte de una familia.
                     </p>
-                    <a href="http://ryomacosmetica.store/" target="_blank" class="project-card__link"><img src="assets/readmore.svg" alt="Leer Más">Ver caso</a>
+                    <div class="project-card__link"><img src="assets/readmore.svg" alt="Leer Más"><span data-es="Ver caso" data-en="View case">Ver caso</span></div>
                 </div>
 
+                <!-- MAHURO -->
+                <div class="experience-card">
+                    <div class="experience-card__logo"><img src="assets/00.svg" loading="lazy" alt="logo"></div>
+                    <h3 class="experience-card__role">Mahuro</h3>
+                    <span class="experience-card__date" data-es="DIRECCIÓN DE ARTE · DESARROLLO FRONTEND" data-en="ART DIRECTION · FRONTEND DEVELOPMENT">DIRECCIÓN DE ARTE · DESARROLLO FRONTEND</span>
+                    <p class="experience-card__description"
+                       data-es="Sitio web para un músico con identidad propia. El concepto: una interfaz que funciona como el booklet de un CD. Proyecto colectivo, código from scratch, acompañando la construcción de la identidad en tiempo real."
+                       data-en="Website for a musician with a distinct identity. The concept: an interface that works like a CD booklet. Collective project, code from scratch, accompanying the identity as it was built in real time.">
+                        Sitio web para un músico con identidad propia. El concepto: una interfaz que funciona como el booklet de un CD. Proyecto colectivo, código from scratch, acompañando la construcción de la identidad en tiempo real.
+                    </p>
+                    <a href="https://mahuro.art/" target="_blank" class="project-card__link"><img src="assets/readmore.svg" alt="Leer Más"><span data-es="Ver sitio" data-en="View site">Ver sitio</span></a>
+                </div>
+
+                <!-- ESPORA QÍ -->
                 <div class="experience-card">
                     <div class="experience-card__logo"><img src="assets/00.svg" loading="lazy" alt="logo"></div>
                     <h3 class="experience-card__role">Espora Qí</h3>
-                    <span class="experience-card__date">JULIO 2024 - SEPTIEMBRE 2025</span>
-                    <p class="experience-card__description">
-                        <strong>Rol:</strong> Estrategia UI/UX & Conversión.<br>
-                        <strong>Impacto:</strong> Rediseño de la infraestructura digital para el sector wellness. Implementamos un ecosistema educativo que eliminó puntos de fuga, logrando un incremento del 45% en la tasa de retención de usuarios y acelerando el ciclo de adopción comercial del producto&nbsp;base.
+                    <span class="experience-card__date" data-es="IDENTIDAD VISUAL · SITIO WEB · SEO" data-en="VISUAL IDENTITY · WEBSITE · SEO">IDENTIDAD VISUAL · SITIO WEB · SEO</span>
+                    <p class="experience-card__description"
+                       data-es="Marca de hongos y plantas medicinales en Lago Puelo. Identidad visual completa y sitio desde cero: navegación por producto, testimonios, puntos de venta físicos, y contacto directo por WhatsApp."
+                       data-en="Medicinal mushrooms and plants brand in Lago Puelo, Patagonia. Complete visual identity and site from scratch: product navigation, testimonials, physical sales points, and direct WhatsApp contact.">
+                        Marca de hongos y plantas medicinales en Lago Puelo. Identidad visual completa y sitio desde cero: navegación por producto, testimonios, puntos de venta físicos, y contacto directo por WhatsApp.
                     </p>
-                    <a href="https://esporaqi.com/" target="_blank" class="project-card__link"><img src="assets/readmore.svg" alt="Leer Más"></span> Ver caso </span></a>
+                    <a href="https://esporaqi.com/" target="_blank" class="project-card__link"><img src="assets/readmore.svg" alt="Leer Más"><span data-es="Ver sitio" data-en="View site">Ver sitio</span></a>
                 </div>
 
+                <!-- LO DE MARÍA -->
                 <div class="experience-card">
                     <div class="experience-card__logo"><img src="assets/00.svg" loading="lazy" alt="logo"></div>
-                    <h3 class="experience-card__role">Ama Maitea</h3>
-                    <span class="experience-card__date">ABRIL 2024 - SEPTIEMBRE 2025</span>
-                    <p class="experience-card__description">
-                        <strong>Rol:</strong> Auditoría CRO & Rebranding B2B.<br>
-                        <strong>Impacto:</strong> Intervención quirúrgica sobre una base visual inconsistente. Reestructuramos la identidad corporativa para proyectar autoridad institucional, facilitando la penetración en nuevos segmentos de mercado y aumentando la tasa de interacción en puntos de contacto clave en un&nbsp;30%.
+                    <h3 class="experience-card__role">Lo de María</h3>
+                    <span class="experience-card__date" data-es="IDENTIDAD VISUAL · SITIO WEB · GASTRONOMÍA" data-en="VISUAL IDENTITY · WEBSITE · FOOD">IDENTIDAD VISUAL · SITIO WEB · GASTRONOMÍA</span>
+                    <p class="experience-card__description"
+                       data-es="Cafetería especializada en bakery artesanal en El Bolsón. Diseñé la identidad y construí el sitio con video de hero, carta digital, sección de catering y take away."
+                       data-en="Specialty bakery café in El Bolsón, Patagonia. I designed the identity and built the site with hero video, digital menu, catering section, and take-away.">
+                        Cafetería especializada en bakery artesanal en El Bolsón. Diseñé la identidad y construí el sitio con video de hero, carta digital, sección de catering y take away.
                     </p>
-                    <a href="https://www.behance.net/gallery/242563459/Ama-Maitea" target="_blank" class="project-card__link"><img src="assets/readmore.svg" alt="Leer Más"><span> Ver caso </span></a>
+                    <a href="https://arielhcontini.github.io/LodeMaria2024/" target="_blank" class="project-card__link"><img src="assets/readmore.svg" alt="Leer Más"><span data-es="Ver sitio" data-en="View site">Ver sitio</span></a>
+                </div>
+
+                <!-- RYOMA -->
+                <div class="experience-card">
+                    <div class="experience-card__logo"><img src="assets/00.svg" loading="lazy" alt="logo"></div>
+                    <h3 class="experience-card__role">Ryoma Cosmética</h3>
+                    <span class="experience-card__date" data-es="E-COMMERCE · WOOCOMMERCE" data-en="E-COMMERCE · WOOCOMMERCE">E-COMMERCE · WOOCOMMERCE</span>
+                    <p class="experience-card__description"
+                       data-es="Cosmética natural con identidad patagónica. Elegí WooCommerce para que el cliente pudiera gestionar su catálogo sin depender de un developer. Hoy procesa pedidos online de forma autónoma."
+                       data-en="Natural cosmetics with a Patagonian identity. I chose WooCommerce so the client could manage their catalog without depending on a developer. Today it processes online orders autonomously.">
+                        Cosmética natural con identidad patagónica. Elegí WooCommerce para que el cliente pudiera gestionar su catálogo sin depender de un developer. Hoy procesa pedidos online de forma autónoma.
+                    </p>
+                    <a href="https://ryomacosmetica.store/" target="_blank" class="project-card__link"><img src="assets/readmore.svg" alt="Leer Más"><span data-es="Ver sitio" data-en="View site">Ver sitio</span></a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════
+             FRASE INTERMEDIA
+        ══════════════════════════════════════ -->
+        <section class="contact" id="quote" style="padding: 4rem 0;">
+            <div class="section-container">
+                <div class="contact__info">
+                    <h2 class="contact__title section-title" style="max-width: 28ch; margin: 0 auto; line-height: 1.3;">
+                        <strong class="outline"
+                            data-es="El diseño es una decisión."
+                            data-en="Design is a decision.">El diseño es una decisión.</strong>
+                        <br><br>
+                        <span data-es="Cada color, cada palabra, cada pantalla es una elección que afecta cómo alguien percibe tu marca."
+                              data-en="Every color, every word, every screen is a choice that affects how someone perceives your brand.">
+                            Cada color, cada palabra, cada pantalla es una elección que afecta cómo alguien percibe tu marca.
+                        </span>
+                    </h2>
                 </div>
             </div>
         </section>
 
-
-
-        
-
-
-        
+        <!-- ══════════════════════════════════════
+             LABORATORIO (ex EXPLORACIONES)
+        ══════════════════════════════════════ -->
         <section class="projects" id="projects">
             <div class="section-container texture-bg">
-                <h2 class="projects__title section-title"> EXPLORACIONES</h2>
-                <p class="projects__description" style="text-align: center; margin: 0 auto 2rem auto; color: #e0e0e0; font-size: 1.05rem; max-width: 65ch;">
-                    Más allá de la interfaz tradicional: proyectos donde el código, el video y el diseño generativo se unen para redefinir la comunicación visual.
+                <h2 class="projects__title section-title" data-es="LABORATORIO" data-en="LAB">LABORATORIO</h2>
+                <p class="projects__description" style="text-align: center; margin: 0 auto 2rem auto; color: #e0e0e0; font-size: 1.05rem; max-width: 65ch;"
+                   data-es="Proyectos donde el código, el video y el diseño generativo se cruzan. Exploraciones fuera del encargo de cliente."
+                   data-en="Projects where code, video and generative design intersect. Explorations outside of client work.">
+                    Proyectos donde el código, el video y el diseño generativo se cruzan. Exploraciones fuera del encargo de cliente.
                 </p>
-                
+
                 <article class="project-card clickable-card" data-modal-target="template-bivio" style="cursor: pointer;">
                     <div class="project-card__image-wrapper">
                         <picture>
@@ -244,13 +380,17 @@
                         </picture>
                     </div>
                     <div class="project-card__content">
-                        <span class="project-card__number"> 01</span>
+                        <span class="project-card__number">01</span>
                         <h3 class="project-card__title">biVio</h3>
-                        <span class="project-card__role" style="font-size: 0.85rem; opacity: 0.8; display: block; margin-bottom: 8px;">ROL: Diseñador Generativo - Videoartista</span>
-                        <p class="project-card__description">
-                            Gestión integral de proyecto audiovisual en co-dirección con Homero Prodan. El resultado: una narrativa visual disruptiva que alineó la visión artística con los estándares de distribución&nbsp;digital.
+                        <span class="project-card__role" style="font-size: 0.85rem; opacity: 0.8; display: block; margin-bottom: 8px;"
+                              data-es="ROL: Diseñador Generativo · Videoartista"
+                              data-en="ROLE: Generative Designer · Video Artist">ROL: Diseñador Generativo · Videoartista</span>
+                        <p class="project-card__description"
+                           data-es="Proyecto audiovisual en co-dirección con Homero Prodan. Diseño sonoro, arte generativo y narrativa visual construidos en conjunto."
+                           data-en="Audiovisual project co-directed with Homero Prodan. Sound design, generative art and visual narrative built together.">
+                            Proyecto audiovisual en co-dirección con Homero Prodan. Diseño sonoro, arte generativo y narrativa visual construidos en conjunto.
                         </p>
-                        <div class="project-card__link"><img src="assets/readmore.svg" loading="lazy" alt="Leer Más">Ver caso</div>
+                        <div class="project-card__link"><img src="assets/readmore.svg" loading="lazy" alt="Leer Más"><span data-es="Ver caso" data-en="View case">Ver caso</span></div>
                     </div>
                 </article>
 
@@ -262,30 +402,45 @@
                         </picture>
                     </div>
                     <div class="project-card__content">
-                        <span class="project-card__number"> 02</span>
+                        <span class="project-card__number">02</span>
                         <h3 class="project-card__title">LAS PELOTAS</h3>
-                        <span class="project-card__role" style="font-size: 0.85rem; opacity: 0.8; display: block; margin-bottom: 8px;">ROL: Diseñador Multimedia - Operador de video</span>
-                        <p class="project-card__description">
-                            Desde 2014, opero como partner estratégico de Juan Daffunchio en el desarrollo de experiencias inmersivas a gran&nbsp;escala.
+                        <span class="project-card__role" style="font-size: 0.85rem; opacity: 0.8; display: block; margin-bottom: 8px;"
+                              data-es="ROL: Diseñador Multimedia · Operador de video"
+                              data-en="ROLE: Multimedia Designer · Video Operator">ROL: Diseñador Multimedia · Operador de video</span>
+                        <p class="project-card__description"
+                           data-es="Desde 2014, partner estratégico de Juan Daffunchio en el desarrollo de experiencias visuales inmersivas a gran escala."
+                           data-en="Since 2014, strategic partner of Juan Daffunchio in developing large-scale immersive visual experiences.">
+                            Desde 2014, partner estratégico de Juan Daffunchio en el desarrollo de experiencias visuales inmersivas a gran escala.
                         </p>
-                        <div class="project-card__link"><img src="assets/readmore.svg" loading="lazy" alt="Leer Más">Ver caso</div>
+                        <div class="project-card__link"><img src="assets/readmore.svg" loading="lazy" alt="Leer Más"><span data-es="Ver caso" data-en="View case">Ver caso</span></div>
                     </div>
                 </article>
             </div>
         </section>
 
+        <!-- ══════════════════════════════════════
+             CONTACTO
+        ══════════════════════════════════════ -->
         <section class="contact" id="contact">
             <div class="section-container">
                 <div class="contact__info">
                     <h2 class="contact__title section-title" style="max-width: 25ch; margin: 0 auto; line-height: 1.3;">
-                     <strong class="outline"> La comunicación visual</strong> <br/>
-                    es un activo estratégico.
-                     <br/><br/>
-                     El diseño<span class="outline"> es una inversión.</span>
+                        <strong class="outline"
+                            data-es="Contame tu proyecto."
+                            data-en="Tell me about your project.">Contame tu proyecto.</strong>
+                        <br><br>
+                        <span data-es="Si tenés una marca que necesita presencia digital — escribime. Trabajo desde la Patagonia con clientes en toda Argentina."
+                              data-en="If you have a brand that needs a digital presence — write to me. I work from Patagonia with clients across Argentina.">
+                            Si tenés una marca que necesita presencia digital — escribime. Trabajo desde la Patagonia con clientes en toda Argentina.
+                        </span>
                     </h2>
-<div class="contact__details">
-                        <a href="https://calendly.com/arielhcontini/30min" target="_blank" class="calendly"><span> Agendar reunión</span></a>
-                        <a href="mailto:arielhcontini@gmail.com" target="_blank" class="contact__email"><span> arielhcontini@gmail.com</span></a>
+                    <div class="contact__details">
+                        <a href="mailto:arielhcontini@gmail.com" target="_blank" class="contact__email">
+                            <span data-es="arielhcontini@gmail.com" data-en="arielhcontini@gmail.com">arielhcontini@gmail.com</span>
+                        </a>
+                        <a href="https://calendly.com/arielhcontini/30min" target="_blank" class="calendly">
+                            <span data-es="Agendá 30 minutos" data-en="Book 30 minutes">Agendá 30 minutos</span>
+                        </a>
                         <a class="social__link up" href="#inicio"><button><img src="assets/up.svg" loading="lazy" alt="Ir arriba"></button></a>
                     </div>
                 </div>
@@ -293,7 +448,11 @@
         </section>
     </main>
 
-        <div id="project-templates" style="display: none;">
+    <!-- ══════════════════════════════════════
+         MODAL TEMPLATES
+    ══════════════════════════════════════ -->
+    <div id="project-templates" style="display: none;">
+
         <!-- Template biVio -->
         <div id="template-bivio">
             <h2 class="section-title">biVio <br><span class="outline">Ecosistema Generativo</span></h2>
@@ -305,13 +464,10 @@
                     </div>
                     <div class="bivio-card__content">
                         <h3 class="bivio-card__title">Chrysalis</h3>
-                        <div class="bivio-card__tags">
-                            <span>[After Effects]</span><span>[Audio-Reactive]</span><span>[Collage Digital]</span>
-                        </div>
+                        <div class="bivio-card__tags"><span>[After Effects]</span><span>[Audio-Reactive]</span><span>[Collage Digital]</span></div>
                         <p class="bivio-card__desc">El MVP visual. Establecimiento de un lenguaje coherente con latencia nula entre diseño sonoro e impacto visual.</p>
                     </div>
                 </article>
-
                 <article class="bivio-card" data-video-id="a_Qp3i1atkw">
                     <div class="bivio-card__thumb">
                         <img src="https://i.ytimg.com/vi/a_Qp3i1atkw/sddefault.jpg" loading="lazy" alt="Chrysalis Slow-mosh">
@@ -319,13 +475,10 @@
                     </div>
                     <div class="bivio-card__content">
                         <h3 class="bivio-card__title">Chrysalis [slow-mosh]</h3>
-                        <div class="bivio-card__tags">
-                            <span>[distorsion temporal]</span><span>[datamosh.py]</span>
-                        </div>
+                        <div class="bivio-card__tags"><span>[distorsion temporal]</span><span>[datamosh.py]</span></div>
                         <p class="bivio-card__desc">Exploración de estrés sobre el activo original. Alteración de framerate y algoritmos de interpolación.</p>
                     </div>
                 </article>
-
                 <article class="bivio-card" data-video-id="c8p-wvNhO6M">
                     <div class="bivio-card__thumb">
                         <img src="https://i.ytimg.com/vi/c8p-wvNhO6M/maxresdefault.jpg" loading="lazy" alt="La mia historia">
@@ -333,13 +486,10 @@
                     </div>
                     <div class="bivio-card__content">
                         <h3 class="bivio-card__title">La mia Storia</h3>
-                        <div class="bivio-card__tags">
-                            <span>[Premiere]</span><span>[Datamoshing]</span>
-                        </div>
+                        <div class="bivio-card__tags"><span>[Premiere]</span><span>[Datamoshing]</span></div>
                         <p class="bivio-card__desc">Composición modular aplicada para guiar la carga cognitiva y acompañar el viaje emocional.</p>
                     </div>
                 </article>
-
                 <article class="bivio-card" data-video-id="vjC0YOhKplU">
                     <div class="bivio-card__thumb">
                         <img src="https://i.ytimg.com/vi/vjC0YOhKplU/maxresdefault.jpg" loading="lazy" alt="IGOR 1st Cut">
@@ -347,9 +497,7 @@
                     </div>
                     <div class="bivio-card__content">
                         <h3 class="bivio-card__title">IGOR (1ST CUT)</h3>
-                        <div class="bivio-card__tags">
-                            <span>[Premiere]</span><span>[After Effects]</span>
-                        </div>
+                        <div class="bivio-card__tags"><span>[Premiere]</span><span>[After Effects]</span></div>
                         <p class="bivio-card__desc">Prototipo de alta fidelidad que demuestra adaptabilidad y enfoque ágil en arte generativo.</p>
                     </div>
                 </article>
@@ -380,34 +528,51 @@
                             <img src="https://i.ytimg.com/vi/9AR9-Mc8kOU/maxresdefault.jpg" loading="lazy" alt="Como se curan las heridas">
                             <div class="video-card__play">► VER</div>
                         </div>
-                        <div class="card-content">
-                            <h3>Como se curan las heridas</h3>
-                            <span class="card-tags">[Atmósfera Visual] [Color Grading]</span>
-                        </div>
+                        <div class="card-content"><h3>Como se curan las heridas</h3><span class="card-tags">[Atmósfera Visual] [Color Grading]</span></div>
                     </article>
                     <article class="video-card secondary-card" data-video-id="UUuUbgmXMHI">
                         <div class="video-card__thumb">
                             <img src="https://i.ytimg.com/vi/UUuUbgmXMHI/maxresdefault.jpg" loading="lazy" alt="La clave">
                             <div class="video-card__play">► VER</div>
                         </div>
-                        <div class="card-content">
-                            <h3>La clave</h3>
-                            <span class="card-tags">[Sincronía Rítmica] [Strobing]</span>
-                        </div>
+                        <div class="card-content"><h3>La clave</h3><span class="card-tags">[Sincronía Rítmica] [Strobing]</span></div>
                     </article>
                     <article class="video-card secondary-card" data-video-id="keywsiC21Is">
                         <div class="video-card__thumb">
                             <img src="https://i.ytimg.com/vi/keywsiC21Is/maxresdefault.jpg" loading="lazy" alt="Para qué?">
                             <div class="video-card__play">► VER</div>
                         </div>
-                        <div class="card-content">
-                            <h3>Para qué?</h3>
-                            <span class="card-tags">[Composición Textural] [Live Mapping]</span>
-                        </div>
+                        <div class="card-content"><h3>Para qué?</h3><span class="card-tags">[Composición Textural] [Live Mapping]</span></div>
                     </article>
                 </div>
             </div>
         </div>
+
+        <!-- Template Ama Maitea -->
+        <div id="template-ama-maitea">
+            <h2 class="section-title">Ama Maitea <br><span class="outline">Identidad Visual · Packaging</span></h2>
+            <div class="featured-wrapper">
+                <div class="featured-info" style="flex: 1;">
+                    <p style="margin-bottom: 1rem; color: #e0e0e0;">
+                        Chutney artesanal patagónico con Sello de Origen Chubut. El desafío era crear una identidad que funcionara en el anaquel, en la foto y en la historia del producto.
+                    </p>
+                    <div class="card-tags" style="margin-bottom: 16px;">[Identidad Visual] [Packaging] [Sistema de Color] [Sello de Origen Chubut]</div>
+                    <p style="color: #e0e0e0;">
+                        Construí un sistema de color con escala técnica completa (50–900) en oklch y variaciones por variedad de producto — para que cada frasco se lea solo y como parte de una familia.
+                    </p>
+                    <a href="https://www.behance.net/gallery/242563459/Ama-Maitea" target="_blank" class="project-card__link" style="margin-top: 1.5rem; display: inline-flex;">
+                        <img src="assets/readmore.svg" alt="Ver en Behance"> Ver en Behance
+                    </a>
+                </div>
+            </div>
+            <!-- Galería de fotos — agregá tus imágenes acá -->
+            <div class="showcase__grid" style="margin-top: 2rem;">
+                <p style="color: rgba(255,255,255,0.4); font-size: 0.85rem; font-family: 'Roboto Mono', monospace;">
+                    [ Galería de imágenes — agregar fotos del proyecto ]
+                </p>
+            </div>
+        </div>
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -416,17 +581,69 @@
     <script src="js/anima.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/modals.js"></script>
-    
+
+    <!-- ══════════════════════════════════════
+         LANGUAGE SWITCH
+    ══════════════════════════════════════ -->
+    <script>
+    (function() {
+        const STORAGE_KEY = 'ac_lang';
+        let currentLang = localStorage.getItem(STORAGE_KEY) || 'es';
+
+        const toggle     = document.getElementById('lang-toggle');
+        const optES      = document.getElementById('lang-es');
+        const optEN      = document.getElementById('lang-en');
+
+        // Aplica el idioma a todos los elementos con data-es / data-en
+        function applyLang(lang) {
+            currentLang = lang;
+            localStorage.setItem(STORAGE_KEY, lang);
+
+            // Actualizar html lang
+            document.documentElement.lang = lang;
+
+            // Actualizar title
+            const titleEl = document.querySelector('title');
+            if (titleEl && titleEl.dataset[lang]) {
+                titleEl.textContent = titleEl.dataset[lang];
+            }
+
+            // Actualizar todos los elementos con data-es / data-en
+            document.querySelectorAll('[data-es], [data-en]').forEach(el => {
+                if (el === titleEl) return; // ya tratado
+                const text = el.dataset[lang];
+                if (text !== undefined) {
+                    // Si el elemento sólo contiene texto (no otros elementos hijos importantes)
+                    if (el.children.length === 0) {
+                        el.textContent = text;
+                    }
+                }
+            });
+
+            // Estado visual del toggle
+            optES.classList.toggle('active', lang === 'es');
+            optEN.classList.toggle('active', lang === 'en');
+        }
+
+        // Evento click en el toggle
+        toggle.addEventListener('click', function() {
+            applyLang(currentLang === 'es' ? 'en' : 'es');
+        });
+
+        // Inicializar con el idioma guardado o por defecto
+        applyLang(currentLang);
+    })();
+    </script>
+
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js')
-                    .then(reg => console.log('Service Worker registrado con éxito:', reg.scope))
-                    .catch(err => console.error('Error al registrar el Service Worker:', err));
+                    .then(reg => console.log('Service Worker registrado:', reg.scope))
+                    .catch(err => console.error('SW error:', err));
             });
         }
     </script>
-
 
 </body>
 </html>
