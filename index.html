@@ -106,6 +106,27 @@
             margin-bottom: 8px;
         }
 
+        /* ── Tipografía global de modales ── */
+        #modal-body p,
+        #modal-body span,
+        #modal-body li,
+        #modal-body a,
+        #modal-body code {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        /* Más espacio entre título y subtítulo en modales */
+        #modal-body .section-title {
+            line-height: 1.5;
+        }
+        #modal-body .section-title .outline {
+            display: inline-block;
+            margin-top: 0.6rem;
+            font-size: 0.75em;
+            letter-spacing: 0.04em;
+            opacity: 0.7;
+        }
+
         /* ── Language Switch ── */
         .lang-switch {
             display: flex;
@@ -447,42 +468,42 @@
                 </div>
 
                 <!-- LO DE MARÍA -->
-                <div class="work-card">
+                <div class="work-card clickable-card" data-modal-target="template-maria" style="cursor:pointer;">
                     <div class="work-card__image">
                         <img src="./assets/maria.webp" alt="Lo de María — Identidad visual y sitio web" loading="lazy">
                     </div>
                     <div class="work-card__body">
-                        <p class="work-card__type" data-es="IDENTIDAD VISUAL · SITIO WEB · GASTRONOMÍA" data-en="VISUAL IDENTITY · WEBSITE · FOOD">IDENTIDAD VISUAL · SITIO WEB · GASTRONOMÍA</p>
+                        <p class="work-card__type" data-es="SITIO WEB · CARTA DIGITAL · GASTRONOMÍA" data-en="WEBSITE · DIGITAL MENU · FOOD">SITIO WEB · CARTA DIGITAL · GASTRONOMÍA</p>
                         <h3 class="work-card__title">Lo de María</h3>
                         <p class="work-card__desc"
-                           data-es="Cafetería especializada en bakery artesanal en El Bolsón. Diseñé la identidad y construí el sitio con video de hero, carta digital, sección de catering y take away."
-                           data-en="Specialty bakery café in El Bolsón, Patagonia. I designed the identity and built the site with hero video, digital menu, catering section, and take-away.">
-                            Cafetería especializada en bakery artesanal en El Bolsón. Diseñé la identidad y construí el sitio con video de hero, carta digital, sección de catering y take away.
+                           data-es="Cafetería de bakery artesanal en El Bolsón. Digitalización del negocio: de carta impresa a sitio mobile-first con carta digital, catering, take away y código QR físico."
+                           data-en="Artisan bakery café in El Bolsón. Business digitalization: from printed menu to mobile-first site with digital menu, catering, take-away and physical QR code.">
+                            Cafetería de bakery artesanal en El Bolsón. Digitalización del negocio: de carta impresa a sitio mobile-first con carta digital, catering, take away y código QR físico.
                         </p>
-                        <a class="work-card__cta" href="https://arielhcontini.github.io/LodeMaria2024/" target="_blank">
+                        <div class="work-card__cta">
                             <img src="assets/readmore.svg" alt="">
-                            <span data-es="Ver sitio" data-en="View site">Ver sitio</span>
-                        </a>
+                            <span data-es="Ver caso" data-en="View case">Ver caso</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- RYOMA -->
-                <div class="work-card">
+                <div class="work-card clickable-card" data-modal-target="template-ryoma" style="cursor:pointer;">
                     <div class="work-card__image">
                         <img src="./assets/ryoma.webp" alt="Ryoma Cosmética — E-commerce" loading="lazy">
                     </div>
                     <div class="work-card__body">
-                        <p class="work-card__type" data-es="E-COMMERCE · WOOCOMMERCE" data-en="E-COMMERCE · WOOCOMMERCE">E-COMMERCE · WOOCOMMERCE</p>
+                        <p class="work-card__type" data-es="E-COMMERCE · WOOCOMMERCE · WELLNESS" data-en="E-COMMERCE · WOOCOMMERCE · WELLNESS">E-COMMERCE · WOOCOMMERCE · WELLNESS</p>
                         <h3 class="work-card__title">Ryoma Cosmética</h3>
                         <p class="work-card__desc"
-                           data-es="Cosmética natural con identidad patagónica. Elegí WooCommerce para que el cliente pudiera gestionar su catálogo sin depender de un developer. Hoy procesa pedidos online de forma autónoma."
-                           data-en="Natural cosmetics with a Patagonian identity. I chose WooCommerce so the client could manage their catalog without depending on a developer. Today it processes online orders autonomously.">
-                            Cosmética natural con identidad patagónica. Elegí WooCommerce para que el cliente pudiera gestionar su catálogo sin depender de un developer. Hoy procesa pedidos online de forma autónoma.
+                           data-es="Cosmética natural con materia prima patagónica. Tienda online con 19 productos y cursos. La decisión clave: elegir la plataforma correcta para que el cliente la opere solo desde el día uno."
+                           data-en="Natural cosmetics with Patagonian raw materials. Online store with 19 products and courses. The key decision: choosing the right platform so the client could operate it alone from day one.">
+                            Cosmética natural con materia prima patagónica. Tienda online con 19 productos y cursos. La decisión clave: elegir la plataforma correcta para que el cliente la opere solo desde el día uno.
                         </p>
-                        <a class="work-card__cta" href="https://ryomacosmetica.store/" target="_blank">
+                        <div class="work-card__cta">
                             <img src="assets/readmore.svg" alt="">
-                            <span data-es="Ver sitio" data-en="View site">Ver sitio</span>
-                        </a>
+                            <span data-es="Ver caso" data-en="View case">Ver caso</span>
+                        </div>
                     </div>
                 </div>
 
@@ -707,6 +728,232 @@
 
                     <div style="margin-top: 1.5rem;">
                         <a href="https://mahuro.art/" target="_blank" class="work-card__cta" style="display:inline-flex;">
+                            <img src="assets/readmore.svg" alt=""> Ver el sitio en vivo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Template Ryoma -->
+        <div id="template-ryoma">
+            <h2 class="section-title">Ryoma Cosmética <br><span class="outline">E-commerce · WooCommerce · Wellness</span></h2>
+
+            <style>
+                .ry-case { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin: 2rem 0; align-items: start; }
+                @media (max-width: 700px) { .ry-case { grid-template-columns: 1fr; } }
+                .ry-block { margin-bottom: 1.5rem; }
+                .ry-block__label { font-family: 'Roboto Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin: 0 0 6px; }
+                .ry-block__text { font-size: 0.95rem; color: #e0e0e0; line-height: 1.7; margin: 0; }
+                .ry-block__text strong { color: #fff; font-weight: 500; }
+                .ry-decision { background: rgba(255,255,255,0.04); border-left: 2px solid rgba(255,255,255,0.2); border-radius: 0 4px 4px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+                .ry-decision p { font-size: 0.9rem; color: #e0e0e0; line-height: 1.7; margin: 0; font-style: italic; }
+                .ry-decision p strong { color: #fff; font-style: normal; }
+                .ry-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem; }
+                .ry-tag { font-size: 0.7rem; padding: 3px 10px; border: 0.5px solid rgba(255,255,255,0.2); border-radius: 12px; color: rgba(255,255,255,0.6); font-family: 'Roboto Mono', monospace; letter-spacing: 0.05em; }
+                .ry-hero-img { width: 100%; aspect-ratio: 16/8; object-fit: cover; border-radius: 4px; margin-bottom: 2rem; display: block; }
+                .ry-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 1rem; }
+                @media (max-width: 500px) { .ry-metrics { grid-template-columns: 1fr 1fr; } }
+                .ry-metric { background: rgba(255,255,255,0.05); border-radius: 6px; padding: 0.875rem 1rem; }
+                .ry-metric__num { font-size: 1.5rem; font-weight: 700; color: #fff; margin: 0 0 3px; }
+                .ry-metric__label { font-size: 0.72rem; color: rgba(255,255,255,0.45); margin: 0; line-height: 1.4; }
+                .ry-handoff { list-style: none; padding: 0; margin: 0; }
+                .ry-handoff li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; padding: 8px 0; border-bottom: 0.5px solid rgba(255,255,255,0.07); font-size: 0.85rem; color: #e0e0e0; line-height: 1.5; }
+                .ry-handoff li:last-child { border-bottom: none; }
+                .ry-handoff__icon { color: rgba(255,255,255,0.3); font-family: 'Roboto Mono', monospace; font-size: 0.7rem; padding-top: 2px; }
+                .ry-handoff strong { color: #fff; font-weight: 500; }
+            </style>
+
+            <div class="ry-tags">
+                <span class="ry-tag">WooCommerce</span>
+                <span class="ry-tag">WordPress</span>
+                <span class="ry-tag">19 productos + cursos</span>
+                <span class="ry-tag">Handoff autónomo</span>
+                <span class="ry-tag">Cosmética natural · Wellness</span>
+            </div>
+
+            <img src="./assets/ryoma.webp" class="ry-hero-img" alt="Ryoma Cosmética — tienda online" loading="lazy"
+                 onerror="this.style.display='none'">
+
+            <div class="ry-case">
+                <!-- Columna izquierda: narrativa -->
+                <div>
+                    <div class="ry-block">
+                        <p class="ry-block__label">El desafío real</p>
+                        <p class="ry-block__text">Este proyecto no fue principalmente un trabajo de diseño — fue un trabajo de <strong>organización y autonomía</strong>. La cliente tenía una marca funcionando en redes sociales con una comunidad activa, pero necesitaba un canal de ventas propio que pudiera operar sin depender de nadie más.</p>
+                    </div>
+
+                    <div class="ry-decision">
+                        <p>La decisión más importante no fue estética: fue <strong>elegir WooCommerce</strong>. Shopify o Tiendanube tienen más funciones, pero WooCommerce tiene la curva de aprendizaje más corta para alguien sin experiencia técnica. El objetivo era que el primer día después de la entrega, la cliente pudiera subir un producto sola.</p>
+                    </div>
+
+                    <div class="ry-block">
+                        <p class="ry-block__label">Lo visual: paleta y espiritualidad</p>
+                        <p class="ry-block__text">Más que una identidad desde cero, fue una <strong>organización visual</strong> del universo que la marca ya tenía. Paleta de colores suaves para comunicar relajación y bienestar — coherente con el sector wellness y el autocuidado. Tipografía sans-serif para legibilidad en mobile. Las fotografías, producción propia de la cliente, ya traían la estética del producto.</p>
+                    </div>
+
+                    <div class="ry-block">
+                        <p class="ry-block__label">Materia prima patagónica</p>
+                        <p class="ry-block__text">La identidad patagónica no es un claim decorativo — es el <strong>origen real de los ingredientes</strong>. Eso se comunicó en las descripciones de producto como parte de la propuesta de valor de la marca, no como elemento visual.</p>
+                    </div>
+                </div>
+
+                <!-- Columna derecha: estructura + handoff -->
+                <div>
+                    <div class="ry-block">
+                        <p class="ry-block__label">Métricas del proyecto</p>
+                        <div class="ry-metrics">
+                            <div class="ry-metric">
+                                <p class="ry-metric__num">19</p>
+                                <p class="ry-metric__label">productos y cursos en catálogo</p>
+                            </div>
+                            <div class="ry-metric">
+                                <p class="ry-metric__num">0</p>
+                                <p class="ry-metric__label">tickets de soporte post-entrega</p>
+                            </div>
+                            <div class="ry-metric">
+                                <p class="ry-metric__num">3m</p>
+                                <p class="ry-metric__label">de soporte incluido en el precio</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ry-block" style="margin-top: 1.5rem;">
+                        <p class="ry-block__label">El handoff — cómo se entregó</p>
+                        <ul class="ry-handoff">
+                            <li>
+                                <span class="ry-handoff__icon">01</span>
+                                <span><strong>Capacitación:</strong> una clase para subir productos y acceder al panel de administración</span>
+                            </li>
+                            <li>
+                                <span class="ry-handoff__icon">02</span>
+                                <span><strong>Categorías y variantes configuradas:</strong> la estructura de catálogo lista para escalar sin ayuda técnica</span>
+                            </li>
+                            <li>
+                                <span class="ry-handoff__icon">03</span>
+                                <span><strong>3 meses de soporte incluido:</strong> red de seguridad para los primeros meses de operación</span>
+                            </li>
+                            <li>
+                                <span class="ry-handoff__icon">04</span>
+                                <span><strong>Resultado:</strong> la cliente procesa pedidos de forma autónoma, impulsada por su presencia en redes</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://ryomacosmetica.store/" target="_blank" class="work-card__cta" style="display:inline-flex;">
+                            <img src="assets/readmore.svg" alt=""> Ver la tienda en vivo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Template Lo de María -->
+        <div id="template-maria">
+            <h2 class="section-title">Lo de María <br><span class="outline">Sitio Web · Carta Digital · Gastronomía</span></h2>
+
+            <style>
+                .lm-case { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin: 2rem 0; align-items: start; }
+                @media (max-width: 700px) { .lm-case { grid-template-columns: 1fr; } }
+                .lm-block { margin-bottom: 1.5rem; }
+                .lm-block__label { font-family: 'Roboto Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin: 0 0 6px; }
+                .lm-block__text { font-size: 0.95rem; color: #e0e0e0; line-height: 1.7; margin: 0; }
+                .lm-block__text strong { color: #fff; font-weight: 500; }
+                .lm-decision { background: rgba(255,255,255,0.04); border-left: 2px solid rgba(255,255,255,0.2); border-radius: 0 4px 4px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+                .lm-decision p { font-size: 0.9rem; color: #e0e0e0; line-height: 1.7; margin: 0; font-style: italic; }
+                .lm-decision p strong { color: #fff; font-style: normal; }
+                .lm-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem; }
+                .lm-tag { font-size: 0.7rem; padding: 3px 10px; border: 0.5px solid rgba(255,255,255,0.2); border-radius: 12px; color: rgba(255,255,255,0.6); font-family: 'Roboto Mono', monospace; letter-spacing: 0.05em; }
+                .lm-hero-img { width: 100%; aspect-ratio: 16/8; object-fit: cover; border-radius: 4px; margin-bottom: 2rem; display: block; }
+                .lm-timeline { list-style: none; padding: 0; margin: 0; }
+                .lm-timeline li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; padding: 8px 0; border-bottom: 0.5px solid rgba(255,255,255,0.07); }
+                .lm-timeline li:last-child { border-bottom: none; }
+                .lm-timeline__num { font-size: 0.7rem; font-family: 'Roboto Mono', monospace; color: rgba(255,255,255,0.3); padding-top: 2px; }
+                .lm-timeline__text { font-size: 0.85rem; color: #e0e0e0; line-height: 1.5; }
+                .lm-timeline__text strong { color: #fff; font-weight: 500; }
+                .lm-stat { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+                .lm-stat__item { background: rgba(255,255,255,0.05); border-radius: 6px; padding: 0.75rem 1rem; flex: 1; min-width: 120px; }
+                .lm-stat__num { font-size: 1.4rem; font-weight: 700; color: #fff; margin: 0 0 3px; }
+                .lm-stat__label { font-size: 0.72rem; color: rgba(255,255,255,0.45); margin: 0; line-height: 1.4; }
+            </style>
+
+            <div class="lm-tags">
+                <span class="lm-tag">HTML · CSS · Mobile-first</span>
+                <span class="lm-tag">Carta digital</span>
+                <span class="lm-tag">Video de hero</span>
+                <span class="lm-tag">Código QR</span>
+                <span class="lm-tag">El Bolsón · Patagonia</span>
+            </div>
+
+            <img src="./assets/maria.webp" class="lm-hero-img" alt="Lo de María — sitio web de cafetería" loading="lazy"
+                 onerror="this.style.display='none'">
+
+            <div class="lm-case">
+                <!-- Columna izquierda: narrativa -->
+                <div>
+                    <div class="lm-block">
+                        <p class="lm-block__label">El punto de partida</p>
+                        <p class="lm-block__text">Lo de María trabajaba con <strong>carta impresa</strong>. El objetivo del proyecto era simple y concreto: digitalizar el negocio. Que los clientes pudieran ver la carta, entender la propuesta y contactar al local — desde el teléfono, antes de llegar.</p>
+                    </div>
+
+                    <div class="lm-decision">
+                        <p>El diferencial de Lo de María es su <strong>pastelería artesanal</strong>. La fotografía de Elisa Almirón y Lucía Mancilla fue el centro de la propuesta visual — no hay mejor argumento que una buena foto de lo que hacen.</p>
+                    </div>
+
+                    <div class="lm-block">
+                        <p class="lm-block__label">Cómo creció el proyecto</p>
+                        <p class="lm-block__text">Empezó como una carta digital. En la primera reunión el cliente explicó sus necesidades y el presupuesto disponible. A medida que avanzábamos, fueron apareciendo nuevos requerimientos: <strong>take away, catering e Instagram integrado</strong>. La arquitectura se fue expandiendo desde los requerimientos reales del negocio, no desde un template.</p>
+                    </div>
+
+                    <div class="lm-block">
+                        <p class="lm-block__label">El video de hero</p>
+                        <p class="lm-block__text">Producción propia del cliente — su idea fue colocarlo en primer lugar para que las personas vean el recorrido de la cafetería antes de entrar. Una decisión de dirección que convierte el sitio en una <strong>experiencia de anticipación</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Columna derecha: iteraciones + resultado -->
+                <div>
+                    <div class="lm-block">
+                        <p class="lm-block__label">Iteraciones post-entrega</p>
+                        <ul class="lm-timeline">
+                            <li>
+                                <span class="lm-timeline__num">v1</span>
+                                <span class="lm-timeline__text"><strong>Lanzamiento:</strong> carta digital con fotografía + video de hero</span>
+                            </li>
+                            <li>
+                                <span class="lm-timeline__num">v2</span>
+                                <span class="lm-timeline__text"><strong>Primera actualización:</strong> sección de take away e integración con Instagram</span>
+                            </li>
+                            <li>
+                                <span class="lm-timeline__num">v3</span>
+                                <span class="lm-timeline__text"><strong>Segunda actualización:</strong> sección de catering con formulario de contacto</span>
+                            </li>
+                            <li>
+                                <span class="lm-timeline__num">v4</span>
+                                <span class="lm-timeline__text"><strong>Mantenimiento:</strong> actualización de carta y precios</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="lm-block" style="margin-top: 1.5rem;">
+                        <p class="lm-block__label">El puente físico-digital</p>
+                        <p class="lm-block__text">El único formato físico del proyecto fue el <strong>código QR</strong> impreso en el local — que lleva directamente al sitio y a la carta digital. Un objeto de 3cm que conecta el espacio físico con la presencia online.</p>
+                    </div>
+
+                    <div class="lm-stat">
+                        <div class="lm-stat__item">
+                            <p class="lm-stat__num">4</p>
+                            <p class="lm-stat__label">versiones iteradas post-lanzamiento</p>
+                        </div>
+                        <div class="lm-stat__item">
+                            <p class="lm-stat__num">↑</p>
+                            <p class="lm-stat__label">más visitas y contactos que con carta impresa</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://arielhcontini.github.io/LodeMaria2024/" target="_blank" class="work-card__cta" style="display:inline-flex;">
                             <img src="assets/readmore.svg" alt=""> Ver el sitio en vivo
                         </a>
                     </div>
