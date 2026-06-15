@@ -106,27 +106,6 @@
             margin-bottom: 8px;
         }
 
-        /* ── Tipografía global de modales ── */
-        #modal-body p,
-        #modal-body span,
-        #modal-body li,
-        #modal-body a,
-        #modal-body code {
-            font-family: 'Roboto Mono', monospace;
-        }
-
-        /* Más espacio entre título y subtítulo en modales */
-        #modal-body .section-title {
-            line-height: 1.5;
-        }
-        #modal-body .section-title .outline {
-            display: inline-block;
-            margin-top: 0.6rem;
-            font-size: 0.75em;
-            letter-spacing: 0.04em;
-            opacity: 0.7;
-        }
-
         /* ── Language Switch ── */
         .lang-switch {
             display: flex;
@@ -630,98 +609,75 @@
         <!-- Template Mahuro -->
         <div id="template-mahuro">
             <h2 class="section-title">Mahuro <br><span class="outline">Dirección de Arte · Desarrollo Web</span></h2>
-
-            <style>
-                .mh-case { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin: 2rem 0; align-items: start; }
-                @media (max-width: 700px) { .mh-case { grid-template-columns: 1fr; } }
-                .mh-block { margin-bottom: 1.5rem; }
-                .mh-block__label { font-family: 'Roboto Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin: 0 0 6px; }
-                .mh-block__text { font-size: 0.95rem; color: #e0e0e0; line-height: 1.7; margin: 0; }
-                .mh-block__text strong { color: #fff; font-weight: 500; }
-                .mh-decision { background: rgba(255,255,255,0.04); border-left: 2px solid rgba(255,255,255,0.2); border-radius: 0 4px 4px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; }
-                .mh-decision p { font-size: 0.9rem; color: #e0e0e0; line-height: 1.7; margin: 0; font-style: italic; }
-                .mh-decision p strong { color: #fff; font-style: normal; }
-                .mh-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem; }
-                .mh-tag { font-size: 0.7rem; padding: 3px 10px; border: 0.5px solid rgba(255,255,255,0.2); border-radius: 12px; color: rgba(255,255,255,0.6); font-family: 'Roboto Mono', monospace; letter-spacing: 0.05em; }
-                .mh-team { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 1rem; }
-                @media (max-width: 500px) { .mh-team { grid-template-columns: 1fr; } }
-                .mh-team__item { background: rgba(255,255,255,0.04); border-radius: 6px; padding: 0.75rem 1rem; }
-                .mh-team__role { font-family: 'Roboto Mono', monospace; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.4; margin: 0 0 3px; }
-                .mh-team__name { font-size: 0.9rem; color: #fff; font-weight: 500; margin: 0 0 2px; }
-                .mh-team__desc { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin: 0; line-height: 1.4; }
-                .mh-team__item.mh-team__you { border: 0.5px solid rgba(255,255,255,0.15); }
-                .mh-hero-img { width: 100%; aspect-ratio: 16/8; object-fit: cover; border-radius: 4px; margin-bottom: 2rem; display: block; }
-            </style>
-
-            <div class="mh-tags">
-                <span class="mh-tag">Dirección técnico-creativa</span>
-                <span class="mh-tag">HTML · CSS</span>
-                <span class="mh-tag">GSAP</span>
-                <span class="mh-tag">Proyecto colectivo</span>
-                <span class="mh-tag">Animación de interfaz</span>
-                <span class="mh-tag">Tipografía editorial</span>
+<div class="mc-tags">
+                <span class="mc-tag">Dirección técnico-creativa</span>
+                <span class="mc-tag">HTML · CSS</span>
+                <span class="mc-tag">GSAP</span>
+                <span class="mc-tag">Proyecto colectivo</span>
+                <span class="mc-tag">Animación de interfaz</span>
+                <span class="mc-tag">Tipografía editorial</span>
             </div>
 
-            <img src="assets/mahuro-hero.webp" class="mh-hero-img" alt="Mahuro — interfaz del álbum interactivo" loading="lazy"
+            <img src="assets/mahuro-hero.webp" class="mc-hero-img" alt="Mahuro — interfaz del álbum interactivo" loading="lazy"
                  onerror="this.style.display='none'">
 
-            <div class="mh-case">
+            <div class="mc-case">
                 <!-- Columna izquierda -->
                 <div>
-                    <div class="mh-block">
-                        <p class="mh-block__label">El punto de partida</p>
-                        <p class="mh-block__text">Mahuro Colleti publicó en Instagram buscando a alguien que creara una <strong>aplicación para su álbum</strong>. El desafío real no era técnico: era cómo integrar un cuento escrito, collages visuales, tipografía de autor, fotografías de tapa y música — todo en un solo objeto digital coherente.</p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">El punto de partida</p>
+                        <p class="mc-block__text">Mahuro Colleti publicó en Instagram buscando a alguien que creara una <strong>aplicación para su álbum</strong>. El desafío real no era técnico: era cómo integrar un cuento escrito, collages visuales, tipografía de autor, fotografías de tapa y música — todo en un solo objeto digital coherente.</p>
                     </div>
 
-                    <div class="mh-block">
-                        <p class="mh-block__label">La propuesta</p>
-                        <p class="mh-block__text">Propuse un website en lugar de una app. Más accesible, sin descarga, y con mayor control creativo sobre la experiencia. El concepto emergió naturalmente: <strong>el booklet de CD</strong> — ese objeto físico que acompañaba los discos y que unía música, imágenes y texto en una experiencia única.</p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">La propuesta</p>
+                        <p class="mc-block__text">Propuse un website en lugar de una app. Más accesible, sin descarga, y con mayor control creativo sobre la experiencia. El concepto emergió naturalmente: <strong>el booklet de CD</strong> — ese objeto físico que acompañaba los discos y que unía música, imágenes y texto en una experiencia única.</p>
                     </div>
 
-                    <div class="mh-decision">
+                    <div class="mc-decision">
                         <p>La decisión de UI más importante fue usar <strong>sliders horizontales inspirados en los de Instagram</strong> para recrear el gesto de pasar páginas. GSAP fue la tecnología que lo hizo posible — permitió animar la interfaz con la suavidad y el control necesarios para que el gesto se sintiera como hojear, no como navegar.</p>
                     </div>
 
-                    <div class="mh-block">
-                        <p class="mh-block__label">El momento que definió el proyecto</p>
-                        <p class="mh-block__text">Las presentaciones en vivo. Ver a las personas descubrir el álbum en tiempo real — pasar las páginas, escuchar la música, leer el cuento — confirmó que el concepto funcionaba más allá de la pantalla. El sitio no era un complemento del álbum: <strong>era parte de la obra</strong>.</p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">El momento que definió el proyecto</p>
+                        <p class="mc-block__text">Las presentaciones en vivo. Ver a las personas descubrir el álbum en tiempo real — pasar las páginas, escuchar la música, leer el cuento — confirmó que el concepto funcionaba más allá de la pantalla. El sitio no era un complemento del álbum: <strong>era parte de la obra</strong>.</p>
                     </div>
                 </div>
 
                 <!-- Columna derecha -->
                 <div>
-                    <div class="mh-block">
-                        <p class="mh-block__label">Mi rol en el equipo</p>
-                        <p class="mh-block__text">Director técnico-creativo del proyecto. Recepcioné los materiales de cada colaborador, tomé las decisiones de integración y fui responsable del desarrollo completo: maquetado HTML/CSS, animación con GSAP y coordinación del proceso colectivo.</p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">Mi rol en el equipo</p>
+                        <p class="mc-block__text">Director técnico-creativo del proyecto. Recepcioné los materiales de cada colaborador, tomé las decisiones de integración y fui responsable del desarrollo completo: maquetado HTML/CSS, animación con GSAP y coordinación del proceso colectivo.</p>
                     </div>
 
-                    <div class="mh-block">
-                        <p class="mh-block__label">El equipo</p>
-                        <div class="mh-team">
-                            <div class="mh-team__item mh-team__you">
-                                <p class="mh-team__role">Dirección técnico-creativa</p>
-                                <p class="mh-team__name">Ariel Contini</p>
-                                <p class="mh-team__desc">Desarrollo web, animación GSAP, maquetado, integración de materiales</p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">El equipo</p>
+                        <div class="mc-team">
+                            <div class="mc-team__item mc-team__item--you">
+                                <p class="mc-team__role">Dirección técnico-creativa</p>
+                                <p class="mc-team__name">Ariel Contini</p>
+                                <p class="mc-team__desc">Desarrollo web, animación GSAP, maquetado, integración de materiales</p>
                             </div>
-                            <div class="mh-team__item">
-                                <p class="mh-team__role">Dirección artística</p>
-                                <p class="mh-team__name">Mahuro Colleti</p>
-                                <p class="mh-team__desc">Músico, cuento, visión del álbum</p>
+                            <div class="mc-team__item">
+                                <p class="mc-team__role">Dirección artística</p>
+                                <p class="mc-team__name">Mahuro Colleti</p>
+                                <p class="mc-team__desc">Músico, cuento, visión del álbum</p>
                             </div>
-                            <div class="mh-team__item">
-                                <p class="mh-team__role">Collages</p>
-                                <p class="mh-team__name">Jazinta</p>
-                                <p class="mh-team__desc">Imágenes de fondo para el cuento</p>
+                            <div class="mc-team__item">
+                                <p class="mc-team__role">Collages</p>
+                                <p class="mc-team__name">Jazinta</p>
+                                <p class="mc-team__desc">Imágenes de fondo para el cuento</p>
                             </div>
-                            <div class="mh-team__item">
-                                <p class="mh-team__role">Fotografía</p>
-                                <p class="mh-team__name">Homero Prodan</p>
-                                <p class="mh-team__desc">Tapa y contratapa del álbum</p>
+                            <div class="mc-team__item">
+                                <p class="mc-team__role">Fotografía</p>
+                                <p class="mc-team__name">Homero Prodan</p>
+                                <p class="mc-team__desc">Tapa y contratapa del álbum</p>
                             </div>
-                            <div class="mh-team__item">
-                                <p class="mh-team__role">Tipografía</p>
-                                <p class="mh-team__name">Camila</p>
-                                <p class="mh-team__desc">Diseño tipográfico de autor</p>
+                            <div class="mc-team__item">
+                                <p class="mc-team__role">Tipografía</p>
+                                <p class="mc-team__name">Camila</p>
+                                <p class="mc-team__desc">Diseño tipográfico de autor</p>
                             </div>
                         </div>
                     </div>
@@ -738,103 +694,77 @@
         <!-- Template Ryoma -->
         <div id="template-ryoma">
             <h2 class="section-title">Ryoma Cosmética <br><span class="outline">E-commerce · WooCommerce · Wellness</span></h2>
-
-            <style>
-                .ry-case { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin: 2rem 0; align-items: start; }
-                @media (max-width: 700px) { .ry-case { grid-template-columns: 1fr; } }
-                .ry-block { margin-bottom: 1.5rem; }
-                .ry-block__label { font-family: 'Roboto Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin: 0 0 6px; }
-                .ry-block__text { font-size: 0.95rem; color: #e0e0e0; line-height: 1.7; margin: 0; }
-                .ry-block__text strong { color: #fff; font-weight: 500; }
-                .ry-decision { background: rgba(255,255,255,0.04); border-left: 2px solid rgba(255,255,255,0.2); border-radius: 0 4px 4px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; }
-                .ry-decision p { font-size: 0.9rem; color: #e0e0e0; line-height: 1.7; margin: 0; font-style: italic; }
-                .ry-decision p strong { color: #fff; font-style: normal; }
-                .ry-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem; }
-                .ry-tag { font-size: 0.7rem; padding: 3px 10px; border: 0.5px solid rgba(255,255,255,0.2); border-radius: 12px; color: rgba(255,255,255,0.6); font-family: 'Roboto Mono', monospace; letter-spacing: 0.05em; }
-                .ry-hero-img { width: 100%; aspect-ratio: 16/8; object-fit: cover; border-radius: 4px; margin-bottom: 2rem; display: block; }
-                .ry-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 1rem; }
-                @media (max-width: 500px) { .ry-metrics { grid-template-columns: 1fr 1fr; } }
-                .ry-metric { background: rgba(255,255,255,0.05); border-radius: 6px; padding: 0.875rem 1rem; }
-                .ry-metric__num { font-size: 1.5rem; font-weight: 700; color: #fff; margin: 0 0 3px; }
-                .ry-metric__label { font-size: 0.72rem; color: rgba(255,255,255,0.45); margin: 0; line-height: 1.4; }
-                .ry-handoff { list-style: none; padding: 0; margin: 0; }
-                .ry-handoff li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; padding: 8px 0; border-bottom: 0.5px solid rgba(255,255,255,0.07); font-size: 0.85rem; color: #e0e0e0; line-height: 1.5; }
-                .ry-handoff li:last-child { border-bottom: none; }
-                .ry-handoff__icon { color: rgba(255,255,255,0.3); font-family: 'Roboto Mono', monospace; font-size: 0.7rem; padding-top: 2px; }
-                .ry-handoff strong { color: #fff; font-weight: 500; }
-            </style>
-
-            <div class="ry-tags">
-                <span class="ry-tag">WooCommerce</span>
-                <span class="ry-tag">WordPress</span>
-                <span class="ry-tag">19 productos + cursos</span>
-                <span class="ry-tag">Handoff autónomo</span>
-                <span class="ry-tag">Cosmética natural · Wellness</span>
+<div class="mc-tags">
+                <span class="mc-tag">WooCommerce</span>
+                <span class="mc-tag">WordPress</span>
+                <span class="mc-tag">19 productos + cursos</span>
+                <span class="mc-tag">Handoff autónomo</span>
+                <span class="mc-tag">Cosmética natural · Wellness</span>
             </div>
 
-            <img src="./assets/ryoma.webp" class="ry-hero-img" alt="Ryoma Cosmética — tienda online" loading="lazy"
+            <img src="./assets/ryoma.webp" class="mc-hero-img" alt="Ryoma Cosmética — tienda online" loading="lazy"
                  onerror="this.style.display='none'">
 
-            <div class="ry-case">
+            <div class="mc-case">
                 <!-- Columna izquierda: narrativa -->
                 <div>
-                    <div class="ry-block">
-                        <p class="ry-block__label">El desafío real</p>
-                        <p class="ry-block__text">Este proyecto no fue principalmente un trabajo de diseño — fue un trabajo de <strong>organización y autonomía</strong>. La cliente tenía una marca funcionando en redes sociales con una comunidad activa, pero necesitaba un canal de ventas propio que pudiera operar sin depender de nadie más.</p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">El desafío real</p>
+                        <p class="mc-block__text">Este proyecto no fue principalmente un trabajo de diseño — fue un trabajo de <strong>organización y autonomía</strong>. La cliente tenía una marca funcionando en redes sociales con una comunidad activa, pero necesitaba un canal de ventas propio que pudiera operar sin depender de nadie más.</p>
                     </div>
 
-                    <div class="ry-decision">
+                    <div class="mc-decision">
                         <p>La decisión más importante no fue estética: fue <strong>elegir WooCommerce</strong>. Shopify o Tiendanube tienen más funciones, pero WooCommerce tiene la curva de aprendizaje más corta para alguien sin experiencia técnica. El objetivo era que el primer día después de la entrega, la cliente pudiera subir un producto sola.</p>
                     </div>
 
-                    <div class="ry-block">
-                        <p class="ry-block__label">Lo visual: paleta y espiritualidad</p>
-                        <p class="ry-block__text">Más que una identidad desde cero, fue una <strong>organización visual</strong> del universo que la marca ya tenía. Paleta de colores suaves para comunicar relajación y bienestar — coherente con el sector wellness y el autocuidado. Tipografía sans-serif para legibilidad en mobile. Las fotografías, producción propia de la cliente, ya traían la estética del producto.</p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">Lo visual: paleta y espiritualidad</p>
+                        <p class="mc-block__text">Más que una identidad desde cero, fue una <strong>organización visual</strong> del universo que la marca ya tenía. Paleta de colores suaves para comunicar relajación y bienestar — coherente con el sector wellness y el autocuidado. Tipografía sans-serif para legibilidad en mobile. Las fotografías, producción propia de la cliente, ya traían la estética del producto.</p>
                     </div>
 
-                    <div class="ry-block">
-                        <p class="ry-block__label">Materia prima patagónica</p>
-                        <p class="ry-block__text">La identidad patagónica no es un claim decorativo — es el <strong>origen real de los ingredientes</strong>. Eso se comunicó en las descripciones de producto como parte de la propuesta de valor de la marca, no como elemento visual.</p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">Materia prima patagónica</p>
+                        <p class="mc-block__text">La identidad patagónica no es un claim decorativo — es el <strong>origen real de los ingredientes</strong>. Eso se comunicó en las descripciones de producto como parte de la propuesta de valor de la marca, no como elemento visual.</p>
                     </div>
                 </div>
 
                 <!-- Columna derecha: estructura + handoff -->
                 <div>
-                    <div class="ry-block">
-                        <p class="ry-block__label">Métricas del proyecto</p>
-                        <div class="ry-metrics">
-                            <div class="ry-metric">
-                                <p class="ry-metric__num">19</p>
-                                <p class="ry-metric__label">productos y cursos en catálogo</p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">Métricas del proyecto</p>
+                        <div class="mc-metrics">
+                            <div class="mc-metric">
+                                <p class="mc-metric__num">19</p>
+                                <p class="mc-metric__label">productos y cursos en catálogo</p>
                             </div>
-                            <div class="ry-metric">
-                                <p class="ry-metric__num">0</p>
-                                <p class="ry-metric__label">tickets de soporte post-entrega</p>
+                            <div class="mc-metric">
+                                <p class="mc-metric__num">0</p>
+                                <p class="mc-metric__label">tickets de soporte post-entrega</p>
                             </div>
-                            <div class="ry-metric">
-                                <p class="ry-metric__num">3m</p>
-                                <p class="ry-metric__label">de soporte incluido en el precio</p>
+                            <div class="mc-metric">
+                                <p class="mc-metric__num">3m</p>
+                                <p class="mc-metric__label">de soporte incluido en el precio</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="ry-block" style="margin-top: 1.5rem;">
-                        <p class="ry-block__label">El handoff — cómo se entregó</p>
-                        <ul class="ry-handoff">
+                    <div class="mc-block" style="margin-top: 1.5rem;">
+                        <p class="mc-block__label">El handoff — cómo se entregó</p>
+                        <ul class="mc-list">
                             <li>
-                                <span class="ry-handoff__icon">01</span>
+                                <span class="mc-list__num">01</span>
                                 <span><strong>Capacitación:</strong> una clase para subir productos y acceder al panel de administración</span>
                             </li>
                             <li>
-                                <span class="ry-handoff__icon">02</span>
+                                <span class="mc-list__num">02</span>
                                 <span><strong>Categorías y variantes configuradas:</strong> la estructura de catálogo lista para escalar sin ayuda técnica</span>
                             </li>
                             <li>
-                                <span class="ry-handoff__icon">03</span>
+                                <span class="mc-list__num">03</span>
                                 <span><strong>3 meses de soporte incluido:</strong> red de seguridad para los primeros meses de operación</span>
                             </li>
                             <li>
-                                <span class="ry-handoff__icon">04</span>
+                                <span class="mc-list__num">04</span>
                                 <span><strong>Resultado:</strong> la cliente procesa pedidos de forma autónoma, impulsada por su presencia en redes</span>
                             </li>
                         </ul>
@@ -852,103 +782,77 @@
         <!-- Template Lo de María -->
         <div id="template-maria">
             <h2 class="section-title">Lo de María <br><span class="outline">Sitio Web · Carta Digital · Gastronomía</span></h2>
-
-            <style>
-                .lm-case { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin: 2rem 0; align-items: start; }
-                @media (max-width: 700px) { .lm-case { grid-template-columns: 1fr; } }
-                .lm-block { margin-bottom: 1.5rem; }
-                .lm-block__label { font-family: 'Roboto Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin: 0 0 6px; }
-                .lm-block__text { font-size: 0.95rem; color: #e0e0e0; line-height: 1.7; margin: 0; }
-                .lm-block__text strong { color: #fff; font-weight: 500; }
-                .lm-decision { background: rgba(255,255,255,0.04); border-left: 2px solid rgba(255,255,255,0.2); border-radius: 0 4px 4px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; }
-                .lm-decision p { font-size: 0.9rem; color: #e0e0e0; line-height: 1.7; margin: 0; font-style: italic; }
-                .lm-decision p strong { color: #fff; font-style: normal; }
-                .lm-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem; }
-                .lm-tag { font-size: 0.7rem; padding: 3px 10px; border: 0.5px solid rgba(255,255,255,0.2); border-radius: 12px; color: rgba(255,255,255,0.6); font-family: 'Roboto Mono', monospace; letter-spacing: 0.05em; }
-                .lm-hero-img { width: 100%; aspect-ratio: 16/8; object-fit: cover; border-radius: 4px; margin-bottom: 2rem; display: block; }
-                .lm-timeline { list-style: none; padding: 0; margin: 0; }
-                .lm-timeline li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; padding: 8px 0; border-bottom: 0.5px solid rgba(255,255,255,0.07); }
-                .lm-timeline li:last-child { border-bottom: none; }
-                .lm-timeline__num { font-size: 0.7rem; font-family: 'Roboto Mono', monospace; color: rgba(255,255,255,0.3); padding-top: 2px; }
-                .lm-timeline__text { font-size: 0.85rem; color: #e0e0e0; line-height: 1.5; }
-                .lm-timeline__text strong { color: #fff; font-weight: 500; }
-                .lm-stat { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
-                .lm-stat__item { background: rgba(255,255,255,0.05); border-radius: 6px; padding: 0.75rem 1rem; flex: 1; min-width: 120px; }
-                .lm-stat__num { font-size: 1.4rem; font-weight: 700; color: #fff; margin: 0 0 3px; }
-                .lm-stat__label { font-size: 0.72rem; color: rgba(255,255,255,0.45); margin: 0; line-height: 1.4; }
-            </style>
-
-            <div class="lm-tags">
-                <span class="lm-tag">HTML · CSS · Mobile-first</span>
-                <span class="lm-tag">Carta digital</span>
-                <span class="lm-tag">Video de hero</span>
-                <span class="lm-tag">Código QR</span>
-                <span class="lm-tag">El Bolsón · Patagonia</span>
+<div class="mc-tags">
+                <span class="mc-tag">HTML · CSS · Mobile-first</span>
+                <span class="mc-tag">Carta digital</span>
+                <span class="mc-tag">Video de hero</span>
+                <span class="mc-tag">Código QR</span>
+                <span class="mc-tag">El Bolsón · Patagonia</span>
             </div>
 
-            <img src="./assets/maria.webp" class="lm-hero-img" alt="Lo de María — sitio web de cafetería" loading="lazy"
+            <img src="./assets/maria.webp" class="mc-hero-img" alt="Lo de María — sitio web de cafetería" loading="lazy"
                  onerror="this.style.display='none'">
 
-            <div class="lm-case">
+            <div class="mc-case">
                 <!-- Columna izquierda: narrativa -->
                 <div>
-                    <div class="lm-block">
-                        <p class="lm-block__label">El punto de partida</p>
-                        <p class="lm-block__text">Lo de María trabajaba con <strong>carta impresa</strong>. El objetivo del proyecto era simple y concreto: digitalizar el negocio. Que los clientes pudieran ver la carta, entender la propuesta y contactar al local — desde el teléfono, antes de llegar.</p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">El punto de partida</p>
+                        <p class="mc-block__text">Lo de María trabajaba con <strong>carta impresa</strong>. El objetivo del proyecto era simple y concreto: digitalizar el negocio. Que los clientes pudieran ver la carta, entender la propuesta y contactar al local — desde el teléfono, antes de llegar.</p>
                     </div>
 
-                    <div class="lm-decision">
+                    <div class="mc-decision">
                         <p>El diferencial de Lo de María es su <strong>pastelería artesanal</strong>. La fotografía de Elisa Almirón y Lucía Mancilla fue el centro de la propuesta visual — no hay mejor argumento que una buena foto de lo que hacen.</p>
                     </div>
 
-                    <div class="lm-block">
-                        <p class="lm-block__label">Cómo creció el proyecto</p>
-                        <p class="lm-block__text">Empezó como una carta digital. En la primera reunión el cliente explicó sus necesidades y el presupuesto disponible. A medida que avanzábamos, fueron apareciendo nuevos requerimientos: <strong>take away, catering e Instagram integrado</strong>. La arquitectura se fue expandiendo desde los requerimientos reales del negocio, no desde un template.</p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">Cómo creció el proyecto</p>
+                        <p class="mc-block__text">Empezó como una carta digital. En la primera reunión el cliente explicó sus necesidades y el presupuesto disponible. A medida que avanzábamos, fueron apareciendo nuevos requerimientos: <strong>take away, catering e Instagram integrado</strong>. La arquitectura se fue expandiendo desde los requerimientos reales del negocio, no desde un template.</p>
                     </div>
 
-                    <div class="lm-block">
-                        <p class="lm-block__label">El video de hero</p>
-                        <p class="lm-block__text">Producción propia del cliente — su idea fue colocarlo en primer lugar para que las personas vean el recorrido de la cafetería antes de entrar. Una decisión de dirección que convierte el sitio en una <strong>experiencia de anticipación</strong>.</p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">El video de hero</p>
+                        <p class="mc-block__text">Producción propia del cliente — su idea fue colocarlo en primer lugar para que las personas vean el recorrido de la cafetería antes de entrar. Una decisión de dirección que convierte el sitio en una <strong>experiencia de anticipación</strong>.</p>
                     </div>
                 </div>
 
                 <!-- Columna derecha: iteraciones + resultado -->
                 <div>
-                    <div class="lm-block">
-                        <p class="lm-block__label">Iteraciones post-entrega</p>
-                        <ul class="lm-timeline">
+                    <div class="mc-block">
+                        <p class="mc-block__label">Iteraciones post-entrega</p>
+                        <ul class="mc-list">
                             <li>
-                                <span class="lm-timeline__num">v1</span>
-                                <span class="lm-timeline__text"><strong>Lanzamiento:</strong> carta digital con fotografía + video de hero</span>
+                                <span class="mc-list__num">v1</span>
+                                <span class="mc-list__text"><strong>Lanzamiento:</strong> carta digital con fotografía + video de hero</span>
                             </li>
                             <li>
-                                <span class="lm-timeline__num">v2</span>
-                                <span class="lm-timeline__text"><strong>Primera actualización:</strong> sección de take away e integración con Instagram</span>
+                                <span class="mc-list__num">v2</span>
+                                <span class="mc-list__text"><strong>Primera actualización:</strong> sección de take away e integración con Instagram</span>
                             </li>
                             <li>
-                                <span class="lm-timeline__num">v3</span>
-                                <span class="lm-timeline__text"><strong>Segunda actualización:</strong> sección de catering con formulario de contacto</span>
+                                <span class="mc-list__num">v3</span>
+                                <span class="mc-list__text"><strong>Segunda actualización:</strong> sección de catering con formulario de contacto</span>
                             </li>
                             <li>
-                                <span class="lm-timeline__num">v4</span>
-                                <span class="lm-timeline__text"><strong>Mantenimiento:</strong> actualización de carta y precios</span>
+                                <span class="mc-list__num">v4</span>
+                                <span class="mc-list__text"><strong>Mantenimiento:</strong> actualización de carta y precios</span>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="lm-block" style="margin-top: 1.5rem;">
-                        <p class="lm-block__label">El puente físico-digital</p>
-                        <p class="lm-block__text">El único formato físico del proyecto fue el <strong>código QR</strong> impreso en el local — que lleva directamente al sitio y a la carta digital. Un objeto de 3cm que conecta el espacio físico con la presencia online.</p>
+                    <div class="mc-block" style="margin-top: 1.5rem;">
+                        <p class="mc-block__label">El puente físico-digital</p>
+                        <p class="mc-block__text">El único formato físico del proyecto fue el <strong>código QR</strong> impreso en el local — que lleva directamente al sitio y a la carta digital. Un objeto de 3cm que conecta el espacio físico con la presencia online.</p>
                     </div>
 
-                    <div class="lm-stat">
-                        <div class="lm-stat__item">
-                            <p class="lm-stat__num">4</p>
-                            <p class="lm-stat__label">versiones iteradas post-lanzamiento</p>
+                    <div class="mc-metrics">
+                        <div class="mc-metric">
+                            <p class="mc-metric__num">4</p>
+                            <p class="mc-metric__label">versiones iteradas post-lanzamiento</p>
                         </div>
-                        <div class="lm-stat__item">
-                            <p class="lm-stat__num">↑</p>
-                            <p class="lm-stat__label">más visitas y contactos que con carta impresa</p>
+                        <div class="mc-metric">
+                            <p class="mc-metric__num">↑</p>
+                            <p class="mc-metric__label">más visitas y contactos que con carta impresa</p>
                         </div>
                     </div>
 
@@ -964,98 +868,76 @@
         <!-- Template Espora Qí -->
         <div id="template-espora">
             <h2 class="section-title">Espora Qí <br><span class="outline">Sitio Web · SEO · Adaptógenos</span></h2>
-
-            <style>
-                .eq-case { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin: 2rem 0; align-items: start; }
-                @media (max-width: 700px) { .eq-case { grid-template-columns: 1fr; } }
-                .eq-block { margin-bottom: 1.5rem; }
-                .eq-block__label { font-family: 'Roboto Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin: 0 0 6px; }
-                .eq-block__text { font-size: 0.95rem; color: #e0e0e0; line-height: 1.7; margin: 0; }
-                .eq-block__text strong { color: #fff; font-weight: 500; }
-                .eq-decision { background: rgba(255,255,255,0.04); border-left: 2px solid rgba(255,255,255,0.2); border-radius: 0 4px 4px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; }
-                .eq-decision p { font-size: 0.9rem; color: #e0e0e0; line-height: 1.7; margin: 0; font-style: italic; }
-                .eq-decision p strong { color: #fff; font-style: normal; }
-                .eq-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem; }
-                .eq-tag { font-size: 0.7rem; padding: 3px 10px; border: 0.5px solid rgba(255,255,255,0.2); border-radius: 12px; color: rgba(255,255,255,0.6); font-family: 'Roboto Mono', monospace; letter-spacing: 0.05em; }
-                .eq-hero-img { width: 100%; aspect-ratio: 16/8; object-fit: cover; border-radius: 4px; margin-bottom: 2rem; display: block; }
-                .eq-arch { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 1rem; }
-                @media (max-width: 500px) { .eq-arch { grid-template-columns: 1fr 1fr; } }
-                .eq-arch__item { background: rgba(255,255,255,0.04); border-radius: 6px; padding: 0.75rem 1rem; }
-                .eq-arch__icon { font-size: 0.85rem; opacity: 0.5; margin-bottom: 4px; font-family: 'Roboto Mono', monospace; }
-                .eq-arch__label { font-size: 0.8rem; color: #fff; font-weight: 500; margin: 0 0 2px; }
-                .eq-arch__desc { font-size: 0.72rem; color: rgba(255,255,255,0.45); margin: 0; line-height: 1.4; }
-            </style>
-
-            <div class="eq-tags">
-                <span class="eq-tag">HTML · CSS</span>
-                <span class="eq-tag">Arquitectura de información</span>
-                <span class="eq-tag">SEO on-page</span>
-                <span class="eq-tag">Optimización de imágenes</span>
-                <span class="eq-tag">Lago Puelo · Patagonia</span>
+<div class="mc-tags">
+                <span class="mc-tag">HTML · CSS</span>
+                <span class="mc-tag">Arquitectura de información</span>
+                <span class="mc-tag">SEO on-page</span>
+                <span class="mc-tag">Optimización de imágenes</span>
+                <span class="mc-tag">Lago Puelo · Patagonia</span>
             </div>
 
-            <img src="./assets/espora.webp" class="eq-hero-img" alt="Espora Qí — sitio web de adaptógenos" loading="lazy"
+            <img src="./assets/espora.webp" class="mc-hero-img" alt="Espora Qí — sitio web de adaptógenos" loading="lazy"
                  onerror="this.style.display='none'">
 
-            <div class="eq-case">
+            <div class="mc-case">
                 <!-- Columna izquierda: narrativa -->
                 <div>
-                    <div class="eq-block">
-                        <p class="eq-block__label">El desafío</p>
-                        <p class="eq-block__text">Espora Qí ya tenía marca y productos cuando llegaron a mí. Lo que necesitaban era una <strong>casita digital</strong> — un lugar donde las personas pudieran conectar con los especialistas, entender qué son los adaptógenos y encontrar el producto que necesitaban para su salud.</p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">El desafío</p>
+                        <p class="mc-block__text">Espora Qí ya tenía marca y productos cuando llegaron a mí. Lo que necesitaban era una <strong>casita digital</strong> — un lugar donde las personas pudieran conectar con los especialistas, entender qué son los adaptógenos y encontrar el producto que necesitaban para su salud.</p>
                     </div>
 
-                    <div class="eq-decision">
+                    <div class="mc-decision">
                         <p>El problema central no era de diseño: era de <strong>conocimiento</strong>. La mayoría de las personas que llegan al sitio no saben qué es un hongo medicinal ni por qué lo necesitan. La arquitectura de información tenía que resolver eso antes de intentar vender.</p>
                     </div>
 
-                    <div class="eq-block">
-                        <p class="eq-block__label">La solución de arquitectura</p>
-                        <p class="eq-block__text">Toda la información fue facilitada por los dueños del emprendimiento — los especialistas. Mi trabajo fue <strong>organizar ese conocimiento en una estructura navegable</strong>: categorías de producto claras, información por hongo o aceite, testimonios de usuarios reales, y puntos de venta físicos para quienes prefieren comprar en persona. El contacto directo por WhatsApp cierra el circuito sin fricción.</p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">La solución de arquitectura</p>
+                        <p class="mc-block__text">Toda la información fue facilitada por los dueños del emprendimiento — los especialistas. Mi trabajo fue <strong>organizar ese conocimiento en una estructura navegable</strong>: categorías de producto claras, información por hongo o aceite, testimonios de usuarios reales, y puntos de venta físicos para quienes prefieren comprar en persona. El contacto directo por WhatsApp cierra el circuito sin fricción.</p>
                     </div>
                 </div>
 
                 <!-- Columna derecha -->
                 <div>
-                    <div class="eq-block">
-                        <p class="eq-block__label">Arquitectura del sitio</p>
-                        <div class="eq-arch">
-                            <div class="eq-arch__item">
-                                <p class="eq-arch__icon">01</p>
-                                <p class="eq-arch__label">Categorías</p>
-                                <p class="eq-arch__desc">Hongos y aceites separados, navegación por tipo de producto</p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">Arquitectura del sitio</p>
+                        <div class="mc-arch">
+                            <div class="mc-arch__item">
+                                <p class="mc-arch__icon">01</p>
+                                <p class="mc-arch__label">Categorías</p>
+                                <p class="mc-arch__desc">Hongos y aceites separados, navegación por tipo de producto</p>
                             </div>
-                            <div class="eq-arch__item">
-                                <p class="eq-arch__icon">02</p>
-                                <p class="eq-arch__label">Información</p>
-                                <p class="eq-arch__desc">Descripción de cada adaptógeno y sus propiedades</p>
+                            <div class="mc-arch__item">
+                                <p class="mc-arch__icon">02</p>
+                                <p class="mc-arch__label">Información</p>
+                                <p class="mc-arch__desc">Descripción de cada adaptógeno y sus propiedades</p>
                             </div>
-                            <div class="eq-arch__item">
-                                <p class="eq-arch__icon">03</p>
-                                <p class="eq-arch__label">Testimonios</p>
-                                <p class="eq-arch__desc">Experiencias reales de usuarios del producto</p>
+                            <div class="mc-arch__item">
+                                <p class="mc-arch__icon">03</p>
+                                <p class="mc-arch__label">Testimonios</p>
+                                <p class="mc-arch__desc">Experiencias reales de usuarios del producto</p>
                             </div>
-                            <div class="eq-arch__item">
-                                <p class="eq-arch__icon">04</p>
-                                <p class="eq-arch__label">Puntos de venta</p>
-                                <p class="eq-arch__desc">Locales físicos donde encontrar los productos</p>
+                            <div class="mc-arch__item">
+                                <p class="mc-arch__icon">04</p>
+                                <p class="mc-arch__label">Puntos de venta</p>
+                                <p class="mc-arch__desc">Locales físicos donde encontrar los productos</p>
                             </div>
-                            <div class="eq-arch__item">
-                                <p class="eq-arch__icon">05</p>
-                                <p class="eq-arch__label">Contacto directo</p>
-                                <p class="eq-arch__desc">WhatsApp para consultas y pedidos sin intermediarios</p>
+                            <div class="mc-arch__item">
+                                <p class="mc-arch__icon">05</p>
+                                <p class="mc-arch__label">Contacto directo</p>
+                                <p class="mc-arch__desc">WhatsApp para consultas y pedidos sin intermediarios</p>
                             </div>
-                            <div class="eq-arch__item">
-                                <p class="eq-arch__icon">06</p>
-                                <p class="eq-arch__label">SEO on-page</p>
-                                <p class="eq-arch__desc">Meta tags e imágenes optimizadas para velocidad de carga</p>
+                            <div class="mc-arch__item">
+                                <p class="mc-arch__icon">06</p>
+                                <p class="mc-arch__label">SEO on-page</p>
+                                <p class="mc-arch__desc">Meta tags e imágenes optimizadas para velocidad de carga</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="eq-block" style="margin-top: 1.5rem;">
-                        <p class="eq-block__label">Tecnología</p>
-                        <p class="eq-block__text">HTML y CSS from scratch. Imágenes optimizadas en WebP para velocidad de carga. Meta tags configurados para que el sitio sea encontrado por personas que buscan adaptógenos en la Patagonia.</p>
+                    <div class="mc-block" style="margin-top: 1.5rem;">
+                        <p class="mc-block__label">Tecnología</p>
+                        <p class="mc-block__text">HTML y CSS from scratch. Imágenes optimizadas en WebP para velocidad de carga. Meta tags configurados para que el sitio sea encontrado por personas que buscan adaptógenos en la Patagonia.</p>
                     </div>
 
                     <div style="margin-top: 1.5rem;">
@@ -1165,31 +1047,12 @@
         <!-- Template Ama Maitea -->
         <div id="template-ama-maitea">
             <h2 class="section-title">Ama Maitea <br><span class="outline">Identidad Visual · Packaging</span></h2>
-
-            <style>
-                .am-case { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-bottom: 2rem; align-items: start; }
-                @media (max-width: 700px) { .am-case { grid-template-columns: 1fr; } }
-                .am-block { margin-bottom: 1.5rem; }
-                .am-block__label { font-family: 'Roboto Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin: 0 0 6px; }
-                .am-block__text { font-size: 0.95rem; color: #e0e0e0; line-height: 1.7; margin: 0; }
-                .am-block__text strong { color: #fff; font-weight: 500; }
-                .am-decision { background: rgba(255,255,255,0.04); border-left: 2px solid rgba(255,255,255,0.2); border-radius: 0 4px 4px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; }
-                .am-decision p { font-size: 0.9rem; color: #e0e0e0; line-height: 1.7; margin: 0; font-style: italic; }
-                .am-decision p strong { color: #fff; font-style: normal; }
-                .am-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem; }
-                .am-tag { font-size: 0.7rem; padding: 3px 10px; border: 0.5px solid rgba(255,255,255,0.2); border-radius: 12px; color: rgba(255,255,255,0.6); font-family: 'Roboto Mono', monospace; letter-spacing: 0.05em; }
-                .am-result { display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
-                .am-result__item { background: rgba(255,255,255,0.05); border-radius: 6px; padding: 0.75rem 1rem; flex: 1; min-width: 140px; }
-                .am-result__num { font-size: 1.4rem; font-weight: 700; color: #fff; margin: 0 0 3px; }
-                .am-result__label { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin: 0; line-height: 1.4; }
-            </style>
-
-            <div class="am-tags">
-                <span class="am-tag">Packaging</span>
-                <span class="am-tag">Sistema de color</span>
-                <span class="am-tag">Identidad visual</span>
-                <span class="am-tag">Sello Origen Chubut</span>
-                <span class="am-tag">Exportación</span>
+<div class="mc-tags">
+                <span class="mc-tag">Packaging</span>
+                <span class="mc-tag">Sistema de color</span>
+                <span class="mc-tag">Identidad visual</span>
+                <span class="mc-tag">Sello Origen Chubut</span>
+                <span class="mc-tag">Exportación</span>
             </div>
 
             <!-- Imagen destacada -->
@@ -1199,53 +1062,53 @@
                 </div>
             </div>
 
-            <div class="am-case">
+            <div class="mc-case">
                 <!-- Columna izquierda: narrativa -->
                 <div>
-                    <div class="am-block">
-                        <p class="am-block__label">El punto de partida</p>
-                        <p class="am-block__text">Maite Caracotche llegó con un problema de comunicación: no podía trabajar fluidamente con la diseñadora anterior. Había una estructura de etiquetas existente, pero necesitaba una nueva etiqueta para el <strong>mix frutal</strong> — una variedad que no encajaba en el sistema vigente.</p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">El punto de partida</p>
+                        <p class="mc-block__text">Maite Caracotche llegó con un problema de comunicación: no podía trabajar fluidamente con la diseñadora anterior. Había una estructura de etiquetas existente, pero necesitaba una nueva etiqueta para el <strong>mix frutal</strong> — una variedad que no encajaba en el sistema vigente.</p>
                     </div>
 
-                    <div class="am-block">
-                        <p class="am-block__label">La decisión que cambió el proyecto</p>
-                        <p class="am-block__text">Lo que empezó como una etiqueta nueva terminó siendo una revisión completa del sistema. A medida que resolvíamos el mix frutal, quedaban evidentes las inconsistencias del resto. <strong>Propuse unificar el sistema entero.</strong></p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">La decisión que cambió el proyecto</p>
+                        <p class="mc-block__text">Lo que empezó como una etiqueta nueva terminó siendo una revisión completa del sistema. A medida que resolvíamos el mix frutal, quedaban evidentes las inconsistencias del resto. <strong>Propuse unificar el sistema entero.</strong></p>
                     </div>
 
-                    <div class="am-decision">
+                    <div class="mc-decision">
                         <p>La decisión más importante fue usar <strong>degradé para el mix frutal</strong>. El resto de las variedades tiene un color pleno que remite a la fruta específica — el damasc, la ciruela, la cereza. El mix no tiene una sola fruta, tiene todas. El degradé comunica eso sin necesidad de texto.</p>
                     </div>
 
-                    <div class="am-block">
-                        <p class="am-block__label">Cómo escala el sistema</p>
-                        <p class="am-block__text">5 variedades, una estructura base común: nombre del sabor, ilustración de la fruta y color característico. Si mañana aparece una variedad nueva, la lógica está resuelta. Solo cambiás la fruta, el nombre y el color.</p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">Cómo escala el sistema</p>
+                        <p class="mc-block__text">5 variedades, una estructura base común: nombre del sabor, ilustración de la fruta y color característico. Si mañana aparece una variedad nueva, la lógica está resuelta. Solo cambiás la fruta, el nombre y el color.</p>
                     </div>
                 </div>
 
                 <!-- Columna derecha: detalles técnicos + resultado -->
                 <div>
-                    <div class="am-block">
-                        <p class="am-block__label">El Sello de Origen Chubut</p>
-                        <p class="am-block__text">No es solo un logo obligatorio — es lo que habilita al producto para <strong>exportación y comercio internacional</strong>. Comunica identidad patagónica con respaldo institucional. El desafío fue integrarlo sin que compita con la marca: ajustar tamaños, márgenes y disposición para que convivan en armonía.</p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">El Sello de Origen Chubut</p>
+                        <p class="mc-block__text">No es solo un logo obligatorio — es lo que habilita al producto para <strong>exportación y comercio internacional</strong>. Comunica identidad patagónica con respaldo institucional. El desafío fue integrarlo sin que compita con la marca: ajustar tamaños, márgenes y disposición para que convivan en armonía.</p>
                     </div>
 
-                    <div class="am-block">
-                        <p class="am-block__label">El resultado</p>
-                        <p class="am-block__text">El producto está en venta y <strong>sigue creciendo</strong>. Se exhibe en múltiples puntos del país. El feedback del cliente y de los consumidores fue positivo — sin observaciones negativas sobre la identidad visual desde el lanzamiento.</p>
+                    <div class="mc-block">
+                        <p class="mc-block__label">El resultado</p>
+                        <p class="mc-block__text">El producto está en venta y <strong>sigue creciendo</strong>. Se exhibe en múltiples puntos del país. El feedback del cliente y de los consumidores fue positivo — sin observaciones negativas sobre la identidad visual desde el lanzamiento.</p>
                     </div>
 
-                    <div class="am-result">
-                        <div class="am-result__item">
-                            <p class="am-result__num">5</p>
-                            <p class="am-result__label">variedades con sistema unificado</p>
+                    <div class="mc-metrics">
+                        <div class="mc-metric">
+                            <p class="mc-metric__num">5</p>
+                            <p class="mc-metric__label">variedades con sistema unificado</p>
                         </div>
-                        <div class="am-result__item">
-                            <p class="am-result__num">+</p>
-                            <p class="am-result__label">puntos de venta en todo el país</p>
+                        <div class="mc-metric">
+                            <p class="mc-metric__num">+</p>
+                            <p class="mc-metric__label">puntos de venta en todo el país</p>
                         </div>
-                        <div class="am-result__item">
-                            <p class="am-result__num">↗</p>
-                            <p class="am-result__label">habilitado para exportación internacional</p>
+                        <div class="mc-metric">
+                            <p class="mc-metric__num">↗</p>
+                            <p class="mc-metric__label">habilitado para exportación internacional</p>
                         </div>
                     </div>
 
