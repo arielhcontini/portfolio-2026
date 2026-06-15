@@ -331,19 +331,32 @@
                     Antes de abrir Figma, entiendo el negocio. Después diseño con criterio y construyo con código real.
                 </p>
                 <div class="skills__grid">
-                    <div class="skill-card">
+                  <div class="skill-card">
                         <div class="skill-card__icon"><img src="assets/01.svg" loading="lazy" alt="Descubrir"></div>
                         <p class="skill-card__label" data-es="Descubro" data-en="Discover">Descubro</p>
-      
+                        <p class="skill-card__sublabel" style="font-size:0.8rem; opacity:0.6; margin-top:4px;"
+                           data-es="Entiendo el negocio antes de diseñar."
+                           data-en="I understand the business before designing.">
+                           Entiendo el negocio antes de diseñar.
+                        </p>
                     </div>
                     <div class="skill-card">
                         <div class="skill-card__icon"><img src="assets/02.svg" loading="lazy" alt="Diseñar"></div>
                         <p class="skill-card__label" data-es="Diseño" data-en="Design">Diseño</p>
-    
+                        <p class="skill-card__sublabel" style="font-size:0.8rem; opacity:0.6; margin-top:4px;"
+                           data-es="Identidad, tipografía, color, jerarquía. Con criterio."
+                           data-en="Identity, typography, color, hierarchy. With intent.">
+                           Identidad, tipografía, color, jerarquía. Con criterio.
+                        </p>
                     </div>
                     <div class="skill-card">
                         <div class="skill-card__icon"><img src="assets/03.svg" loading="lazy" alt="Construir"></div>
                         <p class="skill-card__label" data-es="Construyo" data-en="Build">Construyo</p>
+                        <p class="skill-card__sublabel" style="font-size:0.8rem; opacity:0.6; margin-top:4px;"
+                           data-es="HTML, CSS, JS o WooCommerce. Código real, sitio online."
+                           data-en="HTML, CSS, JS or WooCommerce. Real code, live site.">
+                           HTML, CSS, JS o WooCommerce. Código real, sitio online.
+                        </p>
                     </div>
 <!--                     <div class="skill-card">
                         <div class="skill-card__icon"><img src="assets/04.svg" loading="lazy" alt="Identidad Visual"></div>
@@ -394,7 +407,7 @@
                 </div>
 
                 <!-- MAHURO -->
-                <div class="work-card">
+                <div class="work-card clickable-card" data-modal-target="template-mahuro" style="cursor:pointer;">
                     <div class="work-card__image">
                         <img src="./assets/velo.webp" alt="Mahuro — Dirección de arte y desarrollo web" loading="lazy">
                     </div>
@@ -406,30 +419,30 @@
                            data-en="Website for a musician with a distinct identity. The concept: an interface that works like a CD booklet. Collective project, code from scratch, accompanying the identity as it was built in real time.">
                             Sitio web para un músico con identidad propia. El concepto: una interfaz que funciona como el booklet de un CD. Proyecto colectivo, código from scratch, acompañando la construcción de la identidad en tiempo real.
                         </p>
-                        <a class="work-card__cta" href="https://mahuro.art/" target="_blank">
+                        <div class="work-card__cta">
                             <img src="assets/readmore.svg" alt="">
-                            <span data-es="Ver sitio" data-en="View site">Ver sitio</span>
-                        </a>
+                            <span data-es="Ver caso" data-en="View case">Ver caso</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- ESPORA QÍ -->
-                <div class="work-card">
+                <div class="work-card clickable-card" data-modal-target="template-espora" style="cursor:pointer;">
                     <div class="work-card__image">
                         <img src="./assets/espora.webp" alt="Espora Qí — Identidad visual y sitio web" loading="lazy">
                     </div>
                     <div class="work-card__body">
-                        <p class="work-card__type" data-es="IDENTIDAD VISUAL · SITIO WEB · SEO" data-en="VISUAL IDENTITY · WEBSITE · SEO">IDENTIDAD VISUAL · SITIO WEB · SEO</p>
+                        <p class="work-card__type" data-es="SITIO WEB · SEO · ADAPTÓGENOS" data-en="WEBSITE · SEO · ADAPTOGENS">SITIO WEB · SEO · ADAPTÓGENOS</p>
                         <h3 class="work-card__title">Espora Qí</h3>
                         <p class="work-card__desc"
-                           data-es="Marca de hongos y plantas medicinales en Lago Puelo. Identidad visual completa y sitio desde cero: navegación por producto, testimonios, puntos de venta físicos, y contacto directo por WhatsApp."
-                           data-en="Medicinal mushrooms and plants brand in Lago Puelo, Patagonia. Complete visual identity and site from scratch: product navigation, testimonials, physical sales points, and direct WhatsApp contact.">
-                            Marca de hongos y plantas medicinales en Lago Puelo. Identidad visual completa y sitio desde cero: navegación por producto, testimonios, puntos de venta físicos, y contacto directo por WhatsApp.
+                           data-es="Marca de hongos y plantas medicinales en Lago Puelo. Sitio desde cero con arquitectura de información pensada para acercar los adaptógenos a personas sin conocimiento previo."
+                           data-en="Medicinal mushrooms and plants brand in Lago Puelo, Patagonia. Site built from scratch with an information architecture designed to bring adaptogens closer to people without prior knowledge.">
+                            Marca de hongos y plantas medicinales en Lago Puelo. Sitio desde cero con arquitectura de información pensada para acercar los adaptógenos a personas sin conocimiento previo.
                         </p>
-                        <a class="work-card__cta" href="https://arielhcontini.github.io/esporaQi/" target="_blank">
+                        <div class="work-card__cta">
                             <img src="assets/readmore.svg" alt="">
-                            <span data-es="Ver sitio" data-en="View site">Ver sitio</span>
-                        </a>
+                            <span data-es="Ver caso" data-en="View case">Ver caso</span>
+                        </div>
                     </div>
                 </div>
 
@@ -593,6 +606,220 @@
     ══════════════════════════════════════ -->
     <div id="project-templates" style="display: none;">
 
+        <!-- Template Mahuro -->
+        <div id="template-mahuro">
+            <h2 class="section-title">Mahuro <br><span class="outline">Dirección de Arte · Desarrollo Web</span></h2>
+
+            <style>
+                .mh-case { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin: 2rem 0; align-items: start; }
+                @media (max-width: 700px) { .mh-case { grid-template-columns: 1fr; } }
+                .mh-block { margin-bottom: 1.5rem; }
+                .mh-block__label { font-family: 'Roboto Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin: 0 0 6px; }
+                .mh-block__text { font-size: 0.95rem; color: #e0e0e0; line-height: 1.7; margin: 0; }
+                .mh-block__text strong { color: #fff; font-weight: 500; }
+                .mh-decision { background: rgba(255,255,255,0.04); border-left: 2px solid rgba(255,255,255,0.2); border-radius: 0 4px 4px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+                .mh-decision p { font-size: 0.9rem; color: #e0e0e0; line-height: 1.7; margin: 0; font-style: italic; }
+                .mh-decision p strong { color: #fff; font-style: normal; }
+                .mh-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem; }
+                .mh-tag { font-size: 0.7rem; padding: 3px 10px; border: 0.5px solid rgba(255,255,255,0.2); border-radius: 12px; color: rgba(255,255,255,0.6); font-family: 'Roboto Mono', monospace; letter-spacing: 0.05em; }
+                .mh-team { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 1rem; }
+                @media (max-width: 500px) { .mh-team { grid-template-columns: 1fr; } }
+                .mh-team__item { background: rgba(255,255,255,0.04); border-radius: 6px; padding: 0.75rem 1rem; }
+                .mh-team__role { font-family: 'Roboto Mono', monospace; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.4; margin: 0 0 3px; }
+                .mh-team__name { font-size: 0.9rem; color: #fff; font-weight: 500; margin: 0 0 2px; }
+                .mh-team__desc { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin: 0; line-height: 1.4; }
+                .mh-team__item.mh-team__you { border: 0.5px solid rgba(255,255,255,0.15); }
+                .mh-hero-img { width: 100%; aspect-ratio: 16/8; object-fit: cover; border-radius: 4px; margin-bottom: 2rem; display: block; }
+            </style>
+
+            <div class="mh-tags">
+                <span class="mh-tag">Dirección técnico-creativa</span>
+                <span class="mh-tag">HTML · CSS</span>
+                <span class="mh-tag">GSAP</span>
+                <span class="mh-tag">Proyecto colectivo</span>
+                <span class="mh-tag">Animación de interfaz</span>
+                <span class="mh-tag">Tipografía editorial</span>
+            </div>
+
+            <img src="assets/mahuro-hero.webp" class="mh-hero-img" alt="Mahuro — interfaz del álbum interactivo" loading="lazy"
+                 onerror="this.style.display='none'">
+
+            <div class="mh-case">
+                <!-- Columna izquierda -->
+                <div>
+                    <div class="mh-block">
+                        <p class="mh-block__label">El punto de partida</p>
+                        <p class="mh-block__text">Mahuro Colleti publicó en Instagram buscando a alguien que creara una <strong>aplicación para su álbum</strong>. El desafío real no era técnico: era cómo integrar un cuento escrito, collages visuales, tipografía de autor, fotografías de tapa y música — todo en un solo objeto digital coherente.</p>
+                    </div>
+
+                    <div class="mh-block">
+                        <p class="mh-block__label">La propuesta</p>
+                        <p class="mh-block__text">Propuse un website en lugar de una app. Más accesible, sin descarga, y con mayor control creativo sobre la experiencia. El concepto emergió naturalmente: <strong>el booklet de CD</strong> — ese objeto físico que acompañaba los discos y que unía música, imágenes y texto en una experiencia única.</p>
+                    </div>
+
+                    <div class="mh-decision">
+                        <p>La decisión de UI más importante fue usar <strong>sliders horizontales inspirados en los de Instagram</strong> para recrear el gesto de pasar páginas. GSAP fue la tecnología que lo hizo posible — permitió animar la interfaz con la suavidad y el control necesarios para que el gesto se sintiera como hojear, no como navegar.</p>
+                    </div>
+
+                    <div class="mh-block">
+                        <p class="mh-block__label">El momento que definió el proyecto</p>
+                        <p class="mh-block__text">Las presentaciones en vivo. Ver a las personas descubrir el álbum en tiempo real — pasar las páginas, escuchar la música, leer el cuento — confirmó que el concepto funcionaba más allá de la pantalla. El sitio no era un complemento del álbum: <strong>era parte de la obra</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Columna derecha -->
+                <div>
+                    <div class="mh-block">
+                        <p class="mh-block__label">Mi rol en el equipo</p>
+                        <p class="mh-block__text">Director técnico-creativo del proyecto. Recepcioné los materiales de cada colaborador, tomé las decisiones de integración y fui responsable del desarrollo completo: maquetado HTML/CSS, animación con GSAP y coordinación del proceso colectivo.</p>
+                    </div>
+
+                    <div class="mh-block">
+                        <p class="mh-block__label">El equipo</p>
+                        <div class="mh-team">
+                            <div class="mh-team__item mh-team__you">
+                                <p class="mh-team__role">Dirección técnico-creativa</p>
+                                <p class="mh-team__name">Ariel Contini</p>
+                                <p class="mh-team__desc">Desarrollo web, animación GSAP, maquetado, integración de materiales</p>
+                            </div>
+                            <div class="mh-team__item">
+                                <p class="mh-team__role">Dirección artística</p>
+                                <p class="mh-team__name">Mahuro Colleti</p>
+                                <p class="mh-team__desc">Músico, cuento, visión del álbum</p>
+                            </div>
+                            <div class="mh-team__item">
+                                <p class="mh-team__role">Collages</p>
+                                <p class="mh-team__name">Jazinta</p>
+                                <p class="mh-team__desc">Imágenes de fondo para el cuento</p>
+                            </div>
+                            <div class="mh-team__item">
+                                <p class="mh-team__role">Fotografía</p>
+                                <p class="mh-team__name">Homero Prodan</p>
+                                <p class="mh-team__desc">Tapa y contratapa del álbum</p>
+                            </div>
+                            <div class="mh-team__item">
+                                <p class="mh-team__role">Tipografía</p>
+                                <p class="mh-team__name">Camila</p>
+                                <p class="mh-team__desc">Diseño tipográfico de autor</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://mahuro.art/" target="_blank" class="work-card__cta" style="display:inline-flex;">
+                            <img src="assets/readmore.svg" alt=""> Ver el sitio en vivo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Template Espora Qí -->
+        <div id="template-espora">
+            <h2 class="section-title">Espora Qí <br><span class="outline">Sitio Web · SEO · Adaptógenos</span></h2>
+
+            <style>
+                .eq-case { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin: 2rem 0; align-items: start; }
+                @media (max-width: 700px) { .eq-case { grid-template-columns: 1fr; } }
+                .eq-block { margin-bottom: 1.5rem; }
+                .eq-block__label { font-family: 'Roboto Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin: 0 0 6px; }
+                .eq-block__text { font-size: 0.95rem; color: #e0e0e0; line-height: 1.7; margin: 0; }
+                .eq-block__text strong { color: #fff; font-weight: 500; }
+                .eq-decision { background: rgba(255,255,255,0.04); border-left: 2px solid rgba(255,255,255,0.2); border-radius: 0 4px 4px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+                .eq-decision p { font-size: 0.9rem; color: #e0e0e0; line-height: 1.7; margin: 0; font-style: italic; }
+                .eq-decision p strong { color: #fff; font-style: normal; }
+                .eq-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem; }
+                .eq-tag { font-size: 0.7rem; padding: 3px 10px; border: 0.5px solid rgba(255,255,255,0.2); border-radius: 12px; color: rgba(255,255,255,0.6); font-family: 'Roboto Mono', monospace; letter-spacing: 0.05em; }
+                .eq-hero-img { width: 100%; aspect-ratio: 16/8; object-fit: cover; border-radius: 4px; margin-bottom: 2rem; display: block; }
+                .eq-arch { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 1rem; }
+                @media (max-width: 500px) { .eq-arch { grid-template-columns: 1fr 1fr; } }
+                .eq-arch__item { background: rgba(255,255,255,0.04); border-radius: 6px; padding: 0.75rem 1rem; }
+                .eq-arch__icon { font-size: 0.85rem; opacity: 0.5; margin-bottom: 4px; font-family: 'Roboto Mono', monospace; }
+                .eq-arch__label { font-size: 0.8rem; color: #fff; font-weight: 500; margin: 0 0 2px; }
+                .eq-arch__desc { font-size: 0.72rem; color: rgba(255,255,255,0.45); margin: 0; line-height: 1.4; }
+            </style>
+
+            <div class="eq-tags">
+                <span class="eq-tag">HTML · CSS</span>
+                <span class="eq-tag">Arquitectura de información</span>
+                <span class="eq-tag">SEO on-page</span>
+                <span class="eq-tag">Optimización de imágenes</span>
+                <span class="eq-tag">Lago Puelo · Patagonia</span>
+            </div>
+
+            <img src="./assets/espora.webp" class="eq-hero-img" alt="Espora Qí — sitio web de adaptógenos" loading="lazy"
+                 onerror="this.style.display='none'">
+
+            <div class="eq-case">
+                <!-- Columna izquierda: narrativa -->
+                <div>
+                    <div class="eq-block">
+                        <p class="eq-block__label">El desafío</p>
+                        <p class="eq-block__text">Espora Qí ya tenía marca y productos cuando llegaron a mí. Lo que necesitaban era una <strong>casita digital</strong> — un lugar donde las personas pudieran conectar con los especialistas, entender qué son los adaptógenos y encontrar el producto que necesitaban para su salud.</p>
+                    </div>
+
+                    <div class="eq-decision">
+                        <p>El problema central no era de diseño: era de <strong>conocimiento</strong>. La mayoría de las personas que llegan al sitio no saben qué es un hongo medicinal ni por qué lo necesitan. La arquitectura de información tenía que resolver eso antes de intentar vender.</p>
+                    </div>
+
+                    <div class="eq-block">
+                        <p class="eq-block__label">La solución de arquitectura</p>
+                        <p class="eq-block__text">Toda la información fue facilitada por los dueños del emprendimiento — los especialistas. Mi trabajo fue <strong>organizar ese conocimiento en una estructura navegable</strong>: categorías de producto claras, información por hongo o aceite, testimonios de usuarios reales, y puntos de venta físicos para quienes prefieren comprar en persona. El contacto directo por WhatsApp cierra el circuito sin fricción.</p>
+                    </div>
+                </div>
+
+                <!-- Columna derecha -->
+                <div>
+                    <div class="eq-block">
+                        <p class="eq-block__label">Arquitectura del sitio</p>
+                        <div class="eq-arch">
+                            <div class="eq-arch__item">
+                                <p class="eq-arch__icon">01</p>
+                                <p class="eq-arch__label">Categorías</p>
+                                <p class="eq-arch__desc">Hongos y aceites separados, navegación por tipo de producto</p>
+                            </div>
+                            <div class="eq-arch__item">
+                                <p class="eq-arch__icon">02</p>
+                                <p class="eq-arch__label">Información</p>
+                                <p class="eq-arch__desc">Descripción de cada adaptógeno y sus propiedades</p>
+                            </div>
+                            <div class="eq-arch__item">
+                                <p class="eq-arch__icon">03</p>
+                                <p class="eq-arch__label">Testimonios</p>
+                                <p class="eq-arch__desc">Experiencias reales de usuarios del producto</p>
+                            </div>
+                            <div class="eq-arch__item">
+                                <p class="eq-arch__icon">04</p>
+                                <p class="eq-arch__label">Puntos de venta</p>
+                                <p class="eq-arch__desc">Locales físicos donde encontrar los productos</p>
+                            </div>
+                            <div class="eq-arch__item">
+                                <p class="eq-arch__icon">05</p>
+                                <p class="eq-arch__label">Contacto directo</p>
+                                <p class="eq-arch__desc">WhatsApp para consultas y pedidos sin intermediarios</p>
+                            </div>
+                            <div class="eq-arch__item">
+                                <p class="eq-arch__icon">06</p>
+                                <p class="eq-arch__label">SEO on-page</p>
+                                <p class="eq-arch__desc">Meta tags e imágenes optimizadas para velocidad de carga</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="eq-block" style="margin-top: 1.5rem;">
+                        <p class="eq-block__label">Tecnología</p>
+                        <p class="eq-block__text">HTML y CSS from scratch. Imágenes optimizadas en WebP para velocidad de carga. Meta tags configurados para que el sitio sea encontrado por personas que buscan adaptógenos en la Patagonia.</p>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://esporaqi.com/" target="_blank" class="work-card__cta" style="display:inline-flex;">
+                            <img src="assets/readmore.svg" alt=""> Ver el sitio en vivo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Template biVio -->
         <div id="template-bivio">
             <h2 class="section-title">biVio <br><span class="outline">Ecosistema Generativo</span></h2>
@@ -692,36 +919,108 @@
         <div id="template-ama-maitea">
             <h2 class="section-title">Ama Maitea <br><span class="outline">Identidad Visual · Packaging</span></h2>
 
-            <div class="featured-wrapper" style="margin-bottom: 1.5rem;">
-                <div class="featured-info" style="flex: 1;">
-                    <div class="card-tags" style="margin-bottom: 14px;">[Identidad Visual] [Packaging] [Sistema de Color] [Sello Origen Chubut]</div>
-                    <p style="color: #e0e0e0; margin-bottom: 1rem;">
-                        Chutney artesanal patagónico con Sello de Origen Chubut. El desafío era crear una identidad que funcionara en el anaquel, en la fotografía y en la historia del producto.
-                    </p>
-                    <a href="https://www.behance.net/gallery/242563459/Ama-Maitea" target="_blank" class="work-card__cta" style="display:inline-flex;">
-                        <img src="assets/readmore.svg" alt=""> Ver en Behance
-                    </a>
+            <style>
+                .am-case { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-bottom: 2rem; align-items: start; }
+                @media (max-width: 700px) { .am-case { grid-template-columns: 1fr; } }
+                .am-block { margin-bottom: 1.5rem; }
+                .am-block__label { font-family: 'Roboto Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.45; margin: 0 0 6px; }
+                .am-block__text { font-size: 0.95rem; color: #e0e0e0; line-height: 1.7; margin: 0; }
+                .am-block__text strong { color: #fff; font-weight: 500; }
+                .am-decision { background: rgba(255,255,255,0.04); border-left: 2px solid rgba(255,255,255,0.2); border-radius: 0 4px 4px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+                .am-decision p { font-size: 0.9rem; color: #e0e0e0; line-height: 1.7; margin: 0; font-style: italic; }
+                .am-decision p strong { color: #fff; font-style: normal; }
+                .am-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem; }
+                .am-tag { font-size: 0.7rem; padding: 3px 10px; border: 0.5px solid rgba(255,255,255,0.2); border-radius: 12px; color: rgba(255,255,255,0.6); font-family: 'Roboto Mono', monospace; letter-spacing: 0.05em; }
+                .am-result { display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
+                .am-result__item { background: rgba(255,255,255,0.05); border-radius: 6px; padding: 0.75rem 1rem; flex: 1; min-width: 140px; }
+                .am-result__num { font-size: 1.4rem; font-weight: 700; color: #fff; margin: 0 0 3px; }
+                .am-result__label { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin: 0; line-height: 1.4; }
+            </style>
+
+            <div class="am-tags">
+                <span class="am-tag">Packaging</span>
+                <span class="am-tag">Sistema de color</span>
+                <span class="am-tag">Identidad visual</span>
+                <span class="am-tag">Sello Origen Chubut</span>
+                <span class="am-tag">Exportación</span>
+            </div>
+
+            <!-- Imagen destacada -->
+            <div class="am-gallery" style="margin-bottom: 2rem;">
+                <div class="am-gallery__item am-featured">
+                    <img src="assets/ama-maitea-1.webp" alt="Ama Maitea — familia completa de productos" loading="lazy">
                 </div>
             </div>
 
-            <!-- Galería de imágenes — reemplazá los src="" con tus fotos -->
+            <div class="am-case">
+                <!-- Columna izquierda: narrativa -->
+                <div>
+                    <div class="am-block">
+                        <p class="am-block__label">El punto de partida</p>
+                        <p class="am-block__text">Maite Caracotche llegó con un problema de comunicación: no podía trabajar fluidamente con la diseñadora anterior. Había una estructura de etiquetas existente, pero necesitaba una nueva etiqueta para el <strong>mix frutal</strong> — una variedad que no encajaba en el sistema vigente.</p>
+                    </div>
+
+                    <div class="am-block">
+                        <p class="am-block__label">La decisión que cambió el proyecto</p>
+                        <p class="am-block__text">Lo que empezó como una etiqueta nueva terminó siendo una revisión completa del sistema. A medida que resolvíamos el mix frutal, quedaban evidentes las inconsistencias del resto. <strong>Propuse unificar el sistema entero.</strong></p>
+                    </div>
+
+                    <div class="am-decision">
+                        <p>La decisión más importante fue usar <strong>degradé para el mix frutal</strong>. El resto de las variedades tiene un color pleno que remite a la fruta específica — el damasc, la ciruela, la cereza. El mix no tiene una sola fruta, tiene todas. El degradé comunica eso sin necesidad de texto.</p>
+                    </div>
+
+                    <div class="am-block">
+                        <p class="am-block__label">Cómo escala el sistema</p>
+                        <p class="am-block__text">5 variedades, una estructura base común: nombre del sabor, ilustración de la fruta y color característico. Si mañana aparece una variedad nueva, la lógica está resuelta. Solo cambiás la fruta, el nombre y el color.</p>
+                    </div>
+                </div>
+
+                <!-- Columna derecha: detalles técnicos + resultado -->
+                <div>
+                    <div class="am-block">
+                        <p class="am-block__label">El Sello de Origen Chubut</p>
+                        <p class="am-block__text">No es solo un logo obligatorio — es lo que habilita al producto para <strong>exportación y comercio internacional</strong>. Comunica identidad patagónica con respaldo institucional. El desafío fue integrarlo sin que compita con la marca: ajustar tamaños, márgenes y disposición para que convivan en armonía.</p>
+                    </div>
+
+                    <div class="am-block">
+                        <p class="am-block__label">El resultado</p>
+                        <p class="am-block__text">El producto está en venta y <strong>sigue creciendo</strong>. Se exhibe en múltiples puntos del país. El feedback del cliente y de los consumidores fue positivo — sin observaciones negativas sobre la identidad visual desde el lanzamiento.</p>
+                    </div>
+
+                    <div class="am-result">
+                        <div class="am-result__item">
+                            <p class="am-result__num">5</p>
+                            <p class="am-result__label">variedades con sistema unificado</p>
+                        </div>
+                        <div class="am-result__item">
+                            <p class="am-result__num">+</p>
+                            <p class="am-result__label">puntos de venta en todo el país</p>
+                        </div>
+                        <div class="am-result__item">
+                            <p class="am-result__num">↗</p>
+                            <p class="am-result__label">habilitado para exportación internacional</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://www.behance.net/gallery/242563459/Ama-Maitea" target="_blank" class="work-card__cta" style="display:inline-flex;">
+                            <img src="assets/readmore.svg" alt=""> Ver caso completo en Behance
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Galería secundaria -->
             <div class="am-gallery">
-                <!-- Imagen destacada (ancho completo) -->
-                <div class="am-gallery__item am-featured">
-                    <img src="assets/ama-maitea-1.webp" alt="Ama Maitea — foto destacada de producto" loading="lazy">
-                </div>
-                <!-- Fila de 3 -->
                 <div class="am-gallery__item">
-                    <img src="./assets/ama-maitea-2.webp" alt="Ama Maitea — variedad 1" loading="lazy">
+                    <img src="./assets/ama-maitea-2.webp" alt="Ama Maitea — variedad damascos con arándanos" loading="lazy">
                 </div>
                 <div class="am-gallery__item">
-                    <img src="./assets/ama-maitea-3.webp" alt="Ama Maitea — variedad 2" loading="lazy">
+                    <img src="./assets/ama-maitea-3.webp" alt="Ama Maitea — variedad ciruelas" loading="lazy">
                 </div>
-         <div class="am-gallery__item">
-                    <img src="./assets/ama-maitea-4.webp" alt="Ama Maitea — sistema de color" loading="lazy">
+                <div class="am-gallery__item">
+                    <img src="./assets/ama-maitea-4.webp" alt="Ama Maitea — mix frutal con degradé" loading="lazy">
                 </div>
-                <!-- Fila de 3 -->
-           
             </div>
         </div>
 
