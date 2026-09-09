@@ -1,21 +1,21 @@
 import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
 
 const CONFIG = {
-    colorNiebla: 0x331166,
-    nieblaInicio: 0.333,
-    nieblaFin: 25.0,
-    colorGeometria: 0x120B1A,
-    colorLuzToque: 0x320B3A,
-    intensidadLuzBase: 333,
-    intensidadLuzToque: 666,
-    colorLuzAmbiente: 0x990096,
-    intensidadAmbiente: 12.95,
-    distanciaCamara: 3.5,
+    colorNiebla: 0x330033,
+    nieblaInicio: 12.0,
+    nieblaFin: 12.0,
+    colorGeometria: 0x661C33,
+    colorLuzToque: 0x669A9C,
+    intensidadLuzBase: 111,
+    intensidadLuzToque: 888,
+    colorLuzAmbiente: 0x331133,
+    intensidadAmbiente: 2.00,
+    distanciaCamara: 20.5,
     campoVision: 50,
     radio: 8.88,
-    detalle: 3, 
-    rugosidad: .888,
-    metalizado: 2.22,
+    detalle: 10, 
+    rugosidad: 1.0,
+    metalizado: 1.11,
     flatShading: true,
     escalaTiempo: 0.000007,
     velRotacionX: 0.155,
@@ -23,17 +23,17 @@ const CONFIG = {
     amplitudRotZ: 0.99,
     frecuenciaRotZ: 0.05,
     velOlaBase: 8,
-    fuerzaOlaBase: 10,
-    frecuenciaOla: 1.33,
+    fuerzaOlaBase: 40,
+    frecuenciaOla: 3.33,
     atraccionDedo: 2.5,
-    radioAtraccion: 2.0,
-    suavizadoInteraccion: 0.05
+    radioAtraccion: 3.0,
+    suavizadoInteraccion: 0.5
 };
 
 const scene = new THREE.Scene();
 scene.fog = new THREE.Fog(CONFIG.colorNiebla, CONFIG.nieblaInicio, CONFIG.nieblaFin);
 
-const camera = new THREE.PerspectiveCamera(CONFIG.campoVision, window.innerWidth / window.innerHeight, 0.1, 100);
+const camera = new THREE.PerspectiveCamera(CONFIG.campoVision, window.innerWidth / window.innerHeight, 0.9, 100);
 camera.position.set(0, 0, CONFIG.distanciaCamara);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -85,17 +85,17 @@ document.addEventListener('mouseleave', () => pointerCoords.set(-1000, -1000));
 function animate() {
     requestAnimationFrame(animate);
     const time = performance.now() * CONFIG.escalaTiempo;
-    const isInteracting = pointerCoords.x !== -1000;
+    const isInteracting = pointerCoords.x !== -10;
     raycaster.setFromCamera(pointerCoords, camera);
 
     if (isInteracting) {
         effectStrength += (1.0 - effectStrength) * CONFIG.suavizadoInteraccion;
         if (raycaster.ray.intersectPlane(mathPlane, interaction3D)) {
-            lightTarget.lerp(interaction3D, 0.1);
+            lightTarget.lerp(interaction3D, 0.999);
         }
     } else {
         effectStrength += (0.0 - effectStrength) * (CONFIG.suavizadoInteraccion * 0.3);
-        lightTarget.lerp(new THREE.Vector3(0, 0, 1), 0.02);
+        lightTarget.lerp(new THREE.Vector3(0, 0, 1), 0.9);
     }
 
     pointLight.position.copy(lightTarget);
