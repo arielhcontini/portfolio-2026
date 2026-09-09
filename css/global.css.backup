@@ -31,9 +31,127 @@ html {
 
 /* BLINDAJE ANTI-PARPADEO (GSAP FOUC FIX) */
 .hero__image, .hero__title, .hero__description, .hero__social a,
-.section-title, .skill-card, .project-card {
+.section-title, .skill-card, .experience-card, .project-card, 
+.about__image-wrapper, .about__text p {
     visibility: hidden;
 }
+
+/* PORTADA */
+
+.cover{
+position:relative;
+width: 100%;
+max-width: 320px;
+height: auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin: 0 auto;
+z-index: 9999;
+}
+
+.cover__container{
+width: 100%;
+height: auto;
+opacity: 1;
+}
+
+.cover__img{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 16vh auto;
+    border-radius: var(--radius);
+    z-index: 10000;
+    opacity: 1;
+}
+
+@media (min-width:1024px){
+
+.cover{
+position:relative;
+width: 100%;
+height: auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin:0 auto;
+z-index: 9999;
+}
+
+.cover__container{
+position: relative;
+width: 100%;
+height: auto;
+opacity: .666;
+
+}
+
+.cover__container:hover{
+position: relative;
+width: 100%;
+height: auto;
+opacity: .999;
+}
+
+}
+
+
+/* Estilo del CTA para que parezca una terminal */
+.mobile-cta {
+  width: 100%;
+  height: auto;
+  font-family: var(--font-primary);
+  color: var(--text-alabastro); /* Un gris técnico, no blanco puro para no robarle peso al logo */
+  font-size: 12px;
+  margin: 0 auto;
+  text-align: center;
+  /* IMPORTANTE: Hacer que el texto también dispare el clic si lo tocan por error */
+  pointer-events: none; 
+  border: 1px solid rgba(244, 241, 238, 0.1);
+  padding: var(--spacing-8) var(--spacing-4);
+  z-index: 10;
+}
+
+/* El cursor parpadeante (el truco psicológico para llamar la atención) */
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+@media (min-width: 1024px) {
+  .mobile-cta {
+    display: block;
+  }
+}
+
+/* BACKGROUNDS */
+
+.gradient--v{
+    height:100vh;
+    margin: 0;
+     --x: calc(var(--posX, 0) * 1px);
+    --y: calc(var(--posY, 0) * 1px);
+     background-image: 
+    linear-gradient(115deg, #120B1A, #1C1621), 
+    radial-gradient( 90% 100% at calc( 50% + var(--x)) calc( 0% + var(--y)), #1c1621, #1C1621), 
+    radial-gradient(100% 100% at calc( 80% - var(--x)) calc( 0% - var(--y)), #1C1621, #1C1621), 
+    radial-gradient(150% 210% at calc(100% + var(--x)) calc( 0% + var(--y)), #120B1A, #120B1A), 
+    radial-gradient(100% 100% at calc(100% - var(--x)) calc(30% - var(--y)), #1C1621, #7c6b8a), 
+    linear-gradient(60deg, #1C1621, #1C1621);
+     background-blend-mode: soft-light, soft-light, lighten, lighten, lighten, soft-light, hard-light;
+}
+
+
+
+
 
 p{
   font-family: var(--font-primary);
@@ -110,6 +228,7 @@ body.is-modal {
 }
 
 body.is-modal .header,
+body.is-modal .bivio-nav,
 body.is-modal .topnav {
     display: none !important;
 }
@@ -627,6 +746,88 @@ font-weight: 400;
 }
 
 
+.about__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-48);
+  padding: var(--spacing-96) var(--spacing-16);
+}
+
+.about__image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.about__image {
+  width: 100%;
+  max-width: 32vw;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-64);
+  width: 100%;
+}
+
+.about__title {
+  text-align: center;
+color: var(--text-alabastro);
+}
+
+.about__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+  font-size: 16px;
+  line-height: 1.2;
+color: var(--text-alabastro);
+}
+
+@media (min-width: 768px) {
+  .about__container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-56);
+  }
+
+  .about__image {
+    width: 100%;
+    max-width:30vw;
+    border-radius: var(--radius);
+  }
+
+  .about__image-wrapper {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .about__content {
+    flex: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+    .about__container{
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding: var(--spacing-80) var(--spacing-96);
+    }
+    .about__image {
+    width: 100%;
+    max-width:32vw;
+    height: auto;
+    padding: var(--spacing-64);
+  }
+}
+
+
 /* EXPERIENCE SECTION */
 
 
@@ -636,6 +837,102 @@ font-weight: 400;
    color: var(--text-alabastro);
 }
 
+
+.experience-card{
+    padding: var(--spacing-32) var(--spacing-24);
+    border: 1px solid rgba(244, 241, 238, 0.1);
+    border-radius: var(--radius);
+    align-items: center;
+
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: var(--spacing-32);
+
+    grid-template-areas: 'logo role' 'date date' 'description description';
+
+    background-color:  var(--bg-obsidian);
+}
+
+
+
+.experience-card:hover{
+    background: var(--bg-obsidian);
+     color: var(--text-alabastro);
+     transform: translateY(-4px);
+}
+
+
+
+.experience-card__logo{
+    grid-area: logo;
+    width: 100%;
+    height: auto;
+    max-width: 32px;
+}
+
+.experience-card__role{
+    grid-area: role;
+    font-size: 1.6rem;
+    font-weight: 600;
+    align-self: end;
+   color: var(--text-alabastro);
+}
+
+
+
+.experience-card__date{
+color: var(--text-alabastro);
+font-size: .8rem;
+font-weight: 600;
+grid-area: date;
+}
+
+.experience-card__description{
+grid-area: description;
+line-height: 1.5;
+color: var(--text-alabastro);
+}
+
+.experience-card a{
+    font-size: 12px;
+    width: 100%;
+    height: auto;
+     font-family: var(--font-mono) !important;
+    display:flex;
+    flex-direction: grid;
+    color: var(--text-alabastro);
+    text-decoration: underline;
+}
+
+@media(min-width:768px){
+
+    .experience-card{
+        grid-template-columns: 32px 1fr auto;
+        grid-template-areas:'logo role date' 'description description description';
+    }
+
+}
+
+
+
+/* PROJECTS */ 
+
+
+
+.projects__title{
+   color: var(--text-alabastro);
+    margin-bottom: var(--spacing-32);
+}
+
+.project-card{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-24);
+    margin-bottom: var(--spacing-32);
+    border: 1px solid rgba(244, 241, 238, 0.1);
+    background-color:  var(--bg-obsidian);
+    
+}
 
 .project-card__image-wrapper{
     width: 100%;
@@ -750,6 +1047,74 @@ font-size: 11px;
 color: var(--text-alabastro);
 }
 
+.contact__form-wrapper {
+  width: 100%;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-20);
+}
+
+.contact__label {
+  display: block;
+  margin-bottom: var(--spacing-8);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.contact__input,
+.contact__textarea {
+  width: 100%;
+  padding: var(--spacing-16);
+border: 1px solid light-dark(var(--edge-obsidian), rgba(244, 241, 238, 0.1));
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 16px;
+  outline: none;
+}
+
+.contact__input:focus,
+.contact__textarea:focus {
+  border-color: var(--bg-obsidian);
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact__input:focus-visible,
+.contact__textarea:focus-visible {
+  outline: 2px solid var(--bg-obsidian);
+  outline-offset: 2px;
+}
+
+.contact__input::placeholder,
+.contact__textarea::placeholder {
+  color: var(--text-alabastro);
+}
+
+.contact__textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-24);
+  align-items: flex-start;
+}
+
+
+
+.contact__button:hover {
+  opacity: 0.9;
+}
+
+.contact__socials {
+  display: flex;
+  gap: var(--spacing-24);
+}
+
 .contact__info {
   display: flex;
   flex-direction: column;
@@ -759,6 +1124,13 @@ color: var(--text-alabastro);
 .contact__title {
   text-align: center;
  color: var(--text-alabastro);
+}
+
+.contact__description {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  line-height: 1.5;
+color: var(--text-alabastro);
+  text-align: center;
 }
 
 .contact__details {
@@ -783,18 +1155,60 @@ font-weight: 600;
 color: var(--text-alabastro);
 }
 
+.contact__phone {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 600;
+  color: var(--basalto);
+}
+
+
 .calendly, 
 
-.calendly:hover {
+.calendly:hover, .contact__button:hover {
     background: var(--text-alabastro);
     color: var(--bg-obsidian);
 }
 
 
+@media (min-width: 768px) {
+  .contact .container {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--spacing-64); /* More space on desktop */
+  }
+
+  .contact__form-wrapper {
+    flex: 1;
+    order: 1; /* Form on the left if needed, or default order */
+  }
+
+  .contact__info {
+    flex: 1;
+    order: 2;
+  }
+
+  .contact__actions {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
 @media (min-width: 1024px) {
   .contact .section-container {
     flex-direction: row;
     align-items: center;
+    text-align: center;
+  }
+
+  .contact__description{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: var(--spacing-8);
     text-align: center;
   }
 
@@ -820,6 +1234,59 @@ color: var(--text-alabastro);
 
 
 
+
+/* =========================================
+   BIVIO NAV - SIMPLE & FIXED
+   ========================================= */
+
+.bivio-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color:  var(--bg-obsidian);
+    border-bottom: 1px solid rgba(244, 241, 238, 0.1);
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+}
+
+.bivio-nav__container {
+    max-width: var(--max-width);
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--spacing-24);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--gradient-dark);
+     border-radius: var(--radius);
+}
+
+.bivio-nav__back {
+    text-decoration: none;
+    color: var(--text-alabastro);
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8);
+}
+
+.bivio-nav__back:hover {
+    opacity: 0.7;
+}
+
+.bivio-nav__brand {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-alabastro-opacity);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
 
 /* =========================================
    BIVIO SHOWCASE - COMPONENTES
@@ -941,8 +1408,73 @@ color: var(--text-alabastro);
 }
 
 
+/* =========================================
+   PROYECTO DESTACADO (LAS PELOTAS)
+   ========================================= */
+
+.featured-project__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-48);
+    margin-top: var(--spacing-8);
+}
+
+/* En pantallas grandes, se pone lado a lado */
+@media (min-width: 768px) {
+    .featured-project__wrapper {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.featured-project__video-trigger {
+    flex: 1.2; /* Toma un poco más de espacio que el texto */
+    width: 100%;
+}
+
+.featured-thumb {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Reestilizando el botón de play para que sea más evidente en el destacado */
+.featured-thumb .bivio-card__play {
+    font-size: 1.2rem;
+    background: var(--bg-obsidian-alpha);
+    padding: var(--spacing-12) var(--spacing-24);
+    backdrop-filter: blur(5px);
+}
+
+.featured-project__info {
+    flex: 1;
+}
+
+.featured-project__subtitle {
+    font-size: var(--H3);
+    color: var(--text-alabastro);
+    margin-bottom: var(--spacing-16);
+    font-family: 'Libre Bodoni', serif; /* Un toque de elegancia editorial */
+    font-style: italic;
+}
+
+.featured-project__details p {
+    color: var(--text-alabastro-opacity);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-16);
+    line-height: 1.6;
+}
+
+.featured-project__details strong {
+    color: var(--text-alabastro);
+    font-family: 'Roboto Mono', monospace;
+    font-weight: normal;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: var(--spacing-4);
+}
 /* REGLAS TÉCNICAS MONOSPACE (CRO) */
-.project-card__number, .skill-card__label, .nav__link, .header__title, .project-card__role {
+.experience-card__date, .project-card__number, .skill-card__label, .nav__link, .header__title, .project-card__role {
     font-family: var(--font-mono) !important;
     text-transform: uppercase;
     letter-spacing: 0.05em;
