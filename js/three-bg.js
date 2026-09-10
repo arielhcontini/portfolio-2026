@@ -1,21 +1,21 @@
 import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
 
 const CONFIG = {
-    colorNiebla: 0x330033,
+    colorNiebla: 0x331177,
     nieblaInicio: 12.0,
-    nieblaFin: 12.0,
-    colorGeometria: 0x661C33,
-    colorLuzToque: 0x669A9C,
+    nieblaFin: 24.0,
+    colorGeometria: 0x661C00,
+    colorLuzToque: 0x889A9D,
     intensidadLuzBase: 111,
-    intensidadLuzToque: 888,
+    intensidadLuzToque: 111,
     colorLuzAmbiente: 0x331133,
     intensidadAmbiente: 2.00,
     distanciaCamara: 20.5,
     campoVision: 50,
     radio: 8.88,
-    detalle: 10, 
-    rugosidad: 1.0,
-    metalizado: 1.11,
+    detalle: 25, 
+    rugosidad: 39.33,
+    metalizado: 10.66,
     flatShading: true,
     escalaTiempo: 0.000007,
     velRotacionX: 0.155,
@@ -25,7 +25,7 @@ const CONFIG = {
     velOlaBase: 8,
     fuerzaOlaBase: 40,
     frecuenciaOla: 3.33,
-    atraccionDedo: 2.5,
+    atraccionDedo: 5.5,
     radioAtraccion: 3.0,
     suavizadoInteraccion: 0.5
 };
