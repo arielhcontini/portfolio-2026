@@ -1,4 +1,4 @@
-import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
+﻿import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
 
 const CONFIG = {
     colorNiebla: 0x331177,
@@ -13,7 +13,7 @@ const CONFIG = {
     distanciaCamara: 20.5,
     campoVision: 50,
     radio: 8.88,
-    detalle: 25, 
+    detalle: window.innerWidth < 768 ? 4 : 20, 
     rugosidad: 39.33,
     metalizado: 10.66,
     flatShading: true,
@@ -38,7 +38,7 @@ camera.position.set(0, 0, CONFIG.distanciaCamara);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setPixelRatio(window.innerWidth < 768 ? 1 : Math.min(window.devicePixelRatio, 2));
 renderer.domElement.id = 'bg-three';
 document.body.appendChild(renderer.domElement);
 
