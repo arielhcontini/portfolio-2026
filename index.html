@@ -46,7 +46,8 @@
     </script>
 
  
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Mono:wght@400;700&family=Libre+Bodoni:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Mono:wght@400;700&family=Libre+Bodoni:ital,wght@0,600;1,600&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Mono:wght@400;700&family=Libre+Bodoni:ital,wght@0,600;1,600&display=optional"></noscript>
     
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
@@ -54,10 +55,16 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="manifest" href="manifiest.json">
 
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/modals.css">
+    <link rel="preload" href="css/reset.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/variables.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/global.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/modals.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/modals.css">
+    </noscript>
 
     <style>
         /* Fondo Three.js */
@@ -267,7 +274,7 @@
 
     <header class="header">
         <div class="header__brand">
-            <a href="#inicio"><img class="header__logo" src="assets/logo.svg" width="24" height="24" loading="lazy" alt="Ariel Hernán Contini"></a>
+            <a href="#inicio"><img class="header__logo" src="assets/logo.svg" width="24" height="24"  alt="Ariel Hernán Contini"></a>
         </div>
         <button id="btn-menu" class="header__toggle" aria-label="toggle menu">
             <span class="linea"></span>
@@ -298,7 +305,7 @@
              HERO
         ══════════════════════════════════════ -->
         <section id="inicio" class="hero section-container">
-<img class="hero__image" src="assets/ari.webp" width="360" height="360" fetchpriority="high" alt="Ariel Hernán Contini" style="translate: none; rotate: none; scale: none; opacity: 1;">
+<img class="hero__image" src="assets/ari.webp" srcset="assets/ari.webp 400w" sizes="(max-width: 767px) 206px, 400px" width="400" height="400" fetchpriority="high" alt="Ariel Hernán Contini" style="translate: none; rotate: none; scale: none; opacity: 1;">
             <div class="hero__content">
                 <h1 class="hero__title">
                     Ariel Contini<br>
@@ -312,8 +319,8 @@
                 </p>
 
                 <div class="hero__social">
-                    <a href="https://www.linkedin.com/in/arielhcontini/" target="_blank" aria-label="linkedin"><img src="assets/in.svg" width="32" height="32" loading="lazy" alt="Linkedin"></a>
-                    <a href="https://github.com/arielhcontini" aria-label="github" target="_blank"><img src="assets/git.svg" width="32" height="32" loading="lazy" alt="Github"></a>
+                    <a href="https://www.linkedin.com/in/arielhcontini/" target="_blank" aria-label="linkedin"><img src="assets/in.svg" width="32" height="32"  alt="Linkedin"></a>
+                    <a href="https://github.com/arielhcontini" aria-label="github" target="_blank"><img src="assets/git.svg" width="32" height="32"  alt="Github"></a>
                 </div>
             </div>
         </section>
@@ -331,7 +338,7 @@
                 </p>
                 <div class="skills__grid">
                   <div class="skill-card">
-                        <div class="skill-card__icon"><img src="assets/01.svg" width="48" height="32" loading="lazy" alt="Descubrir"></div>
+                        <div class="skill-card__icon"><img src="assets/01.svg" width="48" height="32"  alt="Descubrir"></div>
                         <p class="skill-card__label" data-es="Descubro" data-en="Discover">Descubro</p>
                         <p class="skill-card__sublabel" style="font-size:0.8rem; opacity:0.6; margin-top:4px;"
                            data-es="Entiendo el negocio antes de diseñar."
@@ -340,7 +347,7 @@
                         </p>
                     </div>
                     <div class="skill-card">
-                        <div class="skill-card__icon"><img src="assets/02.svg" width="48" height="38" loading="lazy" alt="Diseñar"></div>
+                        <div class="skill-card__icon"><img src="assets/02.svg" width="48" height="38"  alt="Diseñar"></div>
                         <p class="skill-card__label" data-es="Diseño" data-en="Design">Diseño</p>
                         <p class="skill-card__sublabel" style="font-size:0.8rem; opacity:0.6; margin-top:4px;"
                            data-es="Identidad, tipografía, color, jerarquía. Con criterio."
@@ -349,7 +356,7 @@
                         </p>
                     </div>
                     <div class="skill-card">
-                        <div class="skill-card__icon"><img src="assets/03.svg" width="48" height="53" loading="lazy" alt="Construir"></div>
+                        <div class="skill-card__icon"><img src="assets/03.svg" width="48" height="53"  alt="Construir"></div>
                         <p class="skill-card__label" data-es="Construyo" data-en="Build">Construyo</p>
                         <p class="skill-card__sublabel" style="font-size:0.8rem; opacity:0.6; margin-top:4px;"
                            data-es="HTML, CSS, JS o WooCommerce. Código real, sitio online."
@@ -376,7 +383,7 @@
                 <!-- AMA MAITEA -->
                 <div class="work-card clickable-card" data-modal-target="template-ama-maitea" style="cursor:pointer;">
                     <div class="work-card__image">
-                        <img src="./assets/ama-maitea.webp" width="853" height="640" alt="Ama Maitea — Identidad visual y packaging" fetchpriority="high">
+                        <img src="./assets/ama-maitea-480.webp" srcset="./assets/ama-maitea-480.webp 480w" sizes="(max-width: 767px) 100vw, 472px" width="480" height="360" alt="Ama Maitea — Identidad visual y packaging" loading="lazy" decoding="async">
                     </div>
                     <div class="work-card__body">
                         <p class="work-card__type" data-es="IDENTIDAD VISUAL · PACKAGING FÍSICO" data-en="VISUAL IDENTITY · PHYSICAL PACKAGING">IDENTIDAD VISUAL · PACKAGING FÍSICO</p>
@@ -396,7 +403,7 @@
                 <!-- MAHURO -->
                 <div class="work-card clickable-card" data-modal-target="template-mahuro" style="cursor:pointer;">
                     <div class="work-card__image">
-                        <img src="./assets/velo.webp" width="853" height="640" alt="Mahuro — Dirección de arte y desarrollo web" loading="lazy">
+                        <img src="./assets/velo-480.webp" srcset="./assets/velo-480.webp 480w" sizes="(max-width: 767px) 100vw, 472px" width="480" height="360" alt="Mahuro — Dirección de arte y desarrollo web" loading="lazy" decoding="async">
                     </div>
                     <div class="work-card__body">
                         <p class="work-card__type" data-es="DIRECCIÓN DE ARTE · DESARROLLO FRONTEND" data-en="ART DIRECTION · FRONTEND DEVELOPMENT">DIRECCIÓN DE ARTE · DESARROLLO FRONTEND</p>
@@ -416,7 +423,7 @@
                 <!-- ESPORA QÍ -->
                 <div class="work-card clickable-card" data-modal-target="template-espora" style="cursor:pointer;">
                     <div class="work-card__image">
-                        <img src="./assets/espora-qi.webp" width="853" height="640" alt="Espora Qí — Identidad visual y sitio web" loading="lazy">
+                        <img src="./assets/espora-qi-480.webp" srcset="./assets/espora-qi-480.webp 480w" sizes="(max-width: 767px) 100vw, 472px" width="480" height="360" alt="Espora Qí — Identidad visual y sitio web" loading="lazy" decoding="async">
                     </div>
                     <div class="work-card__body">
                         <p class="work-card__type" data-es="SITIO WEB · SEO · ADAPTÓGENOS" data-en="WEBSITE · SEO · ADAPTOGENS">SITIO WEB · SEO · ADAPTÓGENOS</p>
@@ -436,7 +443,7 @@
                 <!-- LO DE MARÍA -->
                 <div class="work-card clickable-card" data-modal-target="template-maria" style="cursor:pointer;">
                     <div class="work-card__image">
-                        <img src="./assets/lo-de-maria.webp" width="853" height="640" alt="Lo de María — Identidad visual y sitio web" loading="lazy">
+                        <img src="./assets/lo-de-maria-480.webp" srcset="./assets/lo-de-maria-480.webp 480w" sizes="(max-width: 767px) 100vw, 472px" width="480" height="360" alt="Lo de María — Identidad visual y sitio web" loading="lazy" decoding="async">
                     </div>
                     <div class="work-card__body">
                         <p class="work-card__type" data-es="SITIO WEB · CARTA DIGITAL · GASTRONOMÍA" data-en="WEBSITE · DIGITAL MENU · FOOD">SITIO WEB · CARTA DIGITAL · GASTRONOMÍA</p>
@@ -456,7 +463,7 @@
                 <!-- RYOMA -->
                 <div class="work-card clickable-card" data-modal-target="template-ryoma" style="cursor:pointer;">
                     <div class="work-card__image">
-                        <img src="./assets/ryoma.webp" width="853" height="640" alt="Ryoma Cosmética — E-commerce" loading="lazy">
+                        <img src="./assets/ryoma-480.webp" srcset="./assets/ryoma-480.webp 480w" sizes="(max-width: 767px) 100vw, 472px" width="480" height="360" alt="Ryoma Cosmética — E-commerce" loading="lazy" decoding="async">
                     </div>
                     <div class="work-card__body">
                         <p class="work-card__type" data-es="E-COMMERCE · WOOCOMMERCE · WELLNESS" data-en="E-COMMERCE · WOOCOMMERCE · WELLNESS">E-COMMERCE · WOOCOMMERCE · WELLNESS</p>
@@ -526,7 +533,7 @@
                            data-en="Audiovisual project co-directed with Homero Prodan. Sound design, generative art and visual narrative built together.">
                             Proyecto audiovisual en co-dirección con Homero Prodan. Diseño sonoro, arte generativo y narrativa visual construidos en conjunto.
                         </p>
-                        <div class="project-card__link"><img src="assets/readmore.svg" width="16" height="16" loading="lazy" alt="Leer Más"><span data-es="Ver caso" data-en="View case">Ver caso</span></div>
+                        <div class="project-card__link"><img src="assets/readmore.svg" width="16" height="16"  alt="Leer Más"><span data-es="Ver caso" data-en="View case">Ver caso</span></div>
                     </div>
                 </article>
 
@@ -534,7 +541,7 @@
                     <div class="project-card__image-wrapper">
                         <picture>
                             <source srcset="assets/las-pelotas.webp" type="image/webp" />
-                            <img src="assets/las-pelotas.png" width="800" height="600" loading="lazy" alt="Las Pelotas" class="project-card__image">
+                            <img src="assets/las-pelotas.png" width="800" height="600"  alt="Las Pelotas" class="project-card__image">
                         </picture>
                     </div>
 
@@ -550,7 +557,7 @@
                            data-en="Since 2014, strategic partner of Juan Daffunchio in developing large-scale immersive visual experiences.">
                 
                         </p>
-                        <div class="project-card__link"><img src="assets/readmore.svg" width="16" height="16" loading="lazy" alt="Leer Más"><span data-es="Ver caso" data-en="View case">Ver caso</span></div>
+                        <div class="project-card__link"><img src="assets/readmore.svg" width="16" height="16" alt="Leer Más"><span data-es="Ver caso" data-en="View case">Ver caso</span></div>
                     </div>
 
 
@@ -571,7 +578,7 @@
                            data-en="Mutant music clips. Exploration of visual tools and Artificial Intelligence to model visual stories in harmony with each song.">
                             Clips musicales mutantes. Exploración de herramientas visuales e Inteligencia Artificial para modelar relatos visuales en consonancia con cada canción.
                         </p>
-                        <div class="project-card__link"><img src="assets/readmore.svg" width="16" height="16" loading="lazy" alt="Leer Más"><span data-es="Ver caso" data-en="View case">Ver caso</span></div>
+                        <div class="project-card__link"><img src="assets/readmore.svg" width="16" height="16"  alt="Leer Más"><span data-es="Ver caso" data-en="View case">Ver caso</span></div>
                     </div>
                 </article>
             </div>
@@ -604,7 +611,7 @@
                         <a href="https://calendly.com/arielhcontini/30min" target="_blank" class="calendly">
                             <span data-es="Agendá 30 minutos" data-en="Book 30 minutes">Agendá 30 minutos</span>
                         </a>
-                        <a class="social__link up" href="#inicio"><button><img src="assets/up.svg" width="32" height="32" loading="lazy" alt="Ir arriba"></button></a>
+                        <a class="social__link up" href="#inicio"><button><img src="assets/up.svg" width="32" height="32" alt="Ir arriba"></button></a>
                     </div>
                 </div>
             </div>
@@ -628,7 +635,7 @@
                 <span class="mc-tag">Tipografía editorial</span>
             </div>
 
-            <img src="assets/velo-cover.webp" class="mc-hero-img" alt="Mahuro — interfaz del álbum interactivo" loading="lazy"
+            <img src="assets/velo-cover.webp" class="mc-hero-img" alt="Mahuro — interfaz del álbum interactivo" 
                  onerror="this.style.display='none'">
 
             <div class="mc-case">
@@ -712,7 +719,7 @@
                 <span class="mc-tag">Cosmética natural · Wellness</span>
             </div>
 
-            <img src="./assets/ryoma.webp" width="853" height="640" class="mc-hero-img" alt="Ryoma Cosmética — tienda online" loading="lazy"
+            <img src="./assets/ryoma.webp" width="853" height="640" class="mc-hero-img" alt="Ryoma Cosmética — tienda online" 
                  onerror="this.style.display='none'">
 
             <div class="mc-case">
@@ -800,7 +807,7 @@
                 <span class="mc-tag">El Bolsón · Patagonia</span>
             </div>
 
-            <img src="./assets/maria.webp" width="853" height="640" class="mc-hero-img" alt="Lo de María — sitio web de cafetería" loading="lazy"
+            <img src="./assets/maria.webp" width="853" height="640" class="mc-hero-img" alt="Lo de María — sitio web de cafetería" 
                  onerror="this.style.display='none'">
 
             <div class="mc-case">
@@ -886,7 +893,7 @@
                 <span class="mc-tag">Lago Puelo · Patagonia</span>
             </div>
 
-            <img src="./assets/espora.webp" width="853" height="640" class="mc-hero-img" alt="Espora Qí — sitio web de adaptógenos" loading="lazy"
+            <img src="./assets/espora.webp" width="853" height="640" class="mc-hero-img" alt="Espora Qí — sitio web de adaptógenos" 
                  onerror="this.style.display='none'">
 
             <div class="mc-case">
@@ -965,7 +972,7 @@
             <div class="showcase__grid">
                 <article class="bivio-card" data-video-id="RwAyVp9RrSc">
                     <div class="bivio-card__thumb">
-                        <img src="https://i.ytimg.com/vi/RwAyVp9RrSc/maxresdefault.jpg" loading="lazy" alt="Chrysalis">
+                        <img src="assets/bivio.webp" alt="Chrysalis">
                         <div class="bivio-card__play">►</div>
                     </div>
                     <div class="bivio-card__content">
@@ -976,7 +983,7 @@
                 </article>
                 <article class="bivio-card" data-video-id="a_Qp3i1atkw">
                     <div class="bivio-card__thumb">
-                        <img src="https://i.ytimg.com/vi/a_Qp3i1atkw/sddefault.jpg" loading="lazy" alt="Chrysalis Slow-mosh">
+                        <img src="assets/bivio.webp" alt="Chrysalis Slow-mosh">
                         <div class="bivio-card__play">►</div>
                     </div>
                     <div class="bivio-card__content">
@@ -987,7 +994,7 @@
                 </article>
                 <article class="bivio-card" data-video-id="c8p-wvNhO6M">
                     <div class="bivio-card__thumb">
-                        <img src="https://i.ytimg.com/vi/c8p-wvNhO6M/maxresdefault.jpg" loading="lazy" alt="La mia historia">
+                        <img src="assets/bivio.webp" alt="La mia historia">
                         <div class="bivio-card__play">►</div>
                     </div>
                     <div class="bivio-card__content">
@@ -998,7 +1005,7 @@
                 </article>
                 <article class="bivio-card" data-video-id="vjC0YOhKplU">
                     <div class="bivio-card__thumb">
-                        <img src="https://i.ytimg.com/vi/vjC0YOhKplU/maxresdefault.jpg" loading="lazy" alt="IGOR 1st Cut">
+                        <img src="assets/bivio.webp" alt="IGOR 1st Cut">
                         <div class="bivio-card__play">►</div>
                     </div>
                     <div class="bivio-card__content">
@@ -1016,7 +1023,7 @@
             <div class="featured-wrapper">
                 <div class="featured-video video-card" data-video-id="f7k_mxk19wE">
                     <div class="video-card__thumb">
-                        <img src="https://i.ytimg.com/vi/f7k_mxk19wE/maxresdefault.jpg" loading="lazy" alt="Estallando desde el océano">
+                        <img src="assets/las-pelotas.webp" alt="Estallando desde el océano">
                         <div class="video-card__play">► PLAY SHOW</div>
                     </div>
                 </div>
@@ -1032,21 +1039,21 @@
                 <div class="secondary-grid">
                     <article class="video-card secondary-card" data-video-id="9AR9-Mc8kOU">
                         <div class="video-card__thumb">
-                            <img src="https://i.ytimg.com/vi/9AR9-Mc8kOU/maxresdefault.jpg" loading="lazy" alt="Como se curan las heridas">
+                            <img src="assets/las-pelotas.webp" alt="Como se curan las heridas">
                             <div class="video-card__play">► VER</div>
                         </div>
                         <div class="card-content"><h2>Como se curan las heridas</h2><span class="card-tags">[Atmósfera Visual] [Color Grading]</span></div>
                     </article>
                     <article class="video-card secondary-card" data-video-id="UUuUbgmXMHI">
                         <div class="video-card__thumb">
-                            <img src="https://i.ytimg.com/vi/UUuUbgmXMHI/maxresdefault.jpg" loading="lazy" alt="La clave">
+                            <img src="assets/las-pelotas.webp" alt="La clave">
                             <div class="video-card__play">► VER</div>
                         </div>
                         <div class="card-content"><h2>La clave</h2><span class="card-tags">[Sincronía Rítmica] [Strobing]</span></div>
                     </article>
                     <article class="video-card secondary-card" data-video-id="keywsiC21Is">
                         <div class="video-card__thumb">
-                            <img src="https://i.ytimg.com/vi/keywsiC21Is/maxresdefault.jpg" loading="lazy" alt="Para qué?">
+                            <img src="assets/las-pelotas.webp" alt="Para qué?">
                             <div class="video-card__play">► VER</div>
                         </div>
                         <div class="card-content"><h2>Para qué?</h2><span class="card-tags">[Composición Textural] [Live Mapping]</span></div>
@@ -1069,7 +1076,7 @@
             <!-- Imagen destacada -->
             <div class="am-gallery" style="margin-bottom: 2rem;">
                 <div class="am-gallery__item am-featured">
-                    <img src="assets/ama-maitea-1.webp" width="853" height="640" alt="Ama Maitea — familia completa de productos" loading="lazy">
+                    <img src="assets/ama-maitea-1.webp" width="853" height="640" alt="Ama Maitea — familia completa de productos" >
                 </div>
             </div>
 
@@ -1134,22 +1141,22 @@
             <!-- Galería secundaria -->
             <div class="am-gallery">
                 <div class="am-gallery__item">
-                    <img src="./assets/ama-maitea-2.webp" alt="Ama Maitea — variedad damascos con arándanos" loading="lazy">
+                    <img src="./assets/ama-maitea-2.webp" alt="Ama Maitea — variedad damascos con arándanos" >
                 </div>
                 <div class="am-gallery__item">
-                    <img src="./assets/ama-maitea-3.webp" alt="Ama Maitea — variedad ciruelas" loading="lazy">
+                    <img src="./assets/ama-maitea-3.webp" alt="Ama Maitea — variedad ciruelas" >
                 </div>
                 <div class="am-gallery__item">
-                    <img src="./assets/ama-maitea-4.webp" alt="Ama Maitea — mix frutal con degradé" loading="lazy">
+                    <img src="./assets/ama-maitea-4.webp" alt="Ama Maitea — mix frutal con degradé" >
                 </div>
                                 <div class="am-gallery__item">
-                    <img src="./assets/ama-maitea-5.webp" alt="Ama Maitea — mix frutal con degradé" loading="lazy">
+                    <img src="./assets/ama-maitea-5.webp" alt="Ama Maitea — mix frutal con degradé" >
                 </div>
                                 <div class="am-gallery__item">
-                    <img src="./assets/ama-maitea-6.webp" alt="Ama Maitea — mix frutal con degradé" loading="lazy">
+                    <img src="./assets/ama-maitea-6.webp" alt="Ama Maitea — mix frutal con degradé" >
                 </div>
                                 <div class="am-gallery__item">
-                    <img src="./assets/ama-maitea-7.webp" alt="Ama Maitea — mix frutal con degradé" loading="lazy">
+                    <img src="./assets/ama-maitea-7.webp" alt="Ama Maitea — mix frutal con degradé" >
                 </div>
             </div>
         </div>
@@ -1164,7 +1171,7 @@
                 <span class="mc-tag">Videoclip</span>
             </div>
 
-            <img src="assets/koprolitos-portada.png" class="mc-hero-img" alt="Koprolitos — clips musicales mutantes" loading="lazy"
+            <img src="assets/koprolitos-portada.png" class="mc-hero-img" alt="Koprolitos — clips musicales mutantes" 
                  onerror="this.style.display='none'">
 
             <div class="mc-case">
@@ -1203,7 +1210,7 @@
                 <div class="am-gallery" style="margin-top: 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
                     <a href="https://www.youtube.com/watch?v=hHB4SJT_kek" target="_blank" style="text-decoration: none; display: flex; flex-direction: column; gap: 12px;">
                         <div class="am-gallery__item">
-                            <img src="./assets/koprolitos-nada-de-mi.png" width="800" height="600" alt="Nada de mí" loading="lazy">
+                            <img src="./assets/koprolitos-nada-de-mi.png" width="800" height="600" alt="Nada de mí" >
                         </div>
                         <div class="work-card__cta" style="margin: 0 auto;">
                             <img src="assets/readmore.svg" width="18" height="18" alt="Ver video"> Nada de mí
@@ -1211,7 +1218,7 @@
                     </a>
                     <a href="https://www.youtube.com/watch?v=nhssz8m2v6I" target="_blank" style="text-decoration: none; display: flex; flex-direction: column; gap: 12px;">
                         <div class="am-gallery__item">
-                            <img src="./assets/koprolitos-civiles.jpg" width="800" height="600" alt="Civiles" loading="lazy">
+                            <img src="./assets/koprolitos-civiles.jpg" width="800" height="600" alt="Civiles" >
                         </div>
                         <div class="work-card__cta" style="margin: 0 auto;">
                             <img src="assets/readmore.svg" width="18" height="18" alt="Ver video"> Civiles
@@ -1219,7 +1226,7 @@
                     </a>
                     <a href="https://www.youtube.com/watch?v=UrYXX9S3BNw" target="_blank" style="text-decoration: none; display: flex; flex-direction: column; gap: 12px;">
                         <div class="am-gallery__item">
-                            <img src="./assets/koprolitos-britni.jpg" width="800" height="600" alt="Britni" loading="lazy">
+                            <img src="./assets/koprolitos-britni.jpg" width="800" height="600" alt="Britni" >
                         </div>
                         <div class="work-card__cta" style="margin: 0 auto;">
                             <img src="assets/readmore.svg" width="18" height="18" alt="Ver video"> Britni
@@ -1233,8 +1240,6 @@
 
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     <script type="module" src="js/three-bg.js" defer></script>
     <script src="js/anima.js" defer></script>
     <script src="js/menu.js" defer></script>

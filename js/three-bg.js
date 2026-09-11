@@ -1,4 +1,4 @@
-﻿import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
+﻿import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.min.js';
 
 const CONFIG = {
     colorNiebla: 0x221122,
@@ -13,7 +13,7 @@ const CONFIG = {
     distanciaCamara: 25.0,
     campoVision: 100,
     radio: 9.0,
-    detalle: window.innerWidth < 960 ? 4 : 50, 
+    detalle: window.innerWidth < 320 ? 4 : 8, 
     rugosidad: 10.33,
     metalizado: 25.0,
     flatShading: true,

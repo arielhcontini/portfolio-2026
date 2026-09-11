@@ -1,90 +1,48 @@
-/**
- * LYTHICS - Extreme Performance Animation Engine
- * Stack: GSAP + ScrollTrigger
- * Directivas: anti-FOUC, autoAlpha, cascada técnica, integrated 3D Hero.
- */
-
-gsap.registerPlugin(ScrollTrigger);
-
 const LythicsEngine = {
     init() {
-        // 1. Carga Prioritaria (Hero)
         this.initHero();
-        
-        // Revelar el canvas de Three.js
-        gsap.to("#bg-three", { autoAlpha: 1, duration: 2, ease: "power2.inOut" });
-        
-        // 2. Carga Diferida (Fuera del hilo principal inicial)
-        // Esto libera a la CPU para que pinte el sitio antes de calcular todos los scroll triggers
-        requestAnimationFrame(() => {
-            setTimeout(() => {
-                this.initScrollAnimations();
-            }, 150); // Pequeño delay para asegurar que el LCP ya se midió
-        });
+        this.revealCanvas();
+        requestAnimationFrame(() => this.initScrollAnimations());
     },
 
     initHero() {
-        // Set inicial inmediato para evitar saltos si el CSS no cargó a tiempo
-        gsap.set(".hero__image, .hero__title, .hero__description, .hero__social a", {
-            y: 30, // Pequeño offset para animar
-            autoAlpha: 0
+        const heroItems = document.querySelectorAll('.hero__image, .hero__title, .hero__description, .hero__social a');
+        heroItems.forEach((item, index) => {
+            item.style.visibility = 'visible';
+            item.animate([
+                { opacity: 0, transform: 'translateY(30px)' },
+                { opacity: 1, transform: 'translateY(0)' }
+            ], { duration: index === 0 ? 1500 : 900, delay: index * 120, easing: 'cubic-bezier(0.16, 1, 0.3, 1)', fill: 'forwards' });
         });
+    },
 
-        const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-        
-        // El Hero se revela usando autoAlpha (visibility: visible + opacity: 1)
-        tl.to(".hero__image", { autoAlpha: 1, y: 0, duration: 1.5 })
-          .to(".hero__title", { autoAlpha: 1, y: 0, duration: 1 }, "-=1.2")
-          .to(".hero__description", { autoAlpha: 1, y: 0, duration: 1 }, "-=0.8")
-          .to(".hero__social a", { autoAlpha: 1, y: 0, stagger: 0.1, duration: 0.8 }, "-=0.6");
+    revealCanvas() {
+        const canvas = document.querySelector('#bg-three');
+        if (canvas) {
+            canvas.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 2000, fill: 'forwards', easing: 'ease-in-out' });
+        }
     },
 
     initScrollAnimations() {
-        // Títulos de sección: Impacto Industrial
-        gsap.utils.toArray('.section-title').forEach(title => {
-            gsap.set(title, { y: 20, autoAlpha: 0 }); // Estado inicial
-            gsap.to(title, {
-                scrollTrigger: {
-                    trigger: title,
-                    start: "top 90%",
-                    toggleActions: "play none none none"
-                },
-                autoAlpha: 1,
-                y: 0,
-                duration: 1,
-                ease: "expo.out"
-            });
-        });
+        const animatedItems = document.querySelectorAll('.section-title, .skill-card, .project-card, .experience-card');
+        if (!('IntersectionObserver' in window)) {
+            animatedItems.forEach(item => { item.style.visibility = 'visible'; item.style.opacity = '1'; });
+            return;
+        }
 
-        // Grid de Habilidades
-        gsap.set(".skill-card", { y: 20, autoAlpha: 0 }); // Estado inicial
-        gsap.to(".skill-card", {
-            scrollTrigger: {
-                trigger: ".skills__grid",
-                start: "top 85%"
-            },
-            autoAlpha: 1,
-            y: 0,
-            stagger: 0.05,
-            duration: 0.8,
-            ease: "power3.out"
-        });
-
-        // Tarjetas de Proyectos y Experiencia (Carga progresiva)
-        const cards = gsap.utils.toArray('.project-card, .experience-card');
-        cards.forEach(card => {
-            gsap.set(card, { y: 20, autoAlpha: 0 }); // Estado inicial
-            gsap.to(card, {
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 92%"
-                },
-                autoAlpha: 1,
-                y: 0,
-                duration: 1.2,
-                ease: "power2.out"
+        const observer = new IntersectionObserver((entries, currentObserver) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.style.visibility = 'visible';
+                entry.target.animate([
+                    { opacity: 0, transform: 'translateY(20px)' },
+                    { opacity: 1, transform: 'translateY(0)' }
+                ], { duration: 900, easing: 'cubic-bezier(0.16, 1, 0.3, 1)', fill: 'forwards' });
+                currentObserver.unobserve(entry.target);
             });
-        });
+        }, { threshold: 0.1 });
+
+        animatedItems.forEach(item => observer.observe(item));
     }
 };
 
