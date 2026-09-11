@@ -1,61 +1,33 @@
-﻿import*as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.min.js';const CONFIG={colorNiebla:0x893959,nieblaInicio:100.0,nieblaFin:66.0,colorGeometria:0x000000,colorLuzToque:0x000000,intensidadLuzBase:10.0,intensidadLuzToque:1,colorLuzAmbiente:0xFFFFFF,intensidadAmbiente:25.00,distanciaCamara:22.22,campoVision:100,radio:9.99,detalle:window.innerWidth<64?4:8,rugosidad:55.55,metalizado:25.0,flatShading:!1,escalaTiempo:0.000005,velRotacionX:3.955,velRotacionY:3.155,amplitudRotZ:0.99,frecuenciaRotZ:0.555,velOlaBase:16,fuerzaOlaBase:10,frecuenciaOla:3.33,atraccionDedo:10.55,radioAtraccion:8.0,suavizadoInteraccion:0.0001};const scene=new THREE.Scene();scene.fog=new THREE.Fog(CONFIG.colorNiebla,CONFIG.nieblaInicio,CONFIG.nieblaFin);const camera=new THREE.PerspectiveCamera(CONFIG.campoVision,window.innerWidth/window.innerHeight,0.9,100);camera.position.set(0,0,CONFIG.distanciaCamara);const renderer=new THREE.WebGLRenderer({antialias:!0,alpha:!0});renderer.setSize(window.innerWidth,window.innerHeight);renderer.setPixelRatio(window.innerWidth<768?1:Math.min(window.devicePixelRatio,2));renderer.domElement.id='bg-three';document.body.appendChild(renderer.domElement);let geometry=new THREE.TetrahedronGeometry(CONFIG.radio,CONFIG.detalle);if(geometry.index)geometry=geometry.toNonIndexed();const material=new THREE.MeshStandardMaterial({color:CONFIG.colorGeometria,flatShading:CONFIG.flatShading,roughness:CONFIG.rugosidad,metalness:CONFIG.metalizado});const tetraMesh=new THREE.Mesh(geometry,material);scene.add(tetraMesh);const posAttribute=geometry.attributes.position;const originalPos=new Float32Array(posAttribute.array);const count=posAttribute.count;const pointLight=new THREE.PointLight(CONFIG.colorLuzToque,CONFIG.intensidadLuzBase,100);scene.add(pointLight);scene.add(new THREE.AmbientLight(CONFIG.colorLuzAmbiente,CONFIG.intensidadAmbiente));const raycaster=new THREE.Raycaster();const mathPlane=new THREE.Plane(new THREE.Vector3(0,0,1),-1);const pointerCoords=new THREE.Vector2(-1000,-1000);const interaction3D=new THREE.Vector3();const lightTarget=new THREE.Vector3(0,0,1);let effectStrength=0;function setPointer(clientX,clientY){pointerCoords.x=(clientX/window.innerWidth)*2-1;pointerCoords.y=-(clientY/window.innerHeight)*2+1}
-window.addEventListener('mousemove',(e)=>setPointer(e.clientX,e.clientY));window.addEventListener('touchstart',(e)=>{if(e.touches.length>0)setPointer(e.touches[0].clientX,e.touches[0].clientY);},{passive:!0});window.addEventListener('touchmove',(e)=>{if(e.touches.length>0)setPointer(e.touches[0].clientX,e.touches[0].clientY);},{passive:!0});window.addEventListener('touchend',()=>pointerCoords.set(-1000,-1000));document.addEventListener('mouseleave',()=>pointerCoords.set(-1000,-1000));function animate(){requestAnimationFrame(animate);const time=performance.now()*CONFIG.escalaTiempo;const isInteracting=pointerCoords.x!==-10;raycaster.setFromCamera(pointerCoords,camera);if(isInteracting){effectStrength+=(1.0-effectStrength)*CONFIG.suavizadoInteraccion;if(raycaster.ray.intersectPlane(mathPlane,interaction3D)){lightTarget.lerp(interaction3D,0.999)}}else{effectStrength+=(0.0-effectStrength)*(CONFIG.suavizadoInteraccion*0.3);lightTarget.lerp(new THREE.Vector3(0,0,1),0.9)}
-pointLight.position.copy(lightTarget);pointLight.intensity=CONFIG.intensidadLuzBase+(CONFIG.intensidadLuzToque*effectStrength);for(let i=0;i<count;i++){const ox=originalPos[i*3],oy=originalPos[i*3+1],oz=originalPos[i*3+2];const distToCenter=Math.sqrt(ox*ox+oy*oy+oz*oz);const wave=Math.sin(time*CONFIG.velOlaBase+oy*CONFIG.frecuenciaOla)*CONFIG.fuerzaOlaBase;const dx=ox-lightTarget.x,dy=oy-lightTarget.y,dz=oz-lightTarget.z;const distToTargetSq=dx*dx+dy*dy+dz*dz;const pullStrength=(Math.exp(-distToTargetSq/CONFIG.radioAtraccion)*CONFIG.atraccionDedo)*effectStrength;const scale=(distToCenter+wave+pullStrength)/distToCenter;posAttribute.setXYZ(i,ox*scale,oy*scale,oz*scale)}
-posAttribute.needsUpdate=!0;geometry.computeVertexNormals();tetraMesh.rotation.x=time*CONFIG.velRotacionX;tetraMesh.rotation.y=time*CONFIG.velRotacionY;tetraMesh.rotation.z=Math.sin(time*CONFIG.frecuenciaRotZ)*CONFIG.amplitudRotZ;renderer.render(scene,camera)}
-window.addEventListener('resize',()=>{camera.aspect=window.innerWidth/window.innerHeight;camera.updateProjectionMatrix();renderer.setSize(window.innerWidth,window.innerHeight)});animate()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.min.js';
+﻿import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.min.js';
 
 const CONFIG = {
-    colorNiebla: 0x893959,
+    colorNiebla: 0x111144,
     nieblaInicio: 100.0,
-    nieblaFin: 66.0,
-    colorGeometria: 0x000000,
-    colorLuzToque: 0x000000,
-    intensidadLuzBase: 10.0,
-    intensidadLuzToque: 1,
-    colorLuzAmbiente: 0xFFFFFF,
-    intensidadAmbiente: 25.00,
+    nieblaFin: 80.0,
+    colorGeometria: 0x003311,
+    colorLuzToque: 0x000033,
+    intensidadLuzBase: 1.0,
+    intensidadLuzToque: 1.0,
+    colorLuzAmbiente: 0x00FF00,
+    intensidadAmbiente: 1.00,
     distanciaCamara: 22.22,
     campoVision: 100,
     radio: 9.99,
-    detalle: window.innerWidth < 64 ? 4 : 8, 
-    rugosidad: 55.55,
-    metalizado: 25.0,
-    flatShading: false,
-    escalaTiempo: 0.000005,
-    velRotacionX: 3.955,
-    velRotacionY: 3.155,
+    detalle: window.innerWidth < 768 ? 32 : window.innerHeight < 768 ? 32 : 64, 
+    rugosidad: 1.0,
+    metalizado: 200.0,
+    flatShading: true,
+    escalaTiempo: 0.000003333,
+    velRotacionX: 1.999,
+    velRotacionY: 1.888,
     amplitudRotZ: 0.99,
-    frecuenciaRotZ: 0.555,
-    velOlaBase: 16,
+    frecuenciaRotZ: 0.0555,
+    velOlaBase: 32,
     fuerzaOlaBase: 10,
     frecuenciaOla: 3.33,
-    atraccionDedo: 10.55,
-    radioAtraccion: 8.0,
-    suavizadoInteraccion: 0.0001
+    atraccionDedo: 10.0,
+    radioAtraccion: 10.0,
+    suavizadoInteraccion: 1.0
 };
 
 const scene = new THREE.Scene();
@@ -154,4 +126,4 @@ window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-animate(); */
+animate();
