@@ -1,7 +1,7 @@
 ﻿import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.min.js';
 
 const CONFIG = {
-    colorNiebla: 0x221122,
+    colorNiebla: 0x893959,
     nieblaInicio: 100.0,
     nieblaFin: 66.0,
     colorGeometria: 0x000000,
@@ -10,24 +10,24 @@ const CONFIG = {
     intensidadLuzToque: 1,
     colorLuzAmbiente: 0xFFFFFF,
     intensidadAmbiente: 25.00,
-    distanciaCamara: 25.0,
+    distanciaCamara: 22.22,
     campoVision: 100,
-    radio: 9.0,
-    detalle: window.innerWidth < 320 ? 4 : 8, 
-    rugosidad: 10.33,
+    radio: 9.99,
+    detalle: window.innerWidth < 64 ? 4 : 8, 
+    rugosidad: 55.55,
     metalizado: 25.0,
-    flatShading: true,
-    escalaTiempo: 0.00005,
+    flatShading: false,
+    escalaTiempo: 0.000005,
     velRotacionX: 3.955,
     velRotacionY: 3.155,
     amplitudRotZ: 0.99,
-    frecuenciaRotZ: 0.5,
-    velOlaBase: 8,
+    frecuenciaRotZ: 0.555,
+    velOlaBase: 16,
     fuerzaOlaBase: 10,
     frecuenciaOla: 3.33,
-    atraccionDedo: 5.55,
+    atraccionDedo: 10.55,
     radioAtraccion: 8.0,
-    suavizadoInteraccion: 0.1
+    suavizadoInteraccion: 0.0001
 };
 
 const scene = new THREE.Scene();
